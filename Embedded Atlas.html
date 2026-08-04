@@ -17,7 +17,7 @@
     button{color:inherit}
     .app{display:grid;grid-template-columns:var(--sidebar) minmax(0,1fr);grid-template-rows:minmax(0,1fr);height:100vh;overflow:hidden}
     aside{background:var(--dark);color:#eef5f1;padding:23px 17px 18px;display:flex;flex-direction:column;z-index:12}.app>aside{overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#46635c transparent}
-    .brand{display:flex;align-items:center;gap:11px;padding:0 7px 22px;border-bottom:1px solid #2b3d3a}
+    .brand{display:flex;align-items:center;gap:11px;padding:0 7px 22px;border-bottom:1px solid #2b3d3a}.menu-close{display:none;margin-left:auto;width:40px;height:40px;border:1px solid #46605a;border-radius:10px;background:#1b302c;color:#eef6f2;cursor:pointer;font-size:19px}
     .mark{width:40px;height:40px;border:1px solid #526a65;border-radius:50%;display:grid;place-items:center;position:relative}
     .mark::before{content:"知";font-family:serif;font-size:18px;color:#ffb58f}
     .mark::after{content:"";position:absolute;inset:5px;border:1px dashed #405853;border-radius:50%;animation:turn 18s linear infinite}
@@ -383,12 +383,24 @@
       .data-shell{padding:21px 14px 50px}.data-head{display:block}.data-head h2{font-size:38px}.data-head p{font-size:13px}.data-head button{margin-top:15px}.data-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.data-stat{padding:14px}.data-stat b{font-size:25px}.data-card{padding:19px 15px}.storage-facts{grid-template-columns:1fr}.preview-counts{grid-template-columns:repeat(3,minmax(0,1fr))}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+    /* 交互与小屏安全层：装饰图不抢点击，正文和工具栏按可用宽度自然换行。 */
+    .figure,.tree-svg,.chapter-head::before,.chapter-head::after,.connection-current::before,.connection-current::after{pointer-events:none}
+    .mobile-reading-toc:not([open]) .reading-toc-list{display:none}
+    .article-main>*{max-width:100%;isolation:isolate}.article-main img,.article-main svg{max-width:100%;height:auto}
+    .article-main pre,.article-main code,.article-title,.article-aside,.article-tools{min-width:0}
+    .article-tool-actions{flex-wrap:wrap;justify-content:flex-end}.article-tools button{min-height:44px}
+    .question-toggle{border:1px solid color-mix(in srgb,var(--chapter) 40%,#cfd5cd);background:color-mix(in srgb,var(--chapter) 7%,#fffefa);color:#28433a;border-radius:12px;padding:10px 14px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}.question-toggle:hover{border-color:var(--chapter)}.question-toggle b{display:inline-grid;place-items:center;min-width:21px;height:21px;padding:0 5px;margin-left:5px;border-radius:999px;background:var(--chapter);color:#fff;font:700 11px Georgia,serif}.question-toggle b:empty{display:none}
+    .question-layer{position:fixed;inset:0;z-index:120;display:none}.question-layer.open{display:grid;place-items:center;padding:20px}.question-layer:not(.open){pointer-events:none}.question-backdrop{position:absolute;inset:0;background:#07100ec7;backdrop-filter:blur(4px)}
+    .question-dialog{position:relative;width:min(760px,100%);max-height:min(820px,calc(100vh - 40px));overflow:auto;border:1px solid #d8dbd3;border-radius:21px;background:#fffefa;color:#1d2f28;box-shadow:0 28px 90px #0008;padding:28px}.question-dialog>header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;padding-bottom:18px;border-bottom:1px solid #e0e1d9}.question-kicker{display:block;color:var(--chapter,#287f71);font:700 10px Georgia,serif;letter-spacing:.16em;margin-bottom:6px}.question-dialog h2{font:500 31px/1.22 Georgia,"Songti SC",serif;margin:0}.question-dialog header p{margin:7px 0 0;color:#66776f;font-size:13px;line-height:1.65}.question-close{width:44px;height:44px;border:1px solid #cfd5cd;border-radius:12px;background:#f5f3ec;cursor:pointer;font-size:20px}.question-compose{padding:19px 0 16px}.question-compose label{display:block;font-weight:700;font-size:14px;margin-bottom:8px}.question-compose textarea{display:block;width:100%;min-height:112px;resize:vertical;border:1px solid #cfd6ce;border-radius:13px;background:#fff;padding:13px 14px;font:14px/1.75 inherit;color:#243830}.question-compose textarea:focus{outline:3px solid color-mix(in srgb,var(--chapter,#287f71) 18%,transparent);border-color:var(--chapter,#287f71)}.question-actions{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:10px}.question-actions button{min-height:42px;border:1px solid #cbd2ca;border-radius:10px;background:#fff;padding:9px 13px;cursor:pointer}.question-actions .primary{background:#17372f;border-color:#17372f;color:#fff}.question-list-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:5px 0 10px}.question-list-head h3{margin:0;font-size:17px}.question-list-head span{font-size:11px;color:#7b8982}.question-list{display:grid;gap:9px}.question-item{border:1px solid #d9ddd5;border-radius:13px;background:#f7f6f0;padding:13px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}.question-item.resolved{opacity:.62}.question-item p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.7}.question-item small{display:block;color:#819089;margin-top:5px;font-size:10px}.question-item div:last-child{display:flex;gap:6px;align-items:start}.question-item button{border:1px solid #cfd4cc;background:#fffefa;border-radius:8px;padding:7px 9px;font-size:11px;cursor:pointer}.question-empty{border:1px dashed #cbd3cb;border-radius:13px;padding:26px;text-align:center;color:#71817a;font-size:13px;line-height:1.7}
+    .term-guide{border-left:5px solid var(--chapter);background:linear-gradient(135deg,#fffefa,#f3f5ef)}.term-guide>h3{margin-bottom:5px}.term-guide>p{margin:0 0 14px;color:#6b7b74;font-size:13px}.term-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:9px}.term-item{border:1px solid #d8ddd5;border-radius:11px;background:#fff;overflow:hidden}.term-item summary{list-style:none;cursor:pointer;padding:12px 13px;font-size:13px;font-weight:800;color:#274239;display:flex;align-items:center;justify-content:space-between;gap:12px}.term-item summary::-webkit-details-marker{display:none}.term-item summary::after{content:"＋";color:var(--chapter)}.term-item[open] summary::after{content:"－"}.term-item p{border-top:1px solid #e1e3dc;margin:0;padding:11px 13px!important;font-size:13px!important;line-height:1.75!important}
+    @media(max-width:960px){.menu-close{display:block}.app>aside{z-index:80}.article-grid{grid-template-columns:1fr}.article-aside{display:flex;flex-direction:column}.article-wrap{padding:25px clamp(18px,4vw,34px) 76px}.article-tools{margin-bottom:20px}.article-tool-actions{justify-content:flex-start}.article-title .lead{max-width:none}.back-to-top{right:14px;bottom:14px}}
+    @media(max-width:720px){.article-tools{display:grid;grid-template-columns:1fr}.article-tool-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}.article-tool-actions>span{grid-column:1/-1;order:3}.bookmark-toggle,.question-toggle{width:100%;min-height:48px;padding:11px 10px}.article-title h2{font-size:clamp(28px,9vw,38px)}.article-title .lead{font-size:16px}.text-card{padding:21px 17px}.compare-table{min-width:0;font-size:12px}.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.table-scroll .compare-table{min-width:560px}.code-card pre{max-width:100%;font-size:12px}.question-layer.open{padding:0;align-items:end}.question-dialog{width:100%;max-height:92vh;border-radius:20px 20px 0 0;padding:21px 16px 28px}.question-dialog h2{font-size:25px}.question-item{grid-template-columns:1fr}.question-item div:last-child{justify-content:flex-end}.term-grid{grid-template-columns:1fr}.back-to-top{bottom:12px}.protocol-svg{min-width:0}}
   </style>
 </head>
 <body>
 <div class="app" id="app">
   <aside>
-    <div class="brand"><div class="mark"></div><div><h1>温故知新</h1><p>STRUCTURED KNOWLEDGE</p></div></div>
+    <div class="brand"><div class="mark"></div><div><h1>温故知新</h1><p>STRUCTURED KNOWLEDGE</p></div><button class="menu-close" id="menuClose" aria-label="关闭章节菜单">×</button></div>
     <div class="side-label">章节 / CHAPTERS</div>
     <nav class="chapter-nav" id="chapterNav"></nav>
     <button class="home-btn" id="homeBtn">返回知识森林</button>
@@ -436,7 +448,7 @@
               <section class="maintenance-rule"><i>03</i><h4>每页必须完成一次推导</h4><p>推荐顺序是：为什么会遇到 → 对象和前提是什么 → 机制如何逐步发生 → 具体代码、字节或时序例子 → 常见误区 → 工程中怎样观察和验证。标题保持正规，正文可以生动，但不能用行业黑话代替解释。</p></section>
               <section class="maintenance-rule"><i>04</i><h4>图要匹配知识本身</h4><p>C 语言适合逐表达式与逐字节图；ARM 适合调用栈、寄存器和异常路径；内存适合地址地图与所有权箭头；协议适合波形、帧和事务；RTOS 适合状态机与时间线。<strong>能用图讲清才画</strong>，不用同一种方框模板覆盖所有章节。</p></section>
               <section class="maintenance-rule"><i>05</i><h4>结论必须有证据层级</h4><p>优先语言标准、架构规范、协议原始资料和项目官方文档；社区文章只用于发现问题。明确区分“标准规定、架构允许、芯片实现、库的版本行为和项目约定”，不要把某颗 MCU 的现象写成普遍规律。无法确认的说法宁可暂缓。</p></section>
-              <section class="maintenance-rule"><i>06</i><h4>更新不能破坏旧数据</h4><p>已有知识点 ID 尽量保持稳定。合并或改名时保留旧 ID 到新页面的迁移映射，使收藏、阅读历史、进度和内部链接继续有效；新增样式必须覆盖宽屏、平板与手机，不使用会截断正文的固定高度。</p></section>
+              <section class="maintenance-rule"><i>06</i><h4>更新不能破坏旧数据</h4><p>已有知识点 ID 尽量保持稳定。合并或改名时保留旧 ID 到新页面的迁移映射，使收藏、随页疑问、阅读历史、进度和内部链接继续有效；新增样式必须覆盖宽屏、平板与手机，不使用会截断正文的固定高度。</p></section>
             </div>
             <div class="maintenance-check"><b>交付前逐项自问：</b>读者是否知道“是什么、为什么、怎样发生、哪里会错、如何验证”？是否存在可以合并的重复页？图是否比文字更直观且在小屏可读？折叠追问是否都有答案？资料来源是否足以支撑结论？搜索、导航、收藏、备份和不同屏幕是否仍然正常？<span class="maintenance-version">本约定随知识库保存在同一个 HTML 中；以后继续扩充时，以这里而不是聊天记忆作为统一验收标准。</span></div>
           </div>
@@ -446,7 +458,7 @@
             <span class="about-kicker">ABOUT THIS KNOWLEDGE ATLAS</span>
             <h3 id="aboutTitle">关于本站</h3>
             <p>“温故知新”是一份面向嵌入式软件学习的单文件知识体系。它不绑定某一颗芯片或某个具体工程，而是围绕嵌入式 C、数据结构与算法、ARM、内存、通信协议、FreeRTOS，以及必要的 FatFs、LVGL 扩展知识，建立可以持续生长的理解框架。这里重视基础机制、前后联系、可验证的例子和适合知识本身的图解；它用于帮助理解和复习，但不能替代语言标准、架构手册、协议规范与目标芯片文档。</p>
-            <div class="about-facts"><span>离线单 HTML</span><span>221 个知识单元</span><span>自适应知识树</span><span>收藏与阅读进度保存在浏览器</span><span>桌面 / 平板 / 手机适配</span></div>
+            <div class="about-facts"><span>离线单 HTML</span><span><b id="aboutLeafCount">—</b> 个知识单元</span><span>自适应知识树</span><span>收藏、疑问与阅读进度保存在浏览器</span><span>桌面 / 平板 / 手机适配</span></div>
           </div>
           <aside class="about-developer" aria-label="开发者信息">
             <div><span>DEVELOPER &amp; CURATOR</span><strong>橙汁</strong><p>项目开发、知识整理与持续维护。把零碎问题重新放回结构中，让每次补充都能成为原有知识网络的一部分。</p></div>
@@ -488,10 +500,10 @@
       </section>
       <section class="data-page" id="dataCenter" aria-hidden="true">
         <div class="data-shell">
-          <header class="data-head"><div><span>PERSONAL DATA CENTER</span><h2>数据与备份</h2><p>收藏、最近阅读和阅读进度都保存在当前浏览器。这里把它们装进一份带版本号的备份，更新网页或更换设备时都能完整恢复。</p></div><button id="dataCenterClose">← 返回</button></header>
+          <header class="data-head"><div><span>PERSONAL DATA CENTER</span><h2>数据与备份</h2><p>收藏、随页疑问、最近阅读和阅读进度都保存在当前浏览器。这里把它们装进一份带版本号的备份，更新网页或更换设备时都能完整恢复。</p></div><button id="dataCenterClose">← 返回</button></header>
           <div class="data-overview" id="dataOverview"></div>
           <div class="data-columns">
-            <section class="data-card export-card"><div class="data-card-title"><span>01</span><div><h3>导出个人数据</h3><p>生成一份完整 JSON。它不包含网页正文，只包含属于你的收藏与阅读足迹。</p></div></div><button class="data-primary" id="exportPersonalData">导出完整备份</button><button class="data-secondary" id="exportBookmarksFromData">仅导出收藏（兼容旧版）</button><div class="data-last" id="dataLastBackup"></div></section>
+            <section class="data-card export-card"><div class="data-card-title"><span>01</span><div><h3>导出个人数据</h3><p>生成一份完整 JSON。它不包含网页正文，只包含属于你的收藏、疑问与阅读足迹。</p></div></div><button class="data-primary" id="exportPersonalData">导出完整备份</button><button class="data-secondary" id="exportBookmarksFromData">仅导出收藏（兼容旧版）</button><div class="data-last" id="dataLastBackup"></div></section>
             <section class="data-card import-card"><div class="data-card-title"><span>02</span><div><h3>导入与恢复</h3><p>先读取并预览备份，确认内容和处理方式后才会写入浏览器。</p></div></div><button class="data-primary" id="choosePersonalData">选择备份文件</button><input id="personalDataImportFile" type="file" accept="application/json,.json" hidden><div class="import-preview" id="importPreview"><div class="import-empty"><b>还没有选择文件</b><span>支持完整备份，也兼容旧版收藏 JSON。</span></div></div></section>
           </div>
           <section class="data-card storage-card"><div class="data-card-title"><span>03</span><div><h3>数据保存在哪里？</h3><p>浏览器使用本地存储保存个人状态。HTML 更新不会主动清空它，但更换浏览器、设备或文件路径前应先导出备份。</p></div></div><div class="storage-facts" id="storageFacts"></div></section>
@@ -509,6 +521,14 @@
     <div class="picker-folders" id="pickerFolders"></div>
     <div class="picker-new"><input id="pickerFolderName" maxlength="24" placeholder="新收藏夹名称"><button id="pickerCreateFolder">新建</button></div>
     <button class="picker-remove" id="removeBookmark" hidden>移出收藏</button>
+  </div>
+</section>
+<section class="question-layer" id="questionLayer" aria-hidden="true">
+  <div class="question-backdrop" data-question-close></div>
+  <div class="question-dialog" role="dialog" aria-modal="true" aria-labelledby="questionDialogTitle">
+    <header><div><span class="question-kicker">PAGE QUESTIONS · LOCAL NOTES</span><h2 id="questionDialogTitle">记录本页疑问</h2><p id="questionPageContext"></p></div><button class="question-close" id="questionClose" aria-label="关闭">×</button></header>
+    <div class="question-compose"><label for="questionInput">哪里没看懂、哪里还想补充？</label><textarea id="questionInput" maxlength="1200" placeholder="例如：这里说的原子性，到底是 CPU 一条指令不可拆，还是 C 语言并发访问有定义？"></textarea><div class="question-actions"><button class="primary" id="questionAdd">保存疑问</button><button id="questionCopyPrompt">复制本页 AI 补充请求</button><button id="questionCopyAll">复制全部未解决疑问</button></div></div>
+    <div class="question-list-head"><h3>本页记录</h3><span id="questionListCount">0 条</span></div><div class="question-list" id="questionList"></div>
   </div>
 </section>
 <div class="bookmark-toast" id="bookmarkToast" role="status" aria-live="polite"></div>
@@ -547,6 +567,12 @@ const S={
   cUB:["CERT C · Undefined Behavior","https://wiki.sei.cmu.edu/confluence/display/c/CC.+Undefined+Behavior"],
   cINT:["CERT C · Integer Conversion Rules","https://wiki.sei.cmu.edu/confluence/display/c/INT02-C.+Understand+integer+conversion+rules"],
   cMEM:["CERT C · Do Not Access Freed Memory","https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory"],
+  tcp:["RFC 9293 · Transmission Control Protocol","https://www.rfc-editor.org/rfc/rfc9293.html"],
+  udp:["RFC 768 · User Datagram Protocol","https://www.rfc-editor.org/rfc/rfc768.html"],
+  udpGuide:["RFC 8085 · UDP Usage Guidelines","https://www.rfc-editor.org/rfc/rfc8085.html"],
+  http:["RFC 9110 · HTTP Semantics","https://www.rfc-editor.org/rfc/rfc9110.html"],
+  http11:["RFC 9112 · HTTP/1.1","https://www.rfc-editor.org/rfc/rfc9112.html"],
+  mqtt:["OASIS Standard · MQTT Version 5.0","https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html"],
   gccWarn:["GCC Warning Options","https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html"],
   gccArm:["GCC · ARM Function Attributes","https://gcc.gnu.org/onlinedocs/gcc/ARM-Function-Attributes.html"],
   clangASan:["Clang AddressSanitizer","https://clang.llvm.org/docs/AddressSanitizer.html"],
@@ -873,7 +899,7 @@ const chapters=[
       F("c-malloc-family","malloc/calloc/free 的基本契约","malloc 返回满足基本对齐的未初始化存储；calloc 进行大小乘法并把字节清零；free 结束 allocated object 生命周期。",["始终检查分配失败。","malloc(0) 的结果需要按标准边界处理，不可随意解引用。","calloc 的全零字节不等于所有抽象类型语义零的普遍保证。","free(NULL) 安全且无动作。"],"分配 API 返回的是存储与生命周期责任。","分配成功不代表 size 计算没有溢出。",["c-size-overflow","c-ownership"],["cISO","cCERT"],["calloc 与 malloc+memset 的差异有哪些？"]),
       F("c-ownership","所有权、借用与释放协议","C 不自动追踪 owner；接口必须规定谁负责释放、借用能持续多久、能否修改。",["owned 指针负责最终释放。","borrowed 指针不得超过 owner 生命周期。","共享所有权需要引用计数或更高层协议。","转移后原 owner 不再访问对象。"],"每个动态对象在任意时刻都应能回答“谁负责释放”。","把指针设为 NULL 只清理一个别名，不能修复其他悬空别名。",["c-memory-bugs","fr-queue-pointer"],["cMEM","cCERT"],["指针队列传递 buffer 时如何表达所有权转移？"]),
       F("c-realloc","realloc 的移动、失败与原指针","realloc 可能原地扩展、搬到新地址、缩小或失败。",["成功后旧指针值不再可用，即使地址看似相同。","失败时原分配保持有效，因此应先存到临时指针。","新增长区域不会自动初始化。","size=0 的语义边界应避免依赖。"],"p = realloc(p,n) 会在失败时丢失唯一 owner；先用 tmp。","任何指向旧块内部的派生指针在成功 realloc 后都需重新建立。",["c-ownership","c-size-overflow"],["cMEM","cCERT"],["realloc 为什么必须使用临时指针接收？"]),
-      F("c-memcpy-memmove","memcpy、memmove 与对象字节","memcpy 要求源与目标不重叠；memmove 支持重叠并表现得像通过临时缓冲复制。",["长度单位是字节。","目标必须有足够可写空间。","复制结构体会连同 padding 和指针值一起复制。","字符串复制还要处理终止符和容量。"],"先证明区域、大小和重叠关系，再选择 copy 还是 move。","memcpy 不是深拷贝，也不是通用序列化。",["c-object-representation","c-string-safety"],["cISO","cCERT"],["数组内删除一个元素时为什么常用 memmove？"]),
+      F("c-memcpy-memmove","memcpy、memmove、memset 与 memcmp","四个函数都按字节工作：复制先判断重叠，填充别混淆字节值与对象值，比较只使用结果符号并避开 padding 与安全比较陷阱。",["memcpy 要求区域不重叠，memmove 为重叠定义等价临时副本语义。","memset 把每个 byte 设为同一值，给 int 数组填 1 通常不会得到整数 1。","memcmp 按 unsigned byte 比较，只保证负、零、正，不适合含 padding 的结构体或秘密数据。","所有长度都是字节；容量、对象生命周期、乘法溢出和 MMIO 副作用必须在调用前证明。"],"mem* 只认识地址与字节数，不认识你的类型、容量、资源所有权和协议字段。","全零字节、业务零值、空指针和浮点零不能在所有 C 实现上无条件画等号；安全擦除还要防止优化删除。",["c-object-representation","c-serialization"],["cISO","cCERT"],["memset(a,1,sizeof a) 为什么通常不能把 int 数组设为 1？","memcmp 为什么不适合比较结构体业务相等？","什么时候必须使用 memmove？"]),
       F("c-size-overflow","分配大小与乘加溢出","count * sizeof(T) 若在 size_t 中回绕，分配会比预期小，随后写越界。",["乘法前检查 count > SIZE_MAX/sizeof(T)。","柔性数组还要检查 header + payload 的加法。","外部长度进入 size_t 前也需验证转换范围。","calloc 可帮助处理乘法，但仍要检查返回值与实现契约。"],"任何“元素数 × 元素大小”都是安全边界。","仅检查 count 很小而忽略类型转换，仍可能在乘法前产生错误值。",["c-malloc-family","c-conversions"],["cINT","cCERT"],["如何安全计算 n 个元素的分配字节数？"]),
       F("c-memory-bugs","泄漏、越界、UAF 与 double free","内存错误分为边界、生命周期和所有权三类，症状可能延迟到很远位置。",["越界写常先破坏邻接元数据。","use-after-free 使用已结束生命周期对象。","double free 说明多个路径都自认为是 owner。","AddressSanitizer 可在主机测试中定位多类错误。"],"崩溃点常是受害者，不是第一次错误写入的位置。","关闭优化或增加日志让问题消失，可能只是改变了内存布局。",["c-sanitizers","c-ownership"],["cMEM","clangASan"],["UAF 为什么可能在 free 很久之后才崩溃？"])
     ])
@@ -2137,12 +2163,44 @@ const memoryVisibilityBranch=B("memory-visibility","Cache、DMA 与数据可见�
 memoryChapter.children.unshift(memoryCoreBranch);
 memoryChapter.children.splice(2,0,memoryVisibilityBranch);
 
+/* 网络通信放在板级协议之后：先搭分层坐标，再比较传输语义，最后进入 HTTP 与 MQTT。 */
+const networkCommunicationBranch=B("network-communication","网络通信：从 IP 数据包到应用消息","网络协议不是把 UART 换成网线。它把寻址、传输和应用语义分层，让每一层只承担自己的承诺。",[
+  F("net-stack-path","一条消息怎样穿过网络协议栈","应用数据从 HTTP/MQTT 进入 TCP 或 UDP，再由 IP 寻址并交给以太网、Wi‑Fi 或蜂窝链路；接收端按相反方向逐层解封。",[
+    "应用层先定义消息是什么、何时算成功；传输层用端口把数据交给正确进程，并提供各自的传输语义。",
+    "IP 负责跨网络转发数据包，可能丢失、重复、乱序或因 MTU 被分片；它不理解业务命令。",
+    "链路层只负责当前一跳的帧传输和本地寻址，换一段网络后 MAC 头会变化，IP 端点通常保持。",
+    "发送时每层加自己的头部，接收时逐层校验并去掉；抓包应同时标出链路、IP、传输和应用四层。"
+  ],"先问问题属于哪一层，再选证据；端口通不等于应用语义正确。","OSI 七层是教学模型；嵌入式工程常用链路/IP/传输/应用四层坐标即可，实际隧道、TLS 与网关会在层间再套协议。",["net-tcp-udp","net-http","net-mqtt","comm-layer-model"],["tcp","udp","http","mqtt"],["MAC 地址、IP 地址和端口分别在什么范围内识别对象？","为什么网卡收到帧不等于应用一定收到消息？"]),
+  F("net-tcp-udp","TCP 与 UDP：字节流和数据报是两份不同合同","TCP 提供可靠、有序、双向的字节流；UDP 以独立数据报发送，保留每次发送边界，但不替应用重传、排序或去重。",[
+    "TCP 的 send(100 B) 与 send(50 B) 到接收端可能被一次读出 150 B，也可能分多次读出；应用必须自己设计长度、分隔符或固定头。",
+    "TCP 用序号、确认、重传、接收窗口和拥塞控制维护一条流；可靠性会带来连接状态、缓冲和 head-of-line 等待。",
+    "UDP 一次发送对应一个数据报；接收 buffer 太小会截断或丢弃余部（依 API），数据报过大还可能遇到 IP 分片与更高丢失风险。",
+    "选择不是‘重要用 TCP、不重要用 UDP’：要看消息边界、时延上界、丢失策略、广播/组播、连接成本，以及应用能否实现去重与重传。",
+    "两者的 checksum 只校验传输内容，不提供身份认证；安全性通常需要 TLS、DTLS 或受保护的上层协议。"
+  ],"TCP 是连续可靠字节流，UDP 是可能丢失的独立信封；消息边界与业务成功都仍由应用定义。","TCP 的可靠是连接两端协议栈之间的字节可靠，不证明对端业务已经持久化或执行；UDP 也不是‘一定更实时’，拥塞和队列同样存在。",["comm-framing","net-http","net-mqtt","comm-timeout-recovery"],["tcp","udp","udpGuide"],["为什么 TCP 接收不能假设一次 recv 就得到一整包？","UDP 数据报丢失、重复或乱序时，应用怎样决定是否重传？","端口号解决了什么问题？"]),
+  F("net-http","HTTP 基础：请求、响应与消息边界","HTTP 用请求方法、目标 URI、字段和可选内容表达一次操作，再用状态码、字段和内容返回结果；它是应用协议，不等于一条 TCP 连接。",[
+    "HTTP/1.1 请求行写方法、目标和版本，随后是字段、空行与可选 body；响应以状态行开始。字段名大小写不敏感，但字段值语义由各字段定义。",
+    "GET 读取资源，POST 提交由资源处理的数据，PUT 表示用给定表示创建或替换目标资源；是否安全、幂等要按方法语义和具体 API 一起判断。",
+    "200 表示请求成功处理，201 常表示已创建，204 成功但无内容；4xx 是请求侧问题，5xx 是服务器处理失败。不要把所有非 200 都当成同一种错误。",
+    "HTTP/1.1 的 body 边界由方法/状态、Content-Length、Transfer-Encoding 等规则共同确定；读取到 socket 暂时没数据不等于消息结束。",
+    "嵌入式客户端必须限制状态行、字段总长和 body 上限，设置连接/首字节/整体 deadline，并决定重试是否会重复副作用。"
+  ],"HTTP 是有语义的请求—响应消息；TCP 只提供承载它的字节流。","HTTP 是无状态语义，不表示服务器不能用 Cookie、Token 或数据库维持会话；HTTPS 是 HTTP 通过 TLS 获得安全传输，不是另一套业务方法。",["net-stack-path","net-tcp-udp","comm-framing","comm-timeout-recovery"],["http","http11"],["Content-Length 为什么必须在分配内存前校验上限？","POST 超时后可以无条件重试吗？","HTTP 204 响应为什么通常没有 body？"]),
+  F("net-mqtt","MQTT 基础：Broker、Topic 与 QoS","MQTT 用 broker 把发布者和订阅者解耦：客户端向 topic 发布消息，broker 按订阅关系转发，并用会话、保活和 QoS 管理协议交付。",[
+    "Topic 是分层字符串路由键，订阅可用通配符；它不是固定的消息结构，payload 的版本、编码、长度与权限仍要另行定义。",
+    "QoS 0 最多发送一次，可能丢；QoS 1 至少一次，可能重复；QoS 2 通过更完整握手减少协议层重复，但成本和状态更多。消费者仍应按消息 ID/业务键做幂等。",
+    "Retained message 是 broker 为某个 topic 保存的最后一条保留消息，让新订阅者立即得到当前值；它不是完整历史记录。",
+    "Keep Alive 用周期通信发现失联；Last Will 可在异常断开时由 broker 发布预设消息。正常断开、网络半开和设备掉电要分别测试。",
+    "MQTT 通常运行在 TCP 上，TLS 负责加密和认证；重连后是否恢复订阅与未完成 QoS 流程取决于会话配置和协议版本。"
+  ],"MQTT 解决的是消息路由与交付流程，不替 payload 定义业务语义，也不替消费者保证恰好执行一次。","QoS 2 常被简称 exactly once，但边界是 MQTT 协议交付；应用在处理完成前崩溃、数据库提交与 ACK 顺序不当，仍可能重复或丢业务效果。",["net-tcp-udp","net-stack-path","c-serialization","comm-timeout-recovery"],["mqtt","tcp"],["QoS 1 为什么要求消费者能够去重？","Retained message 与持久会话有什么区别？","Keep Alive 和业务心跳能否互相替代？"])
+]);
+communicationChapter.children.push(networkCommunicationBranch);
+
 const compactKeep={
   c:new Set(["c-language-elements","c-declarators","c-typedef","c-preprocessor","c-translation-phases","c-object-link","c-decl-definition","c-integer-types","c-signed-unsigned","c-promotions","c-float","c-object-representation","c-sequencing","c-short-circuit","c-ub","c-control-flow","c-pointer-model","c-pointer-arithmetic","c-const-pointer","c-void-pointer","c-aliasing-alignment","c-array-decay","c-multidim-array","c-string-model","c-sizeof-strlen","c-implement-strlen","c-pass-by-value","c-function-pointer","c-callback","c-function-call-stack","c-struct-layout","c-padding-alignment","c-bitfields","c-storage-duration","c-stack-lifetime","c-malloc-family","c-ownership","c-memcpy-memmove","c-memory-bugs","c-macro-rules","c-header-design","c-error-handling","c-build-warnings","c-reentrancy","c-volatile","c-volatile-atomic","c-mmio","c-bit-operations","c-serialization","c-isr-sharing"]),
   algorithms:new Set(["cpp-container-map","cpp-vector-string","cpp-stack-queue","cpp-ordered-map-set","cpp-unordered-map-set","cpp-priority-queue","cpp-iterators-algorithms","cpp-invalidation","algo-complexity","algo-invariant","algo-array","c-linked-list","algo-stack","algo-queue-two-stacks","c-ring-buffer","algo-prefix-sum","algo-two-pointers","algo-sliding-window","algo-monotonic-stack","algo-binary-search","algo-sort","algo-hash","algo-heap","algo-tree-traversal","algo-graph","algo-trie","algo-lru","algo-backtracking","algo-dp","algo-greedy","hot100-overview","hot100-code-clinic"]),
   armarch:new Set(["arm-architecture-core","profiles","isa-states","arm-compile-target","arm-fpu-abi","arm-registers","thread","arm-endianness","load-store-model","condition-flags","branch-call","arm-unaligned","arm-exclusive","arm-barriers","aapcs32","parameter-return","function-call-return","arm-memory-types","arm-mpu-mmu-sau","vector-reset","cmsis-layer","arm-nvic-overview","arm-pipeline-performance","msp","exception-entry","hardfault"]),
   memory:new Set(["memory-mcu-map","memory-vma-lma","memory-stack-heap","memory-allocator-inside","memory-cache-line","memory-cache-policy","memory-dma-cache-case","memory-zero-copy","ram-address","linker-map","allocator-boundaries","draw-buffer","buffer-ownership","dcache","mpu","master-slave","axi-ahb-apb","bandwidth","efficiency","latency","arbitration","dma-stream"]),
-  communication:new Set(["comm-layer-model","comm-selection","comm-framing","comm-byte-order","comm-isr-dma","comm-ring-ownership","comm-timeout-recovery","comm-debug-layers","uart-frame","uart-sampling-window","uart-errors","uart-packet-protocol","uart-throughput","uart-vs-physical","uart-idle-dma","uart-rs485","i2c-open-drain","i2c-rise-time","i2c-start-stop","i2c-timing-parameters","i2c-addressing","i2c-ack-nack","i2c-register-read","i2c-arbitration","i2c-clock-stretch","i2c-timeout-recovery","i2c-errors","spi-signals","spi-cpol-cpha","spi-device-protocol","spi-read-patterns","spi-no-ack","spi-multislave","spi-3wire-turnaround","spi-dma","can-controller-transceiver","can-differential-termination","can-frame","can-errors","can-arbitration","can-bit-stuffing","can-filters","can-bit-timing","canfd-frame","canfd-compatibility","fdcan-message-ram","fdcan-errors-recovery"]),
+  communication:new Set(["comm-layer-model","comm-selection","comm-framing","comm-byte-order","comm-isr-dma","comm-ring-ownership","comm-timeout-recovery","comm-debug-layers","uart-frame","uart-sampling-window","uart-errors","uart-packet-protocol","uart-throughput","uart-vs-physical","uart-idle-dma","uart-rs485","i2c-open-drain","i2c-rise-time","i2c-start-stop","i2c-timing-parameters","i2c-addressing","i2c-ack-nack","i2c-register-read","i2c-arbitration","i2c-clock-stretch","i2c-timeout-recovery","i2c-errors","spi-signals","spi-cpol-cpha","spi-device-protocol","spi-read-patterns","spi-no-ack","spi-multislave","spi-3wire-turnaround","spi-dma","can-controller-transceiver","can-differential-termination","can-frame","can-errors","can-arbitration","can-bit-stuffing","can-filters","can-bit-timing","canfd-frame","canfd-compatibility","fdcan-message-ram","fdcan-errors-recovery","net-stack-path","net-tcp-udp","net-http","net-mqtt"]),
   fatfs:new Set(["fatfs-role","fat-volume-layout","fat-chain-table","fat-directory-entry","fat-read-path","fat-write-sync","fatfs-config-version","fatfs-errors","fatfs-powerfail"]),
   freertos:new Set(["fr-rtos-role","fr-task-template","fr-task-states","fr-scheduler","fr-tcb","fr-pendsv","fr-port","fr-queue-copy","fr-queue-pointer","fr-mutex","fr-notify-core","fr-stream-message","fr-primitive-choice","fr-memory-layout","fr-stack-depth","fr-heap-schemes","fr-fromisr","fr-max-syscall","fr-critical","fr-deferred-isr","fr-timer-daemon","fr-idle-task","fr-tickless","fr-runtime-stats","fr-config-assert","fr-priority-inversion","fr-deadlock","fr-interview-journey"]),
   lvgl:new Set(["lvgl-port","object-tree","events","invalid-area","render-modes","coordinate-transform","indev"])
@@ -2157,7 +2215,7 @@ Object.assign(cChapter,{short:"从翻译、类型和对象模型一路走到指�
 Object.assign(algorithmChapter,{short:"以 C++ 容器操作为工具，以内存形状、不变量和复杂度理解数据结构；Hot100 只作为迁移练习索引。",coreWeight:"重要基础"});
 Object.assign(armChapter,{short:"从架构层级、指令和 ABI 进入 Cortex‑M 的栈、异常、优先级和内存顺序，始终分清架构规则与芯片实现。",coreWeight:"核心主干"});
 Object.assign(memoryChapter,{short:"把对象、映像、栈堆、分配器、Cache、DMA、总线和 buffer 所有权连成一张运行时地图。",coreWeight:"核心主干"});
-Object.assign(communicationChapter,{short:"把 UART、I²C、SPI、CAN/CAN FD 从电气波形、位时间和帧事务讲到可靠收发与恢复。",coreWeight:"核心主干"});
+Object.assign(communicationChapter,{short:"把 UART、I²C、SPI、CAN/CAN FD 从电气波形讲到可靠收发，再补齐 TCP/UDP、HTTP 与 MQTT 的网络通信主线。",coreWeight:"核心主干"});
 Object.assign(fatfsChapter,{short:"用一张卷地图理解扇区、簇链、目录项、读写路径与掉电边界；保留常用机制，删去版本源码细枝。",coreWeight:"扩展专题"});
 Object.assign(freeRTOSChapter,{short:"从任务表观进入调度链表和 Cortex‑M port，再把通信原语、ISR、内存与并发故障放回完整时间线。",coreWeight:"核心主干"});
 Object.assign(lvglChapter,{short:"保留对象、事件、增量渲染、flush 和输入链路这套系统骨架，作为图形移植扩展而非控件 API 百科。",coreWeight:"扩展专题"});
@@ -2417,7 +2475,7 @@ function walk(node,path=[],chapter=null){if(node.children){node.children.forEach
 chapters.forEach(c=>walk(c,[],c));
 function leafCount(n){return n.children?n.children.reduce((a,c)=>a+leafCount(c),0):1}
 function depthProfile(node){const depths=[];function scan(current,depth){if(current.children)current.children.forEach(child=>scan(child,depth+1));else depths.push(depth)}scan(node,0);return{min:Math.min(...depths),max:Math.max(...depths)}}
-function depthLabel(node){const profile=depthProfile(node),min=profile.min+1,max=profile.max+1;return min===max?`${max} 层结构`:`${min}–${max} 层结构`}
+function depthLabel(node){const profile=depthProfile(node),min=profile.min,max=profile.max;return min===max?`${max} 层结构`:`${min}–${max} 层结构`}
 let activeChapter=null,selection=[],activeLeaf=null,articleReturnContext=null;
 const app=document.getElementById("app"),home=document.getElementById("home"),treeView=document.getElementById("treeView"),articleView=document.getElementById("articleView"),detail=document.getElementById("detail");
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
@@ -2493,6 +2551,33 @@ function mergeImportedBookmarks(raw){
   Object.values(imported.items).forEach(item=>{if(bookmarkState.items[item.leafId])return;bookmarkState.items[item.leafId]={...item,folderId:folderMap[item.folderId]||"default"};itemAdds++});reconcileBookmarks();saveBookmarkState();return{folderAdds,itemAdds}
 }
 bookmarkState=loadBookmarkState();reconcileBookmarks();
+const QUESTION_STORAGE_KEY="wenzhixin.embedded.questions.v1";
+let questionState=loadQuestionState(),questionDialogLeafId=null;
+function freshQuestionState(){return{version:1,items:{}}}
+function makeQuestionId(){return`q_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`}
+function normalizeQuestionState(raw){
+  const state=freshQuestionState();if(!raw||typeof raw!=="object")return state;
+  for(const [key,value] of Object.entries(raw.items||{})){if(!value||typeof value!=="object")continue;const oldLeaf=String(value.leafId||""),leafId=legacyLeafRedirects[oldLeaf]||oldLeaf;if(!leafIndex[leafId])continue;const text=String(value.text||"").trim().slice(0,1200);if(!text)continue;const id=String(value.id||key).replace(/[^\w-]/g,"").slice(0,80)||makeQuestionId();state.items[id]={id,leafId,text,resolved:!!value.resolved,createdAt:Number(value.createdAt)||Date.now(),updatedAt:Number(value.updatedAt)||Number(value.createdAt)||Date.now()}}
+  return state
+}
+function loadQuestionState(){try{return normalizeQuestionState(JSON.parse(localStorage.getItem(QUESTION_STORAGE_KEY)||"null"))}catch(error){return freshQuestionState()}}
+function saveQuestionState(){try{localStorage.setItem(QUESTION_STORAGE_KEY,JSON.stringify(questionState))}catch(error){showBookmarkToast("浏览器未能保存疑问，请先导出完整备份")}updateQuestionButton(activeLeaf);if(document.getElementById("questionLayer")?.classList.contains("open"))renderQuestionDialog()}
+function questionsForLeaf(leafId,{openOnly=false}={}){return Object.values(questionState.items).filter(item=>item.leafId===leafId&&(!openOnly||!item.resolved)).sort((a,b)=>b.createdAt-a.createdAt)}
+function questionTotal({openOnly=false}={}){return Object.values(questionState.items).filter(item=>!openOnly||!item.resolved).length}
+function updateQuestionButton(id){const button=document.getElementById("questionToggle");if(!button)return;const count=id?questionsForLeaf(id,{openOnly:true}).length:0;button.innerHTML=`? 记录疑问${count?` <b>${count}</b>`:""}`;button.setAttribute("aria-label",count?`记录疑问，本页有 ${count} 条未解决` : "记录本页疑问")}
+function openQuestionDialog(id=activeLeaf){if(!leafIndex[id])return;questionDialogLeafId=id;renderQuestionDialog();const layer=document.getElementById("questionLayer");layer.classList.add("open");layer.setAttribute("aria-hidden","false");setTimeout(()=>document.getElementById("questionInput")?.focus(),30)}
+function closeQuestionDialog(){const layer=document.getElementById("questionLayer");layer.classList.remove("open");layer.setAttribute("aria-hidden","true");questionDialogLeafId=null}
+function questionTime(timestamp){return new Date(timestamp).toLocaleString("zh-CN",{month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false})}
+function renderQuestionDialog(){
+  const id=questionDialogLeafId,item=leafIndex[id];if(!item)return;const list=questionsForLeaf(id),open=list.filter(x=>!x.resolved).length,path=leafReadablePath?.(item)||item.path.map(x=>x.title).join(" / ");
+  document.getElementById("questionPageContext").textContent=`${path} / ${item.node.title}`;document.getElementById("questionListCount").textContent=`${list.length} 条记录 · ${open} 条未解决`;
+  document.getElementById("questionList").innerHTML=list.length?list.map(q=>`<article class="question-item ${q.resolved?"resolved":""}"><div><p>${esc(q.text)}</p><small>${questionTime(q.createdAt)}${q.resolved?" · 已解决":" · 待补充"}</small></div><div><button data-question-resolve="${q.id}">${q.resolved?"重新打开":"标为解决"}</button><button data-question-delete="${q.id}">删除</button></div></article>`).join(""):`<div class="question-empty">还没有记录。把读到这里突然冒出的“为什么”先放下来，不必打断当前学习节奏。</div>`;
+  document.querySelectorAll("[data-question-resolve]").forEach(button=>button.onclick=()=>{const q=questionState.items[button.dataset.questionResolve];if(!q)return;q.resolved=!q.resolved;q.updatedAt=Date.now();saveQuestionState()});document.querySelectorAll("[data-question-delete]").forEach(button=>button.onclick=()=>{delete questionState.items[button.dataset.questionDelete];saveQuestionState()})
+}
+function addCurrentQuestion(){const input=document.getElementById("questionInput"),textValue=input.value.trim();if(!questionDialogLeafId||!textValue)return showBookmarkToast("先写下具体疑问");const id=makeQuestionId();questionState.items[id]={id,leafId:questionDialogLeafId,text:textValue,resolved:false,createdAt:Date.now(),updatedAt:Date.now()};input.value="";saveQuestionState();showBookmarkToast("疑问已保存在本浏览器")}
+function questionPrompt(items,title="嵌入式知识库待补充疑问"){const groups=new Map();items.forEach(q=>{const leaf=leafIndex[q.leafId];if(!leaf)return;const group=groups.get(q.leafId)||{leaf,questions:[]};group.questions.push(q.text);groups.set(q.leafId,group)});return `${title}\n\n请依据语言标准、架构/协议规范或项目官方文档核对并回答下面的问题。要求先用初学者能听懂的语言解释，再给机制、例子、边界和可验证方法；若原页面表述不准确请明确纠正，并建议应合并到正文的哪一段。\n\n${[...groups.values()].map(({leaf,questions},index)=>`${index+1}. 页面：${leaf.node.title}\n路径：${leafReadablePath(leaf)}\n页面摘要：${leaf.node.summary}\n疑问：\n${questions.map((q,i)=>`  ${i+1}) ${q}`).join("\n")}`).join("\n\n")}`}
+async function copyText(textValue){try{await navigator.clipboard.writeText(textValue)}catch(error){const area=document.createElement("textarea");area.value=textValue;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();document.execCommand("copy");area.remove()}showBookmarkToast("已复制，可直接发给 AI")}
+function mergeQuestionStates(imported){let adds=0;for(const q of Object.values(imported.items)){const duplicate=Object.values(questionState.items).some(old=>old.leafId===q.leafId&&old.text===q.text);if(duplicate)continue;let id=q.id;if(questionState.items[id])id=makeQuestionId();questionState.items[id]={...q,id};adds++}saveQuestionState();return adds}
 const READING_STORAGE_KEY="wenzhixin.embedded.reading.v1";
 let readingState=loadReadingState(),readingSaveTimer=null,suppressReadingSaveUntil=0,searchChapterFilter="all",searchMode="history",searchKeyboardIndex=-1;
 function freshReadingState(){return{version:1,recent:[],positions:{}}}
@@ -2518,28 +2603,29 @@ let dataMeta=loadDataMeta(),pendingPersonalImport=null,dataImportMessage="";
 function loadDataMeta(){try{return{lastExportAt:null,lastImportAt:null,...JSON.parse(localStorage.getItem(DATA_META_KEY)||"{}")}}catch(error){return{lastExportAt:null,lastImportAt:null}}}
 function saveDataMeta(){try{localStorage.setItem(DATA_META_KEY,JSON.stringify(dataMeta))}catch(error){}}
 function downloadJson(payload,filename){const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1200)}
-function fullPersonalPayload(){persistReadingPosition(true);return{format:PERSONAL_DATA_FORMAT,version:PERSONAL_DATA_VERSION,exportedAt:new Date().toISOString(),application:{title:"温故知新 · 嵌入式系统知识全景",knowledgePoints:Object.keys(leafIndex).length},data:{bookmarks:bookmarkState,reading:readingState}}}
+function fullPersonalPayload(){persistReadingPosition(true);return{format:PERSONAL_DATA_FORMAT,version:PERSONAL_DATA_VERSION,exportedAt:new Date().toISOString(),application:{title:"温故知新 · 嵌入式系统知识全景",knowledgePoints:Object.keys(leafIndex).length},data:{bookmarks:bookmarkState,questions:questionState,reading:readingState}}}
 function exportPersonalData(){const payload=fullPersonalPayload();downloadJson(payload,`温故知新-完整数据备份-${new Date().toISOString().slice(0,10)}.json`);dataMeta.lastExportAt=payload.exportedAt;saveDataMeta();renderDataCenter();showBookmarkToast("完整数据备份已导出")}
 function parsePersonalBackup(raw,fileName="备份文件.json"){
-  if(!raw||typeof raw!=="object")throw new Error("文件内容不是有效对象");let kind,bookmarksRaw=null,readingRaw=null,exportedAt=raw.exportedAt||null;
-  if(raw.format===PERSONAL_DATA_FORMAT){if(Number(raw.version)>PERSONAL_DATA_VERSION)throw new Error("备份版本高于当前网页版本，请先更新网页");kind="完整数据备份";bookmarksRaw=raw.data?.bookmarks;readingRaw=raw.data?.reading}
+  if(!raw||typeof raw!=="object")throw new Error("文件内容不是有效对象");let kind,bookmarksRaw=null,questionsRaw=null,readingRaw=null,exportedAt=raw.exportedAt||null;
+  if(raw.format===PERSONAL_DATA_FORMAT){if(Number(raw.version)>PERSONAL_DATA_VERSION)throw new Error("备份版本高于当前网页版本，请先更新网页");kind="完整数据备份";bookmarksRaw=raw.data?.bookmarks;questionsRaw=raw.data?.questions;readingRaw=raw.data?.reading}
   else if(raw.format===BOOKMARK_FORMAT){kind="旧版收藏备份";bookmarksRaw=raw.data}
   else if(Array.isArray(raw.folders)&&raw.items){kind="旧版收藏数据";bookmarksRaw=raw}
   else throw new Error("无法识别备份格式");
-  const bookmarks=bookmarksRaw?normalizeBookmarkState(bookmarksRaw):null,reading=readingRaw?normalizeReadingState(readingRaw):null;return{kind,fileName,exportedAt,bookmarksRaw,readingRaw,bookmarks,reading,available:{bookmarks:!!bookmarks,history:!!reading,progress:!!reading},counts:{bookmarks:bookmarks?Object.keys(bookmarks.items).length:0,folders:bookmarks?bookmarks.folders.length:0,history:reading?.recent.length||0,progress:reading?Object.keys(reading.positions).length:0}}
+  const bookmarks=bookmarksRaw?normalizeBookmarkState(bookmarksRaw):null,questions=questionsRaw?normalizeQuestionState(questionsRaw):null,reading=readingRaw?normalizeReadingState(readingRaw):null;return{kind,fileName,exportedAt,bookmarksRaw,questionsRaw,readingRaw,bookmarks,questions,reading,available:{bookmarks:!!bookmarks,questions:!!questions,history:!!reading,progress:!!reading},counts:{bookmarks:bookmarks?Object.keys(bookmarks.items).length:0,folders:bookmarks?bookmarks.folders.length:0,questions:questions?Object.keys(questions.items).length:0,history:reading?.recent.length||0,progress:reading?Object.keys(reading.positions).length:0}}
 }
 function dataTime(value){return value?new Date(value).toLocaleString("zh-CN",{hour12:false}):"尚未记录"}
-function dataBytes(){return new Blob([JSON.stringify({bookmarks:bookmarkState,reading:readingState})]).size}
-function renderDataOverview(){const box=document.getElementById("dataOverview");if(!box)return;box.innerHTML=`<div class="data-stat" style="--stat-color:#d09a42"><b>${bookmarkTotal()}</b><span>收藏知识点</span></div><div class="data-stat" style="--stat-color:#7d69b8"><b>${bookmarkState.folders.length}</b><span>收藏夹</span></div><div class="data-stat" style="--stat-color:#39796f"><b>${readingState.recent.length}</b><span>最近阅读</span></div><div class="data-stat" style="--stat-color:#527fb1"><b>${Object.keys(readingState.positions).length}</b><span>已记录阅读进度</span></div>`}
+function dataBytes(){return new Blob([JSON.stringify({bookmarks:bookmarkState,questions:questionState,reading:readingState})]).size}
+function renderDataOverview(){const box=document.getElementById("dataOverview");if(!box)return;box.innerHTML=`<div class="data-stat" style="--stat-color:#d09a42"><b>${bookmarkTotal()}</b><span>收藏知识点</span></div><div class="data-stat" style="--stat-color:#b75f43"><b>${questionTotal({openOnly:true})}</b><span>未解决疑问</span></div><div class="data-stat" style="--stat-color:#39796f"><b>${readingState.recent.length}</b><span>最近阅读</span></div><div class="data-stat" style="--stat-color:#527fb1"><b>${Object.keys(readingState.positions).length}</b><span>已记录阅读进度</span></div>`}
 function renderImportPreview(){
   const box=document.getElementById("importPreview");if(!box)return;if(!pendingPersonalImport){box.innerHTML=`<div class="import-empty"><b>还没有选择文件</b><span>支持完整备份，也兼容旧版收藏 JSON。</span></div>`;return}const item=pendingPersonalImport,c=item.counts,available=item.available;
-  box.innerHTML=`${dataImportMessage?`<div class="data-result">${esc(dataImportMessage)}</div>`:""}<div class="preview-head"><small>${esc(item.kind.toUpperCase())}</small><b>${esc(item.fileName)}</b><span>${item.exportedAt?`导出于 ${dataTime(item.exportedAt)}`:"文件中没有导出时间"}</span></div><div class="preview-counts"><div><b>${c.bookmarks}</b><span>收藏</span></div><div><b>${c.history}</b><span>历史</span></div><div><b>${c.progress}</b><span>进度</span></div></div><span class="import-section-label">选择要恢复的数据</span><div class="import-checks"><label class="import-check ${available.bookmarks?"":"disabled"}"><input type="checkbox" data-import-part="bookmarks" ${available.bookmarks?"checked":"disabled"}> 收藏与收藏夹（${c.folders} 个收藏夹）</label><label class="import-check ${available.history?"":"disabled"}"><input type="checkbox" data-import-part="history" ${available.history?"checked":"disabled"}> 最近阅读（${c.history} 条）</label><label class="import-check ${available.progress?"":"disabled"}"><input type="checkbox" data-import-part="progress" ${available.progress?"checked":"disabled"}> 阅读进度（${c.progress} 页）</label></div><span class="import-section-label">遇到本地已有数据时</span><div class="import-strategy"><label><input type="radio" name="importStrategy" value="merge" checked><b>安全合并</b><span>保留本地数据，并补入备份内容。</span></label><label><input type="radio" name="importStrategy" value="replace"><b>完全替换</b><span>所选分类以备份内容为准。</span></label></div><button class="data-primary apply-import" id="applyPersonalImport">确认导入所选数据</button><div class="import-warning">“完全替换”只影响勾选的分类；网页正文和未勾选的数据不会改变。</div>`;document.getElementById("applyPersonalImport").onclick=applyPersonalImport
+  box.innerHTML=`${dataImportMessage?`<div class="data-result">${esc(dataImportMessage)}</div>`:""}<div class="preview-head"><small>${esc(item.kind.toUpperCase())}</small><b>${esc(item.fileName)}</b><span>${item.exportedAt?`导出于 ${dataTime(item.exportedAt)}`:"文件中没有导出时间"}</span></div><div class="preview-counts"><div><b>${c.bookmarks}</b><span>收藏</span></div><div><b>${c.questions}</b><span>疑问</span></div><div><b>${c.history}</b><span>历史</span></div></div><span class="import-section-label">选择要恢复的数据</span><div class="import-checks"><label class="import-check ${available.bookmarks?"":"disabled"}"><input type="checkbox" data-import-part="bookmarks" ${available.bookmarks?"checked":"disabled"}> 收藏与收藏夹（${c.folders} 个收藏夹）</label><label class="import-check ${available.questions?"":"disabled"}"><input type="checkbox" data-import-part="questions" ${available.questions?"checked":"disabled"}> 随页疑问（${c.questions} 条）</label><label class="import-check ${available.history?"":"disabled"}"><input type="checkbox" data-import-part="history" ${available.history?"checked":"disabled"}> 最近阅读（${c.history} 条）</label><label class="import-check ${available.progress?"":"disabled"}"><input type="checkbox" data-import-part="progress" ${available.progress?"checked":"disabled"}> 阅读进度（${c.progress} 页）</label></div><span class="import-section-label">遇到本地已有数据时</span><div class="import-strategy"><label><input type="radio" name="importStrategy" value="merge" checked><b>安全合并</b><span>保留本地数据，并补入备份内容。</span></label><label><input type="radio" name="importStrategy" value="replace"><b>完全替换</b><span>所选分类以备份内容为准。</span></label></div><button class="data-primary apply-import" id="applyPersonalImport">确认导入所选数据</button><div class="import-warning">“完全替换”只影响勾选的分类；网页正文和未勾选的数据不会改变。</div>`;document.getElementById("applyPersonalImport").onclick=applyPersonalImport
 }
 function mergeReadingHistory(imported){const byId=new Map();[...readingState.recent,...imported.recent].forEach(entry=>{const old=byId.get(entry.leafId);if(!old||entry.viewedAt>old.viewedAt)byId.set(entry.leafId,entry)});return[...byId.values()].sort((a,b)=>b.viewedAt-a.viewedAt).slice(0,50)}
 function mergeReadingPositions(imported){const positions={...readingState.positions};for(const [id,value] of Object.entries(imported.positions)){const old=positions[id];if(!old||value.ratio>old.ratio||value.updatedAt>old.updatedAt&&value.ratio===old.ratio)positions[id]={...value}}return positions}
 function applyPersonalImport(){
   if(!pendingPersonalImport)return;const selected=new Set([...document.querySelectorAll("[data-import-part]:checked")].map(input=>input.dataset.importPart)),strategy=document.querySelector('input[name="importStrategy"]:checked')?.value||"merge";if(!selected.size){dataImportMessage="请至少选择一类数据";renderImportPreview();return}const item=pendingPersonalImport,messages=[];
   if(selected.has("bookmarks")&&item.bookmarks){if(strategy==="replace"){bookmarkState=item.bookmarks;reconcileBookmarks();saveBookmarkState();messages.push(`替换 ${bookmarkTotal()} 条收藏`)}else{const result=mergeImportedBookmarks(item.bookmarks);messages.push(`合并收藏：新增 ${result.itemAdds} 条、${result.folderAdds} 个收藏夹`)}}
+  if(selected.has("questions")&&item.questions){if(strategy==="replace"){questionState=item.questions;saveQuestionState();messages.push(`替换 ${questionTotal()} 条疑问`)}else{messages.push(`合并疑问：新增 ${mergeQuestionStates(item.questions)} 条`)}}
   if(item.reading&&(selected.has("history")||selected.has("progress"))){if(selected.has("history"))readingState.recent=strategy==="replace"?item.reading.recent:mergeReadingHistory(item.reading);if(selected.has("progress"))readingState.positions=strategy==="replace"?item.reading.positions:mergeReadingPositions(item.reading);saveReadingState();messages.push(`${strategy==="replace"?"恢复":"合并"} ${selected.has("history")?readingState.recent.length+" 条历史":""}${selected.has("history")&&selected.has("progress")?"、":""}${selected.has("progress")?Object.keys(readingState.positions).length+" 页进度":""}`)}
   dataMeta.lastImportAt=new Date().toISOString();saveDataMeta();dataImportMessage=`导入完成：${messages.join("；")}`;renderDataCenter();showBookmarkToast("个人数据已恢复")
 }
@@ -2554,8 +2640,8 @@ function buildNav(){
     const b=document.createElement("button");b.dataset.chapter=c.id;b.style.setProperty("--c",c.color);b.innerHTML=`<span class="n">${c.index}</span><span class="t">${c.title}</span><span class="count">${leafCount(c)}</span>`;b.onclick=()=>openChapter(c.id);nav.appendChild(b);
     const card=document.createElement("button");card.className="chapter-card";card.style.setProperty("--c",c.color);card.innerHTML=`<span class="idx">CHAPTER ${c.index}</span><span class="scope-pill">${esc(c.coreWeight||"知识专题")}</span><h3>${c.title}</h3><p>${c.short}</p><footer><span>${c.children.length} 条主干 · ${depthLabel(c)} · ${leafCount(c)} 个知识单元</span><b>进入 →</b></footer>`;card.onclick=()=>openChapter(c.id);forest.appendChild(card);
   });
-  const profiles=chapters.map(depthProfile),minLevel=Math.min(...profiles.map(profile=>profile.min))+1,maxLevel=Math.max(...profiles.map(profile=>profile.max))+1;
-  document.getElementById("homeChapterCount").textContent=chapters.length;document.getElementById("homeLeafCount").textContent=Object.keys(leafIndex).length;document.getElementById("homeDepthRange").textContent=minLevel===maxLevel?String(maxLevel):`${minLevel}–${maxLevel}`;
+  const profiles=chapters.map(depthProfile),minLevel=Math.min(...profiles.map(profile=>profile.min)),maxLevel=Math.max(...profiles.map(profile=>profile.max));
+  document.getElementById("homeChapterCount").textContent=chapters.length;document.getElementById("homeLeafCount").textContent=Object.keys(leafIndex).length;document.getElementById("aboutLeafCount").textContent=Object.keys(leafIndex).length;document.getElementById("homeDepthRange").textContent=minLevel===maxLevel?String(maxLevel):`${minLevel}–${maxLevel}`;
   document.getElementById("homeChapterBands").innerHTML=chapters.map(c=>`<i style="--c:${c.color}"><b>${c.index}</b><span>${esc(c.title.split(/[：:]/)[0])}</span><em>${depthLabel(c)}</em></i>`).join("");
 }
 function showHome(){
@@ -2569,7 +2655,7 @@ function openChapter(id){
 }
 function setNav(){document.querySelectorAll("#chapterNav button").forEach(b=>b.classList.toggle("active",activeChapter&&b.dataset.chapter===activeChapter.id));document.getElementById("bookmarkHomeBtn")?.classList.toggle("active",document.getElementById("bookmarkDrawer")?.classList.contains("open"))}
 function renderChapterHead(){
-  const c=activeChapter,head=document.getElementById("chapterHead"),atlas=c.presentation==="atlas",profile=depthProfile(c),levels=profile.max+1,currentLevel=Math.min(selection.length+1,levels),range=profile.min===profile.max?`${levels} 层结构`:`${profile.min+1}–${levels} 层结构`;treeView.style.setProperty("--chapter",c.color);head.classList.toggle("has-cover",c.id==="freertos");head.innerHTML=`<div class="chapter-index">${c.index}</div><div class="chapter-copy"><span class="chapter-scope">${esc(c.coreWeight||"知识专题")}</span><h2>${c.title}</h2><p>${c.short}</p></div><div class="depth"><span>${atlas?"空间知识地图":`${range} · 当前第 ${currentLevel} 层`}</span>${Array.from({length:levels},(_,i)=>`<i class="${atlas||selection.length>=i?"on":""}"></i>`).join("")}</div>`;
+  const c=activeChapter,head=document.getElementById("chapterHead"),atlas=c.presentation==="atlas",profile=depthProfile(c),levels=profile.max,currentLevel=Math.min(selection.length+1,levels),range=profile.min===profile.max?`${levels} 层结构`:`${profile.min}–${levels} 层结构`;treeView.style.setProperty("--chapter",c.color);head.classList.toggle("has-cover",c.id==="freertos");head.innerHTML=`<div class="chapter-index">${c.index}</div><div class="chapter-copy"><span class="chapter-scope">${esc(c.coreWeight||"知识专题")}</span><h2>${c.title}</h2><p>${c.short}</p></div><div class="depth"><span>${atlas?"空间知识地图":`${range} · 当前第 ${currentLevel} 层`}</span>${Array.from({length:levels},(_,i)=>`<i class="${atlas||selection.length>=i?"on":""}"></i>`).join("")}</div>`;
 }
 function selectedNodes(){
   const nodes=[];let parent=activeChapter;
@@ -3045,9 +3131,17 @@ function memoryCoreFigure(id){
   if(id==="memory-zero-copy")return `<section class="figure"><h3 class="figure-title">零拷贝传的是“钥匙”，不是让所有人同时进屋改数据</h3><div class="flow">${figBox("Pool","allocate buffer",true)}<span class="arr">→</span>${figBox("Producer owns","写 payload + len")}<span class="arr">→</span>${figBox("Queue descriptor","addr · len · capacity",true)}<span class="arr">→</span>${figBox("Consumer owns","只在交接后读/写")}<span class="arr">→</span>${figBox("Completion","DMA/下游真正结束",true)}<span class="arr">→</span>${figBox("Return to pool","所有失败路径也必须到达")}</div><div class="split-compare"><div class="concept-card hot"><b>省掉的成本</b><small>payload 的一次或多次内存复制</small></div><div class="concept-card"><b>新增的合同</b><small>描述符同步、Cache、引用/唯一 owner、取消与回收</small></div></div><p class="figure-caption">小消息按值复制通常更容易证明且可能更快；零拷贝是系统级优化，不是默认美德。</p></section>`;
   return "";
 }
+function networkFigure(id){
+  if(id==="net-stack-path")return `<section class="figure"><h3 class="figure-title">同一条温度消息，穿上四层“信封”再出门</h3><div class="protocol-lanes"><div class="protocol-lane"><div class="lane-tag">发送：从业务语义走向线路</div><div class="flow">${figBox("HTTP / MQTT","方法、topic、payload",true)}<span class="arr">→</span>${figBox("TCP / UDP","端口与传输合同")}<span class="arr">→</span>${figBox("IP","源/目的 IP · 路由",true)}<span class="arr">→</span>${figBox("Ethernet / Wi‑Fi","当前一跳的帧")}<span class="arr">→</span>${figBox("Bits / Radio","真实介质")}</div></div><div class="protocol-lane"><div class="lane-tag">接收：逐层验收并拆掉自己的头</div><div class="flow">${figBox("Frame check","链路帧是否完整")}<span class="arr">→</span>${figBox("IP destination","是否交给本机",true)}<span class="arr">→</span>${figBox("Port","交给哪个 socket")}<span class="arr">→</span>${figBox("Message parser","边界、版本、长度",true)}<span class="arr">→</span>${figBox("Business","是否接受并执行")}</div></div></div><p class="figure-caption">每层“成功”只证明自己的那一段：网卡收帧、TCP ACK、HTTP 200 和设备动作完成，是四个不同证据。</p></section>`;
+  if(id==="net-tcp-udp")return `<section class="figure"><h3 class="figure-title">TCP 像水管，UDP 像一封封独立信件</h3><div class="split-compare"><div class="concept-card hot"><b>TCP · byte stream</b><small>应用写入 100B + 50B；接收端可能读到 80B、20B、50B。字节有序可靠，但原来的两次 write 边界消失。</small><div class="heap-strip"><div class="heap-block" style="--s:2">80B</div><div class="heap-block" style="--s:1">20B</div><div class="heap-block" style="--s:2">50B</div></div></div><div class="concept-card"><b>UDP · datagrams</b><small>每次 send 形成一枚数据报；接收仍按报读取，但某枚可能丢失、重复、乱序或因接收区太小被截断。</small><div class="heap-strip"><div class="heap-block hot" style="--s:2">DGRAM A</div><div class="heap-block free" style="--s:1">lost?</div><div class="heap-block hot" style="--s:2">DGRAM B</div></div></div></div><div class="formula-grid"><div class="formula-card"><b>TCP framing</b><code>header + length / delimiter / fixed size</code></div><div class="formula-card"><b>UDP sizing</b><code>尽量避免依赖 IP fragmentation</code></div><div class="formula-card"><b>业务成功</b><code>仍需 application acknowledgement</code></div></div><p class="figure-caption">TCP 解决的是字节流传输，不会自动给你的 JSON、二进制帧或命令划边界；UDP 保留边界，也不会自动补丢包。</p></section>`;
+  if(id==="net-http")return `<section class="figure"><h3 class="figure-title">一轮 HTTP/1.1 对话：先把请求说完整，再按规则确定响应边界</h3><div class="sequence"><div class="seq-col"><b>Client</b><i class="seq-msg" style="--y:34px">GET /sensor HTTP/1.1</i></div><div class="seq-col"><b>Headers</b><i class="seq-msg" style="--y:62px">Host · Accept · Content-Length?</i></div><div class="seq-col"><b>Server</b><i class="seq-msg" style="--y:90px">解析目标与方法</i></div><div class="seq-col"><b>Status</b><i class="seq-msg" style="--y:118px">200 OK · Content-Type</i></div><div class="seq-col"><b>Body</b><i class="seq-msg" style="--y:146px">长度受限的表示数据</i></div></div><div class="concept-grid"><div class="concept-card hot"><b>2xx</b><small>请求已按相应语义成功处理</small></div><div class="concept-card"><b>4xx</b><small>请求、权限或目标存在问题</small></div><div class="concept-card"><b>5xx</b><small>服务器未能完成有效请求</small></div><div class="concept-card"><b>Timeout</b><small>结果未知，不等于服务器一定没执行</small></div></div><p class="figure-caption">嵌入式客户端先限制 header/body 大小，再分配和读取；超时后能否重试，要由方法语义、幂等键和服务端合同共同决定。</p></section>`;
+  if(id==="net-mqtt")return `<section class="figure"><h3 class="figure-title">MQTT Broker 像分拣中心：发布者不需要逐个认识订阅者</h3><div class="flow">${figBox("Sensor A","PUBLISH plant/1/temp",true)}<span class="arr">→</span>${figBox("Broker","按 topic 过滤与会话转发")}<span class="arr">→</span>${figBox("Dashboard","SUB plant/+/temp",true)}<span class="arr">↘</span>${figBox("Recorder","SUB plant/#")}</div><div class="concept-grid"><div class="concept-card"><b>QoS 0</b><small>尽力一次；没有协议重传流程。</small></div><div class="concept-card hot"><b>QoS 1</b><small>至少一次；确认丢失会导致重复，消费者要幂等。</small></div><div class="concept-card"><b>QoS 2</b><small>更完整握手减少协议层重复；成本与状态更多。</small></div><div class="concept-card"><b>Retained</b><small>为 topic 保存最后一条保留消息，不是历史数据库。</small></div></div><p class="figure-caption">Topic 解决路由，QoS 解决协议交付流程，payload schema 解决内容解释，TLS 解决安全；四件事不要互相顶替。</p></section>`;
+  return "";
+}
 function figureFor(id,chapter){
   if(chapter.id==="algorithms"){const structure=dataStructureFigure(id);if(structure)return structure;}
   if(chapter.id==="memory"){const core=memoryCoreFigure(id);if(core)return core;}
+  if(chapter.id==="communication"){const network=networkFigure(id);if(network)return network;}
   const refined=refinedFigure(id,chapter);if(refined)return refined;
   const protocol=protocolDeepFigure(id,chapter);if(protocol)return protocol;
   const guided=guidedFigure(id,chapter);if(guided)return guided;
@@ -4493,9 +4587,9 @@ PERIPH->CTRL = v;
     table:[["场景","位域风险","推荐"],["内部 flags","ABI 内可接受","仍加范围测试"],["wire protocol","布局不稳定","移位/掩码逐字段"],["Flash 文件格式","编译器变化","显式序列化"],["普通 R/W MMIO","访问宽度/RMW","厂商头文件或掩码"],["W1C/只写/混合语义 MMIO","读改写破坏状态","专用写值/SET/CLR"]]
   },
   "c-memcpy-memmove":{
-    intro:["memcpy 与 memmove 都按字符字节复制 n 个字节；区别只有重叠合同。memcpy 要求源、目标不重叠，违反后行为未定义，库可以使用任意宽搬运和顺序；memmove 必须像先经过临时数组一样正确处理重叠。","它们复制 object representation，不执行深拷贝。结构体里的指针字段只会复制地址，两个对象随后仍指向同一资源；函数指针、锁、硬件句柄也不会因 memcpy 获得新的所有权。"],
-    sections:[["返回值","两者都返回 dst，便于组合，但不返回实际完成量；前置条件失败不是可恢复短拷贝。"],["n 与对象范围","源至少可读 n 字节，目标至少可写 n 字节；n 的乘法/加法先防 size_t 溢出。"],["volatile/MMIO","标准库复制不适合有副作用寄存器或要求特定宽度的 MMIO；应使用明确 volatile 访问和设备协议。"]],
-    table:[["问题","memcpy","memmove"],["允许重叠","否","是"],["语义方向","未规定，可高度优化","结果等价临时副本"],["速度","常可更自由优化","现代库也常很快"],["深拷贝","否","否"],["适合 MMIO","通常否","通常否"],["对象表示复制","是","是"]]
+    intro:["memcpy 与 memmove 都按字符字节复制 n 个字节；区别只有重叠合同。memcpy 要求源、目标不重叠，违反后行为未定义，库可以使用任意宽搬运和顺序；memmove 必须像先经过临时数组一样正确处理重叠。","memset 与 memcmp 也只看字节：memset 把每个目标字节写成同一个 unsigned char 值；memcmp 按 unsigned char 逐字典序比较，只保证返回值的正、零、负。四个函数都不知道数组元素个数、结构体字段和业务所有权。"],
+    sections:[["n 的单位永远是字节","复制 count 个 T 应写 `count * sizeof *ptr` 并先检查乘法；若参数已经退化为指针，`sizeof ptr` 只得到指针大小。源至少可读 n 字节，目标至少可写 n 字节。"],["memset 的 0x01 陷阱","`memset(a, 1, sizeof a)` 把每个 byte 写成 0x01，int 常变成 0x01010101，而不是数值 1。全零字节通常适合无符号整数和普通字节缓冲；空指针、浮点零及含 padding 的复杂对象仍应按类型/平台合同判断。"],["memcmp 不是万能相等","结构体 padding 可能未确定，浮点有多个表示，逻辑相等也不等于对象表示相同；密码摘要还需要 constant-time 比较，普通 memcmp 可能在首个差异处提前返回。"],["对象与所有权","复制 object representation 不执行深拷贝。结构体里的指针只复制地址，两个对象仍指向同一资源；锁、硬件句柄和含内部指针对象也不能靠字节复制获得独立副本。"],["volatile/MMIO 与安全擦除","标准库 mem* 不适合有副作用或规定访问宽度的 MMIO。普通 memset 清秘密还可能被优化掉，应使用实现提供的安全擦除接口并核对其保证。"]],
+    table:[["函数","核心合同","最常见误用"],["memcpy(dst,src,n)","区域不重叠；复制 n 字节","重叠、容量不足、把结构体当 wire format"],["memmove(dst,src,n)","允许重叠；结果等价临时副本","误以为会深拷贝或返回完成量"],["memset(dst,c,n)","每个字节写 (unsigned char)c","给 int 数组设为 1、无条件构造任意类型零值"],["memcmp(a,b,n)","按 unsigned byte 比较；只用结果符号","比较含 padding 的结构体、当 constant-time 安全比较"],["共同边界","长度是字节，地址范围有效","MMIO、已释放对象、溢出的 n"]]
   },
   "c-pointer-arithmetic":{
     intro:["`p+n` 的单位是 `sizeof *p` 个字节，并且只有在同一数组对象（单对象可视为长度 1 数组）的元素范围及 one-past 位置内才有定义。one-past 是合法的边界哨兵，可比较、可减回去，但不能解引用。","两个指针相减也要求属于同一数组对象，结果类型是 ptrdiff_t，单位是元素数。把两个任意内存地址做减法/大小比较属于平台实现层技巧，不是纯 ISO C 通用算法。"],
@@ -5169,13 +5263,24 @@ _Static_assert(offsetof(DmaDesc, status) == 8,
 _Static_assert(RING_CAPACITY &&
                !(RING_CAPACITY & (RING_CAPACITY - 1)),
                "capacity must be power of two");`},
-  "c-volatile-atomic":{title:"读—改—写不是一次原子操作",meta:"C/MCU · 单次访存与并发协议是两回事",text:`volatile uint32_t counter;
+  "c-volatile-atomic":{title:"读—改—写不是一次原子操作",meta:"C11 stdatomic · 先选并发合同，再看目标实现",text:`#include <stdatomic.h>
 
-/* counter++ 通常是 load + add + store；
-   ISR 插入后可能丢失一次更新。 */
+volatile uint32_t wrong_counter;
+_Atomic uint32_t event_count;
 
-/* 单核任务/ISR共享：在最短临界区内更新，
-   或使用目标支持的原子操作/RTOS 通知计数。 */`},
+/* wrong_counter++ 通常是 load + add + store；
+   ISR/线程插入后可能丢失一次更新。 */
+
+void record_event(void)
+{
+    atomic_fetch_add_explicit(&event_count, 1,
+                              memory_order_relaxed);
+}
+
+/* relaxed 只保证这次计数读改写原子；
+   若还要用 flag 发布 payload，需要更强的顺序协议。
+   在单核 ISR/任务场景，也可用很短的临界区包住
+   整个复合不变量更新。 */`},
   "c-bit-operations":{title:"先把值提升到目标宽度，再移位和构造掩码",meta:"C · 避免窄类型提升与非法移位",text:`uint32_t field_set(uint32_t reg, unsigned pos,
                    unsigned width, uint32_t value)
 {
@@ -8454,9 +8559,25 @@ const qaOverrides={
     boundary:"packed 后即使 sizeof 变小，也可能产生未对齐访问、性能下降、Fault 或 DMA 不接受等后果。"
   }
 };
+domainQAs["memory-dma-cache-case"]=[...(domainQAs["memory-dma-cache-case"]||[]),
+  {q:"DMA 搬运时 CPU 还能访问同一块内存吗？",direct:"硬件通常能发起访问，但软件不应让 CPU 与 DMA 在没有所有权协议时同时读写同一范围。",support:["CPU 与 DMA 可能在互连上仲裁，性能会互相影响；这不是最危险的问题。","真正危险的是一方读到另一方尚未发布的半成品，以及 D-Cache 与 RAM 版本不一致。","把 buffer 分成 FREE、CPU_OWNED、DMA_OWNED、READY 等状态，只有完成事件和必要 Cache 维护都结束后才交接。"],boundary:"若硬件提供一致性互连或双端只读，要求会不同；必须以 SoC 互连和内存属性为准。"},
+  {q:"怎样知道 DMA 已完成，必须用中断吗？",direct:"可以轮询状态，也可以用完成中断；两者确认的都是 DMA 通道事务状态，不能自动证明业务消息完整。",support:["轮询简单但占 CPU，适合启动期或极短且有界的事务。","中断适合异步交接；ISR 应保存状态、清正确标志并通知任务。","还要同时检查错误、实际长度、外设尾部状态以及迟到事件。"],boundary:"某些外设在 DMA 计数归零后移位器仍未完成，例如 UART TX 或 SPI 最后一位尚在线上。"}
+];
+domainQAs["c-ring-buffer"]=[...(domainQAs["c-ring-buffer"]||[]),
+  {q:"环形缓冲区 head==tail 为什么不能同时表示空和满？",direct:"同一组可观察状态必须映射到唯一含义，否则读取者无法判断是否有 N 个有效元素。",support:["留一个空槽时，head==tail 表示空，next(head)==tail 表示满，可用容量少 1。","也可额外保存 count 或 full 标志，但更新索引和附加状态必须保持一致。","满时还要明确丢新、覆盖最旧、阻塞生产者或停硬件接收。"],boundary:"SPSC 能简化同步，不表示任意多生产者/多消费者照搬索引就安全。"}
+];
+domainQAs["fr-mutex"]=[...(domainQAs["fr-mutex"]||[]),
+  {q:"互斥量和二值信号量最根本的区别是什么？",direct:"互斥量表达有 owner 的资源独占；二值信号量表达一次事件或一个二态令牌。",support:["持有 mutex 的任务负责释放，FreeRTOS mutex 通常参与优先级继承。","二值信号量可由 ISR give 给任务，不要求 give/take 是同一执行者。","把事件通知做成 mutex 会混淆 owner；把资源锁做成 binary semaphore 又失去所有权诊断和继承。"],boundary:"两者底层可能共享 queue 机制，但公共语义不同，不能因为实现相似就互换。"}
+];
+domainQAs["fr-priority-inversion"]=[...(domainQAs["fr-priority-inversion"]||[]),
+  {q:"优先级反转是怎样发生的？",direct:"低优先级任务持有高优先级任务需要的锁，而中优先级任务持续抢占低任务，使高任务间接被中任务拖住。",support:["优先级继承临时提高锁 owner，让它尽快完成临界区并释放锁。","继承缓解有界的 mutex 反转，不修复死锁、长临界区、嵌套锁顺序或无界 I/O。","更强的结构是缩短持锁区，或让单一 owner task 串行管理资源。"],boundary:"高任务被正常的更高优先级 ISR 延迟不是这一定义下的 mutex 优先级反转。"}
+];
+domainQAs["i2c-open-drain"]=[...(domainQAs["i2c-open-drain"]||[]),
+  {q:"I²C 为什么使用开漏并需要上拉？",direct:"节点只主动拉低、从不主动推高，因此多个节点可以安全地在同一根线上表达 wired-AND，并支持 ACK、时钟同步和仲裁。",support:["所有节点释放后，上拉电阻给总线电容充电形成高电平。","若两个节点分别想发 1 和 0，想发 1 的节点释放并读到 0，从而安全判定丢失仲裁。","上升速度由 Rp×Cbus 决定；上拉太大边沿慢，太小则低电平灌电流过大。"],boundary:"所谓‘安全’仍要求电压域、器件掉电状态和 level shifter 设计正确。"}
+];
 function qaAnswer(n,question,questionIndex){
   const override=qaOverrides[question];
-  if(override)return `<div class="qa-answer"><p><b>先说结论：</b>${esc(override.direct)}</p><ul>${override.support.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><p><b>一句收束：</b>${esc(n.remember)}</p><p class="boundary"><b>别把结论用过头：</b>${esc(override.boundary)}</p></div>`;
+  if(override)return `<div class="qa-answer"><p><b>直接回答：</b>${esc(override.direct)}</p><ul>${override.support.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><p class="boundary"><b>适用边界：</b>${esc(override.boundary)}</p></div>`;
   const facts=(n.points||[]).map((text,index)=>({text,index,score:relevance(question,text)}))
     .sort((a,b)=>b.score-a.score||((a.index-questionIndex+n.points.length)%n.points.length)-((b.index-questionIndex+n.points.length)%n.points.length));
   const first=facts[0]?.text||n.remember,second=facts[1]?.text||"";
@@ -8479,7 +8600,7 @@ function qaAnswer(n,question,questionIndex){
     direct=`“${focus}”在这里指：${first}${second?` ${second}`:""}`;
   }
   const support=facts.slice(1,4);
-  return `<div class="qa-answer"><p><b>先说结论：</b>${esc(direct)}</p>${support.length?`<ul>${support.map(x=>`<li>${esc(x.text)}</li>`).join("")}</ul>`:""}<p><b>一句收束：</b>${esc(n.remember)}</p>${n.correction?`<p class="boundary"><b>别把结论用过头：</b>${esc(n.correction)}</p>`:""}</div>`;
+  return `<div class="qa-answer"><p><b>直接回答：</b>${esc(direct)}</p>${support.length?`<ul>${support.slice(0,2).map(x=>`<li>${esc(x.text)}</li>`).join("")}</ul>`:""}</div>`;
 }
 function fallbackQuestion(n){
   const title=n.title.replace(/[：:——].*$/,""),mode=lessonModeFor(n);
@@ -8495,7 +8616,7 @@ function fallbackQuestion(n){
 function renderQA(n,id){
   const rich=domainQAs[id]||[],normalize=q=>q.replace(/[\s`'"“”‘’？?，,。.:：]/g,"").toLowerCase(),richKeys=new Set(rich.map(x=>normalize(x.q)));
   const basic=(n.interview?.length?n.interview:[fallbackQuestion(n)]).filter(q=>!richKeys.has(normalize(q)));
-  const richHtml=rich.map(x=>`<details class="qa-item"><summary>${esc(x.q)}</summary><div class="qa-answer"><p><b>先说结论：</b>${esc(x.direct)}</p><ul>${x.support.map(s=>`<li>${esc(s)}</li>`).join("")}</ul><p><b>一句收束：</b>${esc(n.remember)}</p><p class="boundary"><b>别把结论用过头：</b>${esc(x.boundary)}</p></div></details>`).join("");
+  const richHtml=rich.map(x=>`<details class="qa-item"><summary>${esc(x.q)}</summary><div class="qa-answer"><p><b>直接回答：</b>${esc(x.direct)}</p><ul>${x.support.map(s=>`<li>${esc(s)}</li>`).join("")}</ul><p class="boundary"><b>适用边界：</b>${esc(x.boundary)}</p></div></details>`).join("");
   const basicHtml=basic.map((q,i)=>`<details class="qa-item"><summary>${esc(q)}</summary>${qaAnswer(n,q,i)}</details>`).join("");
   return `<section class="aside-card interview-box"><h4>继续追问 · 答案默认折叠</h4><div class="qa-list">${richHtml}${basicHtml}</div></section>`;
 }
@@ -8674,6 +8795,27 @@ plainTerms.push(
   {name:"Trie",match:/Trie|字典树/i,text:"把字符串拆成字符路径并共享公共前缀的树形索引。"},
   {name:"Invariant",match:/不变量|invariant/i,text:"每一步操作前后都必须继续成立的事实，是结构正确性的护栏。"}
 );
+plainTerms.push(
+  {name:"API",match:/\bAPI\b/i,text:"Application Programming Interface，模块对调用者公开的函数、参数、返回值与行为合同。"},
+  {name:"RTOS",match:/\bRTOS\b|实时操作系统/i,text:"Real-Time Operating System，重点是让任务响应时间可分析，而不只是‘同时跑很多函数’。"},
+  {name:"Atomic / 原子性",match:/atomic|原子性|原子操作/i,text:"对规定的并发观察者表现为不可再分：只能看到操作前或操作后，不能看到中间状态。它不自动等于有序、事务或断电安全。"},
+  {name:"IRQ",match:/\bIRQ\b/i,text:"Interrupt Request，中断请求；它可处于 pending、active 或被屏蔽等不同状态。"},
+  {name:"SPSC",match:/\bSPSC\b/i,text:"Single Producer Single Consumer，恰好一个生产者和一个消费者的并发模型。"},
+  {name:"CRC",match:/\bCRC\b/i,text:"循环冗余校验，用来发现许多传输差错；它不是加密、认证，也不天然防重放。"},
+  {name:"ACK / NACK",match:/\bACK\b|\bNACK\b/i,text:"肯定/否定应答。它究竟确认到链路、事务还是业务层，必须看所在协议。"},
+  {name:"VMA / LMA",match:/\bVMA\b|\bLMA\b/i,text:"运行地址与装载地址；.data 常在 Flash 保存初值，却在 RAM 中运行。"},
+  {name:"DMB / DSB / ISB",match:/\bDMB\b|\bDSB\b|\bISB\b/i,text:"Arm 屏障指令家族，分别约束内存访问顺序、完成以及后续取指环境；不能替代 Cache 维护。"},
+  {name:"TCP",match:/\bTCP\b/i,text:"可靠、有序、面向字节流的传输协议；它不保留应用消息边界。"},
+  {name:"UDP",match:/\bUDP\b/i,text:"保留数据报边界的轻量传输协议；不承诺送达、顺序或去重。"},
+  {name:"IP",match:/\bIP\b|网际协议/i,text:"负责跨网络按地址转发数据包；best effort 不等于每包必达。"},
+  {name:"HTTP",match:/\bHTTP\b/i,text:"请求—响应式应用协议；方法、目标、字段和内容共同表达一条消息的语义。"},
+  {name:"MQTT",match:/\bMQTT\b/i,text:"基于 broker 的发布/订阅消息协议，常运行在 TCP/TLS 上。"},
+  {name:"QoS",match:/\bQoS\b/i,text:"Quality of Service；在 MQTT 中主要描述一次协议交付流程，不等于端到端业务恰好处理一次。"},
+  {name:"MTU / MSS",match:/\bMTU\b|\bMSS\b/i,text:"MTU 是链路层一次可承载的最大网络包大小；MSS 是 TCP 单段愿意接收的最大 payload。"},
+  {name:"RTT / RTO",match:/\bRTT\b|\bRTO\b/i,text:"往返时间与重传超时；后者要从观测到的网络时延估计并留出波动余量。"},
+  {name:"TLS",match:/\bTLS\b/i,text:"为传输提供机密性、完整性和对端认证的安全协议；它位于 HTTP/MQTT 与 TCP 之间。"},
+  {name:"HAL",match:/\bHAL\b/i,text:"Hardware Abstraction Layer，芯片厂商常用的外设抽象接口；它不是协议规范本身。"}
+);
 function lessonModeFor(n){
   const title=n.title||"",text=`${title} ${n.summary||""}`;
   if(/错误|故障|Fault|溢出|越界|泄漏|死锁|饥饿|掉电|排查|异常|风险|一致性|竞态|失步|超时|失败|丢失|漂移|卡死|无响应|错位|撕裂/i.test(title)||/故障现场|错误标志|不可恢复|数据不一致|循环等待|偶发崩溃/i.test(n.summary||""))return "diagnostic";
@@ -8688,12 +8830,12 @@ function plainSceneFor(id,chapter){
   const key=path.find(x=>plainScenes[x]);
   return plainScenes[key]||plainSceneDefaults[chapter.id]||"先把术语放一边，从一次真实输入、一次状态变化和一个可观察结果开始。";
 }
-function plainTermsFor(n){
-  const title=n.title||"",all=`${title} ${n.summary||""}`;
-  let found=plainTerms.filter(t=>t.match.test(title));
-  if(!found.length)found=plainTerms.filter(t=>t.match.test(all));
-  return found.slice(0,3);
+function plainTermsFor(n,id){
+  const title=n.title||"",all=`${title} ${n.summary||""} ${(n.points||[]).join(" ")} ${JSON.stringify(deepLessons[id]||{})} ${JSON.stringify(canonicalStudies[id]||{})}`;
+  const inTitle=plainTerms.filter(t=>t.match.test(title)),inPage=plainTerms.filter(t=>!inTitle.includes(t)&&t.match.test(all));
+  return [...inTitle,...inPage].slice(0,7);
 }
+function renderTermGuide(n,id){const terms=plainTermsFor(n,id);if(!terms.length)return"";return `<section class="text-card term-guide"><h3>本页术语速查</h3><p>缩写第一次遇到不必硬背。点开它，先把名字换成一句能工作的解释。</p><div class="term-grid">${terms.map(t=>`<details class="term-item"><summary>${esc(t.name)}</summary><p>${esc(t.text)}</p></details>`).join("")}</div></section>`}
 function varied(id,items){
   let sum=0;for(const ch of id)sum=(sum+ch.charCodeAt(0))%997;
   return items[sum%items.length];
@@ -8737,9 +8879,9 @@ function renderAdaptiveStory(n,id,chapter,d){
     concept:["先把这件事讲成人话","从一个具体场景开始","先理解，再给它一个正式名字"]
   },labels={
     process:"FOLLOW ONE REAL PATH",structure:"READ THE STRUCTURE",compare:"COMPARE THE CONDITIONS",diagnostic:"TRACE THE EVIDENCE",concept:"MAKE IT INTUITIVE"
-  },sceneLabels=["先看现场","把它放进项目","先来一幅画面","从一次真实动作开始"],terms=plainTermsFor(n);
+  },sceneLabels=["先看现场","把它放进项目","先来一幅画面","从一次真实动作开始"];
   const intro=d?.intro?.length?`<div class="story-intro">${d.intro.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`:"";
-  return `<section class="text-card adaptive-story ${mode==="diagnostic"?"diagnostic-story":""}" data-mode="${labels[mode]}"><h3>${varied(id,titles[mode])}</h3><div class="story-scene"><b>${varied(id,sceneLabels)}</b><p>${esc(plainSceneFor(id,chapter))}</p></div>${terms.length?`<div class="plain-terms">${terms.map(t=>`<div class="plain-term"><b>${esc(t.name)}，说人话就是</b><span>${esc(t.text)}</span></div>`).join("")}</div>`:""}${intro}${narrativeBody(n,mode,id)}</section>`;
+  return `<section class="text-card adaptive-story ${mode==="diagnostic"?"diagnostic-story":""}" data-mode="${labels[mode]}"><h3>${varied(id,titles[mode])}</h3><div class="story-scene"><b>${varied(id,sceneLabels)}</b><p>${esc(plainSceneFor(id,chapter))}</p></div>${intro}${narrativeBody(n,mode,id)}</section>`;
 }
 const algorithmGuides={
   "cpp-vector-string":{kind:"容器操作手册",intro:"下面每一行都回答三个问题：操作改变 size 还是 capacity、需要搬多少元素、旧位置是否还有效。",summary:"最常用的刷题组合是：reserve 预估容量 → push_back 构造 → 范围 for 扫描 → sort 建序 → lower_bound 查边界 → erase/remove 过滤。",ops:[
@@ -9275,6 +9417,8 @@ function renderCanonicalStudy(id){
   return `<section class="masterclass" data-kind="${esc(s.kind)}"><div class="masterclass-head"><small>核心推演 · 从条件走到结论</small><h3>${esc(s.title)}</h3><p>${esc(s.lead)}</p></div><div class="mc-walk">${walk}</div>${example}<div class="mc-boundary"><div class="danger"><b>最容易错在哪里</b><p>${esc(s.danger)}</p></div><div class="verify"><b>怎样把结论验证出来</b><p>${esc(s.verify)}</p></div></div></section>`;
 }
 const supplementalDepth={
+  "c-volatile-atomic":[["原子性到底是什么意思","原子操作对它所承诺的观察者表现为不可再分：其他并发执行者只能看到操作之前或之后的状态，看不到中间半成品。这个定义必须带范围——某次对齐 32-bit load/store 可能由硬件一条访存完成，不代表 `counter++` 这种“读、加、写”复合动作原子，更不代表多个字段组成的不变量能一起提交。"],["四个常被混淆的承诺","原子性回答“会不会看见半次操作”；互斥回答“谁能同时进入这段协议”；顺序/可见性回答“一方先写 A 再发布 B，另一方按什么次序观察”；lock-free 只回答实现是否无需锁取得系统级进展。原子不等于有序，不等于事务，更不等于断电后持久。"],["放回单核 MCU 的真实场景","主循环和 ISR 同时修改计数器时，`volatile counter++` 仍可能在读后被中断插入而丢更新。可以使用 C `_Atomic`/`atomic_fetch_add` 建立语言定义的并发操作；也可在单核且参与者明确时，用很短的临界区包住整个读改写。若另一方是 DMA，则还要处理 buffer 所有权、Cache 与屏障，C 原子本身不指挥外设。"]],
+  "c-memcpy-memmove":[["先做五项调用前检查","每次 mem* 调用先写清：地址指向仍存活的对象吗；源能读、目标能写吗；n 的单位和乘法是否正确；区域是否重叠；复制后谁拥有其中的资源。只看函数名而不看这五项，最容易得到“测试时正常、优化后偶发”的错误。"],["别把字节工具当类型构造器","mem* 擅长搬运和观察对象表示，不理解成员语义。解析外部数据时可把固定数量字节 memcpy 到对齐的无符号整数，再显式处理端序；但把任意字节塞进指针、浮点、枚举或带约束的结构体后直接使用，仍可能得到陷阱表示、非法值或 ABI 依赖。"]],
   "c-multidim-array":[["形参为什么必须知道后续维度","`int a[R][C]` 在表达式中转换为指向‘含 C 个 int 的数组’的指针，即 `int (*)[C]`。编译器计算 `a[i][j]` 时要先跨过 i 行，每行步长是 `C*sizeof(int)`；因此形参可以省略最外层长度，却不能在普通数组形参中凭空省略列宽。VLA 形参则可把运行时列数作为前置参数。"],["连续二维数组与指针的指针不同","`int **` 指向一枚 int*，它可能再指向各自独立分配的行；`int [R][C]` 是单一连续对象。二者的寻址次数、布局、Cache 局部性和释放方式均不同，不能靠强制转换互换。向函数传矩阵时应把行列、stride 与元素类型写进接口合同。"]],
   "arm-nvic-overview":[["优先级数字先经过实现位宽","NVIC 优先级寄存器可能只实现高若干位，`__NVIC_PRIO_BITS` 描述芯片选择。CMSIS API 接收逻辑优先级值并按实现对齐；直接把未移位常量写寄存器、或混用 HAL 分组编码与原始数值，会造成‘设置了却没变化’。数值越小优先级越高，NMI/HardFault 还有固定异常优先级。"],["Pending、Active 与抢占是三件事","事件可以 pending 但因 PRIMASK/BASEPRI、当前 active 优先级或全局条件而不能立即执行。抢占优先级决定能否打断，子优先级常用于同时 pending 时的服务顺序。清外设源、清 pending 和异常返回分别作用在不同层，调试时应同时读取外设 flag、NVIC pending/active 与屏蔽寄存器。"]],
   "comm-layer-model":[["每层失败只能证明到自己","示波器看到边沿正确，只证明物理信号存在；协议分析仪成功解帧，说明采样与帧语法大体成立；DMA complete 说明配置的内存计数搬完；CRC 正确证明指定字节一致；业务 ACK 才说明对端状态机接受了请求。排查时应寻找最后一个正确证据和第一个错误证据。"],["层间接口必须暴露足够信息","驱动若只返回 `false`，上层无法区分地址 NACK、CRC 错、超时、队列满或介质离线，也无法选择恢复策略。接口至少应保留阶段、方向、实际长度、硬件错误、协议错误、时间戳和可重试性；同时避免把芯片寄存器位直接泄漏成永久业务 API。"]],
@@ -9295,7 +9439,7 @@ function renderLesson(n,id,chapter){
   const code=d?.code?`<section class="text-card code-card"><h3>${esc(d.code.title)}</h3><div class="code-meta"><span>${esc(d.code.meta||"示例代码")}</span><span>关注语义，不照抄配置</span></div><pre><code>${esc(d.code.text)}</code></pre></section>`:"";
   const rule=chapter.id==="c"?renderRuleSheet(id):"";
   const example=chapter.id==="c"&&!d?.code?renderExample(id):"";
-  return `${renderAdaptiveStory(n,id,chapter,d)}${renderCanonicalStudy(id)}${renderSupplementalDepth(id)}${sections}${rule}${renderDomainRuleSheet(id)}${renderWalk(d?.walk)}${renderTable(d?.table)}${code}${example}${renderDomainExample(id)}`;
+  return `${renderAdaptiveStory(n,id,chapter,d)}${renderTermGuide(n,id)}${renderCanonicalStudy(id)}${renderSupplementalDepth(id)}${sections}${rule}${renderDomainRuleSheet(id)}${renderWalk(d?.walk)}${renderTable(d?.table)}${code}${example}${renderDomainExample(id)}`;
 }
 function backToTree(){
   persistReadingPosition(true);articleReturnContext=null;articleView.style.display="none";treeView.style.display="flex";activeLeaf=null;renderTree();renderCrumbs();
@@ -9369,8 +9513,8 @@ function openLeaf(id,options={}){
   const articleWrap=document.getElementById("articleWrap");
   articleWrap.dataset.chapter=chapter.id;
   articleWrap.dataset.lesson=lessonModeFor(n);
-  articleView.style.setProperty("--chapter",chapter.color);articleWrap.innerHTML=`<div class="article-tools"><button class="back-tree" id="backTree">${backLabel}</button><div class="article-tool-actions"><button class="bookmark-toggle" id="bookmarkToggle" aria-pressed="false">☆ 收藏</button><span>INTERACTIVE TEXTBOOK · ${esc(chapter.index)}</span></div></div><header class="article-title" id="articleStart" data-layout="${lessonModeFor(n).toUpperCase()}"><span class="chapter-scope">${esc(chapter.coreWeight||"知识专题")}</span><div class="chapter-tag">${esc(chapter.title)}　/　${path.slice(1,-1).map(p=>esc(p.title)).join("　/　")}</div><h2>${esc(n.title)}</h2><p class="lead">${esc(n.summary)}</p></header><details class="mobile-reading-toc"><summary>本页目录 <span>点击展开</span></summary><nav class="reading-toc-list" id="mobileReadingTocList"></nav></details><div class="article-grid"><main class="article-main">${figureFor(id,chapter)}${renderAlgorithmGuide(id,chapter)}${renderLesson(n,id,chapter)}</main><aside class="article-aside"><section class="aside-card reading-toc"><div class="reading-toc-head"><h4>本页目录</h4><span>ON THIS PAGE</span></div><nav class="reading-toc-list" id="readingTocList"></nav></section><section class="aside-card remember-box"><h4>一眼记住</h4><p>${esc(n.remember)}</p></section>${n.correction?`<section class="aside-card correction-box"><h4>边界 / 校正</h4><p>${esc(n.correction)}</p></section>`:""}${renderQA(n,id)}${sources.length?`<section class="aside-card"><h4>官方依据</h4><div class="article-sources">${sources.map(k=>`<a href="${S[k][1]}" target="_blank" rel="noopener">${esc(S[k][0])} ↗</a>`).join("")}</div></section>`:""}</aside></div>${connections}${pager}<button class="back-to-top" id="backToTop" aria-label="回到文章顶部" title="回到顶部">↑</button>`;
-  document.getElementById("backTree").onclick=()=>returnToBookmarks?openBookmarkHub(returnFolder):returnToSearch?openSearchHub(returnSearchQuery,{mode:returnSearchMode,filter:returnSearchFilter}):backToTree();document.getElementById("bookmarkToggle").onclick=()=>openBookmarkPicker(id);document.getElementById("backToTop").onclick=articleScrollTop;updateBookmarkButton(id);document.querySelectorAll("[data-leaf]").forEach(b=>b.onclick=()=>openLeaf(b.dataset.leaf,{preserveReturn:true}));document.querySelectorAll("[data-page-leaf]").forEach(b=>b.onclick=()=>openLeaf(b.dataset.pageLeaf,{preserveReturn:true}));document.querySelectorAll("[data-connection-leaf]").forEach(b=>b.onclick=()=>openLeaf(b.dataset.connectionLeaf,{preserveReturn:true}));balanceArticleBlocks();buildReadingToc();suppressReadingSaveUntil=performance.now()+650;articleView.scrollTop=0;articleView.focus({preventScroll:true});scheduleReadingUpdate();requestAnimationFrame(scheduleReadingUpdate);if(restoreRatio>.015)setTimeout(()=>{if(activeLeaf!==id)return;const max=Math.max(0,articleView.scrollHeight-articleView.clientHeight);articleView.scrollTop=max*restoreRatio;suppressReadingSaveUntil=performance.now()+260;scheduleReadingUpdate()},150);renderCrumbs();
+  articleView.style.setProperty("--chapter",chapter.color);articleWrap.innerHTML=`<div class="article-tools"><button class="back-tree" id="backTree">${backLabel}</button><div class="article-tool-actions"><button class="question-toggle" id="questionToggle">? 记录疑问</button><button class="bookmark-toggle" id="bookmarkToggle" aria-pressed="false">☆ 收藏</button><span>INTERACTIVE TEXTBOOK · ${esc(chapter.index)}</span></div></div><header class="article-title" id="articleStart" data-layout="${lessonModeFor(n).toUpperCase()}"><span class="chapter-scope">${esc(chapter.coreWeight||"知识专题")}</span><div class="chapter-tag">${esc(chapter.title)}　/　${path.slice(1,-1).map(p=>esc(p.title)).join("　/　")}</div><h2>${esc(n.title)}</h2><p class="lead">${esc(n.summary)}</p></header><details class="mobile-reading-toc"><summary>本页目录 <span>点击展开</span></summary><nav class="reading-toc-list" id="mobileReadingTocList"></nav></details><div class="article-grid"><main class="article-main">${figureFor(id,chapter)}${renderAlgorithmGuide(id,chapter)}${renderLesson(n,id,chapter)}</main><aside class="article-aside"><section class="aside-card reading-toc"><div class="reading-toc-head"><h4>本页目录</h4><span>ON THIS PAGE</span></div><nav class="reading-toc-list" id="readingTocList"></nav></section><section class="aside-card remember-box"><h4>一眼记住</h4><p>${esc(n.remember)}</p></section>${n.correction?`<section class="aside-card correction-box"><h4>边界 / 校正</h4><p>${esc(n.correction)}</p></section>`:""}${renderQA(n,id)}${sources.length?`<section class="aside-card"><h4>官方依据</h4><div class="article-sources">${sources.map(k=>`<a href="${S[k][1]}" target="_blank" rel="noopener">${esc(S[k][0])} ↗</a>`).join("")}</div></section>`:""}</aside></div>${connections}${pager}<button class="back-to-top" id="backToTop" aria-label="回到文章顶部" title="回到顶部">↑</button>`;
+  document.getElementById("backTree").onclick=()=>returnToBookmarks?openBookmarkHub(returnFolder):returnToSearch?openSearchHub(returnSearchQuery,{mode:returnSearchMode,filter:returnSearchFilter}):backToTree();document.getElementById("questionToggle").onclick=()=>openQuestionDialog(id);document.getElementById("bookmarkToggle").onclick=()=>openBookmarkPicker(id);document.getElementById("backToTop").onclick=articleScrollTop;updateBookmarkButton(id);updateQuestionButton(id);document.querySelectorAll("[data-leaf]").forEach(b=>b.onclick=()=>openLeaf(b.dataset.leaf,{preserveReturn:true}));document.querySelectorAll("[data-page-leaf]").forEach(b=>b.onclick=()=>openLeaf(b.dataset.pageLeaf,{preserveReturn:true}));document.querySelectorAll("[data-connection-leaf]").forEach(b=>b.onclick=()=>openLeaf(b.dataset.connectionLeaf,{preserveReturn:true}));balanceArticleBlocks();buildReadingToc();suppressReadingSaveUntil=performance.now()+650;articleView.scrollTop=0;articleView.focus({preventScroll:true});scheduleReadingUpdate();requestAnimationFrame(scheduleReadingUpdate);if(restoreRatio>.015)setTimeout(()=>{if(activeLeaf!==id)return;const max=Math.max(0,articleView.scrollHeight-articleView.clientHeight);articleView.scrollTop=max*restoreRatio;suppressReadingSaveUntil=performance.now()+260;scheduleReadingUpdate()},150);renderCrumbs();
 }
 function closeDetail(){activeLeaf=null;detail.classList.remove("open")}
 function renderCrumbs(){
@@ -9416,8 +9560,9 @@ function setupSearch(){
   input.addEventListener("focus",()=>{if(!panel.classList.contains("open"))openSearchHub(input.value,{mode:input.value.trim()?"query":"history"})});input.addEventListener("input",()=>{searchMode=input.value.trim()?"query":"history";searchChapterFilter="all";if(!panel.classList.contains("open"))openSearchHub(input.value,{mode:searchMode});else renderSearchHub()});input.addEventListener("keydown",event=>{if(event.key==="Escape"){event.preventDefault();hideSearchHub();input.blur()}else if(event.key==="ArrowDown"){event.preventDefault();moveSearchKeyboard(1)}else if(event.key==="ArrowUp"){event.preventDefault();moveSearchKeyboard(-1)}else if(event.key==="Enter"){const first=panel.querySelector("[data-search-open],[data-history-open]");if(first){event.preventDefault();first.click()}}});
   panel.addEventListener("keydown",event=>{if(event.key==="Escape"){event.preventDefault();hideSearchHub();input.focus()}else if(event.key==="ArrowDown"){event.preventDefault();moveSearchKeyboard(1)}else if(event.key==="ArrowUp"){event.preventDefault();moveSearchKeyboard(-1)}});document.addEventListener("keydown",event=>{if(event.key==="/"&&document.activeElement!==input&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName||"")){event.preventDefault();input.focus()}})
 }
-document.getElementById("homeBtn").onclick=showHome;document.getElementById("bookmarkHomeBtn").onclick=()=>openBookmarkHub();document.getElementById("historyHomeBtn").onclick=()=>openSearchHub("",{mode:"history",filter:"all"});document.getElementById("dataHomeBtn").onclick=openDataCenter;document.getElementById("aboutHomeBtn").onclick=openAbout;document.getElementById("menuBtn").onclick=()=>app.classList.toggle("menu-open");articleView.addEventListener("scroll",()=>{scheduleReadingUpdate();scheduleReadingPositionSave()},{passive:true});window.addEventListener("resize",()=>{if(activeLeaf){balanceArticleBlocks();scheduleReadingUpdate()}else if(activeChapter)drawConnectors()});window.addEventListener("beforeunload",()=>persistReadingPosition(true));
+document.getElementById("homeBtn").onclick=showHome;document.getElementById("bookmarkHomeBtn").onclick=()=>openBookmarkHub();document.getElementById("historyHomeBtn").onclick=()=>openSearchHub("",{mode:"history",filter:"all"});document.getElementById("dataHomeBtn").onclick=openDataCenter;document.getElementById("aboutHomeBtn").onclick=openAbout;document.getElementById("menuBtn").onclick=()=>app.classList.toggle("menu-open");document.getElementById("menuClose").onclick=()=>app.classList.remove("menu-open");articleView.addEventListener("scroll",()=>{scheduleReadingUpdate();scheduleReadingPositionSave()},{passive:true});window.addEventListener("resize",()=>{if(innerWidth>960)app.classList.remove("menu-open");if(activeLeaf){balanceArticleBlocks();scheduleReadingUpdate()}else if(activeChapter)drawConnectors()});window.addEventListener("beforeunload",()=>persistReadingPosition(true));
 document.getElementById("bookmarkClose").onclick=closeBookmarkHub;document.getElementById("bookmarkPickerClose").onclick=closeBookmarkPicker;document.querySelector("[data-picker-close]").onclick=closeBookmarkPicker;
+document.getElementById("questionClose").onclick=closeQuestionDialog;document.querySelector("[data-question-close]").onclick=closeQuestionDialog;document.getElementById("questionAdd").onclick=addCurrentQuestion;document.getElementById("questionInput").addEventListener("keydown",event=>{if((event.ctrlKey||event.metaKey)&&event.key==="Enter")addCurrentQuestion()});document.getElementById("questionCopyPrompt").onclick=()=>{const items=questionsForLeaf(questionDialogLeafId,{openOnly:true});if(!items.length)return showBookmarkToast("本页还没有未解决疑问");copyText(questionPrompt(items,"本页知识需要补充"))};document.getElementById("questionCopyAll").onclick=()=>{const items=Object.values(questionState.items).filter(q=>!q.resolved);if(!items.length)return showBookmarkToast("目前没有未解决疑问");copyText(questionPrompt(items,"嵌入式知识库全部待补充疑问"))};
 document.getElementById("dataCenterClose").onclick=closeDataCenter;document.getElementById("openDataCenterFromBookmarks").onclick=openDataCenter;document.getElementById("exportPersonalData").onclick=exportPersonalData;document.getElementById("exportBookmarksFromData").onclick=exportBookmarks;document.getElementById("choosePersonalData").onclick=()=>document.getElementById("personalDataImportFile").click();
 document.getElementById("personalDataImportFile").addEventListener("change",async event=>{const file=event.target.files?.[0];event.target.value="";if(!file)return;try{pendingPersonalImport=parsePersonalBackup(JSON.parse(await file.text()),file.name);dataImportMessage="";renderDataCenter()}catch(error){pendingPersonalImport=null;dataImportMessage="";document.getElementById("importPreview").innerHTML=`<div class="data-result error"><b>无法读取这个备份</b><br>${esc(error.message||"文件格式无效")}</div>`}});
 document.getElementById("newBookmarkFolder").onclick=()=>{const name=prompt("新收藏夹名称：");if(name===null)return;const folder=createBookmarkFolder(name);if(!folder)return showBookmarkToast("名称不能为空");activeBookmarkFolder=folder.id;renderBookmarkHub();showBookmarkToast(`已创建「${folder.name}」`)};
@@ -9425,9 +9570,9 @@ document.getElementById("pickerCreateFolder").onclick=()=>{const input=document.
 document.getElementById("pickerFolderName").addEventListener("keydown",event=>{if(event.key==="Enter")document.getElementById("pickerCreateFolder").click()});
 document.getElementById("exportBookmarks").onclick=exportBookmarks;document.getElementById("importBookmarks").onclick=()=>document.getElementById("bookmarkImportFile").click();
 document.getElementById("bookmarkImportFile").addEventListener("change",async event=>{const file=event.target.files?.[0];event.target.value="";if(!file)return;try{const result=mergeImportedBookmarks(JSON.parse(await file.text()));showBookmarkToast(`已合并 ${result.itemAdds} 条收藏、${result.folderAdds} 个收藏夹`)}catch(error){showBookmarkToast("导入失败：这不是有效的收藏备份")}});
-document.addEventListener("keydown",event=>{if(event.key!=="Escape")return;if(document.getElementById("dataCenter").classList.contains("open"))closeDataCenter();else if(document.getElementById("bookmarkPicker").classList.contains("open"))closeBookmarkPicker();else if(document.getElementById("bookmarkDrawer").classList.contains("open"))closeBookmarkHub()});
-window.addEventListener("storage",event=>{if(!event.newValue)return;try{if(event.key===BOOKMARK_STORAGE_KEY){bookmarkState=normalizeBookmarkState(JSON.parse(event.newValue));reconcileBookmarks();updateBookmarkCount();updateBookmarkButton(activeLeaf);if(document.getElementById("bookmarkDrawer").classList.contains("open"))renderBookmarkHub()}else if(event.key===READING_STORAGE_KEY){readingState=normalizeReadingState(JSON.parse(event.newValue));updateHistoryCount();if(document.getElementById("searchPanel").classList.contains("open"))renderSearchHub()}}catch(error){}});
-buildNav();setupSearch();showHome();saveBookmarkState();saveReadingState();
+document.addEventListener("keydown",event=>{if(event.key!=="Escape")return;if(document.getElementById("questionLayer").classList.contains("open"))closeQuestionDialog();else if(document.getElementById("dataCenter").classList.contains("open"))closeDataCenter();else if(document.getElementById("bookmarkPicker").classList.contains("open"))closeBookmarkPicker();else if(document.getElementById("bookmarkDrawer").classList.contains("open"))closeBookmarkHub()});
+window.addEventListener("storage",event=>{if(!event.newValue)return;try{if(event.key===BOOKMARK_STORAGE_KEY){bookmarkState=normalizeBookmarkState(JSON.parse(event.newValue));reconcileBookmarks();updateBookmarkCount();updateBookmarkButton(activeLeaf);if(document.getElementById("bookmarkDrawer").classList.contains("open"))renderBookmarkHub()}else if(event.key===QUESTION_STORAGE_KEY){questionState=normalizeQuestionState(JSON.parse(event.newValue));updateQuestionButton(activeLeaf);if(document.getElementById("questionLayer").classList.contains("open"))renderQuestionDialog()}else if(event.key===READING_STORAGE_KEY){readingState=normalizeReadingState(JSON.parse(event.newValue));updateHistoryCount();if(document.getElementById("searchPanel").classList.contains("open"))renderSearchHub()}}catch(error){}});
+buildNav();setupSearch();showHome();saveBookmarkState();saveQuestionState();saveReadingState();
 </script>
 </body>
 </html>
