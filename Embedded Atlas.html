@@ -1854,12 +1854,13 @@ const cppOrdered=F("cpp-ordered-map-set","map / set：用树维护“随时有�
 ],"要范围、前驱后继或稳定的最坏 O(log n)，选有序树；只要平均等值查找再考虑哈希。",
 "operator[] 在 map 中找不到 key 会插入默认值；只查询时用 find/contains/at。",["cpp-comparator-lambda","algo-binary-search","cpp-unordered-map-set"],[],["map::lower_bound 与 std::lower_bound 有什么区别？","为什么比较器不能写 a<=b？"]);
 const cppUnordered=F("cpp-unordered-map-set","unordered_map / unordered_set：平均 O(1) 的代价藏在桶里","哈希容器是两数之和、频次统计、前缀和与图访问标记的主力；平均 O(1) 依赖哈希、负载因子和扩容。",[
-  "unordered_map<K,V> 常用 ++freq[x] 计数；find/contains 检查存在，不查询时避免无意插入。",
+  "最直接的写入是 m[key]=value：key 不存在时先插入 value-initialized 的 V，再赋值；纯查询不要这样写。",
+  "find 返回 iterator（const 容器返回 const_iterator）；未找到返回 end，找到后用 it->first/it->second 访问键和值。",
   "不同 key 可能落入同一 bucket，容器仍会再比较 key；哈希相等不代表对象相等。",
   "rehash 会重建桶表并使迭代器失效；提前 reserve 可减少反复扩容，但引用/指针规则要按标准接口确认。",
   "自定义 key 需要相容的 hash 与 equality：若 a==b，则 hash(a) 必须等于 hash(b)。"
 ],"哈希表快在平均查找，不是因为冲突不存在，而是冲突被控制在较短的桶内。",
-"不可信输入、糟糕哈希或高负载可让操作退化；需要范围查询或稳定最坏界时换树。",["algo-hash","cpp-invalidation","hot-array-hash"],[],["为什么只查询时不推荐 freq[key]？","reserve 对 unordered_map 做了什么？"]);
+"operator[] 的默认值来自 V{}：int 为 0、bool 为 false、string 为空串、指针为空指针；它不是对所有类型简单‘赋 0’。",["algo-hash","cpp-invalidation","hot-array-hash"],[],["find 返回什么，怎样安全读取 value？","operator[]、at、insert、try_emplace 与 insert_or_assign 分别会不会插入或覆盖？"]);
 const cppPriorityQueue=F("cpp-priority-queue","priority_queue：把“当前最重要”留在堆顶","优先队列适合 Top-K、合并多路有序序列和数据流中位数；它只保证 top 是极值。",[
   "priority_queue<int> 默认大顶堆；priority_queue<int,vector<int>,greater<int>> 是小顶堆。",
   "push/emplace 与 pop 为 O(log n)，top 为 O(1)；构造/heapify 可利用线性建堆。",
@@ -6838,37 +6839,42 @@ s.erase(4);`},
     result:"你应能区分等值查找与顺序边界查询，并知道什么时候 operator[] 会制造一条本来不存在的记录。"
   },
   "cpp-unordered-map-set":{
-    intro:["unordered_map/set 把 key 先交给哈希函数，再在目标桶里做相等比较。平均 O(1) 来自“桶数足够、分布均匀、每个桶很短”，不是来自某种无冲突魔法。","刷题里最常见的三种用途是频次表、值到下标的索引，以及 visited 集合。使用 operator[] 计数很自然；只判断存在时则更适合 find 或 C++20 的 contains。"],
-    sections:[["reserve 与 rehash","reserve(n) 以预计元素数为目标准备足够桶，rehash(b) 直接要求至少 b 个桶。二者都可能重建桶表；提前 reserve 能减少扫描过程中多次搬桶。"],["自定义 key","自定义结构体作为 key 时，要同时提供 hash 与 equality。相等对象必须得到相同哈希；相同哈希的对象不必相等，所以桶内还会调用 equality。"]],
-    code:{title:"哈希表的频次、索引与安全查询",meta:"C++17 · unordered_map / unordered_set",text:`#include <string>
+    intro:["unordered_map/set 把 key 先交给哈希函数，再在目标桶里做相等比较。平均 O(1) 来自“桶数足够、分布均匀、每个桶很短”，不是来自某种无冲突魔法。","刷题里最常见的三种用途是频次表、值到下标的索引，以及 visited 集合。`m[key]=value` 是最直接的写入；但 `m[key]` 同时也是一次可能改变容器的查询，所以读取时要先想清是否允许自动创建。"],
+    sections:[["find 的返回值是位置，不是 value","对非常量 map，`find(key)` 返回 `iterator`；对 const map 返回 `const_iterator`。找不到时等于 `end()`，找到后 `it->first` 是只读 key，`it->second` 是 mapped value。必须先判断 `it != m.end()`，再解引用。"],["operator[] 为何会凭空多出一项","`m[key]` 找不到 key 时，会插入一个 `V{}` 再返回它的引用。`int{}` 是 0，`bool{}` 是 false，`string{}` 是空串，指针值初始化为空指针；自定义 V 则调用默认构造。随后 `m[key]=value` 再把该默认值覆盖。"],["只插入、插入或覆盖、只在缺失时构造","`insert` 遇到已有 key 不覆盖；`insert_or_assign` 不存在则插入、存在则赋新值；`try_emplace` 只在 key 缺失时构造 value，适合构造昂贵或不可随便复制的对象。它们通常返回 `pair<iterator,bool>`，bool 表示本次是否新插入。"],["reserve 与 rehash","reserve(n) 以预计元素数为目标准备足够桶，rehash(b) 直接要求至少 b 个桶。二者都可能重建桶表；提前 reserve 能减少扫描过程中多次搬桶。"],["自定义 key","自定义结构体作为 key 时，要同时提供 hash 与 equality。相等对象必须得到相同哈希；相同哈希的对象不必相等，所以桶内还会调用 equality。"]],
+    code:{title:"把返回值和‘是否隐式插入’一次看清",meta:"C++17；contains 为 C++20",text:`#include <string>
 #include <unordered_map>
-#include <unordered_set>
-#include <vector>
 using namespace std;
 
-unordered_map<int, int> freq;
-freq.reserve(256);
-for (int x : vector<int>{2, 1, 2, 3}) {
-    ++freq[x];                        // 适合“没有就从 0 开始”
+unordered_map<string, int> m;
+
+m["orange"] = 3;                    // 缺失：先插入 int{}，再赋 3
+int x = m["missing"];               // x==0，同时插入 {"missing",0}
+
+auto it = m.find("orange");          // iterator，不是 value
+if (it != m.end()) {
+    const string& key = it->first;    // key 不可经 iterator 修改
+    int value = it->second;           // mapped value
+    it->second = 4;                   // 非 const iterator 可改 value
 }
 
-auto it = freq.find(2);
-if (it != freq.end()) {
-    int count = it->second;
+if (m.find("ghost") == m.end()) {     // 纯查询，不插入
+    // absent
 }
-freq.erase(3);
+// m.at("ghost");                    // 不插入；缺失则抛 out_of_range
 
-unordered_set<string> seen{"red", "blue"};
-auto [pos, inserted] = seen.insert("red");
-// inserted == false，因为 key 已存在
-if (seen.find("blue") != seen.end()) {
-    // 只查询，不会创建新元素
-}
+auto [p1, inserted1] = m.insert({"orange", 99});
+// false：旧值 4 不覆盖
 
-for (const auto& [key, count] : freq) {
+auto [p2, inserted2] = m.insert_or_assign("orange", 99);
+// false：不是新插入，但 value 已覆盖为 99
+
+auto [p3, inserted3] = m.try_emplace("new", 7);
+// true：只有 key 缺失才构造 value
+
+for (const auto& [key, value] : m) {
     // 遍历顺序没有稳定保证
 }`},
-    result:"你应能解释哈希值、桶索引和 key 相等是三步，并知道为什么 rehash 之后不能继续用旧迭代器。"
+    result:"你应能读懂 find/insert 系列的 iterator 与 bool 返回值，并能判断一行代码是否会隐式插入、覆盖旧值或触发 rehash。"
   },
   "cpp-priority-queue":{
     intro:["priority_queue 只维护一个局部承诺：top 是当前优先级最高的元素。它不让你遍历，也不提供任意 erase，因为这会暴露底层堆而破坏简洁接口。","大小顶堆方向很容易记反。与其背术语，不如放入 3、1、2 三个值，问自己 top 希望看到谁，再检查比较器。"],
@@ -8763,6 +8769,10 @@ domainQAs["memory-dma-cache-case"]=[...(domainQAs["memory-dma-cache-case"]||[]),
 domainQAs["c-ring-buffer"]=[...(domainQAs["c-ring-buffer"]||[]),
   {q:"环形缓冲区 head==tail 为什么不能同时表示空和满？",direct:"同一组可观察状态必须映射到唯一含义，否则读取者无法判断是否有 N 个有效元素。",support:["留一个空槽时，head==tail 表示空，next(head)==tail 表示满，可用容量少 1。","也可额外保存 count 或 full 标志，但更新索引和附加状态必须保持一致。","满时还要明确丢新、覆盖最旧、阻塞生产者或停硬件接收。"],boundary:"SPSC 能简化同步，不表示任意多生产者/多消费者照搬索引就安全。"}
 ];
+domainQAs["cpp-unordered-map-set"]=[...(domainQAs["cpp-unordered-map-set"]||[]),
+  {q:"find 返回什么，怎样安全读取 value？",direct:"find 返回指向元素的 iterator；找不到返回 end()，所以必须先比较，再通过 it->second 访问 value。",support:["元素类型近似 pair<const K,V>，因此 it->first 是 key，it->second 是 mapped value。","非常量 map 的 iterator 可以改 it->second；const map 返回 const_iterator。","end() 是尾后哨兵，不能解引用。"],boundary:"unordered_map 的 iterator 在 rehash 后失效；不要跨可能扩容的插入继续使用旧 iterator。"},
+  {q:"operator[]、at、insert、try_emplace 与 insert_or_assign 分别会不会插入或覆盖？",direct:"[] 缺失时插入 V{} 且可覆盖；at 不插入；insert 只插入不覆盖；try_emplace 只在缺失时构造；insert_or_assign 插入或覆盖。",support:["m[key]=value 最方便，但 key 缺失时发生一次默认构造再赋值。","insert/try_emplace/insert_or_assign 常返回 pair<iterator,bool>，bool 表示是否新插入，不是统一的成功/失败。","int 的 V{} 是 0，string 是空串，bool 是 false；自定义类型执行值初始化/默认构造。"],boundary:"operator[] 通常要求 mapped type 能从空参数构造；若类型不可默认构造或构造昂贵，优先 try_emplace/insert_or_assign。"}
+];
 domainQAs["fr-mutex"]=[...(domainQAs["fr-mutex"]||[]),
   {q:"互斥量和二值信号量最根本的区别是什么？",direct:"互斥量表达有 owner 的资源独占；二值信号量表达一次事件或一个二态令牌。",support:["持有 mutex 的任务负责释放，FreeRTOS mutex 通常参与优先级继承。","二值信号量可由 ISR give 给任务，不要求 give/take 是同一执行者。","把事件通知做成 mutex 会混淆 owner；把资源锁做成 binary semaphore 又失去所有权诊断和继承。"],boundary:"两者底层可能共享 queue 机制，但公共语义不同，不能因为实现相似就互换。"}
 ];
@@ -9146,14 +9156,18 @@ const algorithmGuides={
     ["m.erase(k)","按键删除","返回删除数量；map/set 唯一键通常为 0/1。","O(log n)","只使被删节点失效"],
     ["set<K> s;","只保存 key","用于去重、有序边界；元素不可经 iterator 修改。","O(1)","修改会破坏树顺序"]
   ],trace:[["COMPARE","沿树判断左/右"],["BOUND","持续保存最近合法候选"],["RETURN","iterator 可能为 end"],["STABLE","其他节点位置通常保持"]]},
-  "cpp-unordered-map-set":{kind:"容器操作手册",intro:"哈希容器的每次操作都包含“算哈希—选桶—桶内判等”三步。平均 O(1) 不是一句可以脱离容量使用的口号。",summary:"已知大致元素数时先 reserve；计数可用 ++m[key]，纯查询用 find/contains；任何 rehash 后都重新取得 iterator。",ops:[
+  "cpp-unordered-map-set":{kind:"容器操作手册",intro:"哈希容器的每次操作都包含“算哈希—选桶—桶内判等”三步。这里把最常用操作的返回值和副作用放在一起：先判断‘是否允许自动插入’，再选接口。",summary:"赋值可用 m[key]=value；纯查询用 find/contains/at。find 返回 iterator/end，insert 系列常返回 iterator+bool；任何 rehash 后都重新取得 iterator。",ops:[
     ["unordered_map<K,V> m;","创建桶表","初始桶数与最大负载因子由实现管理。","O(1)","遍历顺序无保证"],
     ["m.reserve(n)","为 n 个元素准备桶","根据 max_load_factor 选择足够桶并可能 rehash。","O(size)","旧 iterator 可能失效"],
-    ["++m[key]","频次统计","不存在时插入 0，再递增。","平均 O(1)","纯查询不应这样写"],
-    ["m.insert({k,v})","不覆盖插入","返回 iterator+bool；冲突不等于插入失败。","平均 O(1)","相同 key 才失败"],
-    ["m.try_emplace(k,args...)","不存在才构造 value","避免 key 已存在时白白构造昂贵对象。","平均 O(1)","注意返回 inserted"],
-    ["m.find(k)","桶内等值查找","哈希相等后还要调用 equality。","平均 O(1)","最坏可退化 O(n)"],
-    ["m.erase(k)","按 key 删除","返回删除数量；维护桶链接/探测状态。","平均 O(1)","遍历删除接住 iterator"],
+    ["m[k]=v","插入或覆盖","缺失时先插入 V{}，再返回 value 引用完成赋值。","平均 O(1)","V 通常需可默认构造"],
+    ["++m[k]","频次统计","缺失时 value-initialize：int 得 0，再递增。","平均 O(1)","纯查询会制造记录"],
+    ["m.find(k)","纯等值查找","返回 iterator；找不到返回 m.end()。","平均 O(1)","先判 end 再用 it->second"],
+    ["m.contains(k)","只问是否存在","C++20 返回 bool，不提供 value。","平均 O(1)","C++17 用 find!=end"],
+    ["m.at(k)","读取已有 value","返回 value 引用；缺失抛 out_of_range，不插入。","平均 O(1)","热路径要决定异常策略"],
+    ["m.insert({k,v})","仅缺失时插入","返回 pair<iterator,bool>；已有 key 保留旧值。","平均 O(1)","bool=false 不代表哈希冲突"],
+    ["m.insert_or_assign(k,v)","插入或覆盖","返回 iterator+bool；bool 只表示是否新插入。","平均 O(1)","false 时 value 仍被更新"],
+    ["m.try_emplace(k,args...)","缺失才构造 value","返回 iterator+bool；已有 key 时不构造 mapped object。","平均 O(1)","适合构造昂贵对象"],
+    ["m.erase(k)","按 key 删除","返回删除数量，唯一键容器通常为 0 或 1。","平均 O(1)","遍历删除用 erase(it) 返回值"],
     ["m.load_factor()","查看负载因子","元素数 / bucket_count；高负载通常增加冲突。","O(1)","不是性能的唯一指标"],
     ["m.rehash(b)","重建至少 b 个桶","所有元素重新分桶。","O(n)","iterator 失效"],
     ["unordered_set<K> s;","哈希集合","只关心 key 是否出现，适合 visited/去重。","平均 O(1)","无前驱后继查询"]
@@ -9549,7 +9563,7 @@ const lessonEssays={
   "cpp-deque-list":{title:"deque 与 list 都能插删，却在为完全不同的访问方式服务",paras:["deque 是分段连续的双端序列：push_front/push_back 与 pop_front/pop_back 都适合频繁使用，front/back 读取两端，也支持下标随机访问。它很适合 BFS 队列、滑动窗口和需要两端淘汰的算法。分段布局意味着它不是一整块连续数组，不能把 &d[0] 当成可跨越全部元素的连续缓冲。","list 是双向链表。push_front/push_back 添加节点，erase(iterator) 删除已知节点，splice 可以把节点在链表间或链表内摘接而不复制元素。关键限定词是‘已知 iterator’：若先从头寻找第 k 个位置，查找仍是 O(k)。遍历用迭代器或范围 for，没有 list[i] 这种随机访问。","list 的优势是节点地址与大多数其他迭代器在插删后保持稳定，这正适合 LRU 中由 unordered_map 保存节点 iterator，再 O(1) 移到队头。代价是每个元素携带链接、频繁单独分配且 Cache 局部性差。只因为看到‘中间插入 O(1)’就选 list，往往忽略了寻找位置和内存访问的真正成本。"]},
   "cpp-stack-queue":{title:"stack 与 queue 故意不给遍历接口，是在保护算法的取用顺序",paras:["stack 表达后进先出：push 把待办压到顶部，top 只读最近元素，pop 删除顶部但不返回值，所以常写 auto x=st.top(); st.pop();。括号匹配、DFS、表达式求值和单调栈都依赖‘最近未完成工作最先处理’。读取 top 前必须确认 !empty()，size 只用于数量，不应代替空检查。","queue 表达先进先出：push/emplace 从队尾加入，front 读取最早元素，back 查看最新元素，pop 从队头删除。BFS 的层序性质来自这一纪律，而不是来自一个特殊的图函数。若要一次处理一层，先保存 int levelSize=q.size()，再循环恰好弹出这些旧元素，新加入的留给下一层。","二者是容器适配器，默认常以 deque 保存数据，只暴露符合语义的少量操作。它们没有 begin/end；如果算法需要扫描或删除中间元素，就应直接选 vector/deque/list。priority_queue 虽也用 top/push/pop，但 top 是比较器决定的极值而不是最老元素，不能与 FIFO queue 混为一谈。"]},
   "cpp-ordered-map-set":{title:"map 与 set 的价值不只是查找，而是让所有键始终处在可查询的顺序里",paras:["map<K,V> 保存唯一 key 到 value 的映射，set<K> 只保存 key；构造后可用 insert/emplace 添加，find 或 contains 查询，erase(key/iterator) 删除。遍历会按比较器顺序得到元素，因此需要最小值、前驱后继、范围统计或 lower_bound 时，它们比哈希表自然。典型查找、插入和删除为 O(log n)。","lower_bound(k) 返回第一个不小于 k 的位置，upper_bound(k) 返回第一个大于 k 的位置，二者可组合出键区间。map[k] 找不到时会插入一个默认 value，频次统计很方便，但只查询时可能污染容器；此时用 find、contains 或 at。erase 只让被删节点的迭代器失效，其他节点通常保持稳定。","自定义比较器必须形成严格弱序：comp(x,x) 必须为 false，所以不能写 <=；多字段顺序可用 tie(a.x,a.y)<tie(b.x,b.y)。比较器定义的是‘等价类和排列’，一旦插入后又修改影响排序的 key，树结构的前提就被破坏。若只需平均等值查找且不关心顺序，再换 unordered 容器。"]},
-  "cpp-unordered-map-set":{title:"哈希表的 O(1) 是平均合同：先找桶，再在冲突中确认真正的 key",paras:["unordered_map<K,V> 常用来保存频次、下标、前缀和首次出现位置和图的 visited 状态。insert/emplace 添加，find/contains 查询，erase 删除；++freq[x] 会在不存在时创建 0 再加一，方便但也说明 operator[] 不是纯查询。unordered_set 只保存 key，适合成员测试与去重。","hash(key) 选择 bucket，不同 key 可以落入同一桶，所以容器仍用 equality 区分对象。自定义 key 必须同时提供相容的 hash 与相等判断：只要 a==b，就必须保证 hash(a)==hash(b)。遍历顺序没有业务含义，也会在扩容后变化；任何依赖当前输出顺序的代码都在使用协议没有承诺的偶然结果。","装载因子升高时会 rehash：重新分配桶并把元素重新归类，迭代器失效且某次插入不再是常数时间。已知规模可 reserve，降低反复扩容，但仍要接受平均复杂度和额外桶内存。面对不可信输入、必须稳定最坏界或需要范围查询时，有序 map/set 往往更稳妥。"]},
+  "cpp-unordered-map-set":{title:"哈希表的 O(1) 是平均合同：先找桶，再在冲突中确认真正的 key",paras:["unordered_map<K,V> 常用来保存频次、下标、前缀和首次出现位置和图的 visited 状态。最简单的写入确实是 m[key]=value；若 key 已存在就覆盖 value，若不存在则先建立一项并 value-initialize V。于是 ++freq[x] 会从 int{} 也就是 0 开始计数，但 m[key] 只想读取时也会悄悄改变 size。unordered_set 只保存 key，适合成员测试与去重。","find(key) 返回的不是 value，而是 iterator；未找到时等于 end()。安全模式是先 if(it!=m.end())，再通过 it->first 和 it->second 读取 key/value。const map 的 find 返回 const_iterator，不能改 second。只问存在可用 C++20 contains；需要 value 且不允许插入可用 find 或 at，后者缺失时抛 out_of_range。","写入接口的覆盖语义不同：insert 已有 key 时保留旧值；insert_or_assign 会覆盖；try_emplace 只有缺失时才构造 value。三者常返回 pair<iterator,bool>，bool 表示是否新插入，而 iterator 总能指向最终那一项。尤其 insert_or_assign 返回 false 时，value 仍然已经更新，不能把 bool 当成‘操作失败’。","hash(key) 选择 bucket，不同 key 可以落入同一桶，所以容器仍用 equality 区分对象。自定义 key 必须同时提供相容的 hash 与相等判断：只要 a==b，就必须保证 hash(a)==hash(b)。遍历顺序没有业务含义，也会在扩容后变化；任何依赖当前输出顺序的代码都在使用协议没有承诺的偶然结果。","装载因子升高时会 rehash：重新分配桶并把元素重新归类，迭代器失效且某次插入不再是常数时间。已知规模可 reserve，降低反复扩容，但仍要接受平均复杂度和额外桶内存。面对不可信输入、必须稳定最坏界或需要范围查询时，有序 map/set 往往更稳妥。"]},
   "cpp-priority-queue":{title:"priority_queue 只维护一个承诺：top 永远是当前比较意义下最优先的元素",paras:["默认 priority_queue<int> 是大顶堆，top 得到最大值；小顶堆常写 priority_queue<int, vector<int>, greater<int>>。push/emplace 添加、pop 删除堆顶通常为 O(log n)，top 为 O(1)。它不会把全部元素排好序，遍历也不是公开接口；依次 pop 虽能得到有序序列，却会销毁容器。","Top-K 的方向常让人绕：寻找最大的 K 个时，可以维护大小为 K 的小顶堆，top 是候选中最小、最该在遇到更大元素时被淘汰的一个；寻找最小 K 个则用大顶堆。多路有序序列合并时，堆元素不仅保存值，还要保存来源序列和下一个位置，否则弹出后无法继续补入。","自定义 Compare 的直觉与 sort 容易混淆，先用三个具体元素验证谁会来到 top。priority_queue 不擅长修改或删除任意旧元素；Dijkstra 常把新距离再次 push，弹出时丢弃过期项，滑动窗口极值则通常使用单调 deque。先确认只需要反复取极值，再选堆。"]},
   "cpp-iterators-algorithms":{title:"STL 算法操作的是半开区间，迭代器决定这段路能怎样走",paras:["[first,last) 包含 first 而不包含 last，空区间自然是 first==last，相邻区间也能无缝拼接。sort(a.begin(),a.end())、find、count、reverse、accumulate 都沿这个合同工作。算法返回 end 往往表示没有找到；解引用返回迭代器前必须先与 end 比较。","迭代器能力有层级：vector/deque 的随机访问迭代器能做 it+n 和距离比较，list 只能逐步前进，forward_list 更受限。std::sort 要求随机访问，因此 list 有自己的 member sort。lower_bound 不仅要求可迭代，还要求区间已按同一比较器分区/排序；在乱序数据上调用虽然语法成立，结论没有算法前提。","删除是最常见的陷阱。remove 并不缩短容器，它把保留元素挪到前面并返回逻辑新尾；vector/string 要继续 erase(newEnd,end())。边遍历边 erase 时使用迭代器版本的返回值继续，而不是在 for 循环里递增一个已失效位置。标准算法减少手写边界，但不会替你保证前提和生命周期。"]},
   "cpp-comparator-lambda":{title:"比较器不是一句小于号，而是容器和算法共同依赖的秩序公约",paras:["sort 的比较器回答‘a 是否严格排在 b 前’，必须让 comp(a,a) 为 false，并保持传递与一致；写 a<=b 会让相等元素互相都声称在前，算法前提随即消失。多关键字排序可用 tie(a.x,a.y)<tie(b.x,b.y)，降序字段则单独反向比较，避免用差值相减造成整数溢出。","set/map 用比较器判断键的排列与等价：若 !comp(a,b)&&!comp(b,a)，容器视它们为等价键。priority_queue 复用 Compare 时，top 是没有任何其他元素被认为比它更高优先的那个，直觉容易反过来；最稳妥的办法是拿 1、2、3 手算 push 后 top。","lambda 的捕获也是生命周期合同。[&] 会借用外部对象，只有在比较器使用期间这些对象始终存在且不改变排序语义才安全；延迟保存到容器或回调中的 lambda 若引用局部变量，离开作用域后就悬空。比较过程本身也不应修改参与对象或依赖变化的全局状态。"]},
