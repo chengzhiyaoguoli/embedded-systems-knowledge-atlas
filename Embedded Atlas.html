@@ -9,6 +9,8 @@
     :root{
       --paper:#f3f1ea;--card:#fffefa;--ink:#17211f;--muted:#6f7a75;--line:#d9d8cf;
       --dark:#12201e;--dark2:#1a2b28;--accent:#df6d3f;--sidebar:292px;--detail:430px;
+      --serif:Georgia,"Songti SC","STSong","Noto Serif CJK SC",serif;
+      --mono:Consolas,"Cascadia Mono","SFMono-Regular",monospace;
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;overflow:hidden}
@@ -441,10 +443,12 @@
     @media(max-width:720px){.code-film{grid-template-columns:repeat(var(--count),minmax(210px,1fr))}.figure:has(.axis-lab),.figure:has(.memory-landscape),.figure:has(.signal-board){overflow-x:auto}.canvas-lab{grid-template-columns:1fr}.swim-row{grid-template-columns:82px minmax(0,1fr)}.orbit-lab::before{width:250px;height:205px}.orbit-state{width:82px;font-size:8.5px}.orbit-core{width:112px;height:112px}}
 .lesson-essay{padding:clamp(24px,3.4vw,48px);background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(250,248,241,.94));border-left:4px solid var(--chapter)}
 .lesson-essay::before{content:attr(data-mode);display:block;margin-bottom:12px;color:var(--chapter);font:800 11px/1.2 var(--mono);letter-spacing:.15em}
-.lesson-essay h3{max-width:25ch;margin:0 0 18px;font:700 clamp(25px,2.5vw,38px)/1.2 var(--serif);color:var(--ink)}
+.lesson-essay h3{max-width:min(920px,100%);margin:0 0 18px;font:650 clamp(25px,2.35vw,36px)/1.3 var(--serif);color:var(--ink);word-break:normal;overflow-wrap:normal;line-break:strict;text-wrap:pretty}
 .lesson-essay p{max-width:76ch;margin:0;color:#33423f;font-size:clamp(17px,1.25vw,20px);line-height:1.95;text-align:justify;text-wrap:pretty}
 .lesson-essay p+p{margin-top:1.05em}
 .lesson-essay .essay-lede{font-size:clamp(18px,1.35vw,21px);color:#20332f}
+.lesson-entry.has-long-opening h3{max-width:min(920px,100%);font-size:clamp(24px,2.25vw,32px);line-height:1.35;word-break:normal;overflow-wrap:normal;line-break:strict;text-wrap:pretty}
+.lesson-entry-thesis{position:relative;z-index:1;max-width:88ch;margin:0;color:#314740;font-size:clamp(17px,1.28vw,20px);line-height:1.95;text-align:left;text-wrap:pretty}
 .cache-line-lab{position:relative;min-height:245px;margin-top:24px;padding:58px 18px 78px;border-radius:24px;background:linear-gradient(145deg,#102c2b,#173b38);overflow:hidden}
 .cache-ruler{display:grid;grid-template-columns:repeat(64,minmax(9px,1fr));height:66px;border:1px solid rgba(255,255,255,.28);border-radius:12px;overflow:hidden}
 .cache-ruler i{position:relative;background:#315b56;border-right:1px solid rgba(255,255,255,.1)}.cache-ruler i:nth-child(8n)::after{content:attr(data-n);position:absolute;top:-28px;right:-7px;color:#a9c9c3;font:10px var(--mono)}
@@ -486,6 +490,14 @@
   .branch-path button{min-height:40px;padding:8px 11px;font-size:12px}
   .article-wrap{padding-top:17px!important}
   .mobile-level-back{display:flex;align-items:center;justify-content:center;position:fixed;left:14px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:25;min-width:116px;min-height:46px;border:1px solid color-mix(in srgb,var(--chapter) 48%,#cbd2ca);border-radius:999px;background:rgba(255,254,250,.96);color:#24443a;font-size:13px;font-weight:800;box-shadow:0 10px 28px rgba(18,35,29,.2);backdrop-filter:blur(5px)}
+}
+/* 中文标题优先使用整行可用空间；只有容器确实放不下时才自然换行。 */
+.article-title h2,.chapter-copy h2,.node-overview h3,.text-card h3{word-break:normal;overflow-wrap:normal;line-break:strict}
+.text-card .lesson-entry-thesis{max-width:88ch;margin:0;color:#314740;font-size:clamp(17px,1.28vw,20px);line-height:1.95;text-align:left;text-wrap:pretty}
+@media(max-width:640px){
+  .lesson-essay h3{max-width:100%;font-size:25px;text-wrap:pretty}
+  .lesson-entry.has-long-opening h3{max-width:100%;font-size:24px;text-wrap:pretty}
+  .lesson-entry-thesis{font-size:17px;line-height:1.85}
 }
 </style>
 </head>
@@ -9085,7 +9097,13 @@ function renderLessonEntry(n,id,chapter){
   const questions=(n.interview||[]).slice(0,2),scene=plainSceneFor(id,chapter),title=n.title.replace(/[：:，,。].*$/,""),goalMarkup=questions.length?`<div class="lesson-goals">${questions.map(q=>`<span>${esc(q)}</span>`).join("")}</div>`:"";
   return `<section class="text-card lesson-entry"><span class="lesson-entry-kicker">WHY THIS PAGE · 先找到学习入口</span><h3>这一页要把“${esc(title)}”讲到能用</h3><p class="lesson-entry-scene">${esc(scene)}</p><p class="lesson-entry-summary">${esc(n.summary)}</p>${goalMarkup}</section>`;
 }
-function renderManualOpening(n,id,chapter,d){if(!d?.intro?.length)return"";const questions=(n.interview||[]).slice(0,2);return `<section class="text-card lesson-entry"><span class="lesson-entry-kicker">START WITH THE PROBLEM · 从真实需求进入</span><h3>${esc(d.intro[0])}</h3>${d.intro.slice(1).map(p=>`<p class="lesson-entry-scene">${esc(p)}</p>`).join("")}${questions.length?`<div class="lesson-goals">${questions.map(q=>`<span>${esc(q)}</span>`).join("")}</div>`:""}</section>`}
+function renderManualOpening(n,id,chapter,d){
+  if(!d?.intro?.length)return"";
+  const questions=(n.interview||[]).slice(0,2),opening=String(d.intro[0]||"").trim(),isLong=Array.from(opening).length>46;
+  const heading=isLong?`${n.title}：先看整体关系`:opening;
+  const thesis=isLong?`<p class="lesson-entry-thesis">${esc(opening)}</p>`:"";
+  return `<section class="text-card lesson-entry${isLong?" has-long-opening":""}"><span class="lesson-entry-kicker">START WITH THE PROBLEM · 从真实需求进入</span><h3>${esc(heading)}</h3>${thesis}${d.intro.slice(1).map(p=>`<p class="lesson-entry-scene">${esc(p)}</p>`).join("")}${questions.length?`<div class="lesson-goals">${questions.map(q=>`<span>${esc(q)}</span>`).join("")}</div>`:""}</section>`
+}
 function varied(id,items){
   let sum=0;for(const ch of id)sum=(sum+ch.charCodeAt(0))%997;
   return items[sum%items.length];
