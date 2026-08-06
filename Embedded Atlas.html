@@ -493,6 +493,7 @@
 }
 /* 中文标题优先使用整行可用空间；只有容器确实放不下时才自然换行。 */
 .article-title h2,.chapter-copy h2,.node-overview h3,.text-card h3{word-break:normal;overflow-wrap:normal;line-break:strict}
+.article-wrap[data-lesson="diagnostic"] .article-title h2{max-width:min(980px,100%)}
 .text-card .lesson-entry-thesis{max-width:88ch;margin:0;color:#314740;font-size:clamp(17px,1.28vw,20px);line-height:1.95;text-align:left;text-wrap:pretty}
 @media(max-width:640px){
   .lesson-essay h3{max-width:100%;font-size:25px;text-wrap:pretty}
