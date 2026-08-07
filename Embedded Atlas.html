@@ -603,6 +603,19 @@
 .isr-evolution{padding:38px 40px;background:#fff;border:1px solid #d5ddd7;border-radius:18px}.isr-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.isr-steps>div{position:relative;padding:24px;background:#f5f7f3;border-radius:12px}.isr-steps>div:not(:last-child)::after{content:"→";position:absolute;right:-16px;top:45%;z-index:2;color:#ad7046;font-size:25px}.isr-steps b,.isr-steps span{display:block}.isr-steps span{margin-top:8px;line-height:1.7;color:#596b63}
 .isr-rmw{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.8fr);gap:24px;padding:38px 40px;background:#173a33;color:#eff8f3;border-radius:18px}.isr-rmw h3,.isr-rmw p{color:inherit}.isr-interleave{display:grid;gap:4px}.isr-interleave div{display:grid;grid-template-columns:95px 1fr;gap:12px;padding:12px 14px;background:rgba(255,255,255,.08)}.isr-interleave b{color:#ffd16b}
 .isr-chooser{padding:38px 40px;background:#f2f1e9;border-radius:18px}.isr-choice-row{display:grid;grid-template-columns:170px 1fr 1fr;gap:1px;background:#cbd3cc;margin-top:18px}.isr-choice-row>*{padding:15px 17px;background:#fff}.isr-choice-row b{background:#e7ede8}.isr-choice-row span{line-height:1.6}
+.article-grid:has(.pointer-course){grid-template-columns:minmax(0,1fr)}.article-grid:has(.pointer-course) .article-aside{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:static}
+.pointer-course{--ptr-ink:#17324a;--ptr-blue:#3978ad;--ptr-blue-soft:#e8f3fc;--ptr-orange:#e28b43;--ptr-orange-soft:#fff0dc;--ptr-green:#5c9b80;--ptr-purple:#806ca5;container-type:inline-size;display:grid;gap:28px;color:var(--ptr-ink)}
+.pointer-course h3{color:var(--ptr-ink);font-size:clamp(26px,2.45vw,40px);line-height:1.3}.pointer-course p{color:#465f70;line-height:1.9}.pointer-course code{color:#275e8b}.ptr-paper{position:relative;overflow:hidden;border:1px solid #cfdce5;border-radius:22px;background-color:#fbfdff;background-image:linear-gradient(#dfeaf2 1px,transparent 1px),linear-gradient(90deg,#dfeaf2 1px,transparent 1px);background-size:28px 28px;box-shadow:0 16px 34px rgba(46,85,111,.07)}
+.pointer-opening{display:grid;grid-template-columns:minmax(360px,.92fr) minmax(460px,1.08fr);gap:34px;align-items:center;padding:44px}.ptr-hero-copy{position:relative;z-index:1}.ptr-hero-copy h3{font-size:clamp(27px,2.2vw,36px)}.ptr-hero-icon{display:grid;place-items:center;width:74px;height:74px;margin-bottom:18px;border-radius:24px;background:var(--ptr-blue);box-shadow:0 12px 24px rgba(57,120,173,.23);transform:rotate(-4deg)}.ptr-hero-icon svg{width:43px;height:43px;fill:#fff;stroke:#fff;stroke-linejoin:round}.ptr-thesis{margin-top:20px;padding:16px 18px;border-left:5px solid var(--ptr-orange);background:rgba(255,255,255,.82);font-weight:650;color:#304e62!important}
+.ptr-board{position:relative;min-height:390px;padding:25px 25px 22px;border:1px solid #bfcfda;border-radius:18px;background:rgba(255,255,255,.92);box-shadow:0 15px 30px rgba(55,91,116,.1)}.ptr-code-line{display:flex;flex-wrap:wrap;gap:15px;align-items:center;padding:13px 16px;border-radius:11px;background:#17324a;color:#f4f8fb;font:700 15px/1.5 var(--mono)}.ptr-code-line i{font-style:normal;color:#83c4f0}.ptr-objects{display:grid;grid-template-columns:minmax(155px,1fr) 110px minmax(155px,1fr);gap:14px;align-items:center;margin-top:28px}.ptr-object{position:relative;padding:18px 16px 16px;border:2px solid var(--tone);border-radius:15px;background:#fff;box-shadow:0 8px 16px rgba(39,75,99,.08)}.ptr-object.pointer{--tone:var(--ptr-blue)}.ptr-object.value{--tone:var(--ptr-orange)}.ptr-object>header{display:flex;justify-content:space-between;gap:12px;align-items:center}.ptr-object>header b{font:800 24px/1 var(--mono);color:var(--tone)}.ptr-object>header span{font-size:12px;color:#6c8190}.ptr-object .ptr-stored{margin-top:16px;padding:13px 8px;border-radius:8px;background:color-mix(in srgb,var(--tone) 13%,white);text-align:center;font:800 17px/1.3 var(--mono);color:var(--tone)}.ptr-object small{display:block;margin-top:11px;color:#758894;font:11px/1.5 var(--mono)}.ptr-link{position:relative;height:72px}.ptr-link::before{content:"";position:absolute;left:4px;right:10px;top:34px;height:3px;border-radius:3px;background:var(--ptr-blue)}.ptr-link::after{content:"";position:absolute;right:1px;top:26px;border-left:14px solid var(--ptr-blue);border-block:9px solid transparent}.ptr-link b{position:absolute;left:50%;top:5px;transform:translateX(-50%);white-space:nowrap;color:var(--ptr-blue);font:800 12px var(--mono)}.ptr-board-note{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.ptr-board-note span{padding:12px 14px;border-radius:10px;background:#f1f6f9;color:#516b7c;font-size:13px;line-height:1.65}.ptr-board-note b{color:var(--ptr-ink)}
+.pointer-deref{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:center;padding:42px 44px;background:#fff;border:1px solid #d6e0e6;border-radius:22px}.pointer-deref h3{font-size:clamp(27px,2.2vw,36px)}.ptr-two-stars{display:grid;gap:14px;margin-top:22px}.ptr-star-line{display:grid;grid-template-columns:135px 1fr;gap:16px;align-items:start;padding:15px 17px;border-radius:12px;background:#f4f7f9}.ptr-star-line code{font:800 15px/1.6 var(--mono)}.ptr-star-line span{color:#526a79;line-height:1.7}.ptr-star-line b{color:var(--ptr-ink)}.ptr-write-scene{padding:25px;border-radius:18px;background:#f7fafc}.ptr-write-code{display:flex;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1px solid #cbd8e0;color:#6e8290;font:700 13px var(--mono)}.ptr-write-code strong{color:var(--ptr-orange)}.ptr-value-change{display:grid;grid-template-columns:1fr 80px 1fr;gap:15px;align-items:center;margin-top:24px}.ptr-state{padding:20px;border:2px solid #bfd0dc;border-radius:13px;background:white;text-align:center}.ptr-state b,.ptr-state span,.ptr-state small{display:block}.ptr-state b{font:800 18px var(--mono);color:var(--ptr-blue)}.ptr-state span{margin-top:12px;font:800 30px var(--mono);color:var(--ptr-orange)}.ptr-state small{margin-top:9px;color:#718592}.ptr-write-arrow{text-align:center;color:var(--ptr-orange);font:900 36px/1 var(--mono)}.ptr-write-arrow small{display:block;margin-top:8px;color:#728591;font:11px/1.4 var(--mono)}
+.pointer-stride{padding:42px 44px}.ptr-ruler{margin-top:25px;padding:25px 22px;border-radius:16px;background:rgba(255,255,255,.94)}.ptr-byte-addresses,.ptr-byte-cells{display:grid;grid-template-columns:repeat(8,1fr)}.ptr-byte-addresses span{text-align:center;color:#748a98;font:10px/1.4 var(--mono)}.ptr-byte-cells span{height:54px;border:1px solid #b9cbd7;border-right:0;background:#f9fcfe}.ptr-byte-cells span:first-child{border-radius:10px 0 0 10px}.ptr-byte-cells span:last-child{border-right:1px solid #b9cbd7;border-radius:0 10px 10px 0}.ptr-stride-row{display:grid;grid-template-columns:112px minmax(0,1fr) 175px;gap:16px;align-items:center;margin-top:18px}.ptr-stride-label b,.ptr-stride-label small{display:block}.ptr-stride-label b{font:800 14px var(--mono);color:var(--tone)}.ptr-stride-label small{margin-top:3px;color:#708491}.ptr-jump-track{position:relative;height:36px}.ptr-jump-track::before{content:"";position:absolute;left:3px;width:var(--jump);top:17px;height:3px;border-radius:2px;background:var(--tone)}.ptr-jump-track::after{content:"";position:absolute;left:calc(var(--jump) - 6px);top:10px;border-left:12px solid var(--tone);border-block:8px solid transparent}.ptr-jump-track i{position:absolute;left:0;top:4px;width:14px;height:27px;border:2px solid var(--tone);border-radius:5px;background:color-mix(in srgb,var(--tone) 18%,white)}.ptr-stride-result{color:#4d6676;font-size:13px;line-height:1.6}.ptr-stride-result code{font-weight:800;color:var(--tone)}
+.pointer-life{padding:42px 44px;background:#fff;border:1px solid #d6e0e6;border-radius:22px}.ptr-life-road{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:28px}.ptr-life-road::before{content:"";position:absolute;left:8%;right:8%;top:25px;height:3px;background:#c9d6df}.ptr-life-stop{position:relative;padding-top:58px}.ptr-life-stop::before{content:"";position:absolute;left:0;top:13px;width:27px;height:27px;border:7px solid white;border-radius:50%;background:var(--tone);box-shadow:0 0 0 2px var(--tone)}.ptr-life-stop b,.ptr-life-stop span{display:block}.ptr-life-stop b{color:var(--ptr-ink)}.ptr-life-stop span{margin-top:8px;color:#617684;font-size:13px;line-height:1.7}.ptr-life-code{margin-top:26px;padding:18px 20px;border-left:5px solid var(--ptr-orange);border-radius:8px;background:#fff7ea;color:#536975;line-height:1.8}.ptr-life-code code{font-weight:750}
+.pointer-double{display:grid;grid-template-columns:minmax(310px,.75fr) minmax(560px,1.25fr);gap:34px;align-items:center;padding:42px 44px}.ptr-chain{position:relative;display:grid;grid-template-columns:1fr 65px 1fr 65px 1fr;align-items:center;padding:28px 18px;border-radius:17px;background:rgba(255,255,255,.93)}.ptr-chain-object{padding:18px 10px;border:2px solid var(--tone);border-radius:13px;background:white;text-align:center}.ptr-chain-object b,.ptr-chain-object code,.ptr-chain-object small{display:block}.ptr-chain-object b{font:800 24px var(--mono);color:var(--tone)}.ptr-chain-object code{margin-top:11px;font:800 14px var(--mono);color:var(--tone)}.ptr-chain-object small{margin-top:10px;color:#728694;font:10px/1.5 var(--mono)}.ptr-chain-arrow{position:relative;height:3px;background:var(--ptr-blue)}.ptr-chain-arrow::after{content:"";position:absolute;right:-1px;top:-7px;border-left:11px solid var(--ptr-blue);border-block:8px solid transparent}.ptr-chain-arrow span{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);white-space:nowrap;color:var(--ptr-blue);font:800 10px var(--mono)}.ptr-chain-caption{grid-column:1/-1;margin-top:20px!important;text-align:center;color:#5a7180!important;font-size:13px}
+.pointer-finish{padding:40px 44px;background:#f7f3ea;border:1px solid #ddd4c4;border-radius:22px}.ptr-finish-grid{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(420px,1.1fr);gap:34px;margin-top:22px}.ptr-void-story,.ptr-safe-list{padding:24px;border-radius:15px;background:#fff}.ptr-void-story pre{margin:15px 0;padding:17px;border-radius:10px;background:#eef4f8;color:#24465c;white-space:pre-wrap;line-height:1.8}.ptr-safe-list ol{margin:12px 0 0;padding-left:22px;color:#4e6675;line-height:1.95}.ptr-safe-list b{color:var(--ptr-ink)}
+@media(max-width:980px){.pointer-opening,.pointer-deref,.pointer-double{grid-template-columns:1fr}.ptr-finish-grid{grid-template-columns:1fr}.ptr-life-road{grid-template-columns:1fr 1fr}.ptr-life-road::before{display:none}}
+@media(max-width:640px){.pointer-opening,.pointer-deref,.pointer-stride,.pointer-life,.pointer-double,.pointer-finish{padding:26px 20px}.ptr-objects{grid-template-columns:1fr 48px 1fr}.ptr-board{padding:17px}.ptr-board-note{grid-template-columns:1fr}.ptr-value-change{grid-template-columns:1fr}.ptr-write-arrow{transform:rotate(90deg)}.ptr-stride-row{grid-template-columns:88px 1fr}.ptr-stride-result{grid-column:1/-1}.ptr-life-road{grid-template-columns:1fr}.ptr-chain{grid-template-columns:1fr 34px 1fr 34px 1fr;padding:18px 8px}.ptr-chain-object{padding:13px 5px}.ptr-chain-object b{font-size:19px}}
+@container(max-width:900px){.pointer-opening,.pointer-deref,.pointer-double{grid-template-columns:1fr}.ptr-finish-grid{grid-template-columns:1fr}}
 @media(max-width:980px){.c-type-guide{grid-template-columns:1fr}.c-type-guide>section{grid-column:1!important;grid-row:auto!important}.c-type-guide>.c-course-summary{grid-template-columns:1fr}.c-expression-stage>section:nth-child(2){display:block}}
 .c-course-kicker{display:block;margin-bottom:10px;color:#b7623c;font:800 10px/1.3 var(--mono);letter-spacing:.15em;text-transform:uppercase}
 .c-course-opening{background:linear-gradient(140deg,#fffef9 0,#f1f6f0 100%)!important}
@@ -1092,13 +1105,9 @@ const chapters=[
     ])
   ]),
   B("c-pointers-arrays","第四部分：指针、数组与字符串","把地址、对象边界和生命周期放在一起理解。",[
-    B("c-pointer-core","指针模型","指针不是普通整数，它携带对象关联、类型、对齐与可访问边界。",[
-      F("c-pointer-model","指针指向对象，而不只是保存地址数字","指针值用于定位对象或函数；合法解引用还要求生命周期、类型、对齐和边界同时成立。",["&obj 取得对象地址，*p 访问所指对象。","指针类型决定步长和允许的访问类型。","悬空指针即使数值看似未变，也不再指向存活对象。","整数与指针转换具有实现边界。"],"每次解引用都问四件事：非空、存活、对齐、在对象范围内。","地址落在 RAM 区间并不能证明它是可按该类型访问的有效对象。",["c-null-pointer","c-pointer-arithmetic","c-ownership"],["cISO","cUB"],["一个非 NULL 指针为什么仍可能不能解引用？"]),
-      F("c-null-pointer","空指针与 NULL","空指针不指向任何对象或函数；空指针常量经转换得到对应指针类型的空值。",["NULL 可能定义为 0 或 ((void*)0) 等形式。","空指针的位模式不由语言保证全为零。","解引用空指针是未定义行为。","接口应明确参数是否允许为 NULL。"],"NULL 是语义上的“不指向对象”，不是必须等于全零字节。","memset(pointers,0,...) 在绝大多数常见平台有效，但语言层面不等价于逐个赋空指针的普遍保证。",["c-short-circuit","c-defensive-api"],["cISO","cUB"],["NULL、0 和 '\\0' 有什么区别？"]),
-      F("c-pointer-arithmetic","指针算术与同一数组边界","p+n 以所指类型为步长，只在同一数组对象及其 one-past 位置内有定义。",["one-past 可用于比较和循环结束，不能解引用。","两个指针相减要求来自同一数组对象，结果类型为 ptrdiff_t。","void* 的算术不是标准 C。","越界后再加回来也不自动恢复合法性。"],"指针算术的边界是数组对象，不是整块物理 RAM。","编译器扩展允许 void* 加减时，移植代码仍不应依赖。",["c-array-object","c-aliasing-alignment"],["cISO","cUB"],["为什么数组尾后指针合法但不能解引用？"]),
-      F("c-const-pointer","const 放在星号哪一边","const char *p 表示不能通过 p 修改字符；char * const p 表示 p 自身不能改指向。",["顶层 const 修饰指针对象本身。","底层 const 修饰所指类型。","从 T** 到 const T** 的转换不安全。","const 不保证对象永远不会被其他别名修改。"],"从变量名向外读声明，并分别判断“指针能否改”和“所指对象能否经此路径改”。","强转丢掉 const 后写入原本不可修改对象会产生严重问题。",["c-string-model","c-defensive-api"],["cISO"],["为什么 char ** 不能安全隐式转换为 const char **？"]),
-      F("c-void-pointer","void* 与通用对象指针","void* 可与对象指针相互转换，常用于分配器和泛型回调上下文。",["void* 不能直接解引用。","转换回去时必须恢复正确类型与对齐。","函数指针与 void* 的互转不由 ISO C 普遍保证。","malloc 返回的 void* 在 C 中不需要强制转换。"],"void* 擦除了静态类型，调用协议必须把类型信息补回来。","给 malloc 强转可能掩盖缺少 stdlib.h 导致的错误声明问题。",["c-malloc-family","c-callback"],["cISO"],["C 中为什么不建议强转 malloc 返回值？"])
-      ,F("c-restrict","restrict 与无别名承诺","restrict 是调用者对特定访问路径的无别名承诺，可帮助编译器优化 memcpy、DSP 和像素循环。",["它不是运行时检查，也不自动让指针独占。","同一执行期间若违反基于 restrict 的访问约定，行为可能未定义。","适合明确不重叠的输入/输出 buffer。","接口文档必须把不重叠条件写清。"],"restrict 是程序员交给优化器的证明，不是装饰性加速开关。","在可能原地处理或区域重叠的 API 上随意加 restrict 会把合法调用变成错误。",["c-memcpy-memmove","c-aliasing-alignment"],["cISO","cUB"],["restrict 与 const 分别承诺了什么？"])
+    B("c-pointer-core","指针模型","先理解一根指针何时能安全解引用，再讨论只读承诺。",[
+      F("c-pointer-model","指针指向对象，而不只是保存地址数字","指针值用于定位对象；合法解引用还要求非空、对象存活、没有越界，并且访问类型与权限正确。",["&obj 取得对象地址，*p 访问所指对象。","指针类型决定一次访问的宽度和 p+1 的步长。","NULL、野指针和悬空指针是三种不同的无效状态。","void* 只保存通用对象地址，使用时必须恢复真实类型。"],"每次解引用都问四件事：非空、存活、没有越界、访问方式正确。","地址落在 RAM 区间并不能证明它可以按任意类型访问。",["c-const-pointer","c-ownership"],["cISO","cUB"],["一个非 NULL 指针为什么仍可能不能解引用？","NULL、野指针和悬空指针分别是什么？","p+1 为什么不是地址简单加 1？","void* 有什么用，为什么不能直接解引用？"]),
+      F("c-const-pointer","const 放在星号哪一边","const char *p 表示不能通过 p 修改字符；char * const p 表示 p 自身不能改指向。",["顶层 const 修饰指针对象本身。","底层 const 修饰所指类型。","从 T** 到 const T** 的转换不安全。","const 不保证对象永远不会被其他别名修改。"],"从变量名向外读声明，并分别判断“指针能否改”和“所指对象能否经此路径改”。","强转丢掉 const 后写入原本不可修改对象会产生严重问题。",["c-string-model","c-defensive-api"],["cISO"],["为什么 char ** 不能安全隐式转换为 const char **？"])
     ]),
     B("c-array-string","数组与字符串","数组是对象；在大多数表达式中才转换为首元素指针。",[
       F("c-array-object","数组对象、元素与 sizeof","数组包含连续的同类型元素，长度属于数组类型的一部分。",["T a[N] 真正拥有 N 个 T 对象。","sizeof a 得到整个数组字节数，前提是此处 a 仍是数组表达式。","&a 类型是指向整个数组的指针。","数组不能整体赋值，但结构体中的数组随结构体一起复制。"],"数组拥有元素；指针只保存定位信息。","把数组传给函数后，在形参内部 sizeof 参数得到的是指针大小。",["c-array-decay","c-multidim-array"],["cISO"],["a、&a[0] 和 &a 数值可能相同，类型有什么不同？"]),
@@ -1106,7 +1115,6 @@ const chapters=[
       F("c-multidim-array","多维数组与行类型","int a[R][C] 是 R 个“含 C 个 int 的数组”组成的数组。",["a 衰变为 pointer to array[C] of int。","函数要正确步进到下一行，必须知道除第一维外的维度。","int** 与 int[R][C] 内存模型不同。","连续二维数组适合 cache/DMA；指针数组可让每行独立。"],"二维数组首先是“数组的数组”，不是二级指针。","把 int[3][4] 强转为 int** 解引用会按错误布局解释内存。",["c-array-decay","c-pointer-arithmetic"],["cISO"],["int ** 和 int (*)[4] 的本质区别是什么？"]),
       F("c-string-model","C 字符串是以零字符终止的 char 序列","语言没有独立 string 对象；库函数依赖可达的 '\\0' 终止符。",["char s[]=\"abc\" 创建可修改数组并含末尾零字符。","char *p=\"abc\" 指向字符串字面量，不能通过 p 修改。","strlen 不包含终止符，sizeof 数组包含整个数组。","二进制数据可能含 0，不能用字符串 API 处理。"],"字符串安全的第一前提是容量内存在终止符。","字符串字面量在 C 中类型历史上不是 const 数组，但修改它仍是未定义行为。",["c-string-safety","c-const-pointer"],["cISO","cUB"],["strlen(\"abc\") 与 sizeof(\"abc\") 分别是多少？"]),
       F("c-string-safety","字符串容量、长度与截断","安全接口必须同时知道目标容量、当前长度和所需写入量。",["snprintf 返回希望写入的字符数，可用于检测截断。","strncpy 可能不补终止符，也可能无谓填充大量零。","strncat 的 n 不是目标总容量。","解析外部输入时优先使用显式长度。"],"不要只问“最多复制多少”，还要证明终止符和剩余容量。","所谓 n 系列函数语义各不相同，不能仅凭名字当作安全版本。",["c-size-overflow","c-defensive-api"],["cCERT"],["strncpy 为什么不等于安全 strcpy？"]),
-      F("c-aliasing-alignment","别名规则、有效类型与对齐","通过不兼容类型指针访问对象可能违反别名规则；未对齐指针即使地址可读也可能 UB 或 Fault。",["字符类型可用于观察对象表示。","memcpy 是在对象表示之间搬运字节的标准工具。","网络包字段不要直接把 uint8_t* 强转为 uint32_t*。","编译器可基于别名规则重排或消除访问。"],"解析字节流时用 memcpy 或逐字节组合，再处理端序。","关闭优化后正常不代表类型双关合法。",["c-object-representation","c-memcpy-memmove","c-endianness"],["cISO","cUB"],["为什么 *(uint32_t*)&buf[1] 同时可能违反对齐和别名规则？"])
     ])
   ]),
   B("c-functions","第五部分：函数、接口与回调","C 只有值传递；抽象能力来自清晰契约、指针与函数指针。",[
@@ -1864,7 +1872,7 @@ cChapter.children=[
     B("c-value-evaluation","表达式与控制流","再确定值如何计算、分组和推进。",cLeafList("c-operator-precedence","c-sequencing","c-short-circuit","c-ub","c-control-flow","c-switch-flow","c-loops"))
   ]),
   B("c-road-addresses","画进内存：指针、数组与字符串","把每次解引用都落到对象、边界、对齐和生命周期。",[
-    B("c-address-pointer","指针合同","地址数字之外还有对象边界。",cLeafList("c-pointer-model","c-null-pointer","c-pointer-arithmetic","c-const-pointer","c-void-pointer","c-restrict","c-aliasing-alignment")),
+    B("c-address-pointer","指针合同","先理解一根指针何时能安全解引用，再讨论只读承诺。",cLeafList("c-pointer-model","c-const-pointer")),
     B("c-address-array-string","数组与字符串","从连续对象走到零终止字符序列。",[...cLeafList("c-array-object","c-array-decay","c-multidim-array","c-string-model"),cSizeofStrlen,...cLeafList("c-string-safety","c-implement-strlen","c-implement-memmove")])
   ]),
   B("c-road-calls-layout","装成程序：函数调用与复合对象","函数负责交接控制和数据，结构体负责把多个对象组织在一起。",[
@@ -2251,8 +2259,7 @@ const contentCompactionGroups={
   "c-signed-unsigned":["c-promotions","c-conversions"],
   "c-sequencing":["c-operator-precedence","c-short-circuit","c-ub"],
   "c-control-flow":["c-switch-flow","c-loops"],
-  "c-pointer-model":["c-null-pointer"],
-  "c-aliasing-alignment":["c-restrict"],
+  "c-pointer-model":["c-null-pointer","c-pointer-arithmetic","c-void-pointer","c-aliasing-alignment","c-restrict"],
   "c-array-decay":["c-array-object"],
   "c-string-model":["c-string-safety"],
   "c-memcpy-memmove":["c-implement-memmove"],
@@ -2455,6 +2462,20 @@ const cLifetimeMeta={
 };
 Object.entries(cLifetimeMeta).forEach(([id,meta])=>{if(allSourceNodes[id])Object.assign(allSourceNodes[id],meta)});
 
+/* C 第三批重构：把指针、数组和字符串恢复成三堂前后衔接的课程。 */
+const cAddressMeta={
+  "c-pointer-model":{
+    title:"指针：地址、指向关系与解引用",
+    summary:"从 p 指向 a 的第一根箭头开始，依次看懂取地址、解引用、类型步长、失效指针和二级指针。",
+    points:["指针变量本身也占内存，它保存的是另一个对象的地址。","声明中的 * 说明变量类型，表达式中的 * 沿地址访问对象。","指针类型决定解引用的访问宽度，也决定 p+1 跨过多少字节。","二级指针保存另一根指针的地址，常用于修改调用者的指针。"],
+    remember:"先把 p、p 保存的地址和 p 指向的对象画成三个不同概念；每次解引用前再检查指向、生命周期、范围和权限。",
+    correction:"非 NULL 只说明地址数值不是零；野指针、悬空指针和越界指针同样可能非零，却不能安全解引用。",
+    interview:["指针和指针变量有什么区别？","声明中的 * 与表达式中的 * 分别表示什么？","p+1 为什么与指针类型有关？","二级指针为什么能修改调用者手里的指针？"]
+  },
+
+};
+Object.entries(cAddressMeta).forEach(([id,meta])=>{if(allSourceNodes[id])Object.assign(allSourceNodes[id],meta)});
+
 /* 内存是嵌入式主干，补齐从映像、分配到可见性与零拷贝的中间台阶。 */
 const memoryCoreBranch=B("memory-core-map","程序映像与运行时内存","先回答数据从哪里来、被放到哪里、由谁管理，再讨论速度。",[
   F("memory-mcu-map","MCU 地址空间全景：Flash、SRAM、TCM 与外设窗口","同一个 32 位地址只是门牌号；真正响应它的可能是片上 Flash、某组 SRAM、TCM、外部存储器或外设寄存器。",["链接脚本决定程序对象的初始落点。","总线矩阵和地址译码决定一次访问最终去向。","TCM 强调低延迟与确定性，Cacheable SRAM 强调平均性能。","外设窗口通常具有 Device memory 语义，不能套用普通 RAM 的访问假设。"],"看地址先问区域属性，再问速度；不要只凭数值大小猜介质。","地址图和容量完全由具体芯片决定，本页给出分析方法而非虚构一张通用芯片图。",["ram-address","arm-memory-types"],["armM7"],["为什么同一个 CPU load 指令访问 SRAM 和外设会表现不同？","TCM 与带 Cache 的 SRAM 各自适合什么数据？"]),
@@ -2564,7 +2585,7 @@ const networkChapter={id:"network",index:"07",title:"网络通信：从数据包
 finalChapters.splice(0,finalChapters.length,cChapter,algorithmChapter,armChapter,memoryChapter,communicationChapter,freeRTOSChapter,networkChapter,fatfsChapter,lvglChapter);
 
 const compactKeep={
-  c:new Set(["c-language-elements","c-declarators","c-typedef","c-preprocessor","c-translation-phases","c-object-link","c-decl-definition","c-integer-types","c-signed-unsigned","c-float","c-sequencing","c-control-flow","c-pointer-model","c-pointer-arithmetic","c-const-pointer","c-void-pointer","c-aliasing-alignment","c-array-decay","c-multidim-array","c-string-model","c-sizeof-strlen","c-implement-strlen","c-pass-by-value","c-function-pointer","c-callback","c-function-call-stack","c-struct-layout","c-padding-alignment","c-bitfields","c-storage-duration","c-malloc-family","c-ownership","c-memcpy-memmove","c-memory-bugs","c-macro-rules","c-header-design","c-error-handling","c-build-warnings","c-reentrancy","c-volatile","c-mmio","c-bit-operations","c-serialization","c-isr-sharing"]),
+  c:new Set(["c-language-elements","c-declarators","c-typedef","c-preprocessor","c-translation-phases","c-object-link","c-decl-definition","c-integer-types","c-signed-unsigned","c-float","c-sequencing","c-control-flow","c-pointer-model","c-const-pointer","c-array-decay","c-multidim-array","c-string-model","c-sizeof-strlen","c-implement-strlen","c-pass-by-value","c-function-pointer","c-callback","c-function-call-stack","c-struct-layout","c-padding-alignment","c-bitfields","c-storage-duration","c-malloc-family","c-ownership","c-memcpy-memmove","c-memory-bugs","c-macro-rules","c-header-design","c-error-handling","c-build-warnings","c-reentrancy","c-volatile","c-mmio","c-bit-operations","c-serialization","c-isr-sharing"]),
   algorithms:new Set(["cpp-container-map","cpp-vector-string","cpp-stack-queue","cpp-ordered-map-set","cpp-unordered-map-set","cpp-priority-queue","cpp-iterators-algorithms","cpp-invalidation","algo-complexity","algo-invariant","algo-array","c-linked-list","algo-stack","algo-queue-two-stacks","c-ring-buffer","algo-prefix-sum","algo-two-pointers","algo-sliding-window","algo-monotonic-stack","algo-binary-search","algo-sort","algo-hash","algo-heap","algo-tree-traversal","algo-graph","algo-trie","algo-lru","algo-backtracking","algo-dp","algo-greedy","hot100-overview","hot100-code-clinic"]),
   armarch:new Set(["arm-architecture-core","profiles","isa-states","arm-compile-target","arm-fpu-abi","arm-registers","thread","arm-endianness","load-store-model","condition-flags","branch-call","arm-unaligned","arm-exclusive","arm-barriers","aapcs32","parameter-return","function-call-return","arm-memory-types","arm-mpu-mmu-sau","vector-reset","cmsis-layer","arm-nvic-overview","arm-pipeline-performance","msp","exception-entry","hardfault"]),
   memory:new Set(["memory-mcu-map","memory-vma-lma","memory-stack-heap","memory-allocator-inside","memory-jpeg-arena-case","memory-cache-line","memory-cache-policy","memory-dma-cache-case","memory-zero-copy","ram-address","linker-map","allocator-boundaries","draw-buffer","buffer-ownership","dcache","mpu","master-slave","axi-ahb-apb","bandwidth","efficiency","latency","arbitration","dma-stream"]),
@@ -3964,11 +3985,6 @@ void app_run(void) { counter_inc(); }
    每个包含者都可能带来一个外部定义。 */`},
     sections:[["static 为什么总让人混乱","文件作用域 static 改变名字的链接属性，使实体只在当前翻译单元配对；函数内部 static 主要改变对象的存储期，名字仍只在块内可见。它们不是同一句“放在静态区”可以解释完的。"],["如何读链接错误","undefined reference 先查目标文件是否参与链接、库顺序/提取条件和符号拼写；multiple definition 先查头文件是否放了普通定义、同一源是否被构建两次，或多个模块是否都提供了同名强符号。"]]
   },
-  "c-pointer-model":{
-    intro:["嵌入式工程很容易把指针简化成“地址变量”，但语言允许解引用的条件更多：它必须指向仍在生命周期内的对象，地址满足目标类型对齐，访问没有越过对象边界，并且所用 lvalue 类型符合访问规则。","MMIO 是经实现与芯片平台定义的特殊地址访问；普通 RAM 中一个数值落在合法区间，不会自动创造对应 C 对象。"],
-    table:[["检查","典型失败","症状"],["是否指向对象","NULL、任意整数地址","HardFault/UB"],["生命周期","返回局部地址、free 后使用","偶发数据错/UAF"],["边界","one-past 解引用、长度错误","邻接对象破坏"],["对齐","buf+1 强转 uint32_t*","UsageFault/性能下降"],["访问类型","不兼容类型双关","优化后结果变化"]],
-    sections:[["画图定位法","画出对象矩形、起止地址、指针位置和生命周期时间轴。只要图上跨出矩形或越过结束时刻，就不再是合法访问。"]]
-  },
   "c-array-decay":{
     intro:["数组与指针关系应回答成“数组在多数表达式中转换为首元素指针”，而不是“数组就是指针”。数组对象拥有 N 个连续元素，长度属于数组类型；指针对象只保存一个定位值。","函数形参中的 T a[] 会调整为 T *a，因此被调函数不能从该形参恢复调用者数组长度。"],
     code:{title:"把数组边界作为接口的一部分",meta:"C · 指针 + 元素数量",text:`static bool sum_i16(const int16_t *items,
@@ -4379,21 +4395,6 @@ bool record_equal(const Record *a, const Record *b)
 /* 不用 memcmp(a, b, sizeof *a) 定义业务相等；
    不用 memcpy(wire, a, sizeof *a) 定义线路格式。 */`},
     table:[["内容","属于对象表示吗","可否当稳定协议"],["命名成员的值字节","是","只有显式规定端序/编码后才可"],["内部 padding","是","否"],["尾部 padding","是","否"],["指针位模式","是","不可跨进程/设备直接传"],["uint8_t 字节字段","是","仍需规定字段顺序与含义"]]
-  },
-  "c-aliasing-alignment":{
-    intro:["把一串字节强转成 T* 然后解引用，至少要同时回答三件事：地址是否满足 _Alignof(T)，那片存储里是否存在可按 T 访问的对象/有效类型，字节序与表示是否符合目标值。只回答“Cortex‑M 支持非对齐”远远不够，因为语言层契约已经可能先被破坏。","编译器利用别名规则假设某些不同类型指针不会同时指向同一对象，从而把加载缓存到寄存器或重排访问。违反规则后，-O0 看似正确而 -O2 改变结果，是优化器兑现语言许可，不是它随意改坏代码。"],
-    sections:[["char 访问的特殊地位","字符类型可查看对象表示字节，因此解析/复制原始数据常以 uint8_t 或 unsigned char 进行；反方向把任意字节解释成复杂类型仍需建立有效对象与表示合同。"],["memcpy 是常用桥梁","从未对齐 wire buffer 拷到一个真正对齐的本地整数对象，再做端序转换，能避免直接错位解引用；编译器常把固定大小 memcpy 优化成合适的加载序列。"],["packed 只改变布局，不自动安全","packed 可能让成员地址不满足自然对齐。直接把 &pkt.value 传给要求 uint32_t* 的函数仍危险；应按字节读写或拷到对齐临时对象。"]],
-    code:{title:"从未对齐 little-endian 字节中读取 u32",meta:"C · byte-wise parse",text:`bool read_le32(const uint8_t *buf, size_t len, uint32_t *out)
-{
-    if (buf == NULL || out == NULL || len < 4) return false;
-
-    *out = ((uint32_t)buf[0]      ) |
-           ((uint32_t)buf[1] <<  8) |
-           ((uint32_t)buf[2] << 16) |
-           ((uint32_t)buf[3] << 24);
-    return true;
-}`},
-    table:[["检查门","要问什么","失败后果"],["Bounds","至少还有 sizeof(T) 字节吗？","越界"],["Alignment","地址是 _Alignof(T) 的倍数吗？","UB / Fault / 慢访问"],["Object / effective type","允许经 T 左值访问吗？","严格别名 UB"],["Representation","端序、宽度、非法编码正确吗？","数值误解"],["Concurrency","别的执行者会同时改吗？","数据竞争/撕裂"]]
   },
   "c-struct-layout":{
     intro:["结构体保证成员按声明顺序拥有递增地址，但不保证紧挨。每个成员前可插入内部 padding，使其 offset 满足实现/ABI 的对齐；最后还可补尾部 padding，使结构体数组中下一个元素的严格成员仍对齐。","整体赋值 s2=s1 会按成员值语义复制结构体；实现可以搬整块字节，也可以逐成员。padding 的具体字节仍不应被拿来做业务相等、持久化或线路格式。"],
@@ -4877,11 +4878,6 @@ const IntPtr fixed_pointer = 0;       /* int * const */`},
     sections:[["递归栈预算","最大深度×每层最坏 frame 只是起点，还要加被调用函数、异常帧与 FPU 上下文。优化可能改变尾调用，但不能把安全押在“编译器应该优化”。"],["inline 过度","展开会增大代码、伤 I-cache/Flash，调试栈也更难读。测热点，不用关键字替代性能证据。"],["static helper","文件内 helper 用 static 建立内部链接，与函数内 static 对象的共享生命周期不是一回事。"]],
     table:[["概念","真正含义","误区"],["recursion","函数调用链再次进入自身","一定无限/一定禁止"],["bounded recursion","深度由可信上限约束","只测平均深度"],["inline specifier","影响内联/链接语义","强制展开"],["static inline in header","每 TU 内部链接定义","所有调用一定无函数体"],["file static function","模块私有符号","对象具有某种特殊栈期"]]
   },
-  "c-void-pointer":{
-    intro:["`void*` 是通用对象指针容器：标准 C 允许对象指针与 void* 往返转换并恢复相等的原对象指针。它没有所指元素大小，不能直接解引用；标准 C 也不允许普通 void* 算术，编译器扩展把它当 byte pointer 不是可移植合同。","void* 不携带运行时类型。通用容器、回调 context 和 allocator 必须另有类型/大小/生命周期协议；把错误对象地址强转成目标类型只会让编译器停止提醒，不会让对象变成那个类型。"],
-    sections:[["对象指针与函数指针","二者不是标准 C 保证可经 void* 无损互转的一类。插件/符号 API 的转换属于平台 ABI 约定，不能推广到所有目标。"],["const","接收只读任意对象用 `const void*`；把 const 丢掉后修改原本只读对象仍可能 UB/Fault。"],["算术","要按字节移动，先转 `unsigned char*`/`uint8_t*`；要按 T 元素移动，恢复为 T* 并满足对象边界与对齐。"]],
-    table:[["操作","标准语义","前置条件"],["T* → void* → T*","恢复相等对象指针","原对象仍存活"],["*void_ptr","不允许","先恢复具体类型"],["void_ptr + n","标准 C 不允许","转字符指针做字节算术"],["void* ↔ function pointer","不通用保证","依平台 API/ABI"],["memcpy(void*,const void*,n)","按字节复制","对象容量与重叠规则"]]
-  },
   "c-memory-bugs":{
     intro:["泄漏是 owner 永远丢失但对象仍占资源；越界是访问超出对象；UAF 是生命周期结束后继续访问；double free 是把同一分配所有权结束两次。它们常在甲处发生、乙处才崩，因为被破坏的可能是邻接对象、allocator 元数据或稍后才遍历的链表。","调试第一原则是让症状靠近根因：主机 sanitizer、目标 MPU guard、canary、watchpoint、对象状态与 owner 迁移日志。仅在最终 HardFault PC 附近加空指针检查，往往只是在伤口上贴标签。"],
     sections:[["use-after-return","属于生命周期错误的一种，即使地址字节没变也非法；日志改变栈布局常让症状移动。"],["double free","第一次 free 后所有别名都失效；把一个局部指针置 NULL 不能同步清除其他别名。根治靠唯一 owner/引用协议。"],["heap corruption","越界写可能破坏下一个块 header，直到后续 malloc/free 才爆；应保存更早写入时间线。"]],
@@ -4911,13 +4907,7 @@ PERIPH->CTRL = v;
     intro:["memcpy 与 memmove 都按字符字节复制 n 个字节；区别只有重叠合同。memcpy 要求源、目标不重叠，违反后行为未定义，库可以使用任意宽搬运和顺序；memmove 必须像先经过临时数组一样正确处理重叠。","memset 与 memcmp 也只看字节：memset 把每个目标字节写成同一个 unsigned char 值；memcmp 按 unsigned char 逐字典序比较，只保证返回值的正、零、负。四个函数都不知道数组元素个数、结构体字段和业务所有权。"],
     sections:[["n 的单位永远是字节","复制 count 个 T 应写 `count * sizeof *ptr` 并先检查乘法；若参数已经退化为指针，`sizeof ptr` 只得到指针大小。源至少可读 n 字节，目标至少可写 n 字节。"],["memset 的 0x01 陷阱","`memset(a, 1, sizeof a)` 把每个 byte 写成 0x01，int 常变成 0x01010101，而不是数值 1。全零字节通常适合无符号整数和普通字节缓冲；空指针、浮点零及含 padding 的复杂对象仍应按类型/平台合同判断。"],["memcmp 不是万能相等","结构体 padding 可能未确定，浮点有多个表示，逻辑相等也不等于对象表示相同；密码摘要还需要 constant-time 比较，普通 memcmp 可能在首个差异处提前返回。"],["对象与所有权","复制 object representation 不执行深拷贝。结构体里的指针只复制地址，两个对象仍指向同一资源；锁、硬件句柄和含内部指针对象也不能靠字节复制获得独立副本。"],["volatile/MMIO 与安全擦除","标准库 mem* 不适合有副作用或规定访问宽度的 MMIO。普通 memset 清秘密还可能被优化掉，应使用实现提供的安全擦除接口并核对其保证。"]],
     table:[["函数","核心合同","最常见误用"],["memcpy(dst,src,n)","区域不重叠；复制 n 字节","重叠、容量不足、把结构体当 wire format"],["memmove(dst,src,n)","允许重叠；结果等价临时副本","误以为会深拷贝或返回完成量"],["memset(dst,c,n)","每个字节写 (unsigned char)c","给 int 数组设为 1、无条件构造任意类型零值"],["memcmp(a,b,n)","按 unsigned byte 比较；只用结果符号","比较含 padding 的结构体、当 constant-time 安全比较"],["共同边界","长度是字节，地址范围有效","MMIO、已释放对象、溢出的 n"]]
-  },
-  "c-pointer-arithmetic":{
-    intro:["`p+n` 的单位是 `sizeof *p` 个字节，并且只有在同一数组对象（单对象可视为长度 1 数组）的元素范围及 one-past 位置内才有定义。one-past 是合法的边界哨兵，可比较、可减回去，但不能解引用。","两个指针相减也要求属于同一数组对象，结果类型是 ptrdiff_t，单位是元素数。把两个任意内存地址做减法/大小比较属于平台实现层技巧，不是纯 ISO C 通用算法。"],
-    sections:[["溢出在形成指针时就发生","不是只有解引用越界才危险；形成超出允许范围的指针表达式本身就可能 UB。解析器更适合维护 size_t offset/remaining，验证后再形成地址。"],["数组 decay","数组在多数表达式中变成首元素指针，类型不再携带长度；函数参数 `T a[]` 也调整为 T*，必须另传 count。"],["字节算术","以 unsigned char* 操作 object representation；void* 算术是常见扩展，不是标准 C。"]],
-    table:[["操作","合法范围/结果","边界"],["p+n","同一数组 [first, one-past]","one-past 不可 *"],["p-q","同一数组","结果 ptrdiff_t 元素数"],["p<q","同一数组排序","任意对象间不通用"],["uint8_t* + n","n 字节步长","仍受同一对象边界"],["T* + 1","sizeof(T) 字节步长","T 必须是完整对象类型"]]
-  }
-});
+  },});
 Object.assign(deepLessons,{
   "fr-priorities":{
     intro:["FreeRTOS 的数字越大通常代表任务逻辑优先级越高，0 留给最低优先级/Idle 级别；它与 Cortex‑M NVIC “数值越小逻辑越高”正好相反。任务 priority、ISR priority、DMA priority、bus QoS 必须在图上分成四列，不能拿一个数字横向比较。","优先级表达业务 deadline 与阻塞关系，不是“这个任务重要所以设最高”。高优先级任务若不阻塞，会让所有低优先级任务饥饿；过多层级又让分析复杂。先按响应期限分组，再用 trace 验证最坏响应。"],
@@ -5314,13 +5304,6 @@ const cBranchDepth={
   }
 };
 const cExamples={
-  "c-pointer-arithmetic":{title:"用 end 指针表达半开区间 [begin, end)",meta:"C · end 合法比较但不可解引用",text:`uint8_t *p = buffer;
-uint8_t *end = buffer + length;
-
-while (p != end) {
-    consume(*p);       /* 此处先由 p != end 证明可解引用 */
-    ++p;
-}`},
   "c-array-decay":{title:"数组长度必须在调用边界显式携带",meta:"C · 形参中的 a[] 会调整为指针",text:`#define ARRAY_LEN(a) (sizeof(a) / sizeof((a)[0]))
 
 void process(const uint16_t *data, size_t count);
@@ -5382,7 +5365,7 @@ size_t widget_size(const Widget *w);
     r->head = next;
     return true;
 }
-/* 空：head == tail；可用容量为 capacity - 1。 */`},};
+/* 空：head == tail；可用容量为 capacity - 1。 */`},};
 const domainDepth={
   "arm-taxonomy":{title:"ARM 名词必须先归层",thesis:"架构定义软件可见契约，处理器实现微架构，芯片再集成存储与外设；工具链目标同时受三层约束。",chain:[
     ["架构","说明 ISA、寄存器、异常和内存模型；Armv7E‑M 不是一颗实体芯片。"],
@@ -6017,7 +6000,7 @@ const domainRuleSheets={
     ["标定/缩放","若范围不同，用足够宽的整数计算并明确舍入；先减 offset，再按有效 span 缩放。"],
     ["旋转","例如对已归一化 W×H 坐标做顺时针 90°：x'=H−1−y，y'=x，新尺寸为 H×W。"],
     ["只做一次","若 LVGL display rotation 已自动变换 indev，则驱动不要再次旋转；用四角与中心五点验证。"]
-  ]},};
+  ]},};
 const domainExamples={
   "fat-chain-table":{title:"手工追一条 FAT32 簇链",meta:"伪代码 · 省略窗口加载与错误码细节",text:`cluster = dir_entry_first_cluster;
 steps = 0;
@@ -6325,7 +6308,7 @@ y2 = x;
 (0,H-1)     → (0,0)
 (W-1,H-1)   → (0,W-1)
 
-若显示层已旋转输入，驱动不要再套同一变换。`},};
+若显示层已旋转输入，驱动不要再套同一变换。`},};
 Object.assign(deepLessons,{
   "cpp-container-map":{
     intro:["刷题时最浪费脑力的事情之一，是每道题都重新纠结“这里到底该用哪个容器”。解决办法不是背完 STL，而是把选择压缩成几个访问问题：要不要下标？从哪一端取？按 key 还是按顺序找？是否需要反复拿极值？","Hot100 本地源码里 vector 是绝对主力，但它不是万能答案。队列、哈希表、堆与链表的价值，恰好都来自它们把某种高频操作从 O(n) 降到了 O(1) 或 O(log n)。"],
@@ -8055,7 +8038,7 @@ const domainQAs={
     {q:"LVGL 的 read_cb 应返回硬件中断事件，还是当前输入状态？",direct:"应返回当前标准化状态；例如 pointer indev 给出当前 point 与 PRESSED/RELEASED。硬件中断只是驱动更新该状态的一种触发。",support:["无新中断不一定等于 RELEASED。","驱动层负责把离散帧、边沿或平台事件整理成连续状态机。"],boundary:"不同 indev 类型的数据字段和 continue_reading 语义以所用 LVGL 版本文档为准。"},
     {q:"坐标数值正确，为什么控件仍收不到 CLICKED？",direct:"事件链还要通过按压状态、显示旋转、对象命中、可点击 flag、裁剪/层级，以及按下到释放的时间与移动阈值。",support:["同时记录 raw point、变换后 point、indev state、命中对象和事件码。","检查 top/system layer 是否存在吸收输入的可点击对象。"],boundary:"CLICKED 是由完整 press/release 交互派生的事件，不等同于任意一次坐标采样。"}
   ],
-  "coordinate-transform":[{q:"顺时针旋转 90° 为什么要出现 H−1？",direct:"离散像素坐标从 0 开始，原 y=0 应映射到输出最右列 x'=H−1，而不是 H。",support:["公式 x'=H−1−y，y'=x。","旋转后输出尺寸由 W×H 变为 H×W。"],boundary:"公式假设坐标已归一化且原点在左上；镜像/安装方向不同要重新定义。"}],};
+  "coordinate-transform":[{q:"顺时针旋转 90° 为什么要出现 H−1？",direct:"离散像素坐标从 0 开始，原 y=0 应映射到输出最右列 x'=H−1，而不是 H。",support:["公式 x'=H−1−y，y'=x。","旋转后输出尺寸由 W×H 变为 H×W。"],boundary:"公式假设坐标已归一化且原点在左上；镜像/安装方向不同要重新定义。"}],};
 Object.assign(domainQAs,{
   "uart-frame":[
     {q:"8N1 在理想连续发送时的字节效率是多少？",direct:"80%。每个 payload 字节有 8 个有效数据位，线上还要付 1 个 Start 和 1 个 Stop，共 10 bit，所以效率是 8/10。",support:["115200 baud 的理想上限约为 11520 B/s。","若再加业务头、长度、CRC、转义与帧间 gap，有效 payload 吞吐会继续降低。"],boundary:"baud 在二进制 UART 中通常等于每秒符号/bit 数，但带调制的其他系统不能把 baud 一概等同 bit/s。"},
@@ -8157,10 +8140,6 @@ Object.assign(domainQAs,{
   "c-object-representation":[
     {q:"两个结构体成员值完全相同，memcmp 为什么仍可能不为 0？",direct:"padding 字节可能具有不同的不确定内容；它们属于对象表示但不属于成员值。",support:["逐成员比较业务字段。","初始化/赋值不保证所有 padding 形成稳定相同字节。"],boundary:"若目标 ABI 明确且你主动规范化全部字节，可形成项目私有格式，但这不是通用 C 结构体语义。"},
     {q:"能否把结构体整体 CRC 当作持久化校验？",direct:"不宜。CRC 会覆盖 padding、端序和实现相关表示，换编译器/ABI 后同一业务值可能产生不同字节。",support:["逐字段序列化到固定 wire/storage format。","CRC 覆盖序列化结果。"],boundary:"仅用于同一构建内部短期内存诊断也要先处理未初始化 padding。"}
-  ],
-  "c-aliasing-alignment":[
-    {q:"Cortex‑M 支持非对齐访问，为什么 `*(uint32_t *)&buf[1]` 仍可能错？",direct:"硬件能力只覆盖一部分：C 还要求指针对齐契约、合法对象/有效类型、边界和正确表示；某些指令/内存类型也仍不支持非对齐。",support:["可逐字节恢复数值。","或 memcpy 到对齐的本地 uint32_t 后转换端序。"],boundary:"packed、强转或关闭 UNALIGN_TRP 都不能自动修复严格别名与对象生命周期。"},
-    {q:"用 memcpy 读取 4 字节会不会很慢？",direct:"固定小尺寸 memcpy 常被编译器内联成适合目标对齐能力的加载序列；应先保证语义，再检查反汇编和测量。",support:["编译器知道目标架构。","逐字节代码也可能被合并优化。"],boundary:"MMIO 或 volatile 源不是普通内存 memcpy 场景。"}
   ],
   "c-serialization":[
     {q:"为什么不能直接 `memcpy(tx, &packet, sizeof packet)`？",direct:"它发送本机结构体表示，包含可能的 padding、端序、enum/指针宽度和 ABI 布局，协议会随构建变化。",support:["逐字段规定宽度、顺序与端序。","长度和版本必须显式验证。"],boundary:"若双方严格固定同一 ABI 的封闭系统也应把该假设写入版本合同，而不是默认长期成立。"},
@@ -9021,7 +9000,7 @@ const algorithmGuides={
     ["minPrice","股票摘要","历史最低价格是今天卖出的最佳买入候选。","O(n)","先更新利润/最低价语义"],
     ["Kadane","最大子数组","若旧前缀只会拖累当前，就从当前重新开始。","O(n)","全负数组不能默认 0"],
     ["counterexample","反例检查","尝试构造局部最优导致全局失败的输入。","验证步骤","找到反例就换 DP/搜索"]
-  ],trace:[["CANDIDATE","找对未来最有利的局部摘要"],["COMMIT","选择后仍保持可行"],["EXCHANGE","证明最优解可包含它"],["DISCARD","才有资格丢弃其余历史"]]},};
+  ],trace:[["CANDIDATE","找对未来最有利的局部摘要"],["COMMIT","选择后仍保持可行"],["EXCHANGE","证明最优解可包含它"],["DISCARD","才有资格丢弃其余历史"]]},};
 /* 这一组页服务于“会写 C、用 C++ 刷题”的读者：先翻译返回值和下一行写法，再给正式术语。 */
 const cppCBridges={
   "cpp-container-map":{title:"先别背容器名：把它们换成你熟悉的数据盒子",intro:"对刷题来说，选择容器只看数据怎样放、最常怎样取。类模板的实现细节先放下。",rows:[
@@ -9254,12 +9233,6 @@ const lessonEssays={
 };
 
 const canonicalStudies={
-  "c-pointer-model":{kind:"OBJECT MODEL",title:"指针不是任意地址计算器：合法性来自对象、元素与生命周期",lead:"机器只看到地址位模式，C 抽象机还追踪它指向哪个对象、是否在对象生命周期内、能否按目标类型访问。很多在汇编层‘能发出 load’的表达式，在 C 层已经没有定义。",steps:[
-    ["先确定对象","`int a[4]` 是一个数组对象，内部含 4 个连续 int 元素；`&a[0]` 到 `&a[3]` 指向真实元素。"],
-    ["允许 one-past","`a + 4` 可形成并用于比较、循环终止或减法，但它不指向元素，所以不能解引用。"],
-    ["算术按元素缩放","`p + 1` 前进 `sizeof *p` 字节。两个指针相减只有在同一数组对象（含 one-past）中才有定义，结果类型是 ptrdiff_t。"],
-    ["访问还要满足三份合同","对象仍活着、地址满足对齐、访问类型满足别名/有效类型规则；只有数值落在 RAM 范围远远不够。"]
-  ],example:{code:`int a[4] = {10,20,30,40};\nint *begin = a;\nint *end   = a + 4;      /* 可形成 */\n\nfor (int *p = begin; p != end; ++p)\n    use(*p);             /* p 只在真实元素上解引用 */\n\n/* *end;                 错：one-past 不可解引用 */`,title:"循环为什么把 end 放在最后一个元素之后",copy:"半开区间 [begin,end) 让空区间、长度 `end-begin` 和循环终止统一起来。one-past 是合法边界哨兵，不是偷偷多出来的元素。"},danger:"整数加法拼出一个地址，或把 void* 强转成结构体指针，并不会自动获得对象、对齐和生命周期合法性。",verify:"让 AddressSanitizer/UBSan 在主机测试解析器和数组算法；嵌入式端结合 MPU guard、Fault 地址和编译器对齐告警。"},
   "c-padding-alignment":{kind:"BYTE RULER",title:"结构体对齐的完整计算：对齐成员、推进偏移、最后补齐数组步长",lead:"结构体大小不是成员 sizeof 相加。实现必须让每个成员在满足自身对齐要求的位置开始，还要让结构体数组中的下一个元素继续满足相同条件。",steps:[
     ["取得每个成员的要求","令成员 i 的大小为 Sᵢ、对齐为 Aᵢ。标准保证成员声明顺序不倒置，但具体 Aᵢ、尾部 padding 和扩展属性由实现/ABI 决定。"],
     ["对齐当前偏移","成员偏移 `Oᵢ = align_up(current, Aᵢ)`；`Oᵢ-current` 就是它前面的内部 padding。"],
@@ -9502,14 +9475,26 @@ function renderCFoundationCourse(id){
   if(id==="c-control-flow")return renderControlFlowCourse();
   return "";
 }
-const cSecondIds=new Set(["c-storage-duration","c-const-pointer","c-volatile","c-isr-sharing"]);
+const cSecondIds=new Set(["c-storage-duration","c-const-pointer","c-volatile","c-isr-sharing","c-pointer-model"]);
 function renderCSecondCourse(id){
   if(id==="c-storage-duration")return renderLifetimeCourse();
   if(id==="c-const-pointer")return renderConstCourse();
   if(id==="c-volatile")return renderVolatileCourse();
   if(id==="c-isr-sharing")return renderIsrSharingCourse();
+  if(id==="c-pointer-model")return renderPointerCourse();
   return "";
 }
+function renderPointerCourse(){return `<div class="c-second-course pointer-course">
+  <section class="pointer-opening ptr-paper">
+    <div class="ptr-hero-copy"><div class="ptr-hero-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 5v31l9-8 7 15 7-4-7-14h12z" stroke-width="2.5"/></svg></div><span class="c-course-kicker">先看懂一根箭头</span><h3>指针变量里装的是地址，箭头另一端才是它指向的数据</h3><p>先写一个普通变量 <code>int a = 100;</code>。它在内存中占据一块空间，我们暂且把这块空间的起始地址记作 <code>0x20001000</code>。表达式 <code>&amp;a</code> 就是在询问：“a 的地址是多少？”</p><p>再写 <code>int *p = &amp;a;</code>，程序会创建第二个变量 p。p 也占内存，但它保存的内容不是 100，而是 a 的地址。于是我们可以沿着 p 保存的地址找到 a。</p><p class="ptr-thesis">记住这幅图：<b>p 是一个真实存在的变量，p 里面保存地址；a 是另一个变量，箭头只是把这两块内存的关系画出来。</b></p></div>
+    <div class="ptr-board"><div class="ptr-code-line"><span>int a = <i>100</i>;</span><span>int *p = <i>&amp;a</i>;</span></div><div class="ptr-objects"><div class="ptr-object pointer"><header><b>p</b><span>指针变量</span></header><div class="ptr-stored">0x20001000</div><small>p 自己的地址：0x20001020</small></div><div class="ptr-link"><b>p 指向 a</b></div><div class="ptr-object value"><header><b>a</b><span>int 变量</span></header><div class="ptr-stored">100</div><small>a 的地址：0x20001000</small></div></div><div class="ptr-board-note"><span><b>&amp;a</b> 得到右侧门牌号<br>结果是 0x20001000</span><span><b>p</b> 读取左侧盒子里的内容<br>结果也是 0x20001000</span></div></div>
+  </section>
+  <section class="pointer-deref"><div><span class="c-course-kicker">同一个 *，在两个位置做两件事</span><h3>声明时说“p 是指针”，表达式中说“沿 p 找到对象”</h3><p>初学者最容易在这里混淆。<code>int *p</code> 中的星号出现在声明里，它说明 p 是一个“指向 int 的指针变量”。而 <code>*p</code> 出现在表达式中时，叫作解引用：先取出 p 保存的地址，再去那个地址访问 a。</p><div class="ptr-two-stars"><div class="ptr-star-line"><code>int *p = &amp;a;</code><span><b>声明：</b>创建 p，p 将保存一个 int 的地址。</span></div><div class="ptr-star-line"><code>*p = 200;</code><span><b>解引用：</b>顺着 p 的箭头找到 a，把 a 改成 200。</span></div><div class="ptr-star-line"><code>int b = *p;</code><span><b>读取：</b>顺着箭头取得 a 的值，因此 b 得到 200。</span></div></div></div><div class="ptr-write-scene"><div class="ptr-write-code"><span>执行前：a = 100</span><strong>*p = 200</strong><span>执行后：a = 200</span></div><div class="ptr-value-change"><div class="ptr-state"><b>p ───▶ a</b><span>100</span><small>p 仍保存 0x20001000</small></div><div class="ptr-write-arrow">→<small>沿箭头写入</small></div><div class="ptr-state"><b>p ───▶ a</b><span>200</span><small>地址没变，a 的值变了</small></div></div><p>修改的是 p 指向的对象，不是 p 本身。若写成 <code>p = &amp;b</code>，才是改变箭头的指向。</p></div></section>
+  <section class="pointer-stride ptr-paper"><span class="c-course-kicker">为什么指针必须带类型</span><h3>地址告诉你从哪里开始，类型告诉你一次看多宽、向前走多远</h3><p>把下面八个小格看成连续八个字节。三根指针都从同一地址出发，但 <code>p + 1</code> 的落点不同：因为“加 1”表示跳过一个所指类型的对象，而不是机械地把地址加 1。</p><div class="ptr-ruler"><div class="ptr-byte-addresses"><span>0x2000</span><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span></div><div class="ptr-byte-cells"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="ptr-stride-row" style="--tone:#3978ad"><div class="ptr-stride-label"><b>char *pc</b><small>1 字节对象</small></div><div class="ptr-jump-track" style="--jump:12.5%"><i></i></div><div class="ptr-stride-result"><code>pc + 1</code>：前进 1 字节</div></div><div class="ptr-stride-row" style="--tone:#5c9b80"><div class="ptr-stride-label"><b>uint16_t *ps</b><small>2 字节对象</small></div><div class="ptr-jump-track" style="--jump:25%"><i></i></div><div class="ptr-stride-result"><code>ps + 1</code>：前进 2 字节</div></div><div class="ptr-stride-row" style="--tone:#e28b43"><div class="ptr-stride-label"><b>uint32_t *pi</b><small>4 字节对象</small></div><div class="ptr-jump-track" style="--jump:50%"><i></i></div><div class="ptr-stride-result"><code>pi + 1</code>：前进 4 字节</div></div></div><p>同理，<code>*pc</code> 按 char 的宽度访问，<code>*pi</code> 按 uint32_t 的宽度访问。实际宽度以目标平台上的类型大小为准。指针加减主要用于数组：可以从首元素走到各元素，也可以形成“最后一个元素之后”的结束位置用于比较，但结束位置没有对象，不能解引用。</p></section>
+  <section class="pointer-life"><span class="c-course-kicker">一根箭头也有生命周期</span><h3>NULL、野指针和悬空指针，区别在于这根箭头经历了什么</h3><p>指针的数值看起来都可能只是一个地址，但地址“像真的”不代表还能访问。沿着下面的时间线看，会比背三句定义更清楚。</p><div class="ptr-life-road"><div class="ptr-life-stop" style="--tone:#8b99a4"><b>① int *p;</b><span>p 没有初始化，里面是不可预测的旧值。这时叫野指针，不能读取、更不能解引用。</span></div><div class="ptr-life-stop" style="--tone:#3978ad"><b>② p = &amp;a;</b><span>a 正在存活，p 保存 a 的地址。只要访问没有越界，此时箭头有效。</span></div><div class="ptr-life-stop" style="--tone:#dc7a52"><b>③ a 已失效</b><span>例如局部变量离开作用域，或动态内存已 free。p 还留着旧地址，却已成为悬空指针。</span></div><div class="ptr-life-stop" style="--tone:#5c9b80"><b>④ p = NULL;</b><span>明确记录“目前不指向对象”。NULL 可以检查和赋值，但不能解引用。</span></div></div><div class="ptr-life-code"><code>free(p); p = NULL;</code> 能防止这个变量继续误用旧地址，但若还有其他指针也指向同一块内存，它们不会自动变成 NULL。<b>所以非 NULL 也不等于一定有效。</b></div></section>
+  <section class="pointer-double ptr-paper"><div><span class="c-course-kicker">当我们还想修改“箭头本身”</span><h3>二级指针就是：保存另一个指针变量的地址</h3><p>p 能通过 <code>*p</code> 修改 a；如果函数还要修改调用者手里的 p，让它改为指向别处，就需要拿到 p 自己的地址 <code>&amp;p</code>。保存这个地址的变量 pp，类型便是 <code>int **</code>。</p><p><code>*pp</code> 得到 p；<code>**pp</code> 再沿第二根箭头得到 a。它并不神秘，只是把“变量也有自己的地址”再用一次。</p><p>链表函数修改头指针、函数通过参数返回一块新分配的内存，都是二级指针的常见场景。</p></div><div class="ptr-chain"><div class="ptr-chain-object" style="--tone:#806ca5"><b>pp</b><code>&amp;p</code><small>地址 0x2040</small></div><div class="ptr-chain-arrow"><span>*pp 是 p</span></div><div class="ptr-chain-object" style="--tone:#3978ad"><b>p</b><code>&amp;a</code><small>地址 0x2020</small></div><div class="ptr-chain-arrow"><span>*p 是 a</span></div><div class="ptr-chain-object" style="--tone:#e28b43"><b>a</b><code>100</code><small>地址 0x2000</small></div><p class="ptr-chain-caption"><code>int a = 100;　int *p = &amp;a;　int **pp = &amp;p;</code></p></div></section>
+  <section class="pointer-finish"><span class="c-course-kicker">最后再处理两个工程中常见的边界</span><h3>通用地址可以暂时不带类型，但真正访问时必须说清“它原来是谁”</h3><div class="ptr-finish-grid"><div class="ptr-void-story"><b>void*：暂存任意对象地址</b><p><code>malloc</code> 和通用回调常使用 <code>void*</code>。它适合传递地址，却不能直接解引用，因为编译器不知道该按几个字节访问。使用前要恢复为真实类型。</p><pre>void on_sample(void *context)\n{\n    Sensor *s = context;\n    s->count++;\n}</pre><p>调用者必须保证 context 确实指向 Sensor，而且回调执行时该对象仍然存在。</p></div><div class="ptr-safe-list"><b>每次准备写 *p 时，按这个顺序检查</b><ol><li><b>有明确指向吗？</b>不是 NULL，也不是未初始化的随机值。</li><li><b>对象还活着吗？</b>没有离开作用域，也没有被 free。</li><li><b>访问在范围内吗？</b>数组指针没有越过有效元素。</li><li><b>类型与权限合适吗？</b>访问宽度正确，且目标允许写入。</li></ol><p>解析通信字节流时还要额外检查剩余长度和字节序。不要把任意 <code>uint8_t*</code> 强转为大类型指针后立即读取：它可能越界，也可能不满足目标处理器的对齐要求。</p></div></div></section>
+</div>`;}
 function renderLifetimeCourse(){return `<div class="c-second-course life-map">
   <section class="life-opening"><div><span class="c-course-kicker">先把一句“局部变量在栈上”拆开</span><h3>同一个变量，至少要回答三个不同问题</h3><p>看到一个变量时，我们常把“局部、全局、static、栈、可见范围”揉成一团。其实它们分别在回答：源码中哪里能写出这个名字？对象从什么时候存在到什么时候？别的 .c 文件能否通过同名声明找到它？至于最后使用寄存器、栈还是某段 RAM，是编译器和链接器在这些语义约束下做出的实现。</p><p>先把这几层分开，static 为什么只初始化一次、局部变量为什么可以与全局变量同名、返回局部地址为什么危险，就不需要死记。</p></div><div class="life-questions"><div><b>作用域</b><span>这个名字在源码的哪一段可见？</span></div><div><b>存储期</b><span>这个对象何时出生、何时失效？</span></div><div><b>链接</b><span>其他源文件中的声明能否找到同一实体？</span></div><div><b>实际位置</b><span>工具链最终把它放在寄存器、栈还是静态区？</span></div></div></section>
   <section class="life-timeline"><span class="c-course-kicker">跟着一次函数调用看普通局部对象</span><h3>名字进入作用域时，对象开始一段新的生命</h3><div class="life-line"><div class="life-stop" style="--tone:#4d7fba"><i>1</i><b>调用函数</b><span>进入函数体，参数和局部声明开始可见。</span></div><div class="life-stop" style="--tone:#4b9a7f"><i>2</i><b>创建对象</b><span>每次调用都有一份独立的局部状态，递归时尤其明显。</span></div><div class="life-stop" style="--tone:#d28a49"><i>3</i><b>执行与修改</b><span>对象可能在栈或寄存器，也可能被优化掉；语义不变。</span></div><div class="life-stop" style="--tone:#be5f4a"><i>4</i><b>离开函数</b><span>对象生命周期结束，指向它的旧指针立即悬空。</span></div></div><p>“生命周期结束”不等于那几字节立刻清零。它只表示原对象已经不存在，后续代码没有权利再通过旧指针访问它。同一地址稍后被另一调用复用，也不会让旧对象复活。</p></section>
