@@ -535,6 +535,115 @@
   .struct-code-compare{grid-template-columns:minmax(0,1fr)}
   .struct-tutorial>section{padding:22px 17px}
 }
+/* C 基础主干：连续课程，不复用通用方框图。 */
+.c-foundation-course{display:grid;gap:26px;width:100%;max-width:100%;min-width:0;overflow:hidden}
+.c-foundation-course>section{min-width:0;padding:clamp(24px,3.2vw,42px);border:1px solid #d8dad2;border-radius:22px;background:#fffefa;box-shadow:0 12px 34px rgba(26,45,38,.055);overflow:hidden}
+.c-foundation-course h3{margin:0;color:#1d342d;font:600 clamp(27px,2.7vw,38px)/1.28 var(--serif);text-wrap:pretty}
+.c-foundation-course h4{margin:0 0 8px;color:#213a32;font-size:18px}
+.c-foundation-course p{margin:12px 0 0;color:#425950;font-size:16px;line-height:1.95}
+.c-type-guide{grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);align-items:start;gap:22px}
+.c-type-guide>section{box-shadow:none;border-radius:16px}
+.c-type-guide>.c-course-opening{grid-column:1/-1;background:linear-gradient(118deg,#f8f3e8 0 62%,#edf4f0 62%)!important;border-color:#cfd9d1}
+.c-type-guide>section:nth-child(2){grid-row:2/span 2;background:#fffaf0;border-top:5px solid #d49a55}
+.c-type-guide>section:nth-child(3),.c-type-guide>section:nth-child(4){background:#f8fbf9;border-left:5px solid #5a927d}
+.c-type-guide>section:nth-child(5){grid-column:1/-1;background:#f2f5fb;border:none}
+.c-type-guide>.c-course-summary{grid-column:1/-1;display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:28px;align-items:center;background:#15362f;color:#eef8f3}
+.c-type-guide>.c-course-summary h3,.c-type-guide>.c-course-summary p{color:inherit}
+.c-integer-case{counter-reset:case-stage;position:relative;padding:24px;background:linear-gradient(90deg,transparent 0 48px,#d8b789 49px 50px,transparent 51px),#f4efe3;border:1px solid #d8c8ae;border-radius:22px}
+.c-integer-case>section{counter-increment:case-stage;margin-left:34px;border:0;border-radius:8px;box-shadow:0 6px 16px rgba(68,49,25,.07);background:#fffdf6}
+.c-integer-case>section:not(:first-child)::before{content:"调查记录 " counter(case-stage,decimal-leading-zero);display:inline-block;margin-bottom:12px;padding:5px 10px;background:#273b35;color:#fff6df;border-radius:3px;font:700 12px/1.2 var(--sans);letter-spacing:.12em;transform:rotate(-1deg)}
+.c-integer-case>.c-course-opening{background:#fff8e8!important;border-top:8px solid #b85e46}
+.c-integer-case>.c-course-summary{background:#273b35;color:#fff}
+.c-integer-case>.c-course-summary h3,.c-integer-case>.c-course-summary p{color:inherit}
+.c-float-lab{counter-reset:experiment;gap:0;padding-left:72px;position:relative}
+.c-float-lab::before{content:"";position:absolute;left:32px;top:40px;bottom:40px;width:2px;background:linear-gradient(#61a6c8,#7f6eb1,#e28d62)}
+.c-float-lab>section{counter-increment:experiment;position:relative;border:0;border-radius:0;box-shadow:none;border-bottom:1px solid #d8dedb;background:transparent;padding:38px 30px}
+.c-float-lab>section::before{content:counter(experiment,decimal-leading-zero);position:absolute;left:-58px;top:38px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#fff;border:2px solid #5c9cba;color:#356b85;font:700 13px/1 var(--sans);box-shadow:0 0 0 7px #f6f4ed}
+.c-float-lab>.c-course-opening{background:linear-gradient(135deg,#eef7fa,#f7f1fb)!important;border:1px solid #cadae1;border-radius:22px;margin-bottom:12px}
+.c-float-lab>.c-course-summary{border-bottom:0;background:#eef5f7;border-radius:0 0 18px 18px}
+.c-expression-stage{background:#112c2d;padding:18px;border-radius:24px;gap:14px}
+.c-expression-stage>section{border:1px solid rgba(149,211,201,.22);background:#f9faf5;border-radius:14px;box-shadow:none}
+.c-expression-stage>.c-course-opening{background:linear-gradient(135deg,#112c2d,#1d4240)!important;color:#eef9f5}
+.c-expression-stage>.c-course-opening h3,.c-expression-stage>.c-course-opening p{color:inherit}
+.c-expression-stage>section:nth-child(2){display:grid;grid-template-columns:minmax(260px,.55fr) minmax(0,1.45fr);gap:22px;align-items:start}
+.c-expression-stage>section:nth-child(2)>.c-timeline-choice,.c-expression-stage>section:nth-child(2)>p{grid-column:2}
+.c-expression-stage>section:nth-child(2)>span,.c-expression-stage>section:nth-child(2)>h3{grid-column:1}
+.c-expression-stage>.c-course-summary{background:#dff1e9}
+.c-flow-workshop{gap:34px}
+.c-flow-workshop>section{box-shadow:none;border-radius:4px;border:0;border-left:8px solid #3d7b69;background:#fff;padding-left:42px}
+.c-flow-workshop>.c-course-opening{border-left-color:#c36249;background:linear-gradient(90deg,#fff8ef,#fff)!important}
+.c-flow-workshop>section:nth-child(2){border-left-color:#4b76b4}
+.c-flow-workshop>section:nth-child(3){border-left-color:#ae7a3f}
+.c-flow-workshop>section:nth-child(4){border-left-color:#a45f78}
+.c-flow-workshop>section:nth-child(5){border-left-color:#5a8a72;background:#f4f8f5}
+.c-flow-workshop>.c-course-summary{border-left:0;border-top:2px dashed #879b92;background:transparent;text-align:center}
+.c-second-course{width:100%;min-width:0;color:#263d36}
+.c-second-course h3{margin:0;color:#17372f;font:600 clamp(28px,2.7vw,40px)/1.25 var(--serif);text-wrap:pretty}
+.c-second-course h4{margin:0;color:#1d3d34;font:700 19px/1.45 var(--sans)}
+.c-second-course p{margin:12px 0 0;color:#425a52;font-size:16.5px;line-height:1.95}
+.life-map{display:grid;gap:0;border:1px solid #d8d4c9;background:#fffef9;border-radius:20px;overflow:hidden}
+.life-map>.life-opening{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:36px;padding:42px;background:#efe9dc}
+.life-questions{display:grid;grid-template-columns:1fr 1fr;border:1px solid #b6c2ba;background:#fff}
+.life-questions div{padding:18px;border-right:1px solid #d7ddd8;border-bottom:1px solid #d7ddd8}.life-questions div:nth-child(even){border-right:0}.life-questions div:nth-last-child(-n+2){border-bottom:0}
+.life-questions b,.life-questions span{display:block}.life-questions b{color:#9a5b37;font-size:14px}.life-questions span{margin-top:6px;line-height:1.65}
+.life-timeline{padding:38px 42px;background:#fff}
+.life-line{display:grid;grid-template-columns:repeat(4,1fr);position:relative;margin:28px 0 12px}.life-line::before{content:"";position:absolute;left:9%;right:9%;top:23px;height:3px;background:#b8c7bf}
+.life-stop{position:relative;text-align:center;padding:0 12px}.life-stop i{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 12px;border-radius:50%;background:var(--tone);color:#fff;font-style:normal;font-weight:800;position:relative}.life-stop b,.life-stop span{display:block}.life-stop span{margin-top:5px;color:#607269;font-size:14px;line-height:1.55}
+.life-static-sheet{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#ccd5cf;border-top:1px solid #ccd5cf}.life-static-sheet>div{padding:34px 40px;background:#f7faf7}.life-static-sheet pre{margin:16px 0 0;padding:20px;background:#14362f;color:#eef7f2;border-radius:12px;white-space:pre-wrap;line-height:1.8}
+.life-dangle{padding:40px;background:#fff4ed;border-top:1px solid #eccfbe}.life-dangle-road{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;margin-top:24px}.life-dangle-road div{padding:18px;border:1px solid #d9bca9;background:#fff;border-radius:12px}.life-dangle-road i{color:#b65c42;font-style:normal;font-weight:800}
+.const-review{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:24px;align-items:start}
+.const-review>.const-brief{grid-column:1/-1;padding:38px 42px;background:#173b33;color:#f1f8f4;border-radius:20px}.const-review>.const-brief h3,.const-review>.const-brief p{color:inherit}.const-brief code{color:#ffd67c}
+.const-file{padding:36px;background:#fff;border:1px solid #d6ddd7;border-radius:16px}.const-code-review{margin-top:22px;background:#112f2a;color:#edf8f3;border-radius:13px;overflow:hidden}.const-code-review pre{margin:0;padding:24px;white-space:pre-wrap;line-height:1.85}.review-note{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:14px 18px;border-top:1px solid rgba(255,255,255,.14);font-size:14px;line-height:1.6}.review-note b{color:#ffd36f}.review-note.good b{color:#78ddb5}
+.const-layers{display:grid;gap:12px;padding:28px;background:#f3efe4;border-radius:16px}.const-decl{padding:18px;background:#fff;border-left:5px solid var(--tone);box-shadow:0 6px 18px rgba(29,54,45,.06)}.const-decl code,.const-decl b,.const-decl span{display:block}.const-decl code{font-size:17px;color:#213d35}.const-decl b{margin-top:10px}.const-decl span{margin-top:4px;color:#65756e;line-height:1.6}
+.const-compare{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.const-compare>div{padding:26px;border:1px solid #d5dbd6;border-radius:14px;background:#fff}.const-compare b,.const-compare span{display:block}.const-compare span{margin-top:8px;line-height:1.75;color:#53675f}
+.volatile-scope{background:#0d292b;border-radius:22px;overflow:hidden;color:#dff5ef}.volatile-scope h3,.volatile-scope h4,.volatile-scope p{color:inherit}
+.volatile-opening{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,1fr);gap:34px;padding:42px}.volatile-poll{background:#071c1e;border:1px solid #245158;border-radius:14px;padding:24px}.volatile-poll pre{margin:0;color:#c9f3e8;white-space:pre-wrap;line-height:1.8}.volatile-wave{height:88px;margin-top:20px;position:relative;background:repeating-linear-gradient(90deg,transparent 0 44px,rgba(99,195,183,.08) 45px)}.volatile-wave::before{content:"";position:absolute;left:0;right:0;top:44px;border-top:2px solid #4cbcae}.volatile-wave i{position:absolute;left:44%;top:17px;width:26%;height:28px;border-left:3px solid #ffd069;border-top:3px solid #ffd069;border-right:3px solid #ffd069}.volatile-wave b{position:absolute;right:0;bottom:0;color:#ffd069;font-size:12px}
+.volatile-diff{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2b5150;border-top:1px solid #2b5150}.volatile-diff>div{padding:34px;background:#f7fbf8;color:#29443c}.volatile-diff code{display:block;margin-top:16px;padding:18px;background:#153833;color:#ddf7ee;border-radius:10px;white-space:pre-wrap;line-height:1.75}.volatile-contract{padding:38px 42px;background:#f0f4e9;color:#29433b}.volatile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.volatile-grid div{padding:22px;background:#fff;border-top:5px solid var(--tone)}.volatile-grid b,.volatile-grid span{display:block}.volatile-grid span{margin-top:8px;line-height:1.65;color:#5e7068}
+.isr-dispatch{display:grid;gap:22px}.isr-opening{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;padding:40px;background:#fff5e8;border:1px solid #e3ceb3;border-radius:20px}.isr-ledger{display:grid;gap:10px}.isr-ledger div{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:14px 16px;background:#fff;border-left:6px solid var(--tone)}.isr-ledger time{font-weight:800;color:#9a5d37}.isr-ledger small{color:#66756e}
+.isr-evolution{padding:38px 40px;background:#fff;border:1px solid #d5ddd7;border-radius:18px}.isr-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.isr-steps>div{position:relative;padding:24px;background:#f5f7f3;border-radius:12px}.isr-steps>div:not(:last-child)::after{content:"→";position:absolute;right:-16px;top:45%;z-index:2;color:#ad7046;font-size:25px}.isr-steps b,.isr-steps span{display:block}.isr-steps span{margin-top:8px;line-height:1.7;color:#596b63}
+.isr-rmw{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.8fr);gap:24px;padding:38px 40px;background:#173a33;color:#eff8f3;border-radius:18px}.isr-rmw h3,.isr-rmw p{color:inherit}.isr-interleave{display:grid;gap:4px}.isr-interleave div{display:grid;grid-template-columns:95px 1fr;gap:12px;padding:12px 14px;background:rgba(255,255,255,.08)}.isr-interleave b{color:#ffd16b}
+.isr-chooser{padding:38px 40px;background:#f2f1e9;border-radius:18px}.isr-choice-row{display:grid;grid-template-columns:170px 1fr 1fr;gap:1px;background:#cbd3cc;margin-top:18px}.isr-choice-row>*{padding:15px 17px;background:#fff}.isr-choice-row b{background:#e7ede8}.isr-choice-row span{line-height:1.6}
+@media(max-width:980px){.c-type-guide{grid-template-columns:1fr}.c-type-guide>section{grid-column:1!important;grid-row:auto!important}.c-type-guide>.c-course-summary{grid-template-columns:1fr}.c-expression-stage>section:nth-child(2){display:block}}
+.c-course-kicker{display:block;margin-bottom:10px;color:#b7623c;font:800 10px/1.3 var(--mono);letter-spacing:.15em;text-transform:uppercase}
+.c-course-opening{background:linear-gradient(140deg,#fffef9 0,#f1f6f0 100%)!important}
+.c-course-opening .c-opening-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(250px,.88fr);gap:30px;align-items:center}
+.c-opening-question{margin-top:19px!important;color:#173f34!important;font:600 clamp(19px,1.7vw,24px)/1.6 var(--serif)!important}
+.c-course-note{margin-top:18px;padding:14px 17px;border-left:5px solid #df9e49;border-radius:10px;background:#fff5df;color:#654d29;font-size:13px;line-height:1.8}
+.c-code-panel{min-width:0;border-radius:17px;background:#14362f;color:#eaf6f2;padding:20px;box-shadow:inset 0 0 0 1px #ffffff1c}
+.c-code-panel pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.8 Consolas,monospace}
+.c-code-panel .result{display:block;margin-top:14px;padding-top:12px;border-top:1px solid #ffffff2b;color:#ffcf74;font-size:13px;line-height:1.7}
+.c-explain-sequence{counter-reset:cstep;display:grid;gap:0;margin-top:22px;border-left:2px solid #c7d2ca}
+.c-explain-sequence>div{position:relative;padding:0 0 23px 28px}
+.c-explain-sequence>div:last-child{padding-bottom:0}
+.c-explain-sequence>div::before{counter-increment:cstep;content:counter(cstep);position:absolute;left:-15px;top:0;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#2f7c69;color:#fff;font:800 11px var(--mono)}
+.c-explain-sequence b{display:block;color:#233c34;font-size:15px}.c-explain-sequence span{display:block;margin-top:5px;color:#5c7068;font-size:14px;line-height:1.8}
+.c-range-stage{position:relative;display:grid;gap:13px;margin-top:22px;padding:24px 18px 18px;border-radius:17px;background:linear-gradient(180deg,#173b33,#102d27);overflow:hidden}
+.c-range-row{display:grid;grid-template-columns:90px minmax(0,1fr) 94px;gap:12px;align-items:center;color:#dcebe6;font-size:12px}
+.c-range-row>b{font:700 12px var(--mono)}.c-range-row>small{text-align:right;color:#9fc0b6;line-height:1.4}
+.c-range-track{height:25px;border:1px solid #ffffff25;border-radius:999px;background:#ffffff0e;overflow:hidden}
+.c-range-track i{display:block;width:var(--w);height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--tone),color-mix(in srgb,var(--tone) 58%,#fff));box-shadow:0 0 18px color-mix(in srgb,var(--tone) 55%,transparent)}
+.c-choice-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.c-choice-path>div{position:relative;padding:18px 16px;border-top:4px solid var(--tone,#377c6a);border-radius:6px 6px 14px 14px;background:#f4f5ef}
+.c-choice-path b{display:block;margin-bottom:7px;color:#253e36;font-size:14px}.c-choice-path span{color:#60736c;font-size:13px;line-height:1.7}
+.c-conversion-river{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:0;margin-top:23px;min-width:720px}
+.c-conversion-river>div{position:relative;min-height:132px;padding:18px 16px;border-block:1px solid #ccd5ce;background:#f7f6f0}
+.c-conversion-river>div:first-child{border-left:1px solid #ccd5ce;border-radius:15px 0 0 15px}.c-conversion-river>div:last-child{border-right:1px solid #ccd5ce;border-radius:0 15px 15px 0}
+.c-conversion-river>div:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:48px;z-index:2;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:#c7633e;color:#fff;font-weight:800}
+.c-conversion-river b{display:block;color:#1f3b32;font-size:13px}.c-conversion-river span{display:block;margin-top:9px;color:#60736b;font-size:12px;line-height:1.65}
+.c-number-flip{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin-top:22px;padding:24px;border-radius:18px;background:#102f29;color:#e7f5f0}
+.c-number-side{text-align:center}.c-number-side strong{display:block;color:#ffd174;font:700 clamp(28px,3.5vw,48px)/1 var(--serif)}.c-number-side span{display:block;margin-top:9px;color:#a9c7be;font-size:13px}.c-number-flip>i{font-style:normal;color:#ed875c;font-size:28px}
+.c-overflow-road{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.c-overflow-road>div{padding:19px;border-radius:15px;background:#f4f5ef}.c-overflow-road>.danger{background:#fff0e7}.c-overflow-road b{display:block;margin-bottom:7px;color:#203c33}.c-overflow-road span{color:#5d7169;font-size:13px;line-height:1.75}
+.c-float-zoom{display:grid;gap:13px;margin-top:23px}.c-float-zoom>div{position:relative;height:62px;border-radius:13px;background:linear-gradient(90deg,#e8ede8,#faf9f4);overflow:hidden;border:1px solid #d3dad3}.c-float-zoom b{position:absolute;left:14px;top:10px;color:#315348;font-size:12px}.c-float-zoom .marks{position:absolute;inset:33px 15px 12px;background:repeating-linear-gradient(90deg,#6b8f83 0 1px,transparent 1px var(--gap));border-bottom:2px solid #78958c}.c-float-zoom>div:nth-child(2) .marks{--gap:28px}.c-float-zoom>div:nth-child(3) .marks{--gap:48px}.c-float-zoom small{position:absolute;right:14px;top:9px;color:#a45c3e}
+.c-compare-formula{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px;align-items:center;margin-top:22px}.c-compare-formula .formula{padding:24px;border-radius:17px;background:#173a32;color:#fff;font:600 clamp(18px,2vw,25px)/1.6 var(--serif);text-align:center}.c-compare-formula ul{margin:0;padding-left:20px;color:#4b6259;line-height:1.9}
+.c-timeline-choice{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}.c-timeline{padding:18px;border-radius:16px;background:#f4f5ef}.c-timeline.bad{background:#fff0e7}.c-timeline header{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px}.c-timeline header b{color:#233f35}.c-timeline header span{color:#a85a3d;font-size:12px}.c-timeline-line{display:flex;align-items:center;gap:8px}.c-timeline-line i{flex:1;height:6px;border-radius:99px;background:var(--tone,#4a967f)}.c-timeline-line em{font-style:normal;color:#5c7168;font-size:12px}
+.c-logic-gates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:22px;align-items:stretch}.c-logic-gates>div{position:relative;padding:17px 14px;border:1px solid #ced7d0;border-radius:14px;background:#fff}.c-logic-gates>div:not(:last-child)::after{content:"→";position:absolute;right:-11px;top:42%;z-index:2;color:#bb613f;font-weight:900}.c-logic-gates b{display:block;color:#234036;font-size:13px}.c-logic-gates span{display:block;margin-top:7px;color:#62756e;font-size:12px;line-height:1.65}
+.c-flow-road{position:relative;display:grid;gap:15px;margin-top:24px;padding-left:54px}.c-flow-road::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:4px;border-radius:99px;background:linear-gradient(#4b9b83,#76a3c2)}
+.c-flow-stop{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 18px;border:1px solid #d5dbd5;border-radius:15px;background:#faf9f4}.c-flow-stop::before{content:attr(data-step);position:absolute;left:-45px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#fff;border:3px solid #4d967f;color:#234239;font:800 10px var(--mono)}.c-flow-stop b{display:block;color:#203b32}.c-flow-stop span{display:block;margin-top:5px;color:#63756e;font-size:13px}.c-flow-stop em{font-style:normal;border-radius:999px;background:#fff0e5;color:#aa5c3d;padding:7px 10px;font-size:11px;font-weight:700}
+.c-cleanup-map{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-top:22px}.c-cleanup-stack{display:grid;gap:7px}.c-cleanup-stack span{padding:12px 14px;border-radius:10px;background:#e8f1ed;color:#31574b;font-size:13px}.c-cleanup-map>i{font-style:normal;color:#c0603f;font-size:26px}.c-cleanup-map>p{margin:0!important;padding:18px;border-radius:15px;background:#17392f!important;color:#dcefe9!important}
+.c-course-scroll{display:block;width:100%;max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.c-course-summary{background:linear-gradient(135deg,#183c34,#102d27)!important;color:#eaf5f2}.c-course-summary h3{color:#fff}.c-course-summary p{color:#bad0c9}.c-course-summary strong{color:#ffd173}
+@media(max-width:900px){.c-course-opening .c-opening-grid,.c-compare-formula{grid-template-columns:1fr}.c-choice-path,.c-logic-gates{grid-template-columns:1fr 1fr}.c-number-flip{grid-template-columns:1fr}.c-number-flip>i{transform:rotate(90deg);justify-self:center}.c-cleanup-map{grid-template-columns:1fr}.c-cleanup-map>i{transform:rotate(90deg);justify-self:center}}
+@media(max-width:600px){.c-foundation-course>section{padding:22px 17px}.c-foundation-course p{font-size:15.5px}.c-choice-path,.c-overflow-road,.c-timeline-choice,.c-logic-gates{grid-template-columns:1fr}.c-logic-gates>div::after{display:none}.c-range-row{grid-template-columns:72px minmax(140px,1fr) 80px}.c-range-stage{min-width:520px}.c-flow-road{padding-left:46px}.c-flow-stop{grid-template-columns:1fr}.c-flow-stop em{justify-self:start}}
 </style>
 </head>
 <body>
@@ -967,29 +1076,19 @@ const chapters=[
   B("c-types","第二部分：类型、值与表示","类型不仅决定大小，还决定可表示范围、运算规则与合法访问。",[
     B("c-integers","整数类型与转换","很多 C Bug 不是算术错，而是算术发生在意外类型中。",[
       F("c-integer-types","整数类型、范围与 sizeof","char、short、int、long、long long 的相对范围有标准约束，具体位宽由实现决定。",["sizeof(char) 恒为 1，但一个 byte 的位数由 CHAR_BIT 决定。","sizeof 返回 size_t，而不是 int。","plain char 是否有符号由实现决定。","用 limits.h 获取实现范围。"],"不要把 int 永远等同于 32 位。","sizeof 的单位是 C byte，不保证等于 8 bit；嵌入式协议应使用明确位宽。",["c-fixed-width","c-signed-unsigned"],["cISO"],["sizeof(char) 为什么永远是 1？"]),
-      F("c-fixed-width","stdint.h 与明确位宽","int8_t/uint32_t 等精确宽度类型只在实现存在对应无填充位类型时提供。",["int_leastN_t 保证至少 N 位且尽量窄。","int_fastN_t 倾向于该平台上较快的至少 N 位类型。","uintptr_t 在实现支持时可容纳转换后的对象指针。","打印固定宽度整数应使用 inttypes.h 的 PRI 宏。"],"协议、寄存器和文件格式优先表达位宽；普通循环计数不必处处 uint32_t。","uint32_t 不是所有平台都必须存在；不要用 %u 猜测 typedef 的底层类型。",["c-integer-types","c-serialization"],["cISO","cINT"],["uint32_t 和 unsigned int 必然是同一类型吗？"]),
       F("c-signed-unsigned","有符号、无符号与回绕","无符号运算按模 2^N 回绕；有符号溢出属于未定义行为。",["负数转换为无符号会按模映射为大正数。","signed 与 unsigned 混合比较可能先把 signed 转成 unsigned。","无符号回绕可用于计数器差值，但要证明算法范围。","数组长度与 -1 哨兵混用是高频陷阱。"],"无符号不是“不会溢出”，而是溢出语义被定义为模运算。","仅把变量改成 unsigned 不能自动让边界检查正确。",["c-promotions","c-ub"],["cISO","cINT","cUB"],["为什么 -1 < sizeof(array) 可能为假？"]),
-      F("c-promotions","整数提升与通常算术转换","小整数在运算前常先提升为 int/unsigned int，随后两侧再转换到共同类型。",["uint8_t + uint8_t 往往在 int 中计算。","移位和按位取反的结果类型受整数提升影响。","赋值回窄类型时还会发生一次转换。","混合 signed/unsigned 的共同类型由等级与范围规则决定。"],"表达式结果由“运算时类型”决定，不由目标变量类型倒推。","显式强转只能改变转换位置，不能替代范围证明。",["c-conversions","c-signed-unsigned"],["cINT","cISO"],["两个 uint16_t 相乘为什么仍可能先发生 int 溢出？"])
     ]),
     B("c-values-representation","值、浮点与对象表示","相同的字节可被怎样解释，哪些转换能保值。",[
-      F("c-conversions","隐式转换、窄化与范围检查","赋值、参数传递、返回值和算术表达式都可能触发隐式转换。",["宽转窄可能丢高位或改变值。","浮点转整数超出可表示范围会出问题。","先检查源值是否落在目标范围，再转换。","-Wconversion 等警告可揭示高风险位置，但需要项目化治理。"],"转换发生前先问：目标类型能否表示所有合法输入？","在转换后再检查是否溢出通常已经太晚。",["c-promotions","c-size-overflow"],["cINT","gccWarn"],["怎样安全地把 size_t 转成 uint16_t？"]),
       F("c-float","浮点数、精度与比较","float/double 表示离散近似值，许多十进制小数不能精确表示。",["相等比较只有在值本应完全一致时才合理。","容差应同时考虑绝对误差、相对误差和业务尺度。","嵌入式 FPU、ABI 与库函数会影响性能和栈。","NaN 与无穷有特殊比较规则。"],"不要机械写 fabs(a-b)<1e-6；容差来自数据尺度与误差预算。","浮点误差不意味着所有 == 都错，例如与精确赋值的哨兵比较可有明确语义。",["c-conversions","measurement"],["cISO"],["为什么 0.1f + 0.2f 不一定等于 0.3f？"]),
-      F("c-enum-bool","_Bool、bool 与 enum","布尔表达意图用 bool；枚举为一组命名整数常量提供类型化语义。",["stdbool.h 在较早标准中提供 bool/true/false 宏。","任意非零标量转为 _Bool 都得到 1。","enum 的表示类型和范围受标准版本与实现影响。","枚举适合状态与类别，不自动阻止任意整数进入接口。"],"类型能表达意图，但边界输入仍需验证。","不要假设 enum 永远与 int 大小相同或适合直接序列化。",["c-switch-flow","c-serialization"],["cISO"],["enum 能否直接作为通信协议字段？"]),
       F("c-typedef","typedef、类型别名与嵌入式接口","typedef 为已有类型提供新名字，常用于寄存器结构、回调、句柄和固定协议类型。",["typedef 不创建与原类型不兼容的新类型。","匿名结构体配合 typedef 可简化接口，但也可能隐藏对象类别。","指针 typedef 会把星号藏进名字，const 位置更易误判。","公开 API 的 typedef 应表达领域含义而非只缩短拼写。"],"typedef 改变名字，不改变底层表示和转换规则。","typedef char* PSTR 后 const PSTR 修饰的是指针本身，不是所指字符。",["c-const-pointer","c-function-pointer"],["cISO"],["typedef 指针类型为什么容易让 const 声明产生误解？"]),
-      F("c-object-representation","对象表示、字节与 padding","对象具有值表示和对象表示；结构体 padding、未使用位和陷阱表示会影响逐字节操作。",["unsigned char 可观察任意对象的字节表示。","相等的结构体值不保证 memcmp 为 0，因为 padding 可能不同。","清零所有字节不对所有类型都保证产生语义零值。","序列化应逐字段定义格式。"],"内存中的字节相同与 C 语义上的值相同不是一回事。","不要用 memcmp 比较含 padding 的结构体逻辑相等。",["c-padding-alignment","c-endianness"],["cISO","cUB"],["为什么两个字段完全相等的结构体 memcmp 仍可能不同？"])
     ])
   ]),
   B("c-expressions","第三部分：表达式、求值与控制流","代码看起来从左到右，语言并不总保证按你想的顺序求值。",[
     B("c-evaluation","表达式如何求值","优先级只决定分组，顺序与副作用由另一套规则决定。",[
-      F("c-operator-precedence","运算符优先级与结合性","优先级决定表达式如何加括号，结合性解决同级分组，不等于运行顺序。",["a + b * c 等价于 a + (b*c)。","赋值通常右结合。","位运算、比较与逻辑运算混合时应主动加括号。","函数实参的求值顺序通常不能靠书写位置推断。"],"优先级回答“怎么分组”，不回答“先算谁”。","依赖运算符表写难读表达式没有工程价值；用括号表达意图。",["c-sequencing","c-short-circuit"],["cISO"],["结合性是否决定函数调用参数的求值顺序？"]),
       F("c-sequencing","求值顺序与副作用","若同一标量对象的副作用与另一次未排序读写发生冲突，程序可能产生未定义行为。",["i = i++ + 1 是典型危险表达式。","逗号运算符、&&、|| 和 ?: 的特定位置提供排序。","函数调用完成与周围求值之间有标准规定，但实参彼此顺序通常不固定。","把一个表达式拆成多条语句最可靠。"],"一个完整表达式里让同一变量只承担一次有副作用的更新。","不同编译器或优化级别给出同一结果，不等于标准保证。",["c-ub","c-operator-precedence"],["cISO","cUB"],["printf(\"%d %d\", i++, i++) 有什么问题？"]),
-      F("c-short-circuit","短路求值与防御条件","&& 左侧为假时右侧不求值；|| 左侧为真时右侧不求值。",["可用 p != NULL && p->ready 安全地先检查指针。","右侧副作用是否发生取决于左侧值。","多个复杂条件可拆成命名布尔变量提升可读性。","位运算 &/| 不提供逻辑短路。"],"短路是语言保证，可用于建立访问前置条件。","不要把必须执行的业务动作藏在短路表达式右侧。",["c-null-pointer","c-control-flow"],["cISO"],["& 与 && 除了结果类型还有什么关键区别？"]),
-      F("c-ub","未定义、未指定与实现定义行为","C 给实现留出空间：UB 无要求；unspecified 在允许集合中选择；implementation-defined 必须记录选择。",["有符号溢出、越界解引用、读未初始化对象都是常见 UB。","实参求值顺序常属未指定。","plain char 符号性、某些右移行为属于实现选择。","编译器可假设 UB 永不发生并据此优化。"],"UB 不是随机值，而是程序失去标准语义约束。","调试版“正常”不能证明没有 UB；必须靠规则、警告、静态分析与 sanitizer。",["c-sanitizers","c-signed-unsigned"],["cISO","cUB","clangUBSan"],["为什么有符号溢出检查可能被优化器删除？"])
     ]),
     B("c-control","控制流与可证明性","分支和循环不仅要能跑，还要覆盖所有状态并保证前进。",[
       F("c-control-flow","if/else 与卫语句","优先处理非法输入和失败路径，可减少深层嵌套并明确主流程。",["条件表达式以零/非零判断真假。","else 与最近的未匹配 if 结合。","复杂条件应命名或封装。","每条失败路径都要定义资源释放和错误传播。"],"早返回不是坏风格；无纪律的资源清理才是问题。","在 C 中可用单一 cleanup 标签集中释放已获得资源。",["c-error-handling","c-short-circuit"],["cCERT"],["多资源函数如何避免每个 return 前重复清理？"]),
-      F("c-switch-flow","switch、case 与贯穿","switch 适合离散状态；case 默认会继续向后执行，除非 break/return/goto。",["case 标签必须是可接受的常量表达式。","有意 fallthrough 应明确注释或使用实现支持的属性。","default 用于处理非法值或未来扩展。","状态机应区分输入事件与当前状态。"],"每个 case 都要回答：退出、返回，还是有意贯穿？","没有 default 不一定错，但必须说明对未列值的策略。",["c-enum-bool","fsm"],["gccWarn"],["switch 忘记 break 为什么有时是 Bug、有时是设计？"]),
-      F("c-loops","for/while、循环不变量与边界","正确循环需要初始化、继续条件、进度量和可证明的边界。",["数组遍历优先使用 i < count，而非 i <= last。","无符号倒序循环 i>=0 永远为真。","修改循环边界相关对象时要重新证明终止。","长循环在实时系统中还需预算最大迭代次数。"],"写循环时明确“每轮前后始终成立什么”。","死循环 for(;;) 合法，但其退出/阻塞机制必须由系统设计说明。",["c-array-object","c-size-overflow"],["cCERT"],["如何正确写 size_t 从 n-1 倒序到 0 的循环？"])
     ])
   ]),
   B("c-pointers-arrays","第四部分：指针、数组与字符串","把地址、对象边界和生命周期放在一起理解。",[
@@ -1037,8 +1136,6 @@ const chapters=[
   B("c-lifetime-memory","第七部分：生命周期与动态内存","内存错误通常是对象何时存在、谁拥有、边界多大没有说清。",[
     B("c-lifetime","对象何时存在","作用域不是生命周期，地址仍在也不代表对象仍存活。",[
       F("c-storage-duration","自动、静态、线程与动态存储期","存储期决定对象 storage 保留多久；标准支持自动、静态、线程和 allocated storage duration。",["自动对象通常随块进入/退出开始与结束生命周期。","静态存储期对象贯穿程序执行。","malloc 获得的存储直到 free/realloc。","存储期不等于变量名字作用域。"],"先判断对象生命周期，再判断指针是否仍可使用。","栈/堆是常见实现区域，不是 C 标准存储期的完整定义。",["c-scope-linkage","c-stack-lifetime"],["cISO"],["局部 static 的作用域和存储期分别是什么？"]),
-      F("c-scope-linkage","块作用域、文件作用域与链接","同一实体可以在不同位置通过声明可见，也可能有同名但不同实体。",["局部变量通常无链接。","文件作用域 static 具有内部链接。","extern 声明可引用具有外部链接的实体。","头文件 static 对象会让每个翻译单元得到独立副本。"],"static header variable 不是一个全局对象，而是每个翻译单元各一份。","把可变 static 定义放进头文件常造成状态分裂。",["c-linkage-storage","c-header-design"],["cISO"],["为什么头文件中的 static 计数器会出现多份？"]),
-      F("c-stack-lifetime","返回局部变量地址与悬空指针","自动对象生命周期结束后，任何指向它的指针都不能再用于访问。",["返回 &local 会产生悬空指针。","异步回调保存局部 context 同样危险。","复用同一栈地址不恢复原对象生命周期。","可改为调用者提供存储、值返回、静态对象或动态分配。"],"地址仍能打印出来，不等于对象仍存在。","偶尔读到原值只是栈尚未覆盖，不是合法行为。",["c-callback","c-ownership"],["cUB","cCERT"],["为什么返回局部数组指针有时看起来能工作？"])
     ]),
     B("c-dynamic-memory","动态分配与所有权","分配只是开始；失败、大小计算、转移和释放都属于同一协议。",[
       F("c-malloc-family","malloc/calloc/free 的基本契约","malloc 返回满足基本对齐的未初始化存储；calloc 进行大小乘法并把字节清零；free 结束 allocated object 生命周期。",["始终检查分配失败。","malloc(0) 的结果需要按标准边界处理，不可随意解引用。","calloc 的全零字节不等于所有抽象类型语义零的普遍保证。","free(NULL) 安全且无动作。"],"分配 API 返回的是存储与生命周期责任。","分配成功不代表 size 计算没有溢出。",["c-size-overflow","c-ownership"],["cISO","cCERT"],["calloc 与 malloc+memset 的差异有哪些？"]),
@@ -1066,7 +1163,6 @@ const chapters=[
   B("c-embedded","第九部分：嵌入式 C 与硬件边界","volatile、寄存器与 ISR 共享数据是语言模型和硬件模型的交叉处。",[
     B("c-hardware-access","硬件访问与并发","让编译器看见哪些访问不能省略，同时不夸大 volatile 的能力。",[
       F("c-volatile","volatile 的正确语义","volatile 告诉实现这些对象访问具有不可按普通不可观察对象优化掉的语义，常用于 MMIO 和特定异步变化对象。",["每次源码层 volatile 访问都应按实现规则发生。","volatile 不保证复合操作原子。","volatile 不提供任务间 happens-before 或互斥。","普通内存上的并发应使用原子或同步原语。"],"volatile 解决“访问必须发生”，不解决“多个执行者如何协调”。","把共享变量全部加 volatile 只能改变优化，不能修复数据竞争。",["c-volatile-atomic","c-mmio"],["cISO","cWG14"],["volatile 能否保证 i++ 原子？"]),
-      F("c-volatile-atomic","volatile、原子与临界区","原子性回答操作是否不可分割；可见性/排序回答各执行者以何顺序观察；volatile 不是这两者的通用替代。",["C11 _Atomic 提供语言级原子操作与内存序。","单核 MCU 上也要考虑 ISR 抢占导致的读改写。","临界区可保护多步不变量。","RTOS 对象常是任务/ISR 通信的更高层方案。"],"先定义竞争者与不变量，再选择 atomic、critical section 或消息传递。","某类型在某 CPU 上单指令读写，不代表整个表达式或跨核顺序安全。",["c-isr-sharing","priority-layers"],["cISO","cCERT"],["32 位 MCU 上 uint32_t 访问为什么仍不等于并发协议正确？"]),
       F("c-mmio","内存映射寄存器与读改写","MMIO 地址对应外设语义，读写可能有副作用，寄存器位也可能采用 W1C、只读或保留规则。",["使用芯片厂商定义的 volatile 寄存器类型。","写 1 清零寄存器不能用普通 read-modify-write 模式。","保留位按手册要求写固定值或保持。","位域布局必须受 ABI 与头文件验证。"],"寄存器操作的真正规格来自芯片手册，不来自变量语法。","volatile 不能阻止错误的访问宽度、顺序或总线错误。",["c-bitfields","fr-fromisr"],["cWG14","st"],["W1C 状态位为什么不能用 reg &= ~FLAG 清除？"])
       ,F("c-bit-operations","位操作、掩码与寄存器字段","嵌入式 C 常用 &, |, ^, ~ 和移位构造寄存器字段，但必须先确定类型宽度、位号与写入语义。",["设置位用 reg |= MASK，清普通 R/W 位可用 reg &= ~MASK。","提取字段通常先 mask 再右移。","1u << bit 要保证 bit 小于类型宽度。","对窄类型做 ~ 和 << 时注意整数提升。"],"位操作先写字段宽度和寄存器语义，再写表达式。","W1C、只写和带副作用寄存器不能机械套用读改写模板。",["c-mmio","c-promotions","c-endianness"],["cINT","st"],["为什么 ~(uint8_t)0x01 的运算结果可能不是 uint8_t？"])
     ]),
@@ -1728,23 +1824,6 @@ const cAbsoluteAddress=F(
   ["cISO","armM7"],
   ["怎样给绝对地址写值？","普通函数跳转与跳转到另一固件 Reset_Handler 有什么区别？"]
 );
-const cIsrReview=F(
-  "c-isr-review",
-  "给 ISR 做代码审查：找出那些“偶尔才炸”的错误",
-  "ISR 的目标是保存最小现场信息并尽快退出；阻塞、无界循环、错误共享和不可重入库会把一次外设事件放大成系统级抖动。",
-  [
-    "ISR 中不能等待只能由任务或更低优先级中断满足的条件；无界 while、锁和阻塞 API 可能直接死锁。",
-    "使用 RTOS 时只调用允许的 FromISR API，并满足中断优先级门槛；需要时通过 higherPriorityTaskWoken 请求异常退出后调度。",
-    "共享的多字段状态不能靠 volatile 获得原子快照；采用队列、环形缓冲、临界区或版本化快照。",
-    "printf、malloc 和多数复杂库函数的时延、锁与可重入性未知；ISR 通常只读状态、清来源、记录时间/数据并通知任务。"
-  ],
-  "ISR 四问：会不会等、会不会丢、会不会重入、退出前是否真正处理了中断源。",
-  "ISR 并非绝对不能调用任何函数；关键是该函数有界、可重入、不会阻塞且符合当前平台/RTOS 的中断合同。",
-  ["c-isr-sharing","c-volatile-atomic","fr-fromisr","fr-hpwoken"],
-  ["cCERT","frInterrupt"],
-  ["ISR 里调用 printf、malloc 或普通队列 API 有什么问题？","清中断标志为什么必须服从 W1C 等寄存器语义？"]
-);
-
 Object.assign(cLeaf("c-implement-strlen"),{
   title:"手写 MyStrlen 与 MyStrcpy：边界比循环更重要",
   summary:"两个循环都不难；真正的合同是源必须终止、目标必须有容量，且 strcpy 不返回截断信息。",
@@ -1802,7 +1881,7 @@ cChapter.children=[
   ]),
   B("c-road-embedded","跨到硬件：MMIO、端序与 ISR","最后把语言对象模型接到寄存器、线路格式和异步执行。",[
     B("c-embedded-registers","寄存器与固定地址","访问必须发生，不等于并发和硬件语义自动正确。 ",[...cLeafList("c-volatile","c-volatile-atomic","c-mmio","c-bit-operations"),cAbsoluteAddress]),
-    B("c-embedded-data-isr","字节流与中断边界","逐字段定义格式，用有界 ISR 把事件交给正常上下文。",[...cLeafList("c-endianness","c-serialization","c-safe-parser","c-isr-sharing"),cIsrReview,...cLeafList("c-state-table","c-callback-table")])
+    B("c-embedded-data-isr","字节流与中断边界","逐字段定义格式，用有界 ISR 把事件交给正常上下文。",[...cLeafList("c-endianness","c-serialization","c-safe-parser","c-isr-sharing"),...cLeafList("c-state-table","c-callback-table")])
   ])
 ];
 
@@ -2169,8 +2248,8 @@ const finalChapters=[cChapter,algorithmChapter,armChapter,memoryChapter,communic
 const legacyLeafRedirects={};
 const contentCompactionGroups={
   "c-integer-types":["c-fixed-width","c-enum-bool"],
-  "c-promotions":["c-conversions"],
-  "c-sequencing":["c-operator-precedence"],
+  "c-signed-unsigned":["c-promotions","c-conversions"],
+  "c-sequencing":["c-operator-precedence","c-short-circuit","c-ub"],
   "c-control-flow":["c-switch-flow","c-loops"],
   "c-pointer-model":["c-null-pointer"],
   "c-aliasing-alignment":["c-restrict"],
@@ -2179,9 +2258,9 @@ const contentCompactionGroups={
   "c-memcpy-memmove":["c-implement-memmove"],
   "c-function-call-stack":["c-function-prototype","c-recursion-inline"],
   "c-pass-by-value":["c-output-params"],
-  "c-struct-layout":["c-initializers","c-union"],
+  "c-struct-layout":["c-initializers","c-union","c-object-representation"],
   "c-padding-alignment":["c-flex-packed"],
-  "c-storage-duration":["c-scope-linkage"],
+  "c-storage-duration":["c-scope-linkage","c-stack-lifetime"],
   "c-malloc-family":["c-realloc"],
   "c-memory-bugs":["c-size-overflow"],
   "c-macro-rules":["c-macro-side-effects"],
@@ -2190,7 +2269,7 @@ const contentCompactionGroups={
   "c-error-handling":["c-defensive-api"],
   "c-mmio":["c-absolute-address"],
   "c-serialization":["c-endianness","c-safe-parser"],
-  "c-isr-sharing":["c-isr-review"],
+  "c-isr-sharing":["c-isr-review","c-volatile-atomic"],
   "c-callback":["c-state-table","c-callback-table"],
 
   "cpp-container-map":["cpp-container-complexity"],
@@ -2284,7 +2363,8 @@ const mergeUnique=(a=[],b=[])=>[...new Set([...a,...b])];
 Object.entries(contentCompactionGroups).forEach(([targetId,sourceIds])=>{
   const target=allSourceNodes[targetId];if(!target)return;
   sourceIds.forEach(sourceId=>{
-    const source=allSourceNodes[sourceId];if(!source)return;legacyLeafRedirects[sourceId]=targetId;
+    legacyLeafRedirects[sourceId]=targetId;
+    const source=allSourceNodes[sourceId];if(!source)return;
     target.points=mergeUnique(target.points,source.points);
     target.questions=mergeUnique(target.questions,source.questions);
     target.related=mergeUnique(target.related,(source.related||[]).filter(id=>id!==targetId));
@@ -2292,6 +2372,88 @@ Object.entries(contentCompactionGroups).forEach(([targetId,sourceIds])=>{
     if(source.summary&&!target.summary.includes(source.summary))target.points.push(source.summary);
   });
 });
+
+/* C 第一批重构：五堂连续课程替代九个互相重复的薄页面。 */
+const cFoundationMeta={
+  "c-integer-types":{
+    title:"整数类型：从范围到正确选型",
+    summary:"先从数据可能出现的最小值、最大值和用途出发，再选择 int、固定宽度类型或 size_t；不要从类型名字猜位宽。",
+    points:["sizeof 计算对象占多少个 C 字节，sizeof(char) 永远为 1。","固定宽度类型适合寄存器、协议字段和确定的二进制格式。","size_t 用来表示对象大小和数组容量。","bool 表达真假，enum 给状态和值起名字。"],
+    remember:"类型选择先问数值范围和用途，再问占多少字节。",
+    correction:"在常见 32 位 MCU 上 int 往往是 32 位，但 C 语言没有要求所有目标都如此。",
+    interview:["sizeof(char) 为什么永远是 1？","什么时候应该使用 uint32_t，什么时候使用 unsigned int？","为什么数组长度通常使用 size_t？","enum 能否直接作为通信协议字段？"]
+  },
+  "c-signed-unsigned":{
+    title:"整数运算：提升、转换与溢出",
+    summary:"表达式会先提升小整数、再寻找共同类型、完成运算，最后才转换到目标变量；许多反直觉结果都发生在赋值之前。",
+    points:["char、short 和常见固定宽度小整数参加运算时通常先提升为 int。","有符号和无符号混合时，负数可能被转换成巨大的无符号数。","无符号溢出按模回绕，有符号溢出不能依赖回绕。","目标变量更宽并不会自动让中间运算变宽。"],
+    remember:"原类型 → 整数提升 → 共同类型 → 运算 → 赋值转换，按这个顺序推导。",
+    correction:"显式强转只有放在运算之前并建立在范围检查上，才能真正改变中间运算。",
+    interview:["为什么 -1 < sizeof(array) 可能为假？","两个 uint16_t 相乘为什么可能在赋给 uint32_t 前就出错？","无符号整数回绕有定义，为什么仍可能是程序错误？","怎样安全地把 size_t 转成 uint16_t？"]
+  },
+  "c-float":{
+    title:"浮点数：近似表示、误差与比较",
+    summary:"浮点数用有限位保存很大的数值范围，代价是多数十进制小数只能保存为邻近值；比较方式必须来自数据的真实误差范围。",
+    points:["0.1 这类十进制小数通常不能被二进制浮点精确表示。","与零比较是否使用容差，取决于值的来源。","接近零时看绝对误差，数值较大时还要考虑相对误差。","外部计算结果需要留意 NaN 和无穷。"],
+    remember:"容差不是固定魔法数，它来自传感器分辨率、算法误差和业务要求。",
+    correction:"不是所有浮点 == 都错误；若程序语义要求精确哨兵值，直接比较可能完全合理。",
+    interview:["为什么 0.1f + 0.2f 不一定等于 0.3f？","float x 与零应该怎样比较？","FLT_EPSILON 为什么不是通用比较阈值？","float 和 double 在嵌入式中怎样选择？"]
+  },
+  "c-sequencing":{
+    title:"表达式如何求值：优先级、顺序与短路",
+    summary:"优先级只决定怎样加括号，求值顺序决定先执行谁；把两者混在一起，是副作用和短路条件出错的根源。",
+    points:["运算符优先级不等于运行顺序。","函数实参通常不能假定从左到右求值。","&& 和 || 保证左侧先执行，并可能跳过右侧。","同一个完整表达式中不要多次修改同一变量。"],
+    remember:"先画括号，再列出每一次读写；顺序没有保证时就拆成多条语句。",
+    correction:"某个编译器每次都得到同一结果，不代表 C 语言承诺了这个顺序。",
+    interview:["printf(\"%d %d\", i++, i++) 有什么问题？","& 与 && 的关键区别是什么？","优先级为什么不能告诉我们函数参数的执行顺序？","未定义行为为什么可能在打开优化后才暴露？"]
+  },
+  "c-control-flow":{
+    title:"控制流：让正常路径与失败路径都清楚",
+    summary:"if、switch 和循环真正要解决的是状态怎样前进、失败怎样退出、资源怎样清理，而不只是语法怎么写。",
+    points:["入口先处理非法参数，能让主流程保持平直。","switch 的每个 case 都要明确退出、返回或有意贯穿。","循环需要边界、推进方式和终止条件。","取得多个资源后，可用统一 cleanup 路径集中释放。"],
+    remember:"好的控制流让读者一眼看出：成功怎样前进，失败从哪里离开。",
+    correction:"早返回本身不是问题；真正的问题是资源已经取得后却从不同出口漏掉清理。",
+    interview:["卫语句为什么能减少嵌套？","switch 忘记 break 会发生什么？","size_t 倒序循环应该怎样写？","多资源函数怎样避免每个 return 前重复清理？"]
+  }
+};
+Object.entries(cFoundationMeta).forEach(([id,meta])=>{if(allSourceNodes[id])Object.assign(allSourceNodes[id],meta)});
+
+/* C 第二批重构：按真实问题组织生命周期、const、volatile 与 ISR 共享。 */
+const cLifetimeMeta={
+  "c-storage-duration":{
+    title:"作用域、生命周期与 static：名字能用多久，对象又活多久",
+    summary:"先区分名字在哪里可见、对象何时存在，再理解局部变量、全局变量和 static 的真正差别；返回局部地址也会因此变得一目了然。",
+    points:["作用域回答名字在源码哪里可见，存储期回答对象从何时存在到何时失效。","普通局部对象每次进入函数都会创建一次新的生命，离开后立即失效。","static 局部对象一直存在但名字只在函数内可见，初始化只发生一次。","文件作用域 static 让名字只在当前 .c 文件使用，不是让对象多活一次。"],
+    remember:"分析变量时分别回答：名字在哪能用、对象活多久、是否跨文件可见。",
+    correction:"局部变量不一定真的放在硬件栈上；那是常见实现结果，不是理解生命周期的前提。",
+    interview:["局部变量和全局变量能否同名？","为什么 static 局部变量只初始化一次？","函数内 static 与文件作用域 static 分别改变什么？","为什么返回普通局部变量地址是错误的？"]
+  },
+  "c-const-pointer":{
+    title:"const：把“只读承诺”写进变量与函数接口",
+    summary:"const 首先是一份访问合同：普通 const 对象不应被修改，指针中的 const 则要看它位于星号哪一侧。",
+    points:["const 对象声明后不能通过普通 C 表达式修改。","const T * 表示不能经该指针修改目标，T * const 表示指针自身不能改指向。","函数输入缓冲使用 pointer-to-const，可以明确告诉调用者函数只读不写。","const 不是常量表达式的万能替代，也不是并发同步工具。"],
+    remember:"从变量名向外读声明：先看指针自己是否 const，再看所指对象是否 const。",
+    correction:"const 表示这条访问路径不允许修改，不保证底层数据永远不会被硬件或其他合法写路径改变。",
+    interview:["const int *p 与 int * const p 有什么区别？","函数参数为什么常写成 const uint8_t *buf？","const 和 #define 有哪些常用区别？","const volatile 常用来描述什么？"]
+  },
+  "c-volatile":{
+    title:"volatile：当值可能在程序视线之外发生变化",
+    summary:"从轮询硬件状态寄存器出发，理解 volatile 为什么阻止编译器省略必要访问，以及它为什么不能解决复合操作和并发竞争。",
+    points:["volatile 对象的每次规定访问都必须真实发生，不能只复用普通对象的旧值。","内存映射外设寄存器是 volatile 最典型的使用场景。","ISR 修改的简单标志可能需要 volatile，但是否并发安全仍要单独分析。","volatile 不保证 counter++ 原子，也不自动建立多字段发布顺序。"],
+    remember:"volatile 只回答‘这次读写能不能被编译器当作无关访问省掉’。",
+    correction:"不要把 volatile 解释成‘每次都从内存读所以线程安全’；内存、Cache、原子性和同步是不同问题。",
+    interview:["硬件寄存器为什么通常声明为 volatile？","没有 volatile 的轮询为什么可能变成死循环？","volatile 能否保证 i++ 原子？","volatile 适合所有任务共享变量吗？"]
+  },
+  "c-isr-sharing":{
+    title:"ISR 与主程序共享数据：从一个标志到可靠交接",
+    summary:"先画清楚谁写、谁读和允许丢多少事件，再在标志、计数器、临界区、原子操作与环形缓冲之间选择。",
+    points:["bool 标志只能表达至少发生一次，不能累计多次同类事件。","volatile 让访问发生，但读—改—写仍可能被中断插入。","临界区保护的是一段不允许被特定中断打断的复合操作，范围应尽量短。","传递成块数据时，生产者应先写完整内容，最后发布 ready 或 head。"],
+    remember:"先定义共享协议，再选择 volatile、临界区、原子操作或队列；关键不是关键词数量。",
+    correction:"32 位 MCU 上一次对齐 uint32_t 读写可能不可撕裂，但 counter++ 和多个字段的一致更新仍不是一次操作。",
+    interview:["ISR 和主循环共享一个变量，只加 volatile 为什么不够？","事件标志和事件计数器有什么区别？","什么时候需要进入临界区？","环形缓冲区为什么要先写数据再更新 head？"]
+  }
+};
+Object.entries(cLifetimeMeta).forEach(([id,meta])=>{if(allSourceNodes[id])Object.assign(allSourceNodes[id],meta)});
 
 /* 内存是嵌入式主干，补齐从映像、分配到可见性与零拷贝的中间台阶。 */
 const memoryCoreBranch=B("memory-core-map","程序映像与运行时内存","先回答数据从哪里来、被放到哪里、由谁管理，再讨论速度。",[
@@ -2402,7 +2564,7 @@ const networkChapter={id:"network",index:"07",title:"网络通信：从数据包
 finalChapters.splice(0,finalChapters.length,cChapter,algorithmChapter,armChapter,memoryChapter,communicationChapter,freeRTOSChapter,networkChapter,fatfsChapter,lvglChapter);
 
 const compactKeep={
-  c:new Set(["c-language-elements","c-declarators","c-typedef","c-preprocessor","c-translation-phases","c-object-link","c-decl-definition","c-integer-types","c-signed-unsigned","c-promotions","c-float","c-object-representation","c-sequencing","c-short-circuit","c-ub","c-control-flow","c-pointer-model","c-pointer-arithmetic","c-const-pointer","c-void-pointer","c-aliasing-alignment","c-array-decay","c-multidim-array","c-string-model","c-sizeof-strlen","c-implement-strlen","c-pass-by-value","c-function-pointer","c-callback","c-function-call-stack","c-struct-layout","c-padding-alignment","c-bitfields","c-storage-duration","c-stack-lifetime","c-malloc-family","c-ownership","c-memcpy-memmove","c-memory-bugs","c-macro-rules","c-header-design","c-error-handling","c-build-warnings","c-reentrancy","c-volatile","c-volatile-atomic","c-mmio","c-bit-operations","c-serialization","c-isr-sharing"]),
+  c:new Set(["c-language-elements","c-declarators","c-typedef","c-preprocessor","c-translation-phases","c-object-link","c-decl-definition","c-integer-types","c-signed-unsigned","c-float","c-sequencing","c-control-flow","c-pointer-model","c-pointer-arithmetic","c-const-pointer","c-void-pointer","c-aliasing-alignment","c-array-decay","c-multidim-array","c-string-model","c-sizeof-strlen","c-implement-strlen","c-pass-by-value","c-function-pointer","c-callback","c-function-call-stack","c-struct-layout","c-padding-alignment","c-bitfields","c-storage-duration","c-malloc-family","c-ownership","c-memcpy-memmove","c-memory-bugs","c-macro-rules","c-header-design","c-error-handling","c-build-warnings","c-reentrancy","c-volatile","c-mmio","c-bit-operations","c-serialization","c-isr-sharing"]),
   algorithms:new Set(["cpp-container-map","cpp-vector-string","cpp-stack-queue","cpp-ordered-map-set","cpp-unordered-map-set","cpp-priority-queue","cpp-iterators-algorithms","cpp-invalidation","algo-complexity","algo-invariant","algo-array","c-linked-list","algo-stack","algo-queue-two-stacks","c-ring-buffer","algo-prefix-sum","algo-two-pointers","algo-sliding-window","algo-monotonic-stack","algo-binary-search","algo-sort","algo-hash","algo-heap","algo-tree-traversal","algo-graph","algo-trie","algo-lru","algo-backtracking","algo-dp","algo-greedy","hot100-overview","hot100-code-clinic"]),
   armarch:new Set(["arm-architecture-core","profiles","isa-states","arm-compile-target","arm-fpu-abi","arm-registers","thread","arm-endianness","load-store-model","condition-flags","branch-call","arm-unaligned","arm-exclusive","arm-barriers","aapcs32","parameter-return","function-call-return","arm-memory-types","arm-mpu-mmu-sau","vector-reset","cmsis-layer","arm-nvic-overview","arm-pipeline-performance","msp","exception-entry","hardfault"]),
   memory:new Set(["memory-mcu-map","memory-vma-lma","memory-stack-heap","memory-allocator-inside","memory-jpeg-arena-case","memory-cache-line","memory-cache-policy","memory-dma-cache-case","memory-zero-copy","ram-address","linker-map","allocator-boundaries","draw-buffer","buffer-ownership","dcache","mpu","master-slave","axi-ahb-apb","bandwidth","efficiency","latency","arbitration","dma-stream"]),
@@ -2450,10 +2612,8 @@ chapters.splice(0,chapters.length,...finalChapters);
  */
 const coverageQuestions={
   "c-decl-definition":["文件作用域 static、函数内 static 和 extern 分别改变了什么？"],
-  "c-signed-unsigned":["为什么 `-1 < sizeof(array)` 可能得到反直觉结果？"],
   "c-array-decay":["为什么同一个数组在调用处能算元素数，传进函数后却不能？"],
   "c-padding-alignment":["交换结构体成员顺序为什么会改变 sizeof？"],
-  "c-volatile":["`const volatile` 适合描述哪类硬件寄存器？"],
   "c-volatile-atomic":["volatile、原子操作、临界区和 memory barrier 各自解决什么问题？"],
   "c-recursion-inline":["inline 能否保证消除函数调用？它和宏的风险有什么不同？"],
   "c-macro-side-effects":["即使给宏参数加了括号，为什么 `MAX(i++, j++)` 仍然危险？"],
@@ -3422,6 +3582,8 @@ function semanticFigure(id,chapter){
   return"";
 }
 function figureFor(id,chapter){
+  const foundationCourse=renderCFoundationCourse(id);if(foundationCourse)return foundationCourse;
+  const secondCourse=renderCSecondCourse(id);if(secondCourse)return secondCourse;
   if(chapter.id==="algorithms"){const structure=dataStructureFigure(id);if(structure)return structure;}
   if(chapter.id==="memory"){const core=memoryCoreFigure(id);if(core)return core;}
   if(chapter.id==="network"){const network=networkFigure(id);if(network)return network;}
@@ -3624,32 +3786,12 @@ static void worker_task(void *arg)
     intro:["状态不是任务函数中的业务枚举，而是内核关于“该任务是否有资格竞争 CPU”的记录。Running 与 Ready 都表示不等待外部条件；Blocked 表示正在等待时间或对象；Suspended 则脱离正常的事件/超时唤醒路径。"],
     table:[["状态","是否占 CPU","如何离开","典型来源"],["Running","是","阻塞、让出、被抢占","当前最高优先级 Ready 任务"],["Ready","否，但有资格","被调度为 Running","事件已满足或超时到期"],["Blocked","否","事件发生或超时","Queue/Notify/Semaphore/Delay"],["Suspended","否","显式 Resume","vTaskSuspend"]],
     sections:[["关键区分","Blocked 会因等待条件满足而自动回到 Ready；Suspended 不会因为原先等待的队列来了数据就自动恢复。"],["调试意义","看到任务长期 Ready 却不运行，优先检查是否有更高优先级任务始终 Ready；看到长期 Blocked，则检查等待对象、超时与生产者。"]]
-  },
-  "fr-delay":{
-    intro:["延时 API 的本质不是精确计时器，而是让任务在若干 Tick 内不参与调度。实际唤醒存在 Tick 量化，并且“变为 Ready”到“真正运行”之间还可能被更高优先级工作推迟。","周期任务关心的是长期相位。若每轮执行 3 ms 后再 xTaskDelay(10 ms)，周期会接近 13 ms；xTaskDelayUntil() 则把下一次释放点锚定在固定时间轴上。"],
-    code:{title:"稳定周期任务",meta:"C · 绝对周期基准",text:`static void sample_task(void *arg)
-{
-    TickType_t last = xTaskGetTickCount();
-    const TickType_t period = pdMS_TO_TICKS(10);
-
-    for (;;) {
-        sample_and_publish();       /* 必须有界，且应短于 period */
-        xTaskDelayUntil(&last, period);
-    }
-}`},
-    table:[["选择","周期基准","适合","注意"],["xTaskDelay","每次调用时刻","退避、最低等待、非严格周期","执行时间累加为漂移"],["xTaskDelayUntil","上次计划唤醒时刻","采样、控制、固定刷新周期","超期时可能立即进入下一轮"]],
-    lab:["用 GPIO 在每轮任务开始时翻转，逻辑分析仪观察周期与抖动。","分别加入 3 ms 可变工作量，比较两种 API 的长期相位。","再启动一个更高优先级突发任务，区分“到期时间”和“实际运行时间”。"],result:"示波器上应看到 DelayUntil 的边沿围绕固定网格，而普通 Delay 的边沿会把每轮执行时间累计进去。"
-  },
+  },
   "fr-tcb":{
     intro:["TCB 不是抽象名词，而是调度器能操作一个任务所需元数据的集合。端口代码通常依赖栈顶指针字段的位置，调度代码则使用链表项和优先级字段。","同一个任务可能同时挂在一张状态链表和一张事件链表：前者决定时间/调度归属，后者表示它正在等待哪个内核对象。事件到达或超时时，内核需要把两处关系一致地解除。"],
     sections:[["为什么源码先看 TCB","从 TCB 字段反推功能，比从数千行 tasks.c 顺读更有效：栈顶对应上下文切换，list item 对应状态流转，priority 对应 Ready list，notification 对应直达事件。"],["配置会改变结构","互斥量、Trace、运行时间统计、任务通知数组、MPU 包装等配置都可能增加字段。不要背固定 sizeof(TCB_t)，应在目标配置下测量。"]],
     lab:["在调试器里观察 pxCurrentTCB、任务名字与 pxTopOfStack。","让任务从 Ready 进入 Queue 阻塞，观察状态链表项与事件链表项的容器变化。","比较启用和关闭 trace/通知数组后的 TCB 大小。"],result:"你应能沿着一个 TaskHandle_t 找到其栈顶、优先级和当前等待关系。"
-  },
-  "fr-ready-list":{
-    intro:["FreeRTOS 的固定优先级调度可以理解为“每个优先级一条 Ready 队列”。调度时先定位最高非空优先级，再从该优先级的链表选择任务。","同优先级时间片只在多个同级任务都保持 Ready 时有意义；一旦其中某个任务阻塞，它就离开这条车道，CPU 自然交给同级或更低优先级候选。"],
-    sections:[["O(1) 选择的来源","很多端口借助位图或硬件找最高置位来快速找到最高 Ready 优先级；具体实现受 configUSE_PORT_OPTIMISED_TASK_SELECTION 等配置影响。"],["设计启示","优先级不应该用来表达模块重要程度，而应反映响应约束与阻塞关系。过多优先级会让系统难以推理，也会掩盖长期 Ready 的错误任务。"]],
-    lab:["创建两个同优先级计算任务和一个低优先级计数任务。","观察启用/关闭时间片时同级任务的运行分配。","让同级任务改为阻塞等待事件，观察低优先级任务获得稳定运行窗口。"],result:"你应能区分“同优先级轮转”“高优先级抢占”和“任务主动阻塞”这三种切换原因。"
-  },
+  },
   "fr-pendsv":{
     intro:["PendSV 被设计成可挂起且逻辑优先级很低的异常，因此适合把真正的上下文保存/恢复放到所有高优先级 ISR 结束之后执行。这样外设 ISR 不必在嵌套中断中直接完成完整切换。","异常入口已把易失寄存器压入当前任务栈；PendSV 只需补存被调用者保存寄存器和端口要求的扩展上下文，再把 PSP 写入旧 TCB，切换 pxCurrentTCB，反向恢复。"],
     sections:[["为什么不是 SysTick 直接切","SysTick 只是可能导致调度结果变化的一个事件源。Queue/Notify 的 ISR、任务主动阻塞或让出同样可能请求切换；统一挂起 PendSV 能把机制集中。"],["FPU 与安全上下文","启用浮点后，是否保存额外寄存器取决于端口、任务使用情况和惰性堆栈行为，这会显著影响任务栈最坏占用。"]],
@@ -3680,42 +3822,12 @@ s.value = 0;                        /* 不影响已经入队的副本 */`},
     intro:["Mutex 表达“有 owner 的互斥访问”，因此必须由获取它的任务释放。Binary semaphore 表达事件或令牌，不要求同一个实体归还。二者内部实现可能相关，但协议语义不同。","优先级继承只在高优先级任务等待低优先级 owner 时临时提高 owner 优先级，目的是让它更快结束临界区。临界区本身若包含慢 I/O 或不受控阻塞，继承也无法给出好上界。"],
     table:[["需求","Mutex","Binary Semaphore"],["保护共享资源","是","不推荐"],["有明确 owner","是","否"],["优先级继承","有","无"],["ISR 中 Give","否","可以使用 FromISR 版本"],["事件合并语义","不适用","0/1 令牌"]],
     sections:[["锁的工程约束","为所有锁定义全局顺序；禁止持锁等待可能反向依赖的队列/事件；记录最长持锁时间。"],["不要保护整个驱动流程","把共享寄存器或状态更新缩到短临界区，长 DMA/外设完成应异步等待，而不是一直持 mutex。"]]
-  },
-  "fr-notify-actions":{
-    intro:["Task Notification 的核心不是单一 API，而是一组“如何更新 32-bit 值”的原子动作。eSetBits 适合事件位，eIncrement 适合轻量计数，eSetValueWithOverwrite 适合只关心最新值，eSetValueWithoutOverwrite 则能检测尚未消费的旧值。"],
-    table:[["动作","语义","适合","风险"],["eNoAction","只改变 pending 状态","纯唤醒","不携带信息"],["eSetBits","value |= bits","多个独立事件位","重复同位会合并"],["eIncrement","value++","事件计数","溢出需定义"],["eSetValueWithOverwrite","value = x","最新状态/采样","旧值会被覆盖"],["eSetValueWithoutOverwrite","仅空闲时写","单槽邮箱","发送者必须处理失败"]],
-    code:{title:"ISR 用位图唤醒一个服务任务",meta:"C · 清位策略属于协议",text:`void DMA_IRQHandler(void)
-{
-    BaseType_t hpw = pdFALSE;
-    uint32_t events = 0;
-
-    if (dma_half()) events |= EVT_HALF;
-    if (dma_done()) events |= EVT_DONE;
-    clear_dma_flags();
-
-    xTaskNotifyFromISR(worker, events, eSetBits, &hpw);
-    portYIELD_FROM_ISR(hpw);
-}
-
-/* worker */
-uint32_t events;
-xTaskNotifyWait(0, EVT_ALL, &events, portMAX_DELAY);`}
-  },
-  "fr-event-groups":{
-    intro:["Event Group 适合表达“系统目前具备哪些条件”，例如网络已连接、传感器已校准、DMA 已完成。它不是消息日志：同一位在被消费前重复置位不会留下次数。","Wait All 常用于阶段闸门，Wait Any 常用于多个等价唤醒源。clear-on-exit 会影响其他等待者看到的状态，尤其在多个消费者并存时必须谨慎。"],
-    sections:[["ISR 为什么可能延后处理","设置事件位可能同时解除多个任务的等待，调度与链表工作不是固定常数。官方实现把 ISR 请求交给 timer daemon 处理，以控制 ISR 内的工作上界。"],["状态位与边沿事件","持续状态可由置位/清位表达；瞬时且不可合并的事件更适合 Queue、计数通知或 counting semaphore。"]],
-    lab:["让两个任务分别等待 ANY 与 ALL 掩码。","逐位置位并记录哪个任务何时变 Ready。","打开 clear-on-exit，再观察两个等待者之间是否出现协议竞争。"],result:"你应能明确每一位是“持续状态”还是“瞬时事件”，以及由谁清除。"
-  },
+  },
   "fr-primitive-choice":{
     intro:["通信原语没有脱离语义的“最优”。选择时先回答六个问题：是否携带每条数据、是否允许合并、几个生产者、几个消费者、是否有 owner、是否从 ISR 使用。性能和 RAM 是在语义正确之后的第二层优化。"],
     table:[["原语","数据/状态","接收模型","所有权/计数","典型用途"],["Queue","固定大小 item FIFO","多生产者/多消费者","队列持有副本","命令、结构化数据"],["Task Notification","32-bit + pending","目标任务固定","无独立对象","单任务事件/计数/位图"],["Mutex","无 payload","竞争 owner","必须由 owner 释放","保护共享资源"],["Binary Semaphore","0/1 token","等待者竞争","无 owner","ISR 到任务事件"],["Event Group","位图状态","多个任务不同掩码","位可合并","多条件闸门"],["Stream/Message Buffer","字节流/变长消息","通常单写单读","环形存储","串口流、变长帧"]],
     sections:[["讲清楚的顺序","先给约束，再给选择，再说为何排除其他原语，最后补充超时、满载和 ISR 边界。这样比背诵“通知比队列快”更能体现工程判断。"]]
-  },
-  "fr-stack-overflow":{
-    intro:["栈溢出往往不是在越界瞬间就进入 Hook。写越界可能先破坏邻近 TCB、链表或数据，随后在完全不同的位置 Fault。检查机制是检测手段，不是内存隔离。","High-water mark 只覆盖已经跑过的路径；错误处理、格式化输出、深层库调用、浮点路径和罕见中断嵌套都必须进入压力场景。"],
-    sections:[["预算方法","从编译器 stack usage 文件、调用图和实测高水位三条证据交叉；再为中断帧、FPU、库函数和未来变更留余量。"],["故障证据","保存当前任务、PSP/MSP、stacked PC、CFSR/BFAR、栈边界与水位。若能使用 MPU，为任务栈边缘设置 no-access guard。"]],
-    lab:["给目标任务逐步减小栈，运行覆盖最深路径的压力测试。","周期记录 uxTaskGetStackHighWaterMark，同时监控栈哨兵。","触发失败后核对 Fault 地址是否位于任务栈边界附近。"],result:"不要把“Hook 没触发”写成“没有栈越界”；正确结论应说明覆盖路径与检测边界。"
-  },
+  },
   "fr-heap-schemes":{
     intro:["FreeRTOS 提供的 heap_x.c 是可替换示例实现，不是内核调度本身。应用最终只依赖 pvPortMalloc/vPortFree 等接口约定，因此选择应由对象生命周期、是否释放、连续块需求和物理内存区域决定。"],
     table:[["实现","释放","相邻合并","区域","适用判断"],["heap_1","否","不需要","单区","全部对象启动期创建且永不删除"],["heap_2","是","否","单区","遗留/固定尺寸模式，通常不优先"],["heap_3","由 C 库","由 C 库","C 库决定","接受其锁、碎片与确定性"],["heap_4","是","是","单区","通用动态对象"],["heap_5","是","是","多不连续区","需要显式利用多块 RAM"]],
@@ -3851,29 +3963,7 @@ void app_run(void) { counter_inc(); }
    unsigned counter = 0;
    每个包含者都可能带来一个外部定义。 */`},
     sections:[["static 为什么总让人混乱","文件作用域 static 改变名字的链接属性，使实体只在当前翻译单元配对；函数内部 static 主要改变对象的存储期，名字仍只在块内可见。它们不是同一句“放在静态区”可以解释完的。"],["如何读链接错误","undefined reference 先查目标文件是否参与链接、库顺序/提取条件和符号拼写；multiple definition 先查头文件是否放了普通定义、同一源是否被构建两次，或多个模块是否都提供了同名强符号。"]]
-  },
-  "c-promotions":{
-    intro:["整数提升是嵌入式 C 最值得真正算一遍的规则。uint8_t、int8_t、uint16_t 等小整数参与运算时，常先提升为 int；若 int 不能表示其全部值才提升为 unsigned int。随后两侧再经过通常算术转换。","目标变量的类型只影响最后赋值转换，不会倒过来保护中间运算。例如 uint32_t result = u16_a * u16_b，乘法可能先在 int 中发生。"],
-    code:{title:"先扩大运算类型，再检查结果范围",meta:"C · 转换位置必须在运算之前",text:`uint16_t a = 50000u;
-uint16_t b = 2u;
-
-/* 危险：a 和 b 可能先提升为 int，再做乘法 */
-uint32_t wrong = a * b;
-
-/* 明确让乘法在 uint32_t 中进行 */
-uint32_t ok = (uint32_t)a * (uint32_t)b;
-
-/* 回窄前仍需验证 */
-if (ok <= UINT16_MAX) {
-    uint16_t narrowed = (uint16_t)ok;
-}`},
-    sections:[["推导顺序","写出每个操作数原类型 → 整数提升 → 共同类型 → 运算范围 → 赋值转换。只看最终变量类型会漏掉真正发生运算的阶段。"],["编译器帮助","开启 -Wconversion、-Wsign-conversion 或相应静态规则，但警告需要结合项目类型约定逐步治理。"]]
-  },
-  "c-ub":{
-    intro:["未定义行为是“标准不再约束程序”，而不是“返回一个随机数”。优化器可假设有符号溢出、越界解引用等永不发生，并据此删除分支、合并访问或重新排序。","题目一旦包含 UB，正确分析应先指出 UB 发生的位置和前提；不能继续把某次编译器输出当成 C 语言答案。"],
-    table:[["类别","例子","工程后果"],["Undefined","有符号溢出、越界、UAF、错位访问","优化器可做任意标准允许推导"],["Unspecified","部分求值顺序","实现从允许结果中选择，无需记录"],["Implementation-defined","plain char 符号性等","实现必须记录其选择"],["Defined","无符号模运算、&& 短路","可作为算法契约使用"]],
-    lab:["用 -O0 与 -O2 编译一个依赖 signed overflow 的判断，比较汇编。","启用 UBSan 触发 signed overflow、非法移位和错位访问。","把反例改写为先做范围检查或使用有证明的无符号算法。"],result:"不要以“我的 GCC 输出是……”结束；应给出标准层结论、目标实现边界和修复方式。"
-  },
+  },
   "c-pointer-model":{
     intro:["嵌入式工程很容易把指针简化成“地址变量”，但语言允许解引用的条件更多：它必须指向仍在生命周期内的对象，地址满足目标类型对齐，访问没有越过对象边界，并且所用 lvalue 类型符合访问规则。","MMIO 是经实现与芯片平台定义的特殊地址访问；普通 RAM 中一个数值落在合法区间，不会自动创造对应 C 对象。"],
     table:[["检查","典型失败","症状"],["是否指向对象","NULL、任意整数地址","HardFault/UB"],["生命周期","返回局部地址、free 后使用","偶发数据错/UAF"],["边界","one-past 解引用、长度错误","邻接对象破坏"],["对齐","buf+1 强转 uint32_t*","UsageFault/性能下降"],["访问类型","不兼容类型双关","优化后结果变化"]],
@@ -3896,19 +3986,7 @@ if (ok <= UINT16_MAX) {
 }`},
     table:[["表达式","类型含义","sizeof 结果"],["int a[10]","拥有 10 个 int 的数组","整个数组"],["a（普通表达式）","转换为 int*","若先 decay，得到指针大小"],["&a[0]","int*","指针大小"],["&a","int (*)[10]","指针大小"]],
     lab:["打印 a+1 与 &a+1 的地址差。","在函数形参中比较 sizeof(a) 与调用处 sizeof(a)。","为 API 分别标记 count、capacity 和 bytes，检查单位混用。"],result:"你应能不靠口诀推导 a、&a[0]、&a 的类型和步长。"
-  },
-  "c-string-safety":{
-    intro:["C 字符串安全不是“换成带 n 的函数”这么简单，而是同时维护容量 capacity、当前长度 length、期望写入量 needed 和终止符。很多 n 系列 API 的 n 参数语义彼此不同。","嵌入式协议缓冲区经常是二进制数据，内部可能合法包含 0，必须使用显式长度而不是 strlen。"],
-    code:{title:"snprintf 的截断判断",meta:"C · 返回值是期望字符数",text:`int n = snprintf(dst, capacity, "T=%ld", (long)value);
-if (n < 0) {
-    return FORMAT_ERROR;
-}
-if ((size_t)n >= capacity) {
-    return TRUNCATED;   /* capacity>0 时 dst 仍以 '\\0' 终止 */
-}
-return OK;`},
-    sections:[["外部输入","接收缓冲区不应先假定已有终止符。先依据帧长度验证，再在额外容量允许时补 '\\0'，或使用长度感知解析器。"],["常见追问","strlen 不含终止符；sizeof(\"abc\") 为 4；strncpy 可能不补终止符；strncat 的 n 是最多从源追加的字符数，不是总容量。"]]
-  },
+  },
   "c-pass-by-value":{
     intro:["C 的所有参数都是值传递。传入 int* 时，函数得到的是地址值的一份副本；它能通过这份副本修改目标对象，但给形参 p 重新赋值不会改变调用者的指针变量。","要修改调用者指针本身，需要传入它的地址，也就是 T**；这仍然只是把一个指针值按值传入。"],
     code:{title:"修改对象与修改调用者指针是两件事",meta:"C · T* 与 T**",text:`static void set_value(int *p)
@@ -3961,25 +4039,7 @@ _Static_assert(sizeof(Frame)          == 12, "Frame size");
     intro:["C 的内存管理真正难点不是 malloc，而是 owner。一个对象可以有多个指针别名，但释放责任必须唯一或由明确的共享协议管理；借用者不能超过 owner 生命周期。","异步系统还要把所有权沿队列、DMA 和回调时间线标出来。生产者把 buffer 指针入队后，是复制共享、只读借用，还是完全转移，必须在 API 中写明。"],
     table:[["状态","谁可写","谁负责释放","典型转移"],["FREE","内存池","内存池","free queue"],["OWNED","当前 owner","当前 owner","创建/取得"],["BORROWED","按契约只读或受限","原 owner","同步调用"],["TRANSFERRED","新 owner","新 owner","队列/回调交接"],["FREED","无人","已完成","任何继续访问均错误"]],
     lab:["为项目中的 DMA buffer、消息结构和回调 context 各画一条 owner 时间线。","在每个失败分支标出已经获取但尚未释放的资源。","用 ASan 在主机测试中故意制造 UAF 与 double free，学习读报告。"],result:"任意时刻指向一个对象时，你都应能回答：它是否存活、谁能写、谁最终释放。"
-  },
-  "c-macro-side-effects":{
-    intro:["函数式宏最危险的问题不是缺括号，而是参数会按展开文本出现多次。MAX(i++, j++) 即使每个参数都加了括号，仍可能让被选中的参数再次自增。","嵌入式寄存器宏若重复读取 volatile 寄存器，还可能丢失状态或触发两次硬件副作用。"],
-    code:{title:"宏展开后数一遍参数出现次数",meta:"C · inline 函数通常更安全",text:`#define BAD_MAX(a, b) ((a) > (b) ? (a) : (b))
-
-static inline int max_int(int a, int b)
-{
-    return a > b ? a : b;
-}
-
-/* BAD_MAX(read_status(), limit) 可能读两次状态寄存器 */
-/* max_int(read_status(), limit) 每个实参只求值一次 */`},
-    sections:[["多语句宏","do { ... } while (0) 让宏在 if/else 中表现为单条语句；宏内部名字仍要避免冲突，并且 continue/break/return 的语义必须谨慎。"],["何时仍用宏","条件编译、字符串化、token 拼接、生成重复声明，以及确实需要保留类型多态的场景。"]]
-  },
-  "c-volatile":{
-    intro:["volatile 的核心是访问可观察性，而不是线程安全。它常用于由硬件改变的 MMIO、ISR 与主程序间受严格约束的简单标志，或调试/实现定义场景；它不保证 ++ 是原子操作，也不提供跨核内存顺序。","在 RTOS 中，共享业务状态优先使用队列、通知、互斥量、原子或临界区。volatile 最多是某些低层实现的一部分。"],
-    table:[["需求","volatile","_Atomic","临界区/锁"],["访问不能被普通优化省略","是","原子对象访问有其规则","间接保证"],["单次读写原子","不保证","保证对应原子操作","保护区内保证"],["多步不变量","否","单对象组合需专门操作","适合"],["任务阻塞等待","否","否","RTOS 对象适合"],["MMIO 副作用访问","常用","通常不是","不能替代寄存器定义"]],
-    lab:["对轮询寄存器分别使用/不使用 volatile，比较优化汇编。","让 ISR 与主循环同时执行 counter++，观察 volatile 不能避免丢更新。","改用临界区或原子 fetch-add，再比较。"],result:"能看到访问指令不被删除，只证明 volatile 的一个作用；并发正确性需要另一套证据。"
-  },
+  },
   "c-mmio":{
     intro:["内存映射寄存器是“地址背后有外设状态机”的对象。读取可能清标志，写入可能启动传输，某些位写 1 清零，某些位必须保持。普通 RAM 的读改写习惯不能机械套用。","厂商 CMSIS 头文件通常已经编码访问宽度和 volatile 限定，但每个寄存器的位语义仍必须回到参考手册。"],
     code:{title:"普通 R/W 位与 W1C 位的写法不同",meta:"伪代码 · 必须以芯片手册为准",text:`/* 普通 R/W 控制位：可读改写 */
@@ -4194,12 +4254,7 @@ Object.assign(deepLessons,{
   }
 });
 /* 其余章节的第二轮提炼：基础主线优先，常用进阶随后，底层细节只在能解释工程现象时出现。 */
-Object.assign(deepLessons,{
-  "c-storage-duration":{
-    intro:["“变量放在哪里”其实混着三个问题：名字在哪段源码可见、这个名字能否被别的翻译单元链接、对象从什么时候活到什么时候。把它们揉成一句“局部变量在栈、全局变量在静态区”，不仅不准确，还会在优化、递归和多文件工程里迅速失灵。","存储期描述对象的生命时间。automatic 对象通常在进入块或调用时开始一次新的生命周期；static 对象贯穿整个程序；allocated 对象从成功分配持续到释放；线程存储期只在实现支持并使用线程局部对象时才 relevant。它们最终位于寄存器、栈、RAM section 还是被优化掉，是实现与链接布局的问题。"],
-    sections:[["automatic 不等于一定上栈","编译器可以把局部对象放寄存器、拆散、复用栈槽，甚至完全消去。只有取地址、调试信息、ABI spill 等因素才让它更可能拥有可观察的内存位置。"],["static local 的两张脸","名字只有块作用域，但对象具有静态存储期；它只初始化一次，后续调用共享同一份状态，因此可能破坏可重入性。"],["动态对象没有 C 变量名也能存活","malloc 返回值只是访问这块对象的一个指针。指针变量离开作用域不等于对象自动释放；最后一条可达指针丢失会形成泄漏。"]],
-    table:[["形式","名字常见作用域","对象存储期","典型风险"],["函数内 int x;","块","automatic","返回 &x 后悬空"],["函数内 static int x;","块","static","跨调用共享，不可重入"],["文件级 static int x;","文件","static","模块私有，但仍是全局可变状态"],["extern int x;","取决于声明位置","声明本身不创建新对象","必须与唯一兼容定义配对"],["malloc 得到的对象","由持有指针的名字决定","allocated","泄漏、UAF、所有权不清"]]
-  },
+Object.assign(deepLessons,{
   "c-scope-linkage":{
     intro:["作用域像“在这页源码上能不能叫出这个名字”，链接像“别的翻译单元能不能用同一个名字找到同一个实体”。两者互不替代：文件级 static 的名字在文件作用域可见，却只有内部链接；函数里的 extern 声明只有块作用域，却仍可引用外部链接实体。","存储期再加进来才形成完整坐标。一个 static local 名字只能在函数块内写出来，但对象活一辈子；一个 automatic local 名字也在块内可见，对象只活这一轮进入。工程里看到 static，先问它修饰的是什么、出现在哪里。"],
     sections:[["三种链接","外部链接让不同翻译单元的声明配到同一实体；内部链接把名字限制在当前翻译单元；无链接的局部变量和 typedef 名称不参与链接器符号配对。"],["头文件该提供什么","公共函数原型、类型和 extern 对象声明可以进头文件；普通对象定义若被多个 .c 包含，通常制造多定义。模块私有对象与 helper 用 file-scope static 留在 .c。"],["同名遮蔽不是同一对象变身","内层块可声明同名局部对象并遮蔽外层名字。此时两个实体都可能仍存活，只是源码名字解析暂时指向内层。"]],
@@ -4775,25 +4830,7 @@ Object.assign(deepLessons,{
     intro:["优先级只决定语法树怎样分组，结合性只在相同优先级连续出现时决定结合方向；它们都不自动规定子表达式先求哪一边。`a + b * c` 等价于 `a + (b*c)`，但函数实参的求值顺序仍要按 C 规则另查。","工程代码不应把正确性押在读者背完整表上。涉及位运算、比较、逻辑运算和赋值混合时主动加括号；但括号也只能改变分组，不能修复未排序副作用。"],
     sections:[["最常踩的链","`flags & MASK == 0` 常被解析为 `flags & (MASK==0)`，应写 `(flags & MASK) == 0`。`a < b == c < d` 是两个比较结果再比较，不是数学连锁不等式。"],["结合性不是执行方向","赋值右结合让 `a=b=c` 分组为 `a=(b=c)`；这不等于所有右结合运算都从右侧先产生副作用。"],["编译器警告","启用 `-Wall -Wextra -Wparentheses` 等目标工具链选项，让可疑表达式在构建阶段暴露。"]],
     table:[["表达式","实际分组","更清楚写法"],["a + b * c","a + (b*c)","可保持或显式括号"],["flags & MASK == 0","flags & (MASK==0)","(flags & MASK) == 0"],["x << 8 + y","x << (8+y)","(x << 8) + y（若这是本意）"],["a < b == c < d","(a<b)==(c<d)","拆成命名布尔条件"],["*p++","*(p++)","(*p)++（若要改值）"]]
-  },
-  "c-control-flow":{
-    intro:["卫语句把非法输入和失败条件尽早送出，让主路径保持从上到下。它不是“return 越多越专业”，而是每个出口都清楚说明此时拥有哪些资源、输出是否已提交。取得资源后的函数若有多个 return，仍要确保每条路径都正确释放。","复杂嵌套通常说明前置条件、状态转换或错误处理没有被命名。把条件拆成 `is_valid_header`、`has_capacity` 等可测试谓词，比在五层 if 里混合解析、修改和 I/O 更容易证明。"],
-    sections:[["先验证后提交","外部输入先解析到临时对象，全部字段合法后再一次更新共享状态；中途失败不会留下半更新。"],["循环退出","区分成功完成、EOF、timeout、取消和错误。一个裸 `break` 若让调用者无法知道原因，应该保存明确状态。"],["资源边界","卫语句适合尚未取得资源的入口；取得多个资源后可使用单一 cleanup 或小型 RAII 风格 wrapper。"]],
-    code:{title:"入口卫语句 + 事务式提交",meta:"C · readable control flow",text:`Status config_apply(const uint8_t *buf, size_t len)
-{
-    if (buf == NULL) return ST_BAD_ARG;
-    if (len < HEADER_SIZE) return ST_TRUNCATED;
-
-    Config next = {0};
-    Status st = decode_config(buf, len, &next);
-    if (st != ST_OK) return st;
-    if (!config_is_safe(&next)) return ST_RANGE;
-
-    g_config = next;       /* 所有验证成功后一次提交 */
-    return ST_OK;
-}`},
-    table:[["阶段","允许修改共享状态吗","失败语义"],["指针/长度检查","否","参数错误"],["字段解码","只写局部临时对象","截断/格式错"],["跨字段验证","否","范围/组合非法"],["资源准备","按 owner 协议","明确 cleanup"],["最终提交","一次","成功后新状态可见"]]
-  },
+  },
   "c-enum-bool":{
     intro:["`_Bool` 只保存 0 或 1：任何标量转换到 `_Bool` 时，零变 0，非零变 1；`stdbool.h` 的 `bool/true/false` 是便捷宏。它适合状态真假，不适合把多个错误原因压成一位。","enum 给一组整数常量命名，并让变量表达有限状态，但它的兼容整数类型、大小和对超范围输入的处理受实现/标准版本影响。协议与 Flash 格式不要直接 memcpy enum，应定义固定宽度 wire value 并验证后映射。"],
     sections:[["位掩码不是 bool","`flags & READY` 的结果可能是 0x20；放进 bool 会归一化为 1，但与 `== true` 直接比较前最好写清 `(flags & READY) != 0`。"],["无效枚举值","来自外部字节的整数应 switch 验证；default 处理未知版本值。把强转写成 enum 不会自动证明合法。"],["状态机","enum + switch 能让状态集合可读，仍需定义合法迁移；枚举器只是名字，不会阻止任意赋值路径。"]],
@@ -5046,23 +5083,7 @@ void UART_IRQHandler(void)
     portYIELD_FROM_ISR(wake);
 }`},
     table:[["审查项","危险信号","更好边界"],["等待","while 条件依赖任务/低优先级 ISR","采样后退出"],["时间","printf/malloc/解析/浮点库","任务处理"],["共享","多字段 volatile 结构体","不可变消息/版本快照"],["RTOS","普通/阻塞 API","FromISR + 优先级门槛"],["清源","普通 RMW 套所有寄存器","按参考手册"]]
-  },
-  "c-const-pointer":{
-    intro:["const 是访问路径上的只读限定：`const uint8_t *p` 表示不能经 p 修改所指字节，`uint8_t * const p` 表示 p 这枚指针自身不能改，`const uint8_t * const p` 两层都限定。它能让接口表达输入借用、把只读对象放入只读区域并帮助编译器诊断误写。","const 不是跨线程同步，也不保证底层对象永远不变：同一对象可能还有一个可写别名，硬件寄存器也可能自行变化。对真正声明为 const 的对象强转去 const 后修改，行为未定义或在只读存储上 Fault。"],
-    sections:[["接口传播","只读输入优先接收 `const T*`；从 T* 转到 const T* 安全，反向丢 const 需要证明原对象可写。多级指针转换要更谨慎，`T**` 不能随意变成 `const T**`。"],["const 与宏","const 对象有类型、作用域、地址和调试符号；`#define` 是预处理 token 替换。宏适合条件编译/生成，类型化常量优先 enum、static const 或语言常量表达式。"],["const volatile","适合软件只读、硬件会异步变化的寄存器路径，例如只读状态寄存器；每次访问都要发生，但软件仍不能通过该左值写。"]],
-    code:{title:"从变量名向外读 const",meta:"C · qualifier",text:`const uint8_t *p;          /* pointer to const byte */
-uint8_t * const q = buffer; /* const pointer to byte */
-const uint8_t * const r = table; /* both */
-
-size_t checksum(const uint8_t *data, size_t length);
-
-typedef uint8_t *BytePtr;
-const BytePtr hidden = buffer; /* uint8_t * const, not const uint8_t * */
-
-const volatile uint32_t *status =
-    (const volatile uint32_t *)STATUS_REG_ADDR;`},
-    table:[["声明","能改指针","能经它改对象"],["const T *p","是","否"],["T * const p","否","是"],["const T * const p","否","否"],["const volatile T *p","是","否；但每次读必须发生"],["#define K 10","不是对象","token 替换"]]
-  },
+  },
   "c-typedef":{
     intro:["typedef 在 C 语法层给已有类型建立别名，编译器仍知道它是类型；宏则在预处理阶段替换 token，既可能表示常量，也可能生成声明或控制条件编译。把二者只概括成“都能起别名”会漏掉类型检查、作用域、分号和副作用。","公共 API 的 typedef 应表达领域角色或隐藏布局，例如 `DeviceHandle`、`SampleCallback`；若只把 `unsigned long` 缩成 U，反而隐藏了位宽和 ABI 风险。"],
     sections:[["指针别名","`typedef char *String; const String s` 的 const 修饰整个指针别名，得到 char * const。指针星号被藏起来后阅读成本会上升。"],["匿名结构","`typedef struct { ... } Sample;` 简洁，但若需要前向声明/自引用，具名 tag 更灵活。"],["宏常量","宏没有类型和存储；`enum { LIMIT=16 };` 或 `static const` 在不同常量表达式场景各有边界，应按标准版本与用途选。"]],
@@ -5111,28 +5132,7 @@ static inline uint32_t clamp_u32(uint32_t x, uint32_t hi)
 /* module.c */
 static uint32_t private_counter; /* 整个模块唯一的私有状态 */`},
     table:[["放入头文件","通常是否合适","原因"],["extern 函数/对象声明","是","发布合同"],["类型定义","是","调用者需要知道时"],["宏/enum 常量","是，谨慎","编译时接口"],["static inline helper","是，短小稳定","每 TU 内部链接"],["static 可变对象","通常否","每 TU 一份隐藏状态"],["普通全局对象定义","否","多定义风险"]]
-  },
-  "c-float":{
-    intro:["浮点“与零比较”没有一条放之四海皆准的 `epsilon`。若值来自能精确产生 0 的离散控制路径，例如初始化为 0 后只赋精确 0，`x == 0.0f` 可以表达正确语义；若值来自测量、累计或非精确运算，容差必须来自业务分辨率和误差预算。","只写 `fabsf(x) < FLT_EPSILON` 往往不对。FLT_EPSILON 是 1 附近相邻 float 的间隔尺度，不是所有数值域的通用零阈值；量程 1000 的传感器和 1e-9 的归一化模型需要不同策略。"],
-    sections:[["绝对容差","靠近零时相对误差分母不稳定，使用业务可接受的 absolute tolerance。"],["相对容差","比较两个非零大数时可用 `rel_tol * max(|a|,|b|)`，并与绝对容差取最大。"],["NaN","任何与 NaN 的有序/相等比较通常为假；外部浮点输入应先用 isfinite/isnan 做域验证。"]],
-    code:{title:"把容差写成接口参数，而不是神秘常量",meta:"C · float comparison",text:`#include <math.h>
-#include <stdbool.h>
-
-bool nearly_equal(float a, float b,
-                  float abs_tol, float rel_tol)
-{
-    if (!isfinite(a) || !isfinite(b)) return false;
-    float diff = fabsf(a - b);
-    float scale = fmaxf(fabsf(a), fabsf(b));
-    return diff <= fmaxf(abs_tol, rel_tol * scale);
-}
-
-/* 与业务零点比较 */
-if (fabsf(measured_current) <= CURRENT_NOISE_FLOOR) {
-    /* treat as zero */
-}`},
-    table:[["场景","比较策略","理由"],["精确状态值/显式赋零","x == 0.0f 可合理","语义要求精确"],["测量接近零","|x| <= noise_floor","由噪声与分辨率决定"],["两个一般结果","abs + relative tolerance","兼顾近零与大尺度"],["NaN/Inf 不允许","先 isfinite","普通比较不能完成域验证"]]
-  },
+  },
   "c-string-model":{
     intro:["C 字符串不是独立运行时类型，而是可访问范围内以零字符终止的 char 序列。`char a[] = \"abc\"` 创建可修改数组副本；`const char *p = \"abc\"` 让 p 指向静态存储期字符串字面量，不能修改字面量内容。","C 为历史兼容把字符串字面量类型描述为 char 数组，但修改它仍是未定义行为，许多系统把它放在只读区。工程接口应使用 `const char*` 接收只读字符串，避免 `char *p = \"abc\"` 暗示可写。"],
     sections:[["字符数组不一定是字符串","`char raw[3]={'a','b','c'};` 没有终止符，只是字符数组；strlen/strcpy 都不能安全使用。"],["指针与数组","`char *p` 只保存地址，可改指向；`char a[4]` 拥有四个元素，数组名多数场景 decay 但数组不是指针对象。"],["字符串数组","`const char *names[]` 是指针数组，字面量散布各处；`char names[N][M]` 是固定 stride 的二维字符数组。"]],
@@ -5152,88 +5152,7 @@ function renderWalk(walk){
   if(!walk?.length)return "";
   return `<section class="text-card"><h3>按字节手算一遍</h3><ol class="calc-list">${walk.map(x=>`<li><code>${esc(x[0])}</code><p>${esc(x[1])}</p></li>`).join("")}</ol></section>`;
 }
-const cRuleSheets={
-  "c-integer-types":{
-    title:"整数类型的硬规则",
-    rules:[
-      ["sizeof(char) 恒为 1","这里的 1 是一个 C byte；一个 byte 有 CHAR_BIT 位，标准只保证 CHAR_BIT≥8，不保证所有平台都是 8。"],
-      ["宽度只保证相对次序","sizeof(char)≤sizeof(short)≤sizeof(int)≤sizeof(long)≤sizeof(long long)，但相等是允许的；不要用桌面经验猜 MCU。"],
-      ["rank 不等于 sizeof","整数提升和通常算术转换使用 conversion rank 与可表示范围，不是简单选择 sizeof 更大的类型。"],
-      ["协议字段不要选 long","ILP32 中 long 常为 32 位，LP64 中 long 常为 64 位；固定格式优先使用明确宽度和范围的类型。"]
-    ]
-  },
-  "c-fixed-width":{
-    title:"stdint.h 不能只会背 uint32_t",
-    rules:[
-      ["uintN_t 是可选的精确宽度类型","只有实现存在恰好 N 位且无 padding 的无符号类型时才定义；uint_leastN_t 至少 N 位，uint_fastN_t 是实现认为较快的至少 N 位类型。"],
-      ["指针整数使用 uintptr_t/intptr_t","它们同样是可选类型；只有实现支持往返转换时才提供，不能假设 uint32_t 总能保存指针。"],
-      ["常量需要正确类型","UINT32_C(1) 等宏为常量选择合适类型；裸写 1 后再左移可能先在 int 中发生。"],
-      ["格式化使用 inttypes.h","PRIu32、PRIxPTR 等宏避免把 uint32_t 固定假设为 unsigned long 或 unsigned int。"]
-    ]
-  },
-  "c-signed-unsigned":{
-    title:"有符号与无符号转换的判定顺序",
-    rules:[
-      ["先做整数提升","bool、char、short 及其变体通常先提升到 int；若 int 不能表示全部值才提升到 unsigned int。"],
-      ["再求共同类型","同符号取较高 rank；异符号时根据 rank 与可表示范围决定转换方向，不能简化成“有 unsigned 就全转 unsigned”。"],
-      ["无符号算术模 2ⁿ","对 N 位无符号类型，结果按 2ⁿ 取模；这是定义良好的回绕，但不等于业务上正确。"],
-      ["有符号溢出是 UB","不能依赖补码回绕；编译器可基于“不溢出”重写比较与循环。"]
-    ]
-  },
-  "c-conversions":{
-    title:"窄化转换到底会发生什么",
-    rules:[
-      ["转无符号按模约简","整数转换到 N 位无符号类型时，结果是与原值同余的 0…2ⁿ−1 值。"],
-      ["转有符号超范围不等同于回绕","若目标有符号类型不能表示原值，结果由实现定义或产生实现定义信号；项目不能把它当可移植截断。"],
-      ["浮点转整数先截断小数","向零截断后若整数部分不能由目标整数类型表示，行为未定义。"],
-      ["显式强转不等于安全","cast 只表明程序员要求转换，不能证明范围正确；外部输入应先做可表示范围检查。"]
-    ]
-  },
-  "c-float":{
-    title:"嵌入式浮点的四个边界",
-    rules:[
-      ["C 不强制 IEEE 754","多数 Cortex-M 工具链采用 IEEE 754，但 NaN、舍入、异常和中间精度仍要结合编译选项、FPU 与库实现。"],
-      ["字面量 1.0 默认是 double","使用 1.0f 才是 float 常量；变参调用中 float 会做默认参数提升为 double。"],
-      ["不要用固定 epsilon 万能比较","误差尺度随数值大小和算法累积变化；应按绝对误差、相对误差或 ULP 设计领域相关判断。"],
-      ["软浮点也影响 ABI","-mfloat-abi 等选项不仅影响性能，还影响参数传递与链接兼容；不同 ABI 目标文件可能无法安全混用。"]
-    ]
-  },
-  "c-sequencing":{
-    title:"表达式分析的固定步骤",
-    rules:[
-      ["优先级只决定分组","先把表达式加括号，不能用优先级表推出实参从左到右执行。"],
-      ["列出每个对象的读写","若同一标量对象的冲突访问没有被规则排序，程序可能已经产生未定义行为。"],
-      ["&&、||、逗号运算符提供特定排序","左操作数的求值在右操作数之前完成；函数实参之间通常没有固定先后。"],
-      ["拆语句是工程解法","临时变量能同时固定顺序、便于断点和消除宏/volatile 重复访问。"]
-    ]
-  },
-  "c-loops":{
-    title:"无符号计数循环最常见的边界",
-    rules:[
-      ["size_t 永远不小于 0","for(size_t i=n-1; i>=0; --i) 条件恒真，并且 n==0 时初始化已经回绕。"],
-      ["推荐写 i-- > 0","for(size_t i=n; i-- > 0;) 的循环体中 i 依次取 n−1…0，且 n==0 时不会进入。"],
-      ["先证明 n 的来源","外部长度转换为 size_t 前要排除负值，乘法和加法还要检查 SIZE_MAX 边界。"],
-      ["循环不变量比模板重要","明确每轮开始时已处理区间、未处理区间和 cursor 范围，才能证明差一位问题。"]
-    ]
-  },
-  "c-null-pointer":{
-    title:"NULL、0、'\\0' 和全零字节不是同一层概念",
-    rules:[
-      ["空指针是语义值","整数常量表达式 0 或转换为 void* 的这种表达式可作为 null pointer constant；转换后得到不指向任何对象或函数的空指针。"],
-      ["0 是整数常量","它在指针上下文中可转换为空指针，但整数 0 本身不是一个指针对象。"],
-      ["'\\0' 是值为零的字符常量","它常用于字符串终止符，语义上仍属于字符/整数表达式，不应拿来表达指针意图。"],
-      ["空指针对象表示未必全零字节","逐个赋 NULL 是语言语义；memset 指针数组为 0 依赖目标表示，不能当成所有 C 实现的普遍保证。"]
-    ]
-  },
-  "c-array-object":{
-    title:"数组表达式的三个不同地址",
-    rules:[
-      ["a 与 &a[0] 在多数表达式中同类型结果","a 通常转换为首元素指针 T*；&a[0] 本来就是 T*。"],
-      ["&a 是指向整个数组","若 a 类型为 T[N]，则 &a 类型为 T (*)[N]；&a+1 跨过整个数组，而不是一个元素。"],
-      ["sizeof a 保留数组身份","在数组仍是数组的作用域中得到 N*sizeof(T)；形参 T a[] 会调整为 T*，此时 sizeof 只得到指针大小。"],
-      ["数组不可整体赋值","结构体中的数组成员可随结构体整体复制，但独立数组名不是可修改左值，不能写 a=b。"]
-    ]
-  },
+const cRuleSheets={
   "c-string-model":{
     title:"字符串成立必须同时满足的条件",
     rules:[
@@ -5242,25 +5161,7 @@ const cRuleSheets={
       ["修改字符串字面量是 UB","即使历史原因使其类型不是 const char[]，也应通过 const char* 接收。"],
       ["长度不等于容量","length 是终止符前字符数，capacity 是可写对象总字节数；追加 n 字节通常要求 length+n+1≤capacity。"]
     ]
-  },
-  "c-function-prototype":{
-    title:"原型为什么是 ABI 安全条件",
-    rules:[
-      ["调用点按可见声明生成代码","参数转换、返回值位置、寄存器/栈使用都依赖函数类型；链接器通常不会重新做完整 C 类型检查。"],
-      ["void f(void) 明确无参数","在传统 C 声明语义中 f() 不提供同等的参数类型信息；嵌入式代码应使用完整原型。"],
-      ["变参只做默认参数提升","float 变 double，窄整数提升；被调用者无法从 ... 自动知道真实类型与数量，必须由格式或额外参数约定。"],
-      [".c include 自己的 .h","这样函数定义会与公开声明在同一翻译单元中接受编译器一致性检查。"]
-    ]
-  },
-  "c-initializers":{
-    title:"初始化、零初始化与 memset 的边界",
-    rules:[
-      ["部分初始化会补零值","聚合初始化器未列出的成员按规则初始化；自动对象 struct S s={0} 与完全未初始化不是一回事。"],
-      ["静态存储期对象先零初始化","即使源码没有显式初始化器，也在程序启动语义中得到相应类型的零值。"],
-      ["padding 不必形成稳定字节","即使所有成员语义为零，padding 内容仍不应拿来做协议、哈希或 memcmp 逻辑相等。"],
-      ["memset 只写字节","全零字节对整数零通常成立，但不是所有抽象类型、指针表示和浮点表示的普遍语言替代。"]
-    ]
-  },
+  },
   "c-malloc-family":{
     title:"动态分配 API 的精确差异",
     rules:[
@@ -5287,25 +5188,7 @@ const cRuleSheets={
       ["多语句宏使用 do{...}while(0)","让宏在 if/else 中表现为一条语句，并允许调用处按普通语句写分号。"],
       ["需要类型和单次求值时用 inline","static inline 函数提供类型检查、局部变量和实参单次求值；宏保留给条件编译、字符串化、token 拼接等文本能力。"]
     ]
-  },
-  "c-conditional-compile":{
-    title:"#ifdef 与 #if 的真实差别",
-    rules:[
-      ["#ifdef FEATURE 只检查是否定义","即使 #define FEATURE 0，#ifdef 仍为真。"],
-      ["#if FEATURE 检查展开后的整数常量表达式","未定义标识符在 #if 表达式中按 0 处理；常用于 0/1 配置宏。"],
-      ["配置宏要有唯一来源","命令行、配置头和源码重复定义会制造不可追踪组合；构建产物应记录最终配置。"],
-      ["每个开关扩大状态空间","关键组合必须进入 CI 构建和测试，否则被条件排除的分支可能长期腐烂。"]
-    ]
-  },
-  "c-volatile":{
-    title:"volatile 明确保证什么、不保证什么",
-    rules:[
-      ["保证 volatile 访问属于可观察行为","编译器不能像普通无用访问那样随意删除或合并，具体访问语义仍受实现定义约束。"],
-      ["不保证原子性","counter++ 是读—改—写；即使单次 load/store 原子，整个表达式仍可能被打断并丢更新。"],
-      ["不建立线程间 happens-before","它不是锁、C 原子或通用内存屏障；多核顺序和数据竞争需要原子/同步原语。"],
-      ["MMIO 还要服从寄存器手册","volatile 不能修复错误访问宽度、W1C 误用、保留位破坏或外设要求的屏障顺序。"]
-    ]
-  },
+  },
   "c-bit-operations":{
     title:"移位与掩码的语言边界",
     rules:[
@@ -5314,16 +5197,7 @@ const cRuleSheets={
       ["有符号左移风险最大","负值左移或结果不可表示会越过标准边界；构造位掩码优先使用明确宽度的无符号值。"],
       ["寄存器字段先清后写","普通 R/W 字段可用 (reg&~mask)|((value<<pos)&mask)；W1C、只写、读清零寄存器不能套用普通读改写。"]
     ]
-  },
-  "c-endianness":{
-    title:"端序问题要拆成三个维度",
-    rules:[
-      ["byte endianness 描述多字节对象的字节顺序","例如 0x1234 的高低字节在递增地址中的排列。"],
-      ["bit numbering 是另一份定义","手册中的 bit 0 通常表示数值最低有效位，不等同于“内存中的第一个 bit”。"],
-      ["位域分配顺序再次独立","C 位域在存储单元中的方向和跨单元策略依赖实现，不能由 CPU 大小端直接推出。"],
-      ["协议显式编码","逐字节移位或 memcpy 后转换，避免未对齐强转、严格别名和主机端序三类问题叠加。"]
-    ]
-  },
+  },
   "c-ring-buffer":{
     title:"环形缓冲区必须先选一种满/空协议",
     rules:[
@@ -5439,41 +5313,14 @@ const cBranchDepth={
     ]
   }
 };
-const cExamples={
-  "c-signed-unsigned":{title:"混合有符号/无符号比较的真实陷阱",meta:"C · 先推导共同类型",text:`int remaining = -1;
-size_t need = 4;
-
-/* remaining 可能先转换为巨大的 size_t，条件反而为真 */
-if (remaining < need) { /* 不可靠 */ }
-
-/* 先证明非负，再进入无符号域 */
-if (remaining < 0 || (size_t)remaining < need) { /* 明确 */ }`},
-  "c-sequencing":{title:"把副作用拆开，语义才稳定",meta:"C · 不依赖未规定的求值顺序",text:`/* 不要用一次表达式同时修改和再次读取 i */
-/* a[i] = i++; */
-
-size_t old = i;
-i++;
-a[old] = old;          /* 每一步的读写与顺序清楚 */`},
+const cExamples={
   "c-pointer-arithmetic":{title:"用 end 指针表达半开区间 [begin, end)",meta:"C · end 合法比较但不可解引用",text:`uint8_t *p = buffer;
 uint8_t *end = buffer + length;
 
 while (p != end) {
     consume(*p);       /* 此处先由 p != end 证明可解引用 */
     ++p;
-}`},
-  "c-const-pointer":{title:"从变量名向外读 const",meta:"C · 两个维度分别判断",text:`const uint8_t *p;       /* 可改 p，不能经 p 改对象 */
-uint8_t * const p2 = a; /* 不能改 p2，可经 p2 改对象 */
-const uint8_t * const p3 = a; /* 两者都不能改 */
-
-/* char ** 不能提升为 const char **：
-   否则可借此把 const char* 写入 char* 槽，之后错误修改只读对象。 */`},
-  "c-restrict":{title:"restrict 是调用者必须兑现的别名承诺",meta:"C · 违反承诺会产生未定义行为",text:`void add(size_t n,
-         float * restrict out,
-         const float * restrict a,
-         const float * restrict b);
-
-/* 契约要求本次执行中，用于写 out 的对象
-   不再经 a 或 b 的受限访问路径访问。 */`},
+}`},
   "c-array-decay":{title:"数组长度必须在调用边界显式携带",meta:"C · 形参中的 a[] 会调整为指针",text:`#define ARRAY_LEN(a) (sizeof(a) / sizeof((a)[0]))
 
 void process(const uint16_t *data, size_t count);
@@ -5489,15 +5336,7 @@ process(samples, ARRAY_LEN(samples));
             a[r][c] = 0;
 }
 
-/* a 在参数中调整为 int (*)[4]，指针步长是一整行。 */`},
-  "c-string-safety":{title:"容量、已用长度与终止符必须同时成立",meta:"C · 不把 strncpy 当万能安全函数",text:`bool copy_text(char *dst, size_t cap, const char *src)
-{
-    if (!dst || !src || cap == 0) return false;
-    size_t n = strlen(src);
-    if (n >= cap) return false;       /* 预留 '\\0' */
-    memcpy(dst, src, n + 1);          /* 连终止符一起复制 */
-    return true;
-}`},
+/* a 在参数中调整为 int (*)[4]，指针步长是一整行。 */`},
   "c-function-pointer":{title:"函数指针签名必须完整一致",meta:"C · 参数、返回值与调用约定都是 ABI",text:`typedef int (*read_fn)(void *ctx, uint8_t *dst, size_t cap);
 
 typedef struct {
@@ -5505,31 +5344,7 @@ typedef struct {
     void *ctx;
 } Reader;
 
-int n = reader.read(reader.ctx, buf, sizeof buf);`},
-  "c-flex-packed":{title:"柔性数组成员把头部和变长载荷放在一次分配中",meta:"C · sizeof 不包含柔性数组元素",text:`struct Packet {
-    uint16_t type;
-    size_t length;
-    uint8_t payload[];
-};
-
-if (length > SIZE_MAX - sizeof(struct Packet)) fail();
-struct Packet *p = malloc(sizeof *p + length);
-if (p) p->length = length;`},
-  "c-realloc":{title:"保留旧 owner，直到确认 realloc 成功",meta:"C · 成功后旧块和内部派生指针均失效",text:`void *tmp = realloc(p, new_size);
-if (tmp == NULL) {
-    /* p 仍指向原对象，调用者可以继续使用或释放 */
-    return false;
-}
-p = tmp;              /* 只有成功后才更新唯一 owner */
-return true;`},
-  "c-size-overflow":{title:"在乘法发生之前检查上界",meta:"C · 无符号回绕不会自动报错",text:`bool alloc_items(size_t count, int **out)
-{
-    if (!out || count > SIZE_MAX / sizeof **out) return false;
-    int *p = malloc(count * sizeof *p);
-    if (!p && count != 0) return false;
-    *out = p;
-    return true;
-}`},
+int n = reader.read(reader.ctx, buf, sizeof buf);`},
   "c-header-design":{title:"头文件自包含的最小检查",meta:"构建 · 头文件应独立成为合法翻译单元",text:`/* widget.h */
 #ifndef WIDGET_H
 #define WIDGET_H
@@ -5538,33 +5353,7 @@ typedef struct Widget Widget;
 size_t widget_size(const Widget *w);
 #endif
 
-/* 检查：仅 include widget.h 的空 .c 也必须能编译。 */`},
-  "c-static-assert":{title:"把 ABI 与容量假设钉在构建期",meta:"C11/C23 · 失败比静默错位更好",text:`#include <stddef.h>
-
-_Static_assert(sizeof(uint32_t) == 4, "requires 32-bit word");
-_Static_assert(offsetof(DmaDesc, status) == 8,
-               "DMA descriptor ABI changed");
-_Static_assert(RING_CAPACITY &&
-               !(RING_CAPACITY & (RING_CAPACITY - 1)),
-               "capacity must be power of two");`},
-  "c-volatile-atomic":{title:"读—改—写不是一次原子操作",meta:"C11 stdatomic · 先选并发合同，再看目标实现",text:`#include <stdatomic.h>
-
-volatile uint32_t wrong_counter;
-_Atomic uint32_t event_count;
-
-/* wrong_counter++ 通常是 load + add + store；
-   ISR/线程插入后可能丢失一次更新。 */
-
-void record_event(void)
-{
-    atomic_fetch_add_explicit(&event_count, 1,
-                              memory_order_relaxed);
-}
-
-/* relaxed 只保证这次计数读改写原子；
-   若还要用 flag 发布 payload，需要更强的顺序协议。
-   在单核 ISR/任务场景，也可用很短的临界区包住
-   整个复合不变量更新。 */`},
+/* 检查：仅 include widget.h 的空 .c 也必须能编译。 */`},
   "c-bit-operations":{title:"先把值提升到目标宽度，再移位和构造掩码",meta:"C · 避免窄类型提升与非法移位",text:`uint32_t field_set(uint32_t reg, unsigned pos,
                    unsigned width, uint32_t value)
 {
@@ -5572,32 +5361,7 @@ void record_event(void)
     uint32_t mask = width == 32 ? UINT32_MAX :
                     ((UINT32_C(1) << width) - 1u) << pos;
     return (reg & ~mask) | ((value << pos) & mask);
-}`},
-  "c-endianness":{title:"逐字节解码让端序和边界同时可见",meta:"协议 · 不依赖 CPU 对齐与主机端序",text:`bool read_be16(const uint8_t **cur, const uint8_t *end,
-               uint16_t *out)
-{
-    if (!cur || !*cur || !out || *cur > end) return false;
-    if ((size_t)(end - *cur) < 2u) return false;
-    const uint8_t *p = *cur;
-    *out = (uint16_t)((uint16_t)p[0] << 8) | p[1];
-    *cur = p + 2;
-    return true;
-}`},
-  "c-isr-sharing":{title:"bool 只能表示“至少发生过一次”，不能累计事件",meta:"ISR/任务 · 根据语义选择计数或队列",text:`/* 两次 ISR 在任务清零前都写 true，第二次信息被合并。 */
-volatile bool ready;
-
-/* 若每次事件都必须处理：使用计数通知、信号量或队列；
-   若只关心最新状态：bool/bit 才可能是正确语义。 */`},
-  "c-safe-parser":{title:"先证明剩余长度，再读取长度字段和载荷",meta:"C · 避免 cursor + length 自身溢出",text:`bool take(const uint8_t **cur, const uint8_t *end,
-          size_t n, const uint8_t **view)
-{
-    if (!cur || !*cur || !view || *cur > end) return false;
-    size_t remain = (size_t)(end - *cur);
-    if (n > remain) return false;     /* 不写 *cur + n > end */
-    *view = *cur;
-    *cur += n;
-    return true;
-}`},
+}`},
   "c-linked-list":{title:"二级指针统一“修改前驱 next”和“修改头指针”",meta:"C · 删除时同步定义节点所有权",text:`bool remove_id(Node **head, int id)
 {
     for (Node **link = head; *link; link = &(*link)->next) {
@@ -5618,27 +5382,7 @@ volatile bool ready;
     r->head = next;
     return true;
 }
-/* 空：head == tail；可用容量为 capacity - 1。 */`},
-  "c-state-table":{title:"把 state × event 组合显式放进表",meta:"C · 缺失项在审查时可见",text:`typedef State (*action_fn)(Context *);
-
-static const action_fn table[STATE_COUNT][EVENT_COUNT] = {
-    [IDLE][EV_START] = start_action,
-    [BUSY][EV_DONE]  = finish_action,
-    [BUSY][EV_ERROR] = fail_action,
-};
-
-/* 空项必须定义为忽略、报错或进入安全态。 */`},
-  "c-callback-table":{title:"用 const 操作表表达驱动能力",meta:"C · C 中常见的接口多态",text:`typedef struct {
-    bool (*init)(void *ctx);
-    int  (*write)(void *ctx, const uint8_t *src, size_t n);
-    void (*close)(void *ctx);
-} UartOps;
-
-typedef struct { const UartOps *ops; void *ctx; } Uart;
-
-int uart_write(Uart *u, const void *p, size_t n)
-{ return u->ops->write(u->ctx, p, n); }`}
-};
+/* 空：head == tail；可用容量为 capacity - 1。 */`},};
 const domainDepth={
   "arm-taxonomy":{title:"ARM 名词必须先归层",thesis:"架构定义软件可见契约，处理器实现微架构，芯片再集成存储与外设；工具链目标同时受三层约束。",chain:[
     ["架构","说明 ISA、寄存器、异常和内存模型；Armv7E‑M 不是一颗实体芯片。"],
@@ -5989,73 +5733,31 @@ const domainDepth={
     ["维护","一条知识只有一个主位置，通过 related 建立横向关系；新证据更新原叶子，不按聊天时间再造重复节点。"]
   ]}
 };
-const domainRuleSheets={
-  "fat-sector-lba":{title:"扇区接口的四条硬契约",rules:[
-    ["单位一致","sector 是逻辑块号，count 是逻辑块数量；字节数只能由 count×sector_size 得到。"],
-    ["容量边界","验证 sector+count 不越过设备末端，并防止整数加法/乘法溢出。"],
-    ["完整完成","返回 RES_OK 代表请求范围全部完成；部分 DMA 或短传输必须转为失败并保留硬件状态。"],
-    ["多扇区","count>1 是性能契约的一部分；驱动应尽量保留介质的连续事务能力。"]
-  ]},
+const domainRuleSheets={
   "fat-volume-layout":{title:"读十六进制卷镜像时的定位顺序",rules:[
     ["找卷起点","先判断 super-floppy 还是分区盘；若有分区表，记录 partition start LBA。"],
     ["验证 BPB","检查跳转/签名、BytsPerSec、SecPerClus、Reserved、NumFATs、总扇区与 FAT 大小。"],
     ["算区域","以卷内相对扇区计算 FAT、Root 和 Data，再统一叠加卷起点。"],
     ["交叉检查","确认各区域不重叠、不越界，cluster count 与推导出的 FAT 类型一致。"]
-  ]},
-  "fat-bpb-mount":{title:"BPB 地址公式不要漏掉的项",rules:[
-    ["RootDirSectors","ceil(RootEntCnt×32 / BytsPerSec)；FAT32 通常为 0，根目录进入数据区。"],
-    ["FirstDataSector","Reserved + NumFATs×FATSz + RootDirSectors，均为卷内扇区。"],
-    ["CountOfClusters","(TotSec−FirstDataSector) / SecPerClus；余数不构成完整簇。"],
-    ["类型","按规范簇数阈值判 FAT12/16/32；BS_FilSysType 文本仅是提示字段。"]
-  ]},
-  "fat-cluster-size":{title:"选择 allocation unit 的判断表",rules:[
-    ["典型文件","小文件占多数时关注尾簇浪费；大顺序文件占多数时关注链长和连续事务。"],
-    ["卷容量","簇太小会让簇数和 FAT 体积增长，甚至越过 FAT 类型/实现限制。"],
-    ["介质特性","擦除块、FTL 与写放大可能影响最佳值，但不能仅凭 NAND 擦除块强行等同簇。"],
-    ["兼容验证","以 f_mkfs 版本、目标 FAT 类型和外部读写工具共同验证，不凭经验表直接定值。"]
-  ]},
+  ]},
   "fat-chain-table":{title:"遍历簇链必须维持的不变量",rules:[
     ["入口合法","首簇为 0 只适用于无数据对象等合法情形；数据文件首簇应落在有效范围。"],
     ["状态分类","每个 FAT 值先分类为 next、EOC、free、bad、reserved，再决定是否继续。"],
     ["防环与越界","损坏介质可能产生环或非法下一簇；遍历步数不得无界超过卷总簇数。"],
     ["FAT32 高位","读取时屏蔽保留高 4 位；写入时按规范保留它们，不能粗暴覆盖整个 32 位。"]
-  ]},
-  "fat-fragmentation":{title:"碎片问题要分正确性与时延两层",rules:[
-    ["正确性","只要目录首簇与每个 FAT 后继有效，簇不连续仍可还原同一逻辑字节流。"],
-    ["事务形状","记录一个文件被拆成多少个连续 LBA run；run 越多，命令切换和 FAT 查询通常越多。"],
-    ["写入策略","预分配、减少反复小幅增长、保持空闲空间与批量顺序写，可降低产生碎片的机会。"],
-    ["介质边界","主机 LBA 连续不等于闪存 NAND 页连续；FTL 仍可重映射、回收并产生尾延迟。"]
-  ]},
+  ]},
   "fat-directory-entry":{title:"解析目录项的安全顺序",rules:[
     ["首字节","0x00 表示后续未使用并可停止扫描，0xE5 表示已删除；还要处理 0x05 的特殊映射。"],
     ["属性","先区分 LFN、卷标、目录与普通文件，再解释剩余字段。"],
     ["逐字段","磁盘字段按 little-endian 组合；避免未对齐结构体强转与编译器 padding。"],
     ["长度边界","文件大小决定有效字节数，簇链长度只给分配容量；二者不一致是损坏线索。"]
-  ]},
-  "fat-path-lookup":{title:"路径查找的逐级证明",rules:[
-    ["起点","绝对路径从根目录开始；相对路径是否启用及当前目录对象由配置决定。"],
-    ["名称","按当前 LFN/代码页/大小写规则组合并比较名称，不能直接把原始目录字节当 UTF-8。"],
-    ["进入下级","命中目录项后验证 DIRECTORY 属性，再取首簇进入下一层目录链。"],
-    ["终点","最后一段才按期望类型和 open mode 判断文件存在、创建、覆盖或拒绝；每一步错误语义不同。"]
-  ]},
-  "fat-runtime-objects":{title:"运行时对象的所有权规则",rules:[
-    ["FATFS","挂载期间地址稳定；卸载或重新挂载会改变卷身份并使旧文件/目录对象失去使用资格。"],
-    ["FIL","一个游标包含可变 fptr 与当前簇状态；多个任务并发推进同一个 FIL 不是普通的只读共享。"],
-    ["DIR","readdir 会推进枚举位置；若要两个独立扫描，应使用两个各自有效的 DIR 对象。"],
-    ["公开边界","只通过公开 API 初始化和关闭对象；私有字段随版本/配置变化，不作为应用持久格式。"]
-  ]},
+  ]},
   "fat-read-path":{title:"一次 f_read 的定位账本",rules:[
     ["剩余长度","requested、bytes_to_eof、br 三者分别记录，EOF 不是磁盘错误。"],
     ["三层偏移","拆出文件处于第几个簇、簇内第几个扇区、扇区内字节偏移。"],
     ["跨簇","只有越过当前簇边界才需取得下一簇；已有 FIL 状态可避免总从首簇重走。"],
     ["传输策略","头尾片段走缓存，中间整扇区尽量合并直读，并在成功后统一推进 fptr/br。"]
-  ]},
-  "fat-sector-window":{title:"扇区窗口的四态思考法",rules:[
-    ["无效","尚未装入任何扇区；第一次访问必须从介质建立完整窗口内容。"],
-    ["命中且干净","目标 sector 等于 winsect，可直接读取解析，不产生介质 I/O。"],
-    ["命中且脏","修改保留在 RAM；后续同步、切窗或关闭路径必须把它推进到底层。"],
-    ["未命中","若旧窗口脏先写回，再读入新 sector 并更新 winsect；任何失败都不能假装窗口已切换完成。"]
-  ]},
+  ]},
   "fat-write-sync":{title:"写入完成不等于一致提交",rules:[
     ["数据","先确认用户字节实际进入对应数据扇区，部分扇区要维护原有未覆盖字节。"],
     ["分配","增长时新簇、前驱链尾和可选 FSInfo 形成多处元数据修改。"],
@@ -6067,20 +5769,7 @@ const domainRuleSheets={
     ["字符集","明确 API 字符类型、代码页、LFN 工作区位置和最坏栈/堆占用。"],
     ["功能裁剪","只读、mkfs、relative path、fast seek、tiny、exFAT 等开关会改变 API 与资源模型。"],
     ["扇区与时间","固定 sector size 契约、get_fattime 来源、同步对象回调和超时单位。"]
-  ]},
-  "fatfs-concurrency":{title:"存储栈并发审查表",rules:[
-    ["对象共享","不同任务是否共享同一 FIL/DIR？若共享，谁串行化 fptr 和生命周期变化？"],
-    ["卷级锁","FF_FS_REENTRANT 的锁创建、获取、超时和释放是否覆盖所用版本要求？"],
-    ["驱动状态","命令、DMA、卡状态与回调是否由单 owner 状态机管理，还是多个调用者可重入破坏？"],
-    ["buffer 所有权","I/O 期间地址是否持续有效、CPU 是否并发修改、Cache line 范围是否正确交接？"]
-  ]},
-  "fatfs-performance":{title:"性能问题先测五个数字",rules:[
-    ["API chunk","每次 f_read/f_write 请求字节数与对齐。"],
-    ["diskio shape","disk_read/write 的 count 分布：1 扇区占比、多扇区最大值和调用次数。"],
-    ["布局","文件簇数、连续段数量、目录深度与 FAT 窗口命中/切换。"],
-    ["分层耗时","FatFs CPU、驱动准备、DMA/总线、介质 busy 各占多少，避免只优化最小一段。"],
-    ["实时性","吞吐之外记录单次最大时延、任务阻塞时间与 deadline miss。"]
-  ]},
+  ]},
   "fatfs-powerfail":{title:"掉电测试必须覆盖真实提交点",rules:[
     ["注入位置","在数据写、FAT 更新、目录更新、sync 和 rename 前后随机断电，而不是只在 API 返回后断电。"],
     ["重启检查","重新挂载并扫描目录/簇链，记录丢失、截断、交叉链、孤簇和不可挂载。"],
@@ -6134,13 +5823,7 @@ const domainRuleSheets={
     ["Start 用于重新定相","接收端在每个字符重新建立采样相位，误差在一字符内累积。"],
     ["Stop 是采样条件","期望 stop 时仍为低通常形成 framing error，不能把该字符无条件提交。"],
     ["字符帧不是业务帧","UART 硬件无法识别 length/CRC/命令，仍需上层 framing。"]
-  ]},
-  "uart-baud":{title:"波特率误差要从实际分频计算",rules:[
-    ["先算 kernel clock","确认时钟源、分频和运行时切换，而不是只看工程标称主频。"],
-    ["再按外设编码算 BRR","不同系列和 oversampling 下公式/小数位编码可不同，以对应 RM 为准。"],
-    ["比较两端总误差","分频取整、晶振初差、温漂和对端误差可同向叠加。"],
-    ["最后上波形验证","覆盖最长字符、极端位型、温度、电压和真实线路边沿。"]
-  ]},
+  ]},
   "uart-idle-dma":{title:"Receive-to-idle 环形接收不变量",rules:[
     ["IDLE 只是一种发布事件","它表示线路暂时空闲，不证明 parser 获得完整消息。"],
     ["持续流还要 HT/TC","没有间隙时只等 IDLE 会让 DMA 环回覆盖未处理数据。"],
@@ -6176,25 +5859,13 @@ const domainRuleSheets={
     ["Mode 1 = CPOL0/CPHA1","idle low，在第二个下降沿采样。"],
     ["Mode 2 = CPOL1/CPHA0","idle high，在第一个下降沿采样。"],
     ["Mode 3 = CPOL1/CPHA1","idle high，在第二个上升沿采样；仍要满足器件 setup/hold。"]
-  ]},
-  "spi-nss-framing":{title:"拉高 CS 前的三个完成条件",rules:[
-    ["内存搬运完成","DMA 已把最后 frame 送入外设/从外设取出，不代表线上结束。"],
-    ["串行移位完成","EOT/BSY 等表明最后 bit 已离开移位器，具体标志按 RM。"],
-    ["器件保持时间满足","最后有效边沿到 CS 无效的 tH 必须达到 target 数据手册要求。"],
-    ["事务语义允许结束","有的 target 需要 command+address+data 全程 CS 连续有效。"]
-  ]},
+  ]},
   "can-arbitration":{title:"CAN 仲裁的四个推论",rules:[
     ["dominant 0 覆盖 recessive 1","首次 ID 位分歧决定优先级，所以数值更小通常获胜。"],
     ["仲裁无破坏","败者发现不一致后停止发送，胜者继续同一帧，无需从头重发。"],
     ["当前帧不可被抢占","高优先级消息也要等待已开始帧结束，产生 blocking term。"],
     ["相同 ID 数据不同是配置错误","节点一直到仲裁结束都相同，进入数据域后差异会触发 bit error/error frame。"]
-  ]},
-  "can-ack":{title:"CAN ACK 的证明边界",rules:[
-    ["至少一名其他接收者通过帧检查","发送者在 ACK slot 发送 recessive，接收者拉 dominant。"],
-    ["不证明目标身份","发送者不知道谁 ACK；可能不是期望 ECU。"],
-    ["不证明 filter/应用处理","帧级有效后仍可能被过滤、FIFO 溢出、软件丢弃或业务拒绝。"],
-    ["单节点会 ACK error","正常模式下没有其他接收者，发送器可能持续重试；测试可用 loopback/silent 组合。"]
-  ]},
+  ]},
   "can-bit-timing":{title:"CAN 位时序计算顺序",rules:[
     ["确认 controller/kernel clock","不要把 CPU 主频直接当 CAN 时钟。"],
     ["选择实际 prescaler 与 total TQ","bitrate = fCAN/(P×(1+TSEG1+TSEG2))。"],
@@ -6316,13 +5987,7 @@ const domainRuleSheets={
     ["可见性门","若 CPU 写、LTDC 读 cacheable RAM，先 clean 涉及区域并完成必要屏障。"],
     ["时序门","在 VBlank/指定 reload 事件提交新基址，并确认何时真正 latch；写寄存器的时刻不等于生效时刻。"],
     ["回收门","确认扫描器已离开旧帧后再归还旧 buffer，避免下一 producer 覆盖仍在显示的行。"]
-  ]},
-  "tick":{title:"LVGL tick 的毫秒契约",rules:[
-    ["lv_tick_inc 参数是经过的毫秒","调用周期可以不是 1ms，但实参必须是自上次调用以来真实经过的毫秒数。"],
-    ["get callback 返回累计毫秒","需要单调、可回绕差分且与 UI 工作独立；不能返回“调用次数”。"],
-    ["FreeRTOS tick 要换算","xTaskGetTickCount 的单位是 OS tick；configTICK_RATE_HZ≠1000 时直接注册会让 LVGL 时间比例错误。"],
-    ["tick 不做渲染","它只更新时间来源；对象、输入与刷新由 lv_timer_handler 驱动。"]
-  ]},
+  ]},
   "lv-handler":{title:"lv_timer_handler 的调度语义",rules:[
     ["周期调用不是固定帧率","一次 handler 可能没有刷新，也可能处理多个到期 timer 和多个无效区。"],
     ["返回值是建议毫秒","可据此 sleep；还需处理无 timer、外部事件提前唤醒与最大输入延迟。"],
@@ -6334,19 +5999,7 @@ const domainRuleSheets={
     ["DIRECT","buffer 是整屏大小，LVGL 在对应坐标直接更新；未失效区域应保持上一代正确像素。"],
     ["FULL","每轮刷新渲染整个屏幕到整屏 buffer，不由 invalid area 限定像素生成范围。"],
     ["双 buffer 不是 mode","每种模式是否能双缓冲及如何同步由模式和驱动决定；“两个 buffer”不自动等于无撕裂。"]
-  ]},
-  "flush-ready":{title:"flush_ready 是 buffer 归还凭证",rules:[
-    ["同步 flush","若 callback 返回前数据已被显示链路复制完，可在 callback 末尾 ready。"],
-    ["异步 flush","DMA/总线开始后立即返回，必须在实际完成 ISR/任务路径调用 lv_display_flush_ready。"],
-    ["一次刷新可多次 flush","驱动可用 lv_display_flush_is_last 等接口判断当前区域是否为本轮最后一次，而不能假设一次 handler 只 flush 一次。"],
-    ["地址切换也是异步","若 px_map 直接成为扫描源，ready 时点要等到显示控制器已安全接管且 LVGL 复用不会覆盖正在扫描内容。"]
-  ]},
-  "lvgl-thread":{title:"LVGL 9.3 线程边界",rules:[
-    ["默认不线程安全","只读式 API 也可能访问内部共享状态，不能凭函数名自行判为安全。"],
-    ["Gateway/UI task 最清晰","其他任务发送数据快照或命令；UI task 统一调用对象 API 与 handler。"],
-    ["官方例外有限","lv_tick_inc 在写操作原子时、lv_display_flush_ready 可在其他线程调用；例外不向相邻 API 传递。"],
-    ["锁不能在未知回调里乱持有","要设计统一锁层级，避免持业务锁进入 LVGL 后，事件回调反向获取业务锁造成死锁。"]
-  ]},
+  ]},
   "gt-frame":{title:"触摸协议必须以项目型号为准",rules:[
     ["不复用寄存器常量","GT 系列不同型号/固件的状态地址、触点记录和清状态时序可能不同。"],
     ["状态与记录分两步","先验证 data-ready 与 touch_count，再按 count 读取完整记录；越界 count 直接拒绝。"],
@@ -6364,50 +6017,8 @@ const domainRuleSheets={
     ["标定/缩放","若范围不同，用足够宽的整数计算并明确舍入；先减 offset，再按有效 span 缩放。"],
     ["旋转","例如对已归一化 W×H 坐标做顺时针 90°：x'=H−1−y，y'=x，新尺寸为 H×W。"],
     ["只做一次","若 LVGL display rotation 已自动变换 indev，则驱动不要再次旋转；用四角与中心五点验证。"]
-  ]},
-  "press-cache":{title:"Release 不能靠猜",rules:[
-    ["有零触点帧时优先使用","它是明确状态转移；收到后发布 RELEASED，并可保留最后坐标。"],
-    ["INT 边沿语义依型号","下降沿、上升沿、低电平保持或脉冲模式会改变“没有新中断”的含义。"],
-    ["超时只能是协议化降级","阈值要大于合法扫描/中断间隔并记录 timeout-release 次数，否则慢帧会被误判松手。"],
-    ["读取失败要单独处理","I²C 错误不应立即伪装成真实 release；可短暂保持、重试，超过策略阈值再复位状态。"]
-  ]},
-  "measurement":{title:"DWT/GPIO/统计各自回答什么",rules:[
-    ["DWT CYCCNT","给 CPU cycle 级区间耗时；要确认实现、启用状态、频率变化和 32-bit 回绕。"],
-    ["GPIO 边沿","跨中断、任务与外设的端到端时间；适合示波器/逻分，但引脚写入和探头有扰动。"],
-    ["软件时间戳","便于关联 frame_id、任务和错误码；时间源分辨率、ISR 安全性和日志带宽必须记录。"],
-    ["硬件错误计数","underflow/overrun/TE/FE 往往比“画面看起来偶尔错”更早、更稳定地暴露瓶颈。"]
-  ]},
-  "priority-layers":{title:"四种 priority 的作用域",rules:[
-    ["DMA priority","影响同控制器/通道资源的服务关系，具体仲裁规则查 DMA 章节。"],
-    ["NVIC priority","决定异常抢占与屏蔽；Cortex‑M 常用较小数值表示更高逻辑优先级，并受实现位数/分组影响。"],
-    ["Task priority","只在任务 Ready 集合中选择 CPU，不能让被阻塞任务绕过依赖。"],
-    ["Bus QoS/arbiter","影响 master 访问共享 slave 的服务；提高后可能改善 LTDC deadline，也可能增加其他 master 最坏延迟。"]
-  ]},
-  "fault-checklist":{title:"HardFault 最小取证包",rules:[
-    ["身份","固件 build ID、复位原因、当前/前一任务、异常号、时间戳。"],
-    ["硬件帧","正确栈上的 R0–R3、R12、LR、PC、xPSR，以及 EXC_RETURN 和原始 MSP/PSP。"],
-    ["Fault 状态","CFSR、HFSR、SHCSR、有效的 MMFAR/BFAR；必要时加 DFSR/AFSR 与芯片总线错误状态。"],
-    ["内存上下文","任务栈界限/水位、关键 buffer owner、MPU/Cache 属性和最近 DMA 状态；随后用匹配 ELF 符号化。"]
-  ]}
-};
-const domainExamples={
-  "fat-cluster-sector":{title:"从 cluster 5 算到物理 LBA",meta:"算例 · 数值只用于理解公式",text:`sector_size        = 512 B
-sectors_per_cluster = 8
-partition_start     = 2048
-first_data_in_vol   = 320
-cluster             = 5
-sector_in_cluster   = 3
-
-cluster_first_in_vol
-  = 320 + (5 - 2) * 8
-  = 344
-
-physical_lba
-  = partition_start + 344 + 3
-  = 2395
-
-/* 一次读该扇区的字节容量仍是 512 B；
-   cluster 只决定 8 个扇区如何作为一个分配单元。 */`},
+  ]},};
+const domainExamples={
   "fat-chain-table":{title:"手工追一条 FAT32 簇链",meta:"伪代码 · 省略窗口加载与错误码细节",text:`cluster = dir_entry_first_cluster;
 steps = 0;
 
@@ -6453,30 +6064,7 @@ tail    = 6144 - 412 - 5632
         = 100 B               // 经下一扇区缓存
 
 /* middle 若跨越簇边界，还要按当前簇剩余扇区
-   与下一簇是否连续，拆成一个或多个 disk_read 请求。 */`},
-  "fatfs-performance":{title:"先记录 diskio 请求形状再谈优化",meta:"C · 低扰动统计示意",text:`typedef struct {
-    uint32_t calls;
-    uint32_t single_sector;
-    uint32_t multi_sector;
-    uint32_t max_count;
-    uint32_t errors;
-} DiskIoStats;
-
-DRESULT traced_read(BYTE pdrv, BYTE *dst,
-                    LBA_t lba, UINT count)
-{
-    stats.calls++;
-    stats.single_sector += (count == 1u);
-    stats.multi_sector  += (count > 1u);
-    if (count > stats.max_count) stats.max_count = count;
-
-    DRESULT r = real_disk_read(pdrv, dst, lba, count);
-    if (r != RES_OK) stats.errors++;
-    return r;
-}
-
-/* 若 32 KiB 的 f_read 最终出现 64 次 count=1，
-   大块优势已在中间某层被拆掉。 */`},
+   与下一簇是否连续，拆成一个或多个 disk_read 请求。 */`},
   "aapcs32":{title:"先看类型和对齐，再分配 core register slots",meta:"AAPCS32 · 简化示意，最终以所用 PCS 为准",text:`/* 典型 base PCS 推导示意 */
 uint32_t f(uint32_t a, uint64_t b, uint32_t c);
 
@@ -6562,19 +6150,7 @@ Sr = repeated START
 P  = STOP
 
 线上 address byte 分别是 0xA0 与 0xA1；
-驱动 API 是否传 0x50 或已左移值要看接口契约。`},
-  "spi-throughput":{title:"20 MHz SPI 读 4096B Flash 的时间拆分",meta:"示例：1B command + 3B address + 1B dummy + 4096B data",text:`total_bytes = 1 + 3 + 1 + 4096 = 4101 B
-wire_bits   = 4101 * 8 = 32808 bit
-wire_time   = 32808 / 20 MHz = 1.6404 ms
-
-纯 payload 理想时间:
-4096 * 8 / 20 MHz = 1.6384 ms
-
-还需加入：
-- CS setup / hold / high interval
-- API 与 DMA setup
-- target busy 或 turnaround
-- 可能的 CRC / status read`},
+驱动 API 是否传 0x50 或已左移值要看接口契约。`},
   "spi-dma":{title:"SPI DMA 结束的三道门",meta:"伪代码 · 标志名称以目标 RM 为准",text:`assert(cs_is_high());
 cs_low();
 start_rx_dma(rx, frames);
@@ -6714,18 +6290,7 @@ Vtotal = 480 + 3  + 29 + 13 = 525
 PCLK@60Hz = 928 × 525 × 60
           = 29,232,000 Hz ≈ 29.232 MHz
 
-最终参数、极性和容差必须来自面板数据手册。`},
-  "tick":{title:"FreeRTOS tick 转成 LVGL 毫秒",meta:"LVGL 9.3 + FreeRTOS · 不假设 1 tick=1ms",text:`static uint32_t lv_get_ms(void)
-{
-    TickType_t t = xTaskGetTickCount();
-    /* 先扩大再除，评估 TickType_t 宽度与回绕周期 */
-    return (uint32_t)(((uint64_t)t * 1000u) /
-                      configTICK_RATE_HZ);
-}
-
-lv_tick_set_cb(lv_get_ms);
-
-/* 若 configTICK_RATE_HZ==1000，直接返回 tick 才具有毫秒单位。 */`},
+最终参数、极性和容差必须来自面板数据手册。`},
   "render-modes":{title:"以 800×480 RGB565 比较 buffer 占用",meta:"LVGL 9.3 · 不含对齐与额外元数据",text:`整屏像素 = 800 × 480 = 384,000
 整屏字节 = 384,000 × 2 = 768,000 B
 
@@ -6734,22 +6299,7 @@ DIRECT/FULL    = 768,000 B / buffer
 双整屏 buffer = 1,536,000 B
 
 PARTIAL 节省 RAM，但一轮 refresh 需要多次 flush；
-FULL 每轮重画整屏；DIRECT 只在整屏 buffer 的失效位置更新。`},
-  "flush-ready":{title:"异步 DMA flush 的正确归还点",meta:"LVGL 9.3 · 伪代码",text:`static void flush_cb(lv_display_t *d,
-                     const lv_area_t *a,
-                     uint8_t *px_map)
-{
-    start_dma_copy(a, px_map);   /* buffer 仍归 DMA 使用 */
-    /* 不在这里立即 ready */
-}
-
-void DMA_IRQHandler(void)
-{
-    if (dma_transfer_complete()) {
-        clear_dma_flags();
-        lv_display_flush_ready(display);
-    }
-}`},
+FULL 每轮重画整屏；DIRECT 只在整屏 buffer 的失效位置更新。`},
   "frame-parser":{title:"先在临时快照中解析，成功后一次发布",meta:"触摸协议 · 字段偏移仅作结构示意",text:`bool parse_points(const uint8_t *p, size_t n, Snapshot *out)
 {
     Snapshot tmp = {0};
@@ -6775,19 +6325,7 @@ y2 = x;
 (0,H-1)     → (0,0)
 (W-1,H-1)   → (0,W-1)
 
-若显示层已旋转输入，驱动不要再套同一变换。`},
-  "measurement":{title:"保存最坏值，而不只打印平均值",meta:"C · 32-bit cycle 差值天然处理单次回绕",text:`uint32_t t0 = DWT->CYCCNT;
-process_one_block();
-uint32_t dt = DWT->CYCCNT - t0;
-
-stats.count++;
-stats.sum += dt;
-if (dt < stats.min) stats.min = dt;
-if (dt > stats.max) stats.max = dt;
-if (dt > deadline_cycles) stats.miss++;
-
-/* 前提：CYCCNT 已实现并启用，测量窗口短于一个回绕周期。 */`}
-};
+若显示层已旋转输入，驱动不要再套同一变换。`},};
 Object.assign(deepLessons,{
   "cpp-container-map":{
     intro:["刷题时最浪费脑力的事情之一，是每道题都重新纠结“这里到底该用哪个容器”。解决办法不是背完 STL，而是把选择压缩成几个访问问题：要不要下标？从哪一端取？按 key 还是按顺序找？是否需要反复拿极值？","Hot100 本地源码里 vector 是绝对主力，但它不是万能答案。队列、哈希表、堆与链表的价值，恰好都来自它们把某种高频操作从 O(n) 降到了 O(1) 或 O(log n)。"],
@@ -8506,12 +8044,9 @@ const domainQAs={
   ],
   "latency":[{q:"平均带宽有 30% 余量，为什么实时数据流仍可能丢数据？",direct:"因为 FIFO 受最长无服务窗口约束；一次长仲裁、目标存储维护、桥排队或前序 burst 就可能耗尽它。",support:["平均值会隐藏峰值和尾延迟。","应测最大/分位延迟、FIFO 错误计数与最坏并发，而不只测 MB/s。"],boundary:"提高某层优先级可能把最坏延迟转移给其他发起者，也不能改变所有仲裁点。"}],
   "dcmi":[{q:"DMA transfer complete 是否一定表示完整相机帧完成？",direct:"不一定；DMA 完成描述配置的传输计数，帧边界由 DCMI/传感器同步语义定义。",support:["需要联合 DCMI frame 事件、DMA 最后一块完成和错误状态。","发生 overrun 的帧不应直接提交为有效 READY。"],boundary:"具体回调顺序与清标志规则绑定 STM32 型号和驱动实现。"}],
-  "vsync":[{q:"DMA2D 完成后为什么不能立即切换 LTDC framebuffer 地址？",direct:"DMA2D 完成只说明内容写入结束；还要保证 Cache/内存可见，并在 LTDC 的安全同步点让新地址生效。",support:["扫描中途换址可能让同一帧混入新旧 buffer。","旧 buffer 也要等 latch/切换确认后才能回收。"],boundary:"立即 reload 与 VBlank reload 的生效时机以 RM/驱动 API 为准。"}],
-  "tick":[{q:"可以把 xTaskGetTickCount 直接传给 lv_tick_set_cb 吗？",direct:"只有 OS tick 恰好是 1ms 时单位才匹配；否则必须把 tick 换算成累计毫秒。",support:["LVGL 9.3 的 tick callback 契约是毫秒。","例如 100Hz tick 直接返回会让动画和长按时间慢 10 倍。"],boundary:"换算还要考虑整数宽度、舍入和回绕周期。"}],
+  "vsync":[{q:"DMA2D 完成后为什么不能立即切换 LTDC framebuffer 地址？",direct:"DMA2D 完成只说明内容写入结束；还要保证 Cache/内存可见，并在 LTDC 的安全同步点让新地址生效。",support:["扫描中途换址可能让同一帧混入新旧 buffer。","旧 buffer 也要等 latch/切换确认后才能回收。"],boundary:"立即 reload 与 VBlank reload 的生效时机以 RM/驱动 API 为准。"}],
   "lv-handler":[{q:"每 5ms 调用 handler 是否等于 200 FPS？",direct:"不等于；handler 只是处理到期 timer，一次调用可能不刷新，也可能完成多个输入/动画/无效区工作。",support:["显示刷新周期、对象是否失效和 flush 完成速度共同决定可见帧率。","长回调还会拖延后续 timer。"],boundary:"5ms 只是常见调度示例，不是 LVGL 的固定要求。"}],
-  "render-modes":[{q:"双缓冲、FULL render 和整屏 framebuffer 是同一概念吗？",direct:"不是。双缓冲描述 buffer 数量，FULL 描述每轮重画整屏，framebuffer 描述扫描/存储角色。",support:["DIRECT 也使用整屏级 buffer，但只更新失效位置。","PARTIAL 可以双 buffer，却仍是分块 flush。"],boundary:"具体无撕裂策略取决于显示控制器和 buffer 所有权时点。"}],
-  "flush-ready":[{q:"DMA 一启动就调用 flush_ready 会发生什么？",direct:"LVGL 可能立刻复用并改写仍在 DMA 读取的 draw buffer，造成随机色块、撕裂或下一批数据污染。",support:["异步路径应在真实 DMA 完成后 ready。","若 buffer 直接成为扫描源，还要等待显示端安全接管。"],boundary:"ready 的准确时点由 flush 的同步/异步实现定义。"}],
-  "lvgl-thread":[{q:"只给 lv_timer_handler 加 mutex 就线程安全了吗？",direct:"不一定；任何其他线程调用 LVGL API 的路径都必须遵守同一串行化规则。",support:["最清晰的是单 UI task + queue。","lv_tick_inc 和 flush_ready 的有限例外不能扩展到其他 API。"],boundary:"锁层级还要避免 LVGL 事件回调与业务锁形成反向依赖。"}],
+  "render-modes":[{q:"双缓冲、FULL render 和整屏 framebuffer 是同一概念吗？",direct:"不是。双缓冲描述 buffer 数量，FULL 描述每轮重画整屏，framebuffer 描述扫描/存储角色。",support:["DIRECT 也使用整屏级 buffer，但只更新失效位置。","PARTIAL 可以双 buffer，却仍是分块 flush。"],boundary:"具体无撕裂策略取决于显示控制器和 buffer 所有权时点。"}],
   "gt-frame":[
     {q:"接口相同的两个输入控制器，能否共用寄存器地址与帧格式？",direct:"不能据此推断；同为 I²C 或 SPI 只说明传输接口相似，不保证寄存器、状态位、记录长度和确认时序兼容。",support:["先读取并确认实际器件标识，再依据目标器件手册实现解析。","保留原始帧日志，用实测验证 data-ready、count、端序与清状态时序。"],boundary:"没有权威器件文档时，只能给通用解析框架，不能把相似型号的地址常量当成事实。"},
     {q:"为什么要在本地临时结构中解析整帧，再一次性发布？",direct:"这样读者只能看到上一份完整快照或下一份完整快照，不会读到坐标、触点数和 ID 各自来自不同采样的半更新状态。",support:["先检查接收长度、count 上限、ID 唯一性与坐标范围。","全部成功后再原子交换索引、指针或受保护的快照。"],boundary:"“原子发布”不代表整个大结构可由一次机器指令复制；通常要用双缓冲、短临界区或队列转移所有权。"}
@@ -8520,18 +8055,7 @@ const domainQAs={
     {q:"LVGL 的 read_cb 应返回硬件中断事件，还是当前输入状态？",direct:"应返回当前标准化状态；例如 pointer indev 给出当前 point 与 PRESSED/RELEASED。硬件中断只是驱动更新该状态的一种触发。",support:["无新中断不一定等于 RELEASED。","驱动层负责把离散帧、边沿或平台事件整理成连续状态机。"],boundary:"不同 indev 类型的数据字段和 continue_reading 语义以所用 LVGL 版本文档为准。"},
     {q:"坐标数值正确，为什么控件仍收不到 CLICKED？",direct:"事件链还要通过按压状态、显示旋转、对象命中、可点击 flag、裁剪/层级，以及按下到释放的时间与移动阈值。",support:["同时记录 raw point、变换后 point、indev state、命中对象和事件码。","检查 top/system layer 是否存在吸收输入的可点击对象。"],boundary:"CLICKED 是由完整 press/release 交互派生的事件，不等同于任意一次坐标采样。"}
   ],
-  "coordinate-transform":[{q:"顺时针旋转 90° 为什么要出现 H−1？",direct:"离散像素坐标从 0 开始，原 y=0 应映射到输出最右列 x'=H−1，而不是 H。",support:["公式 x'=H−1−y，y'=x。","旋转后输出尺寸由 W×H 变为 H×W。"],boundary:"公式假设坐标已归一化且原点在左上；镜像/安装方向不同要重新定义。"}],
-  "press-cache":[{q:"没有新的触摸中断，能否直接返回 RELEASED？",direct:"不能普遍这样判断；无新中断可能只是手指仍按住且坐标未变化。",support:["优先使用控制器明确的零触点/释放语义。","超时只能作为有依据且可统计的恢复策略。"],boundary:"INT 的边沿/电平行为绑定具体控制器配置。"}],
-  "measurement":[{q:"一次 DWT 测得 20µs，能否证明代码最坏耗时小于 20µs？",direct:"不能；这只是一组输入和系统条件下的一次样本。",support:["要覆盖 Cache 冷/热、并发 DMA/中断、数据边界和不同优化构建。","保存 max/分布/deadline miss，并记录时钟与样本条件。"],boundary:"CYCCNT 本身也要确认实现、启用和回绕。"}],
-  "priority-layers":[
-    {q:"把 DMA、NVIC 和 Task priority 都设为同一个数字会怎样？",direct:"没有统一含义；三者属于不同仲裁器，数字方向、位宽和作用对象都可能不同。",support:["NVIC 管 ISR 抢占，Task priority 管 Ready 任务。","DMA priority 管 DMA 服务关系，总线 QoS 又是另一层。"],boundary:"共享状态安全仍需所有权、原子、锁或消息协议，优先级不能替代同步。"},
-    {q:"提高任务优先级，能否解决 DMA FIFO overrun？",direct:"不一定；它只影响 Ready 任务的 CPU 调度，不能直接改变 DMA 控制器、互连或目标存储器的仲裁。",support:["先确定丢数据发生在哪个 FIFO 和哪个服务层。","分别检查 ISR 响应、任务排空、DMA 请求、总线等待和长期消费速率。"],boundary:"提高某层优先级还可能让其他任务或数据流的最坏响应变差。"}
-  ],
-  "fault-checklist":[
-    {q:"只凭 HardFault 的 PC 能否定位根因？",direct:"通常不能；PC 可能是症状点、异常报告点或已被坏栈污染。",support:["结合 CFSR/HFSR、有效地址寄存器、EXC_RETURN、任务栈和 DMA/MPU 状态。","必须使用与现场固件完全匹配的 ELF/map 符号化。"],boundary:"非精确总线错误尤其可能延迟到后续指令才报告。"},
-    {q:"为什么 Fault Handler 里不适合直接做复杂 printf？",direct:"故障可能由坏栈、不可访问内存、总线异常或运行库状态损坏引起；复杂格式化会继续用栈、锁和外设，容易二次 Fault 或死锁。",support:["第一阶段只把最小现场写入已验证的保留区。","复位后或在受控诊断上下文中再符号化和格式化。"],boundary:"若输出路径已经被证明为无锁、无分配且栈独立，可以做有限记录，但仍要有失败上限。"}
-  ]
-};
+  "coordinate-transform":[{q:"顺时针旋转 90° 为什么要出现 H−1？",direct:"离散像素坐标从 0 开始，原 y=0 应映射到输出最右列 x'=H−1，而不是 H。",support:["公式 x'=H−1−y，y'=x。","旋转后输出尺寸由 W×H 变为 H×W。"],boundary:"公式假设坐标已归一化且原点在左上；镜像/安装方向不同要重新定义。"}],};
 Object.assign(domainQAs,{
   "uart-frame":[
     {q:"8N1 在理想连续发送时的字节效率是多少？",direct:"80%。每个 payload 字节有 8 个有效数据位，线上还要付 1 个 Start 和 1 个 Stop，共 10 bit，所以效率是 8/10。",support:["115200 baud 的理想上限约为 11520 B/s。","若再加业务头、长度、CRC、转义与帧间 gap，有效 payload 吞吐会继续降低。"],boundary:"baud 在二进制 UART 中通常等于每秒符号/bit 数，但带调制的其他系统不能把 baud 一概等同 bit/s。"},
@@ -8613,11 +8137,7 @@ Object.assign(domainQAs,{
     {q:"BRS=0 的 CAN FD 帧与 Classical CAN 帧是否相同？",direct:"不同。BRS=0 只表示不切换更快 data bit rate；FDF、ESI、DLC 映射、CRC/填充等 FD 格式仍然存在。",support:["Classical-only 节点仍会把 FD 格式视为错误。","FD 帧可以长于 8 B，即使全程使用 nominal rate。"],boundary:"FD-capable 节点可另外配置发送真正的 Classical frame，不能用 BRS=0 替代格式选择。"}
   ]
 });
-Object.assign(domainQAs,{
-  "c-storage-duration":[
-    {q:"函数里的 static 局部变量到底是局部还是全局？",direct:"名字是块作用域的“局部名字”，对象却具有静态存储期，整个程序只保留一份并跨调用共享。",support:["它通常没有外部链接，其他函数不能直接用这个局部名字。","共享状态意味着函数可能不再可重入。"],boundary:"不要用“局部/全局”一个维度同时回答作用域与生命周期。"},
-    {q:"局部变量一定在栈上吗？",direct:"不一定。automatic 对象可放栈、寄存器、复用栈槽或被优化消除；C 只规定可观察语义与生命周期。",support:["取地址和 ABI spill 会增加真实内存位置的可能。","map 文件通常也不会逐个列出自动局部对象。"],boundary:"需要栈预算时应分析真实构建的调用链与 stack-usage，而不是数源码变量。"}
-  ],
+Object.assign(domainQAs,{
   "c-scope-linkage":[
     {q:"文件级 static 与函数内 static 的共同点和区别是什么？",direct:"共同点是对象通常都具有静态存储期；文件级 static 还让名字具有内部链接，函数内 static 的名字只有块作用域且无链接。",support:["前者用于模块私有实体。","后者用于跨调用保留状态。"],boundary:"static 修饰函数时讨论的是内部链接，不是对象存储期。"},
     {q:"extern 声明是不是定义？",direct:"通常只是声明并引用别处提供的外部定义；带初始化的外部对象声明会成为定义。",support:["公共头文件放 extern 声明。","恰好一个 .c 提供兼容定义。"],boundary:"tentative definition 等细节受具体声明形式与语言规则影响，不能把所有不带初始化的文件级声明都一句话归类。"}
@@ -8700,12 +8220,7 @@ Object.assign(domainQAs,{
     {q:"ISR 中调用 printf 有哪些风险？",direct:"执行时间长且不可预测，可能使用锁、静态缓冲、浮点格式化或底层阻塞 I/O，并且未必可重入。",support:["会放大中断延迟和嵌套压力。","日志应记录轻量事件，交任务格式化。"],boundary:"专门设计的无锁、有界 trace putchar 可以在明确合同下使用，不能与通用 printf 混为一谈。"},
     {q:"ISR 里为什么不能直接调用普通 FreeRTOS API？",direct:"普通 API 可能阻塞或依赖任务上下文；ISR 必须使用标明 FromISR 的版本，并且中断优先级要处在内核允许调用 API 的范围。",support:["ISR 不允许等待 tick。","必要时通过 wake 标志请求退出后切换。"],boundary:"并非每个 API 都有 FromISR 版本，具体以 FreeRTOS 文档为准。"},
     {q:"volatile 能否让 ISR 与任务安全共享一个结构体？",direct:"不能。它只影响访问是否发生，不能让多个字段形成原子一致快照，也不提供互斥或完整的内存顺序。",support:["可用临界区复制快照。","或用队列发布不可变消息/索引。"],boundary:"单个天然原子标量也仍需定义事件合并、丢失和发布顺序。"}
-  ],
-  "c-const-pointer":[
-    {q:"const 关键字主要有什么作用？",direct:"表达经某条左值/指针路径不可修改，帮助接口区分只读输入、阻止误写，并可能让只读对象进入适合的存储区域。",support:["const T* 是指向只读 T 的访问路径。","T* const 是自身不可改的指针。"],boundary:"const 不提供原子性、互斥或硬件不变性。"},
-    {q:"const 与 #define 有什么区别？",direct:"const 对象进入 C 类型系统，有类型、作用域、地址和调试身份；#define 在预处理阶段做 token 替换，没有对象类型或存储。",support:["宏可参与 #if。","类型化常量能获得编译器转换诊断。"],boundary:"C 中 const 对象不在所有标准版本/场景都是整数常量表达式，数组长度/case 等要按具体规则选 enum 或宏。"},
-    {q:"把 const 强转掉后能否修改？",direct:"只有原对象本来可写、只是当前访问路径带 const 时，恢复可写路径才可能合法；若对象定义本身是 const，修改它是未定义行为并可能在只读区 Fault。",support:["函数不能靠强转突破调用者只读合同。","丢 const 应当极少且有明确来源证明。"],boundary:"MMIO 的写权限仍由寄存器语义决定，const volatile 常表示软件只读状态。"}
-  ],
+  ],
   "c-typedef":[
     {q:"typedef 与 #define 给类型起别名时有什么本质区别？",direct:"typedef 由编译器作为类型别名解析，遵守 C 作用域和声明语法；宏只替换 token，可能受逗号、星号和括号结合影响。",support:["typedef 可命名函数指针签名。","宏可做条件编译而 typedef 不行。"],boundary:"typedef 不创建与底层类型不兼容的新强类型。"},
     {q:"为什么指针 typedef 容易误导 const？",direct:"const 修饰整个 typedef 名称；`typedef char *P; const P p` 得到 `char * const p`，不是 `const char *p`。",support:["星号被别名隐藏。","公开接口可用句柄名，但普通数据指针宜保留显式 *。"],boundary:"不透明 handle 若有明确所有权语义，指针 typedef 仍可有价值。"}
@@ -8713,11 +8228,7 @@ Object.assign(domainQAs,{
   "c-header-design":[
     {q:"头文件中可以定义 static 变量吗？",direct:"语法上可以，但每个包含它的翻译单元都会得到一份内部链接副本，常导致隐藏的多份状态和 RAM 浪费，因此模块可变状态通常不应这样设计。",support:["模块唯一私有状态放 .c 的 file static。","头文件发布 extern 声明或访问函数。"],boundary:"若确实需要每 TU 一份且是只读/可证明用途，应明确记录；static inline 函数是另一类常见合法用法。"},
     {q:"include guard 能防止什么，不能防止什么？",direct:"它防止同一头文件在一个翻译单元里重复展开；不能防止多个 .c 各自定义普通对象、不能自动解开循环类型依赖，也不能保证头文件自包含。",support:["公共头应独立编译测试。","使用前向声明减少完整类型依赖。"],boundary:"#pragma once 常见但属于实现支持，路径别名/构建环境边界也需考虑。"}
-  ],
-  "c-float":[
-    {q:"float x 与零值比较应该怎样写？",direct:"若业务语义要求精确零且生成路径保证可精确得到 0，可写 `x == 0.0f`；测量/计算近零则用由噪声、分辨率和误差预算定义的绝对容差。",support:["近零时相对误差不稳定。","一般两值比较可组合绝对与相对容差。"],boundary:"不要机械使用 FLT_EPSILON 或固定 1e-6 覆盖所有量程。"},
-    {q:"为什么 NaN 会让普通范围检查失效？",direct:"与 NaN 的 `<`、`>`、`==` 通常都为假；`x < min || x > max` 对 NaN 可能两边都不成立。",support:["外部浮点先 `isfinite(x)`。","再做业务范围判断。"],boundary:"是否允许无穷和 NaN 取决于接口数据模型，不应默认吞掉。"}
-  ],
+  ],
   "c-endianness":[
     {q:"怎样判断当前系统是大端还是小端？",direct:"构造已知多字节整数，再通过 `const unsigned char*` 读取最低地址字节；0x0102 的首字节为 0x02 表示小端，为 0x01 表示大端。",support:["字符类型允许观察任意对象表示。","也可依据目标工具链宏在构建期判定。"],boundary:"运行时检测不替代协议显式端序；异构/混合端序实现还需单独处理。"},
     {q:"端序与 SPI 的 MSB-first 是同一回事吗？",direct:"不是。端序描述多字节对象在内存地址中的字节排列；MSB-first 描述线路上一字节/字帧先移哪一位。",support:["主机小端仍可用 MSB-first SPI。","协议还要规定多字节字段先发哪个字节。"],boundary:"位域布局和 CAN DBC 位编号又是另外的约定。"}
@@ -8732,14 +8243,6 @@ Object.assign(domainQAs,{
     {q:"什么是野指针，怎样避免？",direct:"它是未初始化、越界形成或对象生命周期结束后仍被使用的无效指针。通过初始化、单一 owner、释放后停止所有别名、容量检查和明确对象生命周期避免。",support:["局部置 NULL 只保护该变量。","ASan/MPU/watchpoint 可让问题更早暴露。"],boundary:"非 NULL 不等于有效；地址落在 RAM 也不证明它指向活对象。"}
   ]
 });
-domainQAs["c-storage-duration"].push(
-  {q:"为什么 static 局部变量只初始化一次？",direct:"它具有静态存储期，整个程序执行期间只有一个对象；初始化在其语言/实现规定的初始化阶段完成，而不是每次进入块都创建新对象。",support:["每次调用只再次执行到这个名字，不会重建对象。","它的值会跨调用保留。"],boundary:"多线程首次初始化的保证取决于 C 标准版本、对象形式和实现；嵌入式还要考虑重入与启动顺序。"}
-);
-domainQAs["c-volatile"]=[
-  {q:"volatile 关键字真正保证什么？",direct:"保证对 volatile 对象的访问按实现的可观察规则真正发生，常用于 MMIO 和特定异步变化对象。",support:["编译器不能像普通不可观察对象那样缓存/删除这些访问。","访问宽度与次数仍由表达式和实现决定。"],boundary:"它不保证原子、互斥、线程 happens-before 或 Cache 一致性。"},
-  {q:"`volatile int i; i++;` 是原子操作吗？",direct:"不是。它仍可拆成读取、加一、写回，ISR/任务/其他核可在中间介入并造成丢更新。",support:["用原子操作、临界区或消息传递保护不变量。","先明确竞争者和允许的丢事件语义。"],boundary:"某处理器恰好用一条指令也不自动建立完整并发协议。"},
-  {q:"const volatile 适合什么？",direct:"适合软件只能读取、但硬件或外部执行者会异步改变的对象，例如只读状态寄存器。",support:["const 阻止通过该左值写。","volatile 要求每次读取发生。"],boundary:"具体寄存器仍须使用厂商定义的访问类型、宽度和顺序。"}
-];
 const extraSources={
   armarch:["armIntro","armM7"],"arm-taxonomy":["armIntro","armM7"],"arm-toolchain-target":["armAAPCS32","gccArm"],"arm-register-model":["armM7","armAAPCS32"],"arm-data-path":["armM7"],"arm-control-data":["armM7","armAAPCS32"],"arm-order-atomic":["armM7","armIntrinsics"],"arm-aapcs":["armAAPCS32"],"arm-function-machine":["armAAPCS32","gccArm"],"arm-memory-model":["armM7","armAmba"],"arm-startup":["armCore","armM7","ldScripts"],"arm-debug-perf":["armCore","armM7"],
   communication:[],"comm-layers":["nxpI2c","nxpSpi","boschCan","tiUart"],"comm-driver-architecture":["nxpI2c","boschMcan"],
@@ -8841,6 +8344,60 @@ domainQAs["c-padding-alignment"]=[
   {q:"给定一组成员，怎样手算结构体大小？",direct:"从偏移 0 开始，按声明顺序逐个摆成员：第一个直接放；后面的成员若当前位置不是它对齐数的整数倍，就补空位直到满足；全部摆完，再把总大小补成最大对齐数的整数倍。",support:["例如 char、int、char：char 放 0；int 要等到偏移 4，所以 1～3 留空；第二个 char 放 8。","此时用了 9 字节，最大对齐数是 4，下一个 4 的整数倍是 12，所以最终 sizeof 为 12。","把成员顺序改成 char、char、int 后，只需在 2～3 留空，最终 sizeof 为 8。"],boundary:"手算前先确认题目采用的类型大小和对齐；常见题目通常使用 char/short/int/double 的 1/2/4/8 规则。"},
   {q:"为什么结构体末尾还要补空位？",direct:"为了让结构体数组中的下一个元素也从合适的位置开始。",support:["S1 若只算到偏移 8 的 c2，共使用 9 字节；但第二个 S1 若紧接着从偏移 9 开始，其中的 int 就会落到不合适的位置。","把单个 S1 补到 12 字节后，数组第二项从 12 开始；其中 int 位于 12+4=16，仍是 4 的整数倍。"],boundary:"末尾空位属于结构体占用空间，但不属于任何成员。"},
   {q:"嵌套结构体应该怎样对齐？",direct:"先单独算完内部结构体，再把它当成一个不可拆开的成员，放到其最大对齐数的整数倍位置。",support:["若内部 S3 大小为 16、最大对齐数为 8，外层前面只有一个 char，那么 S3 不能从偏移 1 开始，要等到偏移 8。","S3 从 8 开始整体占 16 字节，到偏移 23 结束；外层后续成员再从 24 继续摆。"],boundary:"不能拿内部结构体自己的空位去塞外层的其他成员，成员声明顺序也不会被编译器重排。"}
+];
+domainQAs["c-integer-types"]=[
+  {q:"sizeof(char) 为什么永远是 1？",direct:"因为 C 把 char 占用的存储单位定义为一个 byte，sizeof 的结果也正是以这个单位计数，所以 sizeof(char) 必然为 1。",support:["这里的 1 不是 1 bit；一个 C byte 含多少 bit 由 CHAR_BIT 给出。","现代 MCU 基本都是 8 bit byte，但移植代码仍应把 sizeof 理解为字节数而不是位数。"],boundary:"sizeof 返回 size_t；数组整体和已经退化成指针的函数形参会得到完全不同的结果。"},
+  {q:"什么时候应该使用 uint32_t，什么时候使用 unsigned int？",direct:"字段必须恰好 32 位时使用 uint32_t；只需要一个非负普通整数、且不跨固定二进制格式时，unsigned int 更自然。",support:["寄存器、通信字段、文件格式和确定宽度的计数器通常需要 uint32_t。","普通算术应先从业务范围选型；固定宽度并不会自动让提升、溢出和格式化更安全。"],boundary:"uint32_t 只在目标实现存在恰好 32 位的无符号整数类型时提供；常见 MCU 都提供。"},
+  {q:"为什么数组长度通常使用 size_t？",direct:"因为 size_t 能表示当前平台任何对象的大小，也是 sizeof 的返回类型；用它传递容量可以避免把合法对象大小塞进过窄类型。",support:["标准库中的长度和内存函数也普遍使用 size_t。","与 int 混用时要先排除负值，倒序循环也不能写 i>=0。"],boundary:"若协议长度字段只有 16 位，从 size_t 回窄前必须先检查 value<=UINT16_MAX。"},
+  {q:"enum 能否直接作为通信协议字段？",direct:"不建议直接把 enum 对象的内存发送出去；应在协议中规定明确宽度，再显式编码和验证枚举值。",support:["enum 适合在程序内部给状态命名。","它的对象大小和表示不应被当作跨编译器、跨版本的固定线格式。"],boundary:"接收端还要拒绝协议中未定义的数值，不能因为强转成 enum 就自动变成合法状态。"}
+];
+domainQAs["c-signed-unsigned"]=[
+  {q:"为什么 -1 < sizeof(array) 可能为假？",direct:"sizeof 返回无符号的 size_t。比较前，-1 可能转换成 size_t 能表示的巨大正数，于是条件变成‘最大值是否小于数组长度’，结果当然为假。",support:["先写 index>=0，再在右侧短路条件中转换为 size_t。","不要把带 -1 哨兵含义的变量直接改成无符号类型。"],boundary:"具体共同类型仍由两侧类型等级和可表示范围决定，但常见 32/64 位环境会出现上述结果。"},
+  {q:"两个 uint16_t 相乘为什么可能在赋给 uint32_t 前就出错？",direct:"两个 uint16_t 常先提升为 int，乘法也就在 int 中完成；若数学结果超过 int 范围，错误发生在最后赋给 uint32_t 之前。",support:["uint32_t result 只参与最后的赋值转换，不能倒推乘法类型。","把至少一个操作数在乘法前转换为 uint32_t，才能让乘法在更宽的无符号域完成。"],boundary:"若目标的 int 不能表示 uint16_t 全部值，提升规则会不同；仍应按‘提升后类型’推导。"},
+  {q:"无符号整数回绕有定义，为什么仍可能是程序错误？",direct:"语言只保证回绕结果怎样计算，不保证这个结果符合业务含义。长度从 0 减 1 回绕到最大值虽有定义，却可能绕过容量检查并导致越界。",support:["计数器差值可以利用模运算，但必须证明观察间隔小于半个计数周期等前提。","容量、金额和分配大小通常不允许静默回绕，应在运算前检查。"],boundary:"‘有定义’回答语言会算出什么；‘正确’还要由算法和业务不变量判断。"},
+  {q:"怎样安全地把 size_t 转成 uint16_t？",direct:"先比较 value 是否大于 UINT16_MAX，确认装得下后再显式转换。",support:["范围检查必须发生在强转之前。","接口失败时还应规定输出参数保持不变还是被清零。"],boundary:"若 size_t 值来自加法或乘法，还要先保证这些运算本身没有在 size_t 中回绕。"}
+];
+domainQAs["c-float"]=[
+  {q:"为什么 0.1f + 0.2f 不一定等于 0.3f？",direct:"0.1 和 0.2 的二进制小数通常无限重复，只能舍入成邻近 float；两个近似值相加后，未必与单独舍入得到的 0.3 拥有完全相同的位模式。",support:["打印更多小数位或查看十六进制浮点表示，可以观察这点差异。","误差通常很小，但等号比较要求位表示出的数值完全相等。"],boundary:"这不表示所有十进制数都不能精确表示；0.5、0.25 等二进制有限小数可以精确表示。"},
+  {q:"float x 与零应该怎样比较？",direct:"若 x 来自明确赋值或离散控制路径，x==0.0f 可以正确；若来自测量、累计或近似计算，应使用来自业务误差预算的绝对容差。",support:["接近零时相对误差分母不稳定，因此绝对容差更重要。","传感器分辨率为 0.1 时，机械使用 1e-6 通常没有实际意义。"],boundary:"比较前若输入可能含 NaN，应先用 isfinite/isnan 处理，否则普通范围条件可能全部为假。"},
+  {q:"FLT_EPSILON 为什么不是通用比较阈值？",direct:"FLT_EPSILON 描述 1.0 附近相邻 float 的间隔尺度，不是所有量程、所有测量和所有接近零问题的允许误差。",support:["数值越大，相邻浮点数间距通常越大。","业务容差还要包含传感器噪声、算法累计误差和控制系统要求。"],boundary:"它适合说明 float 精度特征，但不能直接替代接口的 abs_tol 和 rel_tol。"},
+  {q:"float 和 double 在嵌入式中怎样选择？",direct:"先由数值范围和误差预算确定所需精度，再核对 MCU 的 FPU、编译选项、库函数成本、存储和执行时间。",support:["只支持单精度硬件的 MCU 上，double 运算可能需要更多软件支持。","长期累计、坐标计算或大动态范围可能确实需要 double。"],boundary:"不要只凭‘float 快’或‘double 准’下结论；应在目标构建上测量关键路径。"}
+];
+domainQAs["c-sequencing"]=[
+  {q:"printf(\"%d %d\", i++, i++) 有什么问题？",direct:"两个实参对同一个 i 产生未排序的修改，程序不能依赖某个固定输出；正确做法是先把两个值分别算好，再调用 printf。",support:["实参书写在左边不代表先求值。","换编译器、优化级别或一次运行恰好相同，都不能把结果变成语言承诺。"],boundary:"问题核心不是 printf，而是同一完整表达式内冲突的副作用。"},
+  {q:"& 与 && 的关键区别是什么？",direct:"&& 是逻辑运算并保证左侧先求值，左侧为假时右侧不执行；& 是逐位运算，两侧都会求值。",support:["p!=NULL && p->ready 可以用左侧保护右侧解引用。","把 && 改成 & 会让 p->ready 无条件执行，并可能解引用空指针。"],boundary:"& 可用于寄存器掩码和整数位测试，不是一个较短的逻辑与写法。"},
+  {q:"优先级为什么不能告诉我们函数参数的执行顺序？",direct:"优先级只决定表达式怎样组成语法结构，没有替各个子表达式安排时间顺序。",support:["乘法比加法优先，只表示 b*c 先与乘号结合，不保证 b()、c() 比 a() 先调用。","需要固定顺序时，把调用拆成多条语句和临时变量。"],boundary:"&&、||、逗号运算符和条件运算符的特定位置确实提供顺序，应按各自规则判断。"},
+  {q:"未定义行为为什么可能在打开优化后才暴露？",direct:"优化器可以假设合法程序不会越界、不会发生有符号溢出等未定义行为，并基于这些前提删除或重排代码；调试构建只是暂时没有利用这些推导。",support:["崩溃位置可能离第一次错误很远。","应先修复被破坏的语言前提，再用警告和主机检测工具辅助定位。"],boundary:"关闭优化让现象消失不是修复，只是改变了指令和内存布局。"}
+];
+domainQAs["c-control-flow"]=[
+  {q:"卫语句为什么能减少嵌套？",direct:"它在函数入口依次排除非法条件，失败立即离开，使剩余代码只处理前置条件已经成立的主流程。",support:["每个失败原因靠近对应检查，阅读时无需跨越多层 else。","所有验证完成后一次提交共享状态，可避免留下半更新结果。"],boundary:"取得多个资源后不能随意早返回；这时应集中进入 cleanup。"},
+  {q:"switch 忘记 break 会发生什么？",direct:"执行会继续进入后面的 case，直到遇到 break、return、goto 或 switch 结束。",support:["这常是 Bug，也可以是有意贯穿。","有意贯穿应明确注释或使用工具链支持的标记，让编译器和读者都知道。"],boundary:"default 是否必需取决于未列举值的策略，但外部输入通常应有明确拒绝路径。"},
+  {q:"size_t 倒序循环应该怎样写？",direct:"常用写法是 for(size_t i=n; i-- > 0; )，这样 n==0 时不进入，进入循环体时 i 已是 n-1 到 0。",support:["不要写 i>=0，因为无符号 i 永远不小于 0。","也可以使用正向计数并计算反向索引，选择团队更容易读懂的形式。"],boundary:"循环体若修改 n 或 i 之外的边界对象，需要重新证明不会越界和一定终止。"},
+  {q:"多资源函数怎样避免每个 return 前重复清理？",direct:"入口参数检查可以早返回；取得资源后，把失败路径统一跳到一个 cleanup 标签，并按取得顺序反向释放。",support:["每个资源配一个是否成功取得的状态，避免释放未取得资源。","free(NULL) 安全，可以简化动态内存清理。"],boundary:"cleanup 只负责可预测的局部资源；中断、锁层级和异步外设还要遵守各自的停止与所有权协议。"}
+];
+domainQAs["c-storage-duration"]=[
+  {q:"局部变量和全局变量能否同名？",direct:"可以，它们是两个不同对象。进入局部变量所在作用域后，同名局部声明会遮住外层或文件作用域名字。",support:["作用域决定某行代码中的名字绑定到哪个对象。","两个对象的存储期互不影响：局部对象随调用创建，文件作用域对象贯穿程序。"],boundary:"语言允许不等于推荐。关键状态同名会降低可读性，工程代码通常主动避免。"},
+  {q:"为什么 static 局部变量只初始化一次？",direct:"因为它不是每次调用都重新创建的自动对象，而是具有静态存储期：对象贯穿整个程序，函数每次进入只是再次访问同一个对象。",support:["名字仍只有函数内部可见。","第一次调用修改后的值会保留到下一次调用。"],boundary:"初始化何时完成以及是否涉及多线程保护受语言版本和实现影响；嵌入式 C 中应优先使用简单静态初始化。"},
+  {q:"函数内 static 与文件作用域 static 分别改变什么？",direct:"函数内 static 主要把对象从每次调用的新生命改为贯穿程序的一份对象；文件作用域 static 主要把名称限制在当前 .c 文件。",support:["文件作用域对象原本就具有静态存储期，所以那里不是再把寿命延长一次。","static 函数同样只允许当前翻译单元通过该名称调用。"],boundary:"把可变 static 对象定义在头文件中会让每个 .c 得到独立副本，通常不是想要的模块私有状态。"},
+  {q:"为什么返回普通局部变量地址是错误的？",direct:"return 执行时局部对象生命周期已经结束，返回的地址随即悬空；字节暂时没被覆盖也不能再合法解引用。",support:["可改为直接返回值。","较大结果可由调用者提供输出缓冲，并由参数说明容量。"],boundary:"static 局部对象能继续存活，但所有调用共享同一份状态，可能带来重入和并发问题。"}
+];
+domainQAs["c-const-pointer"]=[
+  {q:"const int *p 与 int * const p 有什么区别？",direct:"前者锁住所指对象的写权限，p 自己可以改指向；后者锁住指针 p 自己，仍可通过它修改目标。",support:["const int * const p 表示两层都锁住。","从变量名向外读，先判断 p 自己，再判断星号左边的目标类型。"],boundary:"const 限制的是这条访问路径；若底层对象并非 const，其他合法可写指针仍可能修改它。"},
+  {q:"函数参数为什么常写成 const uint8_t *buf？",direct:"它把‘函数只读取输入缓冲、不写回’写进原型，调用者能放心传入可写或只读数据，编译器也能拦截误写。",support:["const 不替代 NULL、长度和生命周期检查。","输出参数应保持可写类型，清楚区分输入与输出。"],boundary:"若函数必须原地转换数据，就不应虚假添加 const；接口合同必须与真实行为一致。"},
+  {q:"const 和 #define 有哪些常用区别？",direct:"const 声明有类型、有作用域并对应对象，可以取地址；#define 在预处理阶段做 token 替换，不创建普通 C 对象。",support:["模块只读表和带类型参数更适合 const。","条件编译和预处理器必须看到的值只能使用宏。"],boundary:"C 中普通 const 不在所有语境都属于整数常量表达式；case 标签等位置常用 enum 或宏。"},
+  {q:"const volatile 常用来描述什么？",direct:"常用于程序只允许读取、但值可能由硬件自行变化的状态寄存器。const 阻止程序写，volatile 要求每次读取真实发生。",support:["两个限定词分别解决写权限和访问可观察性。","它们都不提供线程同步或原子复合操作。"],boundary:"寄存器是否只读、读取是否清状态仍应以芯片手册为准。"}
+];
+domainQAs["c-volatile"]=[
+  {q:"硬件寄存器为什么通常声明为 volatile？",direct:"因为寄存器可能由硬件在程序没有赋值的情况下改变，读写本身也可能产生外设动作；编译器不能按普通 RAM 变量省略或合并这些访问。",support:["轮询状态位需要每轮重新读取。","厂商寄存器头文件通常已经把限定词放在正确位置。"],boundary:"volatile 不会替你选择正确地址、宽度、访问顺序或 W1C 写法。"},
+  {q:"没有 volatile 的轮询为什么可能变成死循环？",direct:"编译器看到循环体没有 C 语句修改普通变量，可能只在循环前读取一次并一直判断缓存值；硬件后来更新内存也不会被程序重新观察。",support:["这是普通对象模型允许的优化。","声明为 volatile 后，每次规定读取都必须重新发生。"],boundary:"实际优化形态随工具链变化；某次调试构建碰巧反复读取不能证明声明正确。"},
+  {q:"volatile 能否保证 i++ 原子？",direct:"不能。i++ 通常包含读取、加一和写回，ISR 或另一个执行者可以插在这些步骤之间，导致更新丢失。",support:["需要根据参与者选择短临界区或合适原子操作。","一次 32 位读写不可撕裂，也不等于整个读改写不可分。"],boundary:"不要为了修复一个计数器就无限扩大关中断范围；临界区会增加最坏中断延迟。"},
+  {q:"volatile 适合所有任务共享变量吗？",direct:"不适合。任务通信通常需要互斥、消息队列、通知或明确定义的原子协议；volatile 只能保证访问发生。",support:["它不表达缓冲区所有权。","它不建立多个字段的一致快照或事件排队语义。"],boundary:"某些 RTOS/端口底层实现会使用 volatile，但应用层不应由此推导出‘共享数据加 volatile 即安全’。"}
+];
+domainQAs["c-isr-sharing"]=[
+  {q:"ISR 和主循环共享一个变量，只加 volatile 为什么不够？",direct:"volatile 只保证读写真正发生；它没有定义事件能否覆盖、复合操作是否会被插入，以及多字段数据何时算完整。",support:["bool 标志会合并重复事件。","counter++ 仍可能丢更新。"],boundary:"若需求明确允许合并事件，简单标志可以足够，但仍要审查清零窗口。"},
+  {q:"事件标志和事件计数器有什么区别？",direct:"标志只能表达‘至少一次’，连续十次仍是 true；计数器能保存次数，但要定义并发更新、回绕或饱和，以及读取并清零的原子性。",support:["刷新请求常可合并。","采样触发或脉冲计数通常不能随意合并。"],boundary:"事件还携带独立数据时，单纯计数仍不够，需要队列或环形缓冲。"},
+  {q:"什么时候需要进入临界区？",direct:"当一个必须保持整体一致的多步操作可能被相关 ISR 插入时，需要让这段最短必要窗口不可被它打断。",support:["例如读取并清零共享计数器。","只保护共享不变量，不把解析、日志或等待放进去。"],boundary:"临界区保护哪些中断、是否允许嵌套以及 RTOS API 要求由平台端口决定。"},
+  {q:"环形缓冲区为什么要先写数据再更新 head？",direct:"head 是发布信号。消费者一旦看到新 head，就会认为对应槽已经完整；若先发布 head，它可能读到尚未写完的旧数据或半成品。",support:["生产者先写 payload，最后交出索引。","消费者先观察索引，再读取已发布槽。"],boundary:"这个简化协议只适用于明确的单生产者单消费者和相应平台条件；多生产者、DMA 或 Cache 系统还要补充同步合同。"}
 ];
 domainQAs["memory-dma-cache-case"]=[...(domainQAs["memory-dma-cache-case"]||[]),
   {q:"DMA 搬运时 CPU 还能访问同一块内存吗？",direct:"硬件通常能发起访问，但软件不应让 CPU 与 DMA 在没有所有权协议时同时读写同一范围。",support:["CPU 与 DMA 可能在互连上仲裁，性能会互相影响；这不是最危险的问题。","真正危险的是一方读到另一方尚未发布的半成品，以及 D-Cache 与 RAM 版本不一致。","把 buffer 分成 FREE、CPU_OWNED、DMA_OWNED、READY 等状态，只有完成事件和必要 Cache 维护都结束后才交接。"],boundary:"若硬件提供一致性互连或双端只读，要求会不同；必须以 SoC 互连和内存属性为准。"},
@@ -8979,23 +8536,16 @@ const plainScenes={
   "lvgl-port":"`lv_init()` 像给新教室通电：灯亮了，但课程还没开始。时钟、显示、输入和负责跑 handler 的执行上下文都接好，界面才真正活起来。",
   tick:"Tick 是墙上的钟，handler 才是来上班的人。只让时钟滴答、从不调用 handler，动画会非常守纪律地永远停在第一帧。",
   "ui-model":"界面不是一张静态图片，而是一棵对象树。样式决定长相，事件决定反应，父子关系决定布局、裁剪和传播路径。",
-  "object-tree":"删除一个父对象像拆掉整栋楼：子对象会一起消失，但业务代码手里保存的旧门牌号不会自动被擦掉。",
-  "style-system":"按钮颜色不对时别只盯着按钮本身，还要问：哪个 part、什么 state、哪条 property、从哪份 style 来——少问一个，样式系统就有机会跟你玩捉迷藏。",
+  "object-tree":"删除一个父对象像拆掉整栋楼：子对象会一起消失，但业务代码手里保存的旧门牌号不会自动被擦掉。",
   events:"事件回调不是后台小精灵，而是 UI 主流程里正在占用讲台的人；它一旦阻塞，输入、动画和刷新都只能在门外排队。",
   rendering:"改了一个按钮，不必重画全屏。LVGL 先记下哪里失效，再只生成这些区域的像素，最后交给显示驱动。",
-  "invalid-area":"按钮从左边挪到右边，不能只把右边画出来：旧位置也要擦干净。无效区记的正是这张“哪些地方需要重算”的清单。",
-  "rendering-engine":"对象树不会直接跳进屏幕里；渲染器要把圆角、颜色、透明度和裁剪逐个算成像素，硬件加速也只是接走其中擅长的工种。",
-  "render-modes":"PARTIAL、DIRECT、FULL 不是省、中、豪华三档套餐，它们分别回答 buffer 多大、在哪里画、每次画多少；选错心智模型比选错模式更麻烦。",
-  "flush-ready":"把 draw buffer 交给 DMA 后立刻喊“我用完了”，就像快递员刚接过箱子你又把箱子抢回来装下一单——偶发花屏一点都不偶发。",
-  "os-integration":"LVGL 大部分 API 期待同一个线程上下文。多个任务同时改对象树，就像两个人同时拿笔改同一张施工图。",
-  "lvgl-thread":"让一个 UI task 拿着对象树的唯一编辑权，其他任务递消息；这样不是保守，而是把“谁何时能改界面”从口头约定变成可画出的时间线。",
-  "touch-hardware":"触摸控制器给出的不是“按钮被点击”，而是一帧原始触点：数量、ID、坐标和状态都要先验证。",
-  "touch-layer":"INT 只像控制器举手说“我这里有变化”，它没有替你宣布“用户点击了确定键”；中间还隔着读帧、校验、坐标和状态机。",
-  driver:"中断只说明输入可能变了。真正的总线读取、帧校验和状态提交应放到可阻塞、可恢复的任务上下文。",
-  "touch-isr":"在触摸 ISR 里阻塞读完整个 I²C 帧，像让门铃负责开门、验货、签字和处理退货——它忙的时候，全楼的门铃都得等。",
+  "invalid-area":"按钮从左边挪到右边，不能只把右边画出来：旧位置也要擦干净。无效区记的正是这张“哪些地方需要重算”的清单。",
+  "render-modes":"PARTIAL、DIRECT、FULL 不是省、中、豪华三档套餐，它们分别回答 buffer 多大、在哪里画、每次画多少；选错心智模型比选错模式更麻烦。",
+  "os-integration":"LVGL 大部分 API 期待同一个线程上下文。多个任务同时改对象树，就像两个人同时拿笔改同一张施工图。",
+  "touch-hardware":"触摸控制器给出的不是“按钮被点击”，而是一帧原始触点：数量、ID、坐标和状态都要先验证。",
+  driver:"中断只说明输入可能变了。真正的总线读取、帧校验和状态提交应放到可阻塞、可恢复的任务上下文。",
   "coordinate-transform":"屏幕旋转 90° 不是把 x 和 y 随手一换就收工：原点也搬家、宽高也换岗，镜像和有效区域还可能继续排队。",
-  state:"硬件给的是一帧帧采样，用户感受到的却是连续按下、移动和松开。中间必须有状态机把离散帧接起来。",
-  "press-cache":"触摸帧像连续照片，track id 才是身份证。拿数组下标认手指，就会把“照片里站第一位的人”误认为永远是同一个人。",
+  state:"硬件给的是一帧帧采样，用户感受到的却是连续按下、移动和松开。中间必须有状态机把离散帧接起来。",
   "lvgl-input":"坐标正确仍不保证按钮收到 CLICKED；还要经过 indev 状态、对象命中、flags、层级和事件条件。",
   indev:"坐标抵达 read_cb 只算跑到半程：接下来还要经过对象命中、层级遮挡、flags 和点击/长按判定，才能真的敲响控件事件。"
 };
@@ -9206,19 +8756,7 @@ const algorithmGuides={
     ["sort(begin(a),end(a))","原地排序","按比较器建立全序；之后才可二分。","O(n log n)","比较器须严格弱序"],
     ["lower_bound(...)","找第一个不小于值","返回 iterator，可能等于 end；要求区间已按同一规则排序。","O(log n)","先判断 it!=end"],
     ["string s(n,'x')","字符串常用动作","push_back/append/find/substr；substr 会构造新字符串。","依操作而定","npos 不是 -1 的 int"]
-  ],trace:[["CREATE","先决定 size 是否立即存在"],["MUTATE","每次修改后重新审视位置"],["ORDER","排序后才拥有二分前提"],["READ","end/npos 都是正常未找到结果"]]},
-  "cpp-deque-list":{kind:"容器操作手册",intro:"deque 与 list 都能在两端操作，但内存形状完全不同：deque 是分段随机访问，list 是稳定节点链。",summary:"滑动窗口/BFS 需要两端操作时用 deque；只有同时需要稳定节点、已知位置 O(1) 摘接时，list 的节点成本才值得。",ops:[
-    ["deque<int> d;","创建双端队列","空队列；可从 front 与 back 两端增长。","O(1)","空时不可读 front/back"],
-    ["d.push_front(x)","头部添加","在最前端构造新元素，不整体搬动已有元素。","O(1)","迭代器规则不同于 list"],
-    ["d.push_back(x)","尾部添加","在末端构造新元素。","O(1)","保存的 iterator 需按合同判断"],
-    ["d.pop_front()","删除队头","只删除，不返回值；应先 front() 再 pop_front()。","O(1)","先判 empty"],
-    ["d[i]","随机访问","通过块表定位分段中的元素，不保证整段连续。","O(1)","不能把 &d[0] 当 C 数组"],
-    ["list<int> ls;","创建链表","每个元素是独立节点，包含前后链接。","O(1)","节点分配与 Cache 成本较高"],
-    ["ls.insert(it,x)","在 it 前插入","已知位置只改有限链接；返回新节点 iterator。","O(1)","找到 it 可能是 O(n)"],
-    ["it=ls.erase(it)","删除节点","只使被删节点位置失效，并返回下一个节点。","O(1)","旧 it 不可再用"],
-    ["ls.splice(dst,ls,node)","移动现有节点","不复制元素、不新分配，把 node 摘到 dst 前。","O(1)","容器/分配器需满足合同"],
-    ["for(auto& x:ls)","顺序遍历","只能逐节点前进，没有 ls[i]。","O(n)","频繁跳节点不利 Cache"]
-  ],trace:[["DEQUE","块表 + 多段存储"],["MONOTONIC","队尾淘汰弱候选"],["LIST","iterator 直接定位节点"],["SPLICE","只改链接，不搬对象"]]},
+  ],trace:[["CREATE","先决定 size 是否立即存在"],["MUTATE","每次修改后重新审视位置"],["ORDER","排序后才拥有二分前提"],["READ","end/npos 都是正常未找到结果"]]},
   "cpp-stack-queue":{kind:"容器操作手册",intro:"适配器故意只开放一小组操作。熟练的标准不是会背名字，而是知道容器里究竟保存哪类“尚未完成的工作”。",summary:"读取与删除分开：stack 用 top→pop，queue 用 front→pop；empty 是所有读取操作的前置条件。",ops:[
     ["stack<T> st;","创建空栈","默认常以 deque 为底层；只开放栈顶。","O(1)","不能遍历中间元素"],
     ["st.push(x)","压栈","把新工作放到最近处理位置。","O(1)","大对象可用 emplace"],
@@ -9275,17 +8813,7 @@ const algorithmGuides={
     ["nth_element(...,nth,...)","选择第 k 元素","nth 就位，左边不大于它、右边不小于它。","平均 O(n)","两侧内部无序"],
     ["accumulate(...)","从左到右折叠","初值类型决定累计类型；0 会导致 int 累加。","O(n)","大和用 0LL"],
     ["transform(...)","逐元素映射","把函数结果写到输出区间，可原地也可另存。","O(n)","输出容量必须足够"]
-  ],trace:[["RANGE","先明确 [first,last)"],["PRECONDITION","排序/迭代器类别"],["EFFECT","哪些元素被重排或写入"],["RESULT","iterator/bool/新尾怎样解释"]]},
-  "cpp-comparator-lambda":{kind:"比较器合同",intro:"比较器决定 sort、map、set 与 heap 的结构是否仍有数学意义。它不是一段能“差不多返回 bool”的普通回调。",summary:"最稳妥的多关键字写法是 tie/tuple；比较字段而不是相减；异步保存 lambda 时避免引用捕获局部对象。",ops:[
-    ["return a < b;","升序严格比较","a 应排在 b 前才返回 true；相等必须 false。","O(1)","禁止写 <="],
-    ["tie(a.x,a.y)<tie(b.x,b.y)","多关键字比较","先 x，x 相等再 y，天然处理等价关系。","O(1)","字段顺序就是优先级"],
-    ["return a.key-b.key;","错误的 C++ bool 比较","非零几乎都变 true，且减法可能溢出。","错误","直接比较字段"],
-    ["[limit](auto x){...}","按值捕获","闭包保存 limit 副本，适合延迟使用。","依对象","副本可能有成本"],
-    ["[&limit](auto x){...}","按引用捕获","闭包只借用外部对象。","O(1)","外部先销毁会悬空"],
-    ["sort(...,cmp)","排序语义","cmp(a,b) 表示 a 排在 b 前。","多次调用","不得修改被比较对象"],
-    ["priority_queue<...,Cmp>","堆比较语义","Cmp 判为较低优先级的元素下沉；用样例验证 top。","多次调用","方向易反"],
-    ["set<T,Cmp>","键等价语义","!cmp(a,b)&&!cmp(b,a) 代表等价键。","O(log n)","等价不一定 operator=="]
-  ],trace:[["IRREFLEXIVE","cmp(x,x) 必须 false"],["TRANSITIVE","a<b、b<c 推出 a<c"],["STABLE RULE","比较期间规则不变化"],["VERIFY","用 3 个元素检查最终顺序"]]},
+  ],trace:[["RANGE","先明确 [first,last)"],["PRECONDITION","排序/迭代器类别"],["EFFECT","哪些元素被重排或写入"],["RESULT","iterator/bool/新尾怎样解释"]]},
   "cpp-invalidation":{kind:"位置有效性手册",intro:"修改容器后，旧 iterator、引用、指针和索引要分别审计。地址失效与逻辑元素换位不是同一件事。",summary:"通用安全习惯：提前 reserve、使用 insert/erase 返回的位置、修改后重新 find；不要跨可能 rehash/扩容的语句保存 iterator。",ops:[
     ["vector::push_back","可能扩容","不扩容时旧位置通常保持；扩容时全部作废。","摊还 O(1)","无法只看源码判断是否扩容"],
     ["vector::insert","移动后缀","操作点及之后的位置失效；若扩容则全部失效。","O(n)","索引对应元素也会变化"],
@@ -9463,37 +8991,7 @@ const algorithmGuides={
     ["std::sort","工程默认比较排序","通常 introsort 思路，标准只承诺复杂度/效果。","O(n log n)","具体实现不应依赖"],
     ["stable_sort","稳定排序","相等 key 保留输入顺序。","O(n log n)","可能使用额外内存"],
     ["comparator","排序合同","严格弱序，不能依赖变化状态或 a-b 溢出。","多次调用","错比较器可破坏算法前提"]
-  ],trace:[["INVARIANT","已有序区域/分区是什么"],["PROGRESS","每轮扩大已完成部分"],["COMBINE","合并或递归子问题"],["GUARANTEE","稳定性、最坏界、空间"]]},
-  "algo-matrix":{kind:"算法执行清单",intro:"矩阵题最容易被下标淹没。先把坐标、边界和“已经处理的区域”画出来，再写循环会简单得多。",summary:"螺旋维护四条边；旋转维护坐标映射；行列有序搜索从右上角每步排除一行或一列。",ops:[
-    ["rows/cols","读取形状","先处理空矩阵，再确认每行列数。","O(1)","grid[0] 前先判空"],
-    ["spiral top/right","走上边与右边","完成后 top++、right--。","O(mn) 总","每条边只访问一次"],
-    ["spiral bottom/left","走下边与左边","执行前重新判断 top<=bottom、left<=right。","O(mn) 总","单行/列防重复"],
-    ["transpose","沿主对角线交换","仅交换 i<j 的 a[i][j] 与 a[j][i]。","O(n²)","原地仅适合方阵"],
-    ["reverse rows","逐行翻转","转置后翻转每行得到顺时针 90°。","O(n²)","旋转方向别混"],
-    ["right-top search","右上角搜索","太大左移，太小下移。","O(m+n)","依赖行列各自有序"],
-    ["set zero markers","首行首列作标记","先保存首行/首列原始是否含 0，再标记内部。","O(mn), O(1) 额外","更新顺序很重要"],
-    ["coordinate mapping","坐标映射","顺时针 (r,c)→(c,n-1-r)。","O(1)/元素","非方阵输出尺寸变化"]
-  ],trace:[["SHAPE","先确认 m×n 与空输入"],["BOUNDARY","标记未处理矩形"],["VISIT","按方向处理一条边/一层"],["SHRINK","收缩后再次检查合法性"]]},
-  "algo-bfs-frontier":{kind:"算法执行清单",intro:"BFS 的队列不仅保存节点，还编码发现顺序。入队时标记 visited，是保证每个节点只进一次的关键。",summary:"单源 BFS 求无权最短边数；多源 BFS 把全部起点以距离 0 同时入队；需要路径时额外保存 parent。",ops:[
-    ["queue<Node> q","创建前沿队列","保存已发现但尚未展开的节点。","O(V) 空间","峰值取决于前沿宽度"],
-    ["visited[s]=true; push(s)","发布起点","入队与标记作为一个逻辑动作。","O(1)","出队才标记会重复入队"],
-    ["u=q.front(); q.pop()","展开最早节点","FIFO 保证距离不下降。","O(1)","先读取再删除"],
-    ["for v in adj[u]","扫描邻边","未访问才记录 dist/parent 并入队。","总 O(E)","无向边会看两次"],
-    ["levelSize=q.size()","按层处理","冻结本层数量，循环结束后距离+1。","O(1)","处理中 q.size 会增长"],
-    ["multi-source","多源初始化","所有源 dist=0 同时入队，像多点水波。","O(number of sources)","源点去重"],
-    ["parent[v]=u","恢复路径","首次发现 v 时记录来源。","O(1)","无路径节点 parent 未定义"],
-    ["weighted?","检查边权","普通 BFS 只适合每条边同成本。","—","0/1 权用 deque，非负权 Dijkstra"]
-  ],trace:[["DISCOVER","首次看见节点就标记"],["QUEUE","按发现顺序排队"],["EXPAND","扫描全部邻居"],["LAYER","下一圈距离恰好 +1"]]},
-  "algo-topological":{kind:"算法执行清单",intro:"拓扑排序把依赖关系变成入度计数。队列中的不是“访问到的节点”，而是所有前置条件已经被满足的节点。",summary:"Kahn 算法处理数等于 V 才无环；需要字典序最小时，把普通 queue 换成小顶 priority_queue。",ops:[
-    ["indegree[v]++","建图时统计入度","每条 u→v 贡献给 v 一个未满足前置。","O(E)","方向反了语义全错"],
-    ["push all indegree 0","初始化可执行集合","没有前置的节点立即可处理。","O(V)","可能有多个起点"],
-    ["pop u","选择下一节点","加入拓扑序。","O(1)","顺序通常不唯一"],
-    ["for v in g[u]","删除 u 的影响","令 --indegree[v]；恰好到 0 才入队。","总 O(E)","不要重复入队"],
-    ["processed++","统计处理数量","最终与 V 比较。","O(1)","序列长度也是证据"],
-    ["processed<V","检测有向环","剩余节点互相依赖，没有任何入度 0。","O(1)","不是列出具体环"],
-    ["min-heap ready","字典序最小拓扑序","每次从可执行节点中取编号最小者。","O((V+E)log V)","只是选择规则变化"],
-    ["semester levels","分层拓扑","冻结当前 ready 数量，一批代表同一轮可并行课程。","O(V+E)","与普通拓扑序输出不同"]
-  ],trace:[["COUNT","每个节点还欠几门前置"],["READY","入度 0 进入候选"],["REMOVE","处理节点并删除出边"],["VERIFY","处理数不足说明环"]]},
+  ],trace:[["INVARIANT","已有序区域/分区是什么"],["PROGRESS","每轮扩大已完成部分"],["COMBINE","合并或递归子问题"],["GUARANTEE","稳定性、最坏界、空间"]]},
   "algo-backtracking":{kind:"算法执行清单",intro:"回溯是对选择树做 DFS。代码里最重要的两行通常是一行做选择、一行撤销选择；缺任何一行，共享现场都会污染兄弟分支。",summary:"路径 path、下一候选 start、约束状态 used/columns 与收集条件共同定义一层递归；剪枝必须证明整棵子树无答案。",ops:[
     ["path","当前选择路径","只描述根到当前节点的决定。","O(depth)","收集答案时复制"],
     ["candidates(start)","本层候选集合","start 控制组合不回头；used 控制排列不复用。","依分支数","组合/排列模板不同"],
@@ -9513,37 +9011,7 @@ const algorithmGuides={
     ["memoization","自顶向下记忆化","递归按需计算，每个状态只求一次。","O(states×transition)","仍占递归栈"],
     ["tabulation","自底向上填表","显式控制遍历和空间。","O(states×transition)","可能计算无用状态"],
     ["space optimize","压缩空间","只有确认旧层不再被未来使用才覆盖。","减少空间","可能失去路径恢复"]
-  ],trace:[["MEANING","一句话定义 dp[state]"],["DEPENDENCY","画出转移箭头"],["ORDER","依赖先于当前"],["ANSWER","明确从哪个状态取结果"]]},
-  "algo-dp-sequence":{kind:"算法执行清单",intro:"序列 DP 的区别集中在“是否必须以 i 结尾”和“状态表示一个前缀还是两个前缀”。",summary:"LIS、LCS、编辑距离与最大乘积只是代表模型；这里重点掌握状态维度、前驱范围和空间压缩条件。",ops:[
-    ["dp[i]=以 i 结尾","单序列结尾状态","适合 LIS/最大子数组等，答案常为 max(dp)。","O(n) 状态","不等于前 i 个总体答案"],
-    ["for j<i","枚举前驱","满足连接条件时从 dp[j] 转移到 dp[i]。","O(n²)","前驱条件必须明确"],
-    ["tails[len]","LIS 贪心索引","保存长度 len+1 的递增子序列最小可能结尾。","O(n log n)","tails 不一定是真实 LIS"],
-    ["dp[i][j]=两前缀","双序列状态","LCS/编辑距离比较 a[i-1] 与 b[j-1]。","O(mn)","多一行一列处理空前缀"],
-    ["equal → diagonal","字符相同","LCS 接左上+1；编辑距离无需替换。","O(1)","索引偏移"],
-    ["not equal → up/left","字符不同","LCS 取 max；编辑距离还包含 diagonal 替换。","O(1)","问题目标不同"],
-    ["max/min ending","最大乘积","同时维护以 i 结尾最大与最小，负数会交换角色。","O(n)","遇负数先交换"],
-    ["parent","恢复具体序列","保存最佳前驱或在二维表上反向走。","O(states) 额外","只求长度可省"]
-  ],trace:[["INDEX","状态落在元素还是前缀边界"],["PREDECESSOR","哪些旧状态能接过来"],["UPDATE","按相等/大小关系转移"],["GLOBAL","答案取最后状态还是全局极值"]]},
-  "algo-dp-grid":{kind:"算法执行清单",intro:"网格 DP 的循环顺序直接来自依赖箭头。若当前格只依赖上和左，从左上到右下就是状态图的拓扑序。",summary:"二维压一维后，更新前 dp[c] 是上方，更新后的 dp[c-1] 是左方；这句话就是正序遍历的证明。",ops:[
-    ["dp[0][0]","初始化起点","路径数为 1 或代价为 grid[0][0]。","O(1)","障碍起点需返回 0/不可达"],
-    ["first row/col","初始化边界","只能从单一方向到达，遇障碍后后续可能全不可达。","O(m+n)","不要无脑全设 1"],
-    ["dp[r][c]=up+left","不同路径","上方与左方路径集合互斥相加。","O(1)","计数可能溢出"],
-    ["min(up,left)+cost","最小路径","选择较小前驱再支付当前格代价。","O(1)","不可达 INF 加法"],
-    ["obstacle → 0/INF","障碍处理","当前格不可达，不能沿旧值继续。","O(1)","一维数组必须覆盖为 0"],
-    ["vector<int> dp(cols)","压缩为一行","dp[c] 保存上一行/当前行交替语义。","O(cols) 空间","解释每次覆盖前后含义"],
-    ["for c left→right","正序列循环","dp[c-1] 已是当前行左方，dp[c] 仍是上一行上方。","O(mn)","反序会读错版本"],
-    ["four directions?","检查是否仍是 DAG","允许回走会形成环，普通表格顺序不再成立。","—","换 BFS/Dijkstra"]
-  ],trace:[["ARROWS","画出每格依赖方向"],["BASE","初始化边界与障碍"],["TOPO ORDER","按箭头拓扑顺序遍历"],["COMPRESS","证明旧层不再需要后覆盖"]]},
-  "algo-dp-knapsack":{kind:"算法执行清单",intro:"背包的一维循环方向不是口诀，而是在控制当前物品能否读取“本轮刚更新”的状态。",summary:"0/1 背包容量倒序，完全背包容量正序；组合数/排列数还要由物品与容量两层循环顺序区分。",ops:[
-    ["dp[c] meaning","定义容量状态","最大价值、最少件数、可达性或方案数，四者初值不同。","O(C) 状态","先写清是否恰好装满"],
-    ["dp[0]=base","空容量初值","可达/计数常为 true/1，最值问题依定义。","O(1)","其余不可达不能默认 0"],
-    ["0/1: c=C..w","容量倒序","dp[c-w] 仍是上一物品轮次，当前物品不会重复。","O(nC)","正序会变完全背包"],
-    ["complete: c=w..C","容量正序","dp[c-w] 可含本轮当前物品，因此允许重复。","O(nC)","倒序会禁止重复"],
-    ["max value","价值转移","dp[c]=max(dp[c],dp[c-w]+v)。","O(1)","不可达哨兵"],
-    ["min coins","最少件数","dp[c]=min(dp[c],dp[c-w]+1)。","O(1)","INF 前先判断"],
-    ["combination count","组合数","外层物品、内层容量，避免把不同顺序重复计数。","O(nC)","数值可能很大"],
-    ["permutation count","排列数","外层容量、内层物品，让最后一步选择产生顺序。","O(nC)","与组合数循环不同"]
-  ],trace:[["SEMANTICS","dp[c] 到底存什么"],["ITEM","当前允许使用哪件物品"],["VERSION","读取上一轮还是本轮"],["DIRECTION","正序/倒序编码重复使用规则"]]},
+  ],trace:[["MEANING","一句话定义 dp[state]"],["DEPENDENCY","画出转移箭头"],["ORDER","依赖先于当前"],["ANSWER","明确从哪个状态取结果"]]},
   "algo-greedy":{kind:"算法执行清单",intro:"贪心代码通常短，证明比代码长。每个局部选择都要有交换论证：任意最优解都能调整为包含我们的选择而不变差。",summary:"维护摘要并不等于贪心。只有能证明摘要代表所有已扫描方案中对未来最有利的选择，才可以安全丢弃其他历史。",ops:[
     ["choose local candidate","选择局部候选","例如结束最早区间、历史最低买价、当前最远覆盖。","O(1)/步","选择标准必须可证明"],
     ["feasibility","保持可行","每次选择不能破坏约束。","O(1) 常见","先验证再提交"],
@@ -9553,18 +9021,7 @@ const algorithmGuides={
     ["minPrice","股票摘要","历史最低价格是今天卖出的最佳买入候选。","O(n)","先更新利润/最低价语义"],
     ["Kadane","最大子数组","若旧前缀只会拖累当前，就从当前重新开始。","O(n)","全负数组不能默认 0"],
     ["counterexample","反例检查","尝试构造局部最优导致全局失败的输入。","验证步骤","找到反例就换 DP/搜索"]
-  ],trace:[["CANDIDATE","找对未来最有利的局部摘要"],["COMMIT","选择后仍保持可行"],["EXCHANGE","证明最优解可包含它"],["DISCARD","才有资格丢弃其余历史"]]},
-  "algo-intervals":{kind:"算法执行清单",intro:"区间题先统一端点语义，再排序。闭区间 [1,2] 与 [2,3] 重叠，半开区间 [1,2) 与 [2,3) 不重叠。",summary:"按 start 排序后，扫描只需要 current=[start,end]；能合并就扩大 end，不能合并就提交 current 并开始新区间。",ops:[
-    ["sort by start","按左端点排序","相同 start 可再按 end 排序，关系变得单调。","O(n log n)","比较器防溢出"],
-    ["current=first","初始化当前覆盖段","空输入先返回。","O(1)","不要直接读 intervals[0]"],
-    ["next.start<=end","判断闭区间重叠","重叠或相接时合并；半开语义应使用 <。","O(1)","端点语义决定符号"],
-    ["end=max(end,next.end)","扩大当前段","吞并被当前覆盖的短区间。","O(1)","start 保持最早"],
-    ["else emit current","提交完成区间","后续 start 更大，不可能再与 current 重叠。","O(1)","最后一段循环后补交"],
-    ["insert new interval","插入新区间","先复制完全在左的，合并重叠段，再复制完全在右的。","O(n)","新区间可能吞多段"],
-    ["events","扫描线事件","开始 +1、结束 -1，排序后前缀和得活跃数量。","O(n log n)","同坐标事件顺序"],
-    ["min rooms","最大并发区间","活跃计数最大值即最少资源数。","O(n log n)","闭/开端点影响释放时点"]
-  ],trace:[["SEMANTICS","先定闭区间还是半开"],["SORT","按 start 建立扫描顺序"],["MERGE","摘要扩大到最远 end"],["EMIT","确认后续不可能相交才提交"]]}
-};
+  ],trace:[["CANDIDATE","找对未来最有利的局部摘要"],["COMMIT","选择后仍保持可行"],["EXCHANGE","证明最优解可包含它"],["DISCARD","才有资格丢弃其余历史"]]},};
 /* 这一组页服务于“会写 C、用 C++ 刷题”的读者：先翻译返回值和下一行写法，再给正式术语。 */
 const cppCBridges={
   "cpp-container-map":{title:"先别背容器名：把它们换成你熟悉的数据盒子",intro:"对刷题来说，选择容器只看数据怎样放、最常怎样取。类模板的实现细节先放下。",rows:[
@@ -9576,12 +9033,7 @@ const cppCBridges={
     ["v.push_back(x)","把 x 放到末尾，返回 void；想读末尾再用 v.back()。"],
     ["v[i] / v.at(i)","都得到第 i 个元素；[] 不检查越界，at 会检查并在越界时抛异常。"],
     ["std::find(begin,end,x)","返回 x 的位置书签；找不到返回 end。vector 自己没有 find 成员函数。"],
-    ["it=v.erase(it)","删除书签指向的元素，并返回删除后下一元素的新书签，循环里要接住它。"]]},
-  "cpp-deque-list":{title:"deque 与 list：一个能从两头长，一个把元素串成节点",intro:"对刷题只记访问能力，不用先研究分段数组和分配器。",rows:[
-    ["deque", "像支持两端 push/pop 的动态数组；还能用下标，但中间插删仍不便宜。"],
-    ["list", "像标准库替你维护好的双向链表；没有下标，要沿 iterator 走。"],
-    ["push_front/back", "只负责添加，返回 void；pop_front/back 也只删除，不把旧值返回。"],
-    ["it=erase(it)", "删除当前节点后，返回下一个节点的位置书签；这是边遍历边删除的标准写法。"]]},
+    ["it=v.erase(it)","删除书签指向的元素，并返回删除后下一元素的新书签，循环里要接住它。"]]},
   "cpp-stack-queue":{title:"栈和队列只开放一扇门，所以接口反而更简单",intro:"这里最容易从 C 的习惯猜错：pop 不返回被删元素，必须先读取，再删除。",rows:[
     ["stack.top()", "取得栈顶元素的引用，不删除；空栈调用是错误。"],
     ["queue.front()", "取得队头元素的引用，不删除；queue.back() 才是队尾。"],
@@ -9606,12 +9058,7 @@ const cppCBridges={
     ["find(first,last,x)", "返回第一个 x 的位置；没找到就原样返回 last。"],
     ["sort(first,last)", "原地调整区间并返回 void；结果仍放在原容器里。"],
     ["lower_bound(...)", "在已排序区间返回第一个不小于目标的位置；找不到合适位置就是 end。"],
-    ["remove(...)", "只把要保留的元素挪到前面并返回‘新尾巴’，还要交给 erase 才真正缩小 vector。"]]},
-  "cpp-comparator-lambda":{title:"比较器就是算法反复调用的回调函数",intro:"可以把 lambda 暂时理解成就地写下的回调；它回答的不是差值，而是‘a 是否应该排在 b 前面’。",rows:[
-    ["return a<b", "升序规则：a 应在 b 前面才返回 true。相等时必须返回 false。"],
-    ["不要写 <=", "相同元素会同时被判为应该排在对方前面，排序规则自相矛盾。"],
-    ["[&] / [=]", "分别近似借用外部变量、保存外部变量副本；普通刷题局部 sort 通常生命周期简单。"],
-    ["多字段比较", "先比主字段，相等再比次字段；不要用相减代替比较，可能溢出。"]]},
+    ["remove(...)", "只把要保留的元素挪到前面并返回‘新尾巴’，还要交给 erase 才真正缩小 vector。"]]},
   "cpp-invalidation":{title:"迭代器失效，可以类比 realloc 之后还拿着旧指针",intro:"容器搬家或移动元素后，旧位置书签可能不再指向原来的对象。对刷题最稳的策略是修改后重新取得位置。",rows:[
     ["vector 扩容", "底层数组可能整体搬家，旧 pointer/reference/iterator 都别再用。"],
     ["vector erase", "后面的元素会左移；使用 erase 返回的新 iterator 继续遍历。"],
@@ -9649,11 +9096,8 @@ Object.assign(deepLessons,{
 Object.assign(deepLessons,{
   "c-function-pointer":{sections:[["先把声明从名字向外读","`int (*fp)(const void *, const void *)`：fp 先与 `*` 结合，所以它是指针；括号外是函数参数列表，最后返回 int。若写成 `int *fp(...)`，fp 就变成返回 int* 的函数。用 typedef 可把复杂签名变成 `typedef int cmp_fn(...); cmp_fn *fp;`。"],["可调用不只看地址","调用者与目标必须在返回类型、参数类型、变参、调用约定和目标状态位上兼容。把不兼容函数强转后调用是未定义行为；在 Cortex‑M 上还要保留函数指针的 Thumb 状态语义。"],["回调上下文也有生命周期","回调函数常与 `void *context` 成对注册。context 若指向栈上局部对象，注册函数返回后就悬空；取消回调时还要等待可能正在运行的 ISR/任务回调退出，才能释放上下文。"]],code:{title:"让回调类型和上下文成为一份接口",meta:"嵌入式 C",text:"typedef void callback_fn(void *ctx, uint32_t event);\n\nstruct subscription {\n    callback_fn *fn;\n    void *ctx;\n};\n\nvoid dispatch(const struct subscription *s, uint32_t event)\n{\n    if (s && s->fn) s->fn(s->ctx, event);\n}"}},
   "c-bit-operations":{sections:[["掩码的四个基本动作","置位 `reg |= mask`，清位 `reg &= ~mask`，翻转 `reg ^= mask`，读取字段 `(reg & mask) >> shift`。构造 mask 时先在足够宽的无符号类型中移位，例如 `UINT32_C(1) << bit`，并证明 bit 小于类型宽度。"],["MMIO 的读改写可能有副作用","对普通 RAM 的 `x |= mask` 是读—改—写；对 W1C、read-to-clear、混合只读位寄存器，这个读取或写回其他位可能清错状态。应使用芯片提供的 SET/CLEAR 寄存器，或按寄存器语义写精确值。"],["位域不适合作为线上格式","C 位域的分配顺序、是否跨存储单元和对齐由实现定义，不能用结构体位域映射网络帧。协议解析使用整数、掩码和显式端序，硬件寄存器位域也要接受编译器/ABI 绑定。"]]},
-  "c-reentrancy":{sections:[["三个概念分开说","可重入函数可在上一次调用未结束时再次调用而互不破坏；线程安全只要求并发调用得到正确结果，内部可以加锁；async-signal/ISR-safe 还要求在异步中断点调用时不依赖不可重入库和阻塞机制。"],["静态局部变量为何危险","函数里的 static buffer、静态 tokenizer 状态或全局 errno 风格状态会被所有调用共享。加 mutex 可以线程安全，却仍不可从 ISR 调用，也可能让递归自己死锁。更通用的做法是让调用者提供状态对象和输出缓冲。"],["如何审查一段函数","列出它读写的全部非局部状态、调用的库、使用的 allocator/锁/设备，以及错误路径。若所有可变状态都经参数传入且每次调用独享，证明可重入会简单得多。"]]},
-  "c-sequencing":{sections:[["优先级不等于求值顺序","`f(i++, i++)` 中逗号只分隔参数，不能规定哪个参数先算；运算符优先级只决定语法分组。涉及同一标量的多个未建立顺序的副作用会导致未定义行为，应拆成独立语句。"],["真正建立顺序的常见位置","完整表达式结束、`&&`/`||` 左操作数到右操作数、条件运算符条件到选中分支、逗号运算符左到右，以及函数调用前参数求值都完成；但参数之间通常仍无指定先后。"],["volatile 也不修复表达式","把 i 声明 volatile 只让访问必须发生，不会替两个副作用规定先后，也不会让 UB 变成硬件的某个固定结果。审查宏时尤其要展开后再数参数被求值几次。"]]},
-  "c-macro-rules":{sections:[["括号只解决分组，不解决重复求值","`#define SQR(x) ((x)*(x))` 对 `SQR(i++)` 仍求值两次。宏没有真正的参数类型和单次求值合同；优先选择 `static inline`，只有需要语法生成或条件编译时才使用宏。"],["do-while(0) 解决多语句语法","多语句宏裸展开到 `if (...) MACRO(); else ...` 会破坏 else 绑定。`do { ... } while (0)` 让整个宏表现为一条语句；内部临时名仍要避免与调用点冲突。"],["字符串化与拼接发生在预处理层","`#x` 字符串化、`a##b` token 拼接常需要两级宏才能让参数先展开。它们很强，但调试应查看预处理输出 `-E`，不能只盯源码猜展开结果。"]]},
-  "c-isr-sharing":{sections:[["共享对象先画访问者","列出主循环/任务、哪些 ISR、DMA 和可能的第二个核心；标出每一方读写的字段与时点。只有一个生产者和一个消费者的环形缓冲可用特定无锁协议，多写者不能直接套用。"],["发布顺序决定消费者看到什么","生产者先写 payload，再发布 head/ready；消费者先读取 head/ready，再读 payload。编译器与 CPU 的顺序、Cache 可见性和中断原子性必须分别满足。`volatile head` 最多约束访问，不自动让 payload 在另一观察者可见。"],["宽度与读改写都要检查","目标 CPU 对齐 32-bit load 可能单指令完成，但 64-bit 值可能撕裂；`flags |= BIT` 即使 flags 是 32-bit，也包含读改写窗口。根据参与者选择 C 原子、极短临界区、单写单读索引或消息队列。"]]},
-  "c-integer-types":{sections:[["先问值域再问字节数","类型选择应来自真实范围：计数会不会负、最大长度多少、是否跨 ABI/线路。`sizeof(int)` 只给占多少 C byte，不给表示范围；范围看 `<limits.h>`，精确宽度类型看 `<stdint.h>` 是否提供。"],["整数提升会先改变小类型","`uint8_t a,b; a*b` 通常先提升为 int 再乘，结果类型并不自动是 uint8_t。赋回窄类型才截断。移位、按位取反和 printf 参数也受提升影响，因此应在表达式关键位置显式选择无符号宽类型。"],["sizeof 的结果属于 size_t","size_t 足以表示对象大小且为无符号类型；与负 int 比较会触发通常算术转换。循环差值使用 ptrdiff_t 或先做范围证明，避免用 unsigned 掩盖负值语义。"]]},
+  "c-reentrancy":{sections:[["三个概念分开说","可重入函数可在上一次调用未结束时再次调用而互不破坏；线程安全只要求并发调用得到正确结果，内部可以加锁；async-signal/ISR-safe 还要求在异步中断点调用时不依赖不可重入库和阻塞机制。"],["静态局部变量为何危险","函数里的 static buffer、静态 tokenizer 状态或全局 errno 风格状态会被所有调用共享。加 mutex 可以线程安全，却仍不可从 ISR 调用，也可能让递归自己死锁。更通用的做法是让调用者提供状态对象和输出缓冲。"],["如何审查一段函数","列出它读写的全部非局部状态、调用的库、使用的 allocator/锁/设备，以及错误路径。若所有可变状态都经参数传入且每次调用独享，证明可重入会简单得多。"]]},
+  "c-macro-rules":{sections:[["括号只解决分组，不解决重复求值","`#define SQR(x) ((x)*(x))` 对 `SQR(i++)` 仍求值两次。宏没有真正的参数类型和单次求值合同；优先选择 `static inline`，只有需要语法生成或条件编译时才使用宏。"],["do-while(0) 解决多语句语法","多语句宏裸展开到 `if (...) MACRO(); else ...` 会破坏 else 绑定。`do { ... } while (0)` 让整个宏表现为一条语句；内部临时名仍要避免与调用点冲突。"],["字符串化与拼接发生在预处理层","`#x` 字符串化、`a##b` token 拼接常需要两级宏才能让参数先展开。它们很强，但调试应查看预处理输出 `-E`，不能只盯源码猜展开结果。"]]},
   "arm-fpu-abi":{sections:[["有 FPU 指令不等于使用 hard-float ABI","`-mfpu` 选择可用浮点指令，`-mfloat-abi=soft/softfp/hard` 决定调用边界怎样传浮点参数。softfp 可以在函数内部使用硬件指令却仍按核心寄存器传参；hard 使用 VFP 参数寄存器，目标文件必须一致。"],["异常与 RTOS 为什么关心 FPU","浮点上下文包含额外寄存器，异常可采用惰性堆栈，任务切换也要在任务使用 FPU 时保存适当状态。一次看似普通的 printf 浮点格式可能显著增加任务栈与执行时间。"],["怎样验证 ABI","检查编译选项只是第一步，还要用 readelf attributes 看每个目标/库的浮点 ABI，并在调用点反汇编确认参数位置。链接成功不应成为唯一证据。"]]},
   "arm-barriers":{sections:[["DMB、DSB、ISB 各自回答不同问题","DMB 约束显式内存访问的观察顺序；DSB 还等待规定访问完成；ISB 让后续指令在更新后的执行上下文重新取指。修改 MPU、Cache、向量表或控制寄存器时，组合和域由架构手册规定。"],["屏障不搬 Cache 数据","CPU 脏 line 仍留在 Cache 时，执行 DMB 不会自动 clean；DMA 写了 RAM 后，执行 DSB 也不会自动丢弃 CPU 旧副本。屏障管顺序/完成，Cache maintenance 管副本。"],["编译器屏障也不是 CPU 屏障","memory clobber 可限制编译器重排，却不必生成 DMB。C 原子 memory_order、CMSIS intrinsic 和外设寄存器协议处在不同抽象层，代码评审要写明需要哪一层的保证。"]]},
   "vector-reset":{sections:[["向量表前两项的特殊含义","地址 0 处的第一个 word 是初始 MSP，第二个 word 是 Reset_Handler 入口，其余项是异常/中断处理函数地址或保留项。函数地址还必须满足 Cortex-M 的 Thumb 状态要求。"],["Reset_Handler 在 main 前做什么","建立必要时钟/存储前置条件，复制 .data、清零 .bss，调用 C/C++ 运行库初始化，再进入 main。若外部 RAM 尚未初始化，就不能提前把其作为 .data 目标。"],["VTOR 重定位不是只改一个指针","Bootloader 跳转应用通常要屏蔽/清理中断，设置向量表、装载应用 MSP，保证 Cache/屏障要求，再跳到 reset entry。旧外设 pending 或 SysTick 不清理会在新应用中触发错误 handler。"]]},
@@ -9699,16 +9143,13 @@ Object.assign(deepLessons,{
 /* 连续讲解层：只给需要一条主叙事的页面使用，不把所有知识强行套进同一模板。 */
 const lessonEssays={
   "cpp-container-map":{title:"容器不是语法清单：先看你最频繁地怎样取数据",paras:["刷题时选容器，先圈出主操作。需要按下标反复扫描，vector 往往是默认答案；需要从两端推进窗口，deque 更贴合；只关心最近或最早的待办，用 stack/queue 把访问纪律写进接口；需要按 key 查状态，再在 map 与 unordered_map 之间选择是否必须保持顺序。容器名只是结果，访问模式才是原因。","创建时也要区分‘容量’和‘元素’：vector<int> a(n,0) 已经有 n 个元素，reserve(n) 只预留空间而不能访问 a[0]；关联容器用 insert/emplace 建立键值，operator[] 还可能在查询时偷偷插入默认值。遍历、插入和删除要和失效规则一起学，否则记住 API 也会在循环中写出悬空迭代器。","算法题通常追求清楚与正确，工程代码还要加上最坏时间、分配次数和内存峰值。连续容器缓存友好但可能整体搬家，节点容器地址稳定却有指针和分配开销，哈希平均快但会 rehash。下面各页不按名字背接口，而是沿‘创建—访问—修改—失效—适用模型’逐个拆开。"]},
-  "cpp-vector-string":{title:"vector 和 string 好用，是因为它们把一段连续内存包装成了可增长序列",paras:["创建 vector<int> a; 得到空序列，vector<int> a(n) 创建 n 个值初始化元素，vector<int> a(n,7) 则全部填 7；二维表常写 vector<vector<int>> grid(r, vector<int>(c,0))。读取前用 size 判断边界，a[i] 不检查越界而 at(i) 会抛异常。范围 for 中 auto x 复制元素，auto& x 才能原地修改，const auto& 适合只读且避免复制。","尾部添加用 push_back(value) 或 emplace_back(args...)，删除尾部用 pop_back；在中间 insert/erase 会移动后续元素，通常是 O(n)。clear 销毁全部元素但不保证归还 capacity，reserve 只扩大容量，resize 才真正改变元素数量。string 的 append、push_back、find、substr 遵循同样的连续序列直觉，不过 substr 会生成新字符串，在递归和双重循环里可能藏着大量复制。","最重要的工程边界是扩容：当 size 超过 capacity，容器申请更大区域并搬走全部元素，旧 iterator、reference、pointer 和 data() 地址随之失效。若已知大致数量，先 reserve；若在遍历中 push_back，不要保存可能跨扩容继续使用的引用。连续存储带来优秀局部性，也意味着中间插删和增长时必须为搬运付费。"]},
-  "cpp-deque-list":{title:"deque 与 list 都能插删，却在为完全不同的访问方式服务",paras:["deque 是分段连续的双端序列：push_front/push_back 与 pop_front/pop_back 都适合频繁使用，front/back 读取两端，也支持下标随机访问。它很适合 BFS 队列、滑动窗口和需要两端淘汰的算法。分段布局意味着它不是一整块连续数组，不能把 &d[0] 当成可跨越全部元素的连续缓冲。","list 是双向链表。push_front/push_back 添加节点，erase(iterator) 删除已知节点，splice 可以把节点在链表间或链表内摘接而不复制元素。关键限定词是‘已知 iterator’：若先从头寻找第 k 个位置，查找仍是 O(k)。遍历用迭代器或范围 for，没有 list[i] 这种随机访问。","list 的优势是节点地址与大多数其他迭代器在插删后保持稳定，这正适合 LRU 中由 unordered_map 保存节点 iterator，再 O(1) 移到队头。代价是每个元素携带链接、频繁单独分配且 Cache 局部性差。只因为看到‘中间插入 O(1)’就选 list，往往忽略了寻找位置和内存访问的真正成本。"]},
+  "cpp-vector-string":{title:"vector 和 string 好用，是因为它们把一段连续内存包装成了可增长序列",paras:["创建 vector<int> a; 得到空序列，vector<int> a(n) 创建 n 个值初始化元素，vector<int> a(n,7) 则全部填 7；二维表常写 vector<vector<int>> grid(r, vector<int>(c,0))。读取前用 size 判断边界，a[i] 不检查越界而 at(i) 会抛异常。范围 for 中 auto x 复制元素，auto& x 才能原地修改，const auto& 适合只读且避免复制。","尾部添加用 push_back(value) 或 emplace_back(args...)，删除尾部用 pop_back；在中间 insert/erase 会移动后续元素，通常是 O(n)。clear 销毁全部元素但不保证归还 capacity，reserve 只扩大容量，resize 才真正改变元素数量。string 的 append、push_back、find、substr 遵循同样的连续序列直觉，不过 substr 会生成新字符串，在递归和双重循环里可能藏着大量复制。","最重要的工程边界是扩容：当 size 超过 capacity，容器申请更大区域并搬走全部元素，旧 iterator、reference、pointer 和 data() 地址随之失效。若已知大致数量，先 reserve；若在遍历中 push_back，不要保存可能跨扩容继续使用的引用。连续存储带来优秀局部性，也意味着中间插删和增长时必须为搬运付费。"]},
   "cpp-stack-queue":{title:"stack 与 queue 故意不给遍历接口，是在保护算法的取用顺序",paras:["stack 表达后进先出：push 把待办压到顶部，top 只读最近元素，pop 删除顶部但不返回值，所以常写 auto x=st.top(); st.pop();。括号匹配、DFS、表达式求值和单调栈都依赖‘最近未完成工作最先处理’。读取 top 前必须确认 !empty()，size 只用于数量，不应代替空检查。","queue 表达先进先出：push/emplace 从队尾加入，front 读取最早元素，back 查看最新元素，pop 从队头删除。BFS 的层序性质来自这一纪律，而不是来自一个特殊的图函数。若要一次处理一层，先保存 int levelSize=q.size()，再循环恰好弹出这些旧元素，新加入的留给下一层。","二者是容器适配器，默认常以 deque 保存数据，只暴露符合语义的少量操作。它们没有 begin/end；如果算法需要扫描或删除中间元素，就应直接选 vector/deque/list。priority_queue 虽也用 top/push/pop，但 top 是比较器决定的极值而不是最老元素，不能与 FIFO queue 混为一谈。"]},
   "cpp-ordered-map-set":{title:"map 与 set 的价值不只是查找，而是让所有键始终处在可查询的顺序里",paras:["map<K,V> 保存唯一 key 到 value 的映射，set<K> 只保存 key；构造后可用 insert/emplace 添加，find 或 contains 查询，erase(key/iterator) 删除。遍历会按比较器顺序得到元素，因此需要最小值、前驱后继、范围统计或 lower_bound 时，它们比哈希表自然。典型查找、插入和删除为 O(log n)。","lower_bound(k) 返回第一个不小于 k 的位置，upper_bound(k) 返回第一个大于 k 的位置，二者可组合出键区间。map[k] 找不到时会插入一个默认 value，频次统计很方便，但只查询时可能污染容器；此时用 find、contains 或 at。erase 只让被删节点的迭代器失效，其他节点通常保持稳定。","自定义比较器必须形成严格弱序：comp(x,x) 必须为 false，所以不能写 <=；多字段顺序可用 tie(a.x,a.y)<tie(b.x,b.y)。比较器定义的是‘等价类和排列’，一旦插入后又修改影响排序的 key，树结构的前提就被破坏。若只需平均等值查找且不关心顺序，再换 unordered 容器。"]},
   "cpp-unordered-map-set":{title:"先把它当成一张登记表：左边是 key，右边是 value",paras:["写 `unordered_map<int,int> m`，可以理解为先准备一张空表。`m[7]=20` 表示找到 key 为 7 的那一行，把 value 写成 20；没有这一行就自动新建。再次执行 `m[7]=30` 不会多出第二个 7，而是把原来的 value 覆盖成 30。词频统计中的 `++m[x]` 正是利用了“没有就先创建 int{}=0”。","`find` 没有直接返回 value，是因为调用者还要区分“找到了什么位置”和“根本没找到”。可以把 iterator 暂时理解成容器给你的书签：它指向某一行时，`it->first` 是 key，`it->second` 是 value；`m.end()` 是夹在整张表最后的终点书签，不指向任何一行。一定先比较 `it!=m.end()`，成立后才能读。","刷题阶段先熟练六件事就够了：创建、`m[key]=value`、`++m[key]`、`find`、范围 for 遍历和 `erase`。只需要判断某个值出现过没有时，用 `unordered_set` 更直接。再额外记住两点：遍历顺序不固定；修改容器后需要某一项时，重新 find，不长期保留旧 iterator。"]},
   "cpp-priority-queue":{title:"priority_queue 只维护一个承诺：top 永远是当前比较意义下最优先的元素",paras:["默认 priority_queue<int> 是大顶堆，top 得到最大值；小顶堆常写 priority_queue<int, vector<int>, greater<int>>。push/emplace 添加、pop 删除堆顶通常为 O(log n)，top 为 O(1)。它不会把全部元素排好序，遍历也不是公开接口；依次 pop 虽能得到有序序列，却会销毁容器。","Top-K 的方向常让人绕：寻找最大的 K 个时，可以维护大小为 K 的小顶堆，top 是候选中最小、最该在遇到更大元素时被淘汰的一个；寻找最小 K 个则用大顶堆。多路有序序列合并时，堆元素不仅保存值，还要保存来源序列和下一个位置，否则弹出后无法继续补入。","自定义 Compare 的直觉与 sort 容易混淆，先用三个具体元素验证谁会来到 top。priority_queue 不擅长修改或删除任意旧元素；Dijkstra 常把新距离再次 push，弹出时丢弃过期项，滑动窗口极值则通常使用单调 deque。先确认只需要反复取极值，再选堆。"]},
-  "cpp-iterators-algorithms":{title:"STL 算法操作的是半开区间，迭代器决定这段路能怎样走",paras:["[first,last) 包含 first 而不包含 last，空区间自然是 first==last，相邻区间也能无缝拼接。sort(a.begin(),a.end())、find、count、reverse、accumulate 都沿这个合同工作。算法返回 end 往往表示没有找到；解引用返回迭代器前必须先与 end 比较。","迭代器能力有层级：vector/deque 的随机访问迭代器能做 it+n 和距离比较，list 只能逐步前进，forward_list 更受限。std::sort 要求随机访问，因此 list 有自己的 member sort。lower_bound 不仅要求可迭代，还要求区间已按同一比较器分区/排序；在乱序数据上调用虽然语法成立，结论没有算法前提。","删除是最常见的陷阱。remove 并不缩短容器，它把保留元素挪到前面并返回逻辑新尾；vector/string 要继续 erase(newEnd,end())。边遍历边 erase 时使用迭代器版本的返回值继续，而不是在 for 循环里递增一个已失效位置。标准算法减少手写边界，但不会替你保证前提和生命周期。"]},
-  "cpp-comparator-lambda":{title:"比较器不是一句小于号，而是容器和算法共同依赖的秩序公约",paras:["sort 的比较器回答‘a 是否严格排在 b 前’，必须让 comp(a,a) 为 false，并保持传递与一致；写 a<=b 会让相等元素互相都声称在前，算法前提随即消失。多关键字排序可用 tie(a.x,a.y)<tie(b.x,b.y)，降序字段则单独反向比较，避免用差值相减造成整数溢出。","set/map 用比较器判断键的排列与等价：若 !comp(a,b)&&!comp(b,a)，容器视它们为等价键。priority_queue 复用 Compare 时，top 是没有任何其他元素被认为比它更高优先的那个，直觉容易反过来；最稳妥的办法是拿 1、2、3 手算 push 后 top。","lambda 的捕获也是生命周期合同。[&] 会借用外部对象，只有在比较器使用期间这些对象始终存在且不改变排序语义才安全；延迟保存到容器或回调中的 lambda 若引用局部变量，离开作用域后就悬空。比较过程本身也不应修改参与对象或依赖变化的全局状态。"]},
-  "cpp-invalidation":{title:"迭代器、引用和指针都是门牌；容器搬家或拆房以后不能继续按旧门牌进屋",paras:["vector 扩容会让所有 iterator/reference/pointer 失效；即使没有扩容，中间 insert/erase 也会使操作点及之后的位置失效。安全写法是在修改后重新取得位置，或用 erase 返回的下一个有效迭代器继续。保存下标能避开地址搬家，但插删会改变逻辑编号，所以也不是万能护身符。","list 插入通常不影响其他节点，erase 只使被删节点失效；map/set 也具有类似节点稳定性。unordered 容器 rehash 会使迭代器失效，元素引用/指针的标准保证与迭代器不同，应按具体操作合同判断。deque 的规则更细，尤其不应凭 vector/list 经验猜。","检查代码时，只要看到会改变 size、capacity、bucket 或节点关系的操作，就暂停寻找当前作用域仍保存的旧位置。典型 bug 是拿着 vector 元素引用又 push_back、遍历 unordered_map 时触发插入扩容、erase 后在 for 头再次 ++it。失效不是调试器偶发，它是接口明确允许容器重新组织存储。"]},
-  "cpp-container-complexity":{title:"复杂度表要和主操作、数据规模以及内存访问方式一起读",paras:["vector 下标 O(1)、尾插摊还 O(1)、中间插删 O(n)；deque 两端 O(1) 且可下标；map/set 查改 O(log n)；unordered 平均 O(1)；heap 的 top O(1)、push/pop O(log n)。这些结论只描述随 n 的增长趋势，没有把 Cache、分配器、元素大小和常数写进去。","摊还 O(1) 表示一串操作的平均成本可控，允许偶尔一次扩容 O(n)；平均 O(1) 则常来自输入/哈希分布假设，最坏可能退化。二者不能互换。实时系统还关心单次最坏时延，因此可能预留 vector 容量、固定哈希桶，或干脆使用静态数组/对象池。","选型时列出最频繁的两三种操作并乘以次数，再估计最大元素数和失效风险。例如需要一百万次顺序遍历、偶尔插入，连续 vector 常胜过理论上插入更快的 list；需要按 key 找 LRU 节点并 O(1) 摘接，则 unordered_map+list 的组合更合适。复杂度是推理起点，不是自动答案。"]},
+  "cpp-iterators-algorithms":{title:"STL 算法操作的是半开区间，迭代器决定这段路能怎样走",paras:["[first,last) 包含 first 而不包含 last，空区间自然是 first==last，相邻区间也能无缝拼接。sort(a.begin(),a.end())、find、count、reverse、accumulate 都沿这个合同工作。算法返回 end 往往表示没有找到；解引用返回迭代器前必须先与 end 比较。","迭代器能力有层级：vector/deque 的随机访问迭代器能做 it+n 和距离比较，list 只能逐步前进，forward_list 更受限。std::sort 要求随机访问，因此 list 有自己的 member sort。lower_bound 不仅要求可迭代，还要求区间已按同一比较器分区/排序；在乱序数据上调用虽然语法成立，结论没有算法前提。","删除是最常见的陷阱。remove 并不缩短容器，它把保留元素挪到前面并返回逻辑新尾；vector/string 要继续 erase(newEnd,end())。边遍历边 erase 时使用迭代器版本的返回值继续，而不是在 for 循环里递增一个已失效位置。标准算法减少手写边界，但不会替你保证前提和生命周期。"]},
+  "cpp-invalidation":{title:"迭代器、引用和指针都是门牌；容器搬家或拆房以后不能继续按旧门牌进屋",paras:["vector 扩容会让所有 iterator/reference/pointer 失效；即使没有扩容，中间 insert/erase 也会使操作点及之后的位置失效。安全写法是在修改后重新取得位置，或用 erase 返回的下一个有效迭代器继续。保存下标能避开地址搬家，但插删会改变逻辑编号，所以也不是万能护身符。","list 插入通常不影响其他节点，erase 只使被删节点失效；map/set 也具有类似节点稳定性。unordered 容器 rehash 会使迭代器失效，元素引用/指针的标准保证与迭代器不同，应按具体操作合同判断。deque 的规则更细，尤其不应凭 vector/list 经验猜。","检查代码时，只要看到会改变 size、capacity、bucket 或节点关系的操作，就暂停寻找当前作用域仍保存的旧位置。典型 bug 是拿着 vector 元素引用又 push_back、遍历 unordered_map 时触发插入扩容、erase 后在 for 头再次 ++it。失效不是调试器偶发，它是接口明确允许容器重新组织存储。"]},
   "algo-complexity":{title:"复杂度是在问：输入变大以后，哪一部分最先失控",paras:["分析一段算法时，先把输入规模 n 说清楚。n 可能是数组长度、图的顶点数，也可能同时有 V 和 E。随后只保留随规模增长最快的项：3n²+20n+7 记作 O(n²)，不是因为常数不存在，而是当 n 足够大时，平方项决定趋势。这个记号描述增长上界，不等于某次运行的精确毫秒数。","时间和空间要分开算，而且平均、最坏、摊还不能混用。哈希表查找常说平均 O(1)，遭遇严重冲突时仍可能退化；vector::push_back 的摊还 O(1) 是把偶尔一次 O(n) 扩容成本摊到许多次追加上。工程选择还要看缓存局部性、内存峰值和数据规模，小 n 时一个连续扫描往往比复杂但跳跃的结构更快。"]},
   "algo-invariant":{title:"先写一句循环始终成立的话，代码才不会靠运气",paras:["不变量是每轮开始或结束时都必须为真的陈述。例如二分搜索用左闭右闭区间时，可以规定“若目标存在，它一定还在 [left,right] 中”；窗口算法可以规定“[left,right] 始终满足约束，left 左边已经没有必要保留”。初始化要让它第一次成立，循环体只能在保持它成立的前提下推进，退出条件再把不变量转换成答案。","真正有用的做法是先写不变量再写 while。若区间定义是 [left,right)，那么 right 本身不可访问，循环条件通常是 left<right；若是 [left,right]，循环条件通常是 left<=right。许多 off-by-one 并不是手抖，而是初始化、更新式和返回值分别偷偷采用了不同区间合同。"]},
   "algo-array":{title:"数组为什么快，也为什么怕在中间挪位置",paras:["数组把同类型元素连续排在内存里，因此 a[i] 可以直接算成 base+i×sizeof(T)，不必从头寻找。这个 O(1) 随机访问也带来很好的 Cache 局部性：一次装入的 cache line 往往顺便带来相邻元素。代价是中间插入或删除会留下空洞，只能搬动后缀来维持连续顺序。","动态数组还多出 size 与 capacity 两个概念。size 是已经构造、允许访问的元素数，capacity 是当前存储还能容纳的上限；reserve 只扩大后者，resize 才改变前者。扩容时整段元素可能搬家，所以旧指针、引用和迭代器可能全部失效。刷题中若大致知道元素数，预先 reserve 往往既减少搬运，也让失效边界更可控。"]},
@@ -9769,10 +9210,7 @@ const lessonEssays={
   "c-preprocessor":{title:"预处理器改的是 token，不理解 C 的类型和作用域",paras:["编译器真正解析 C 语法之前，预处理先处理 include、条件编译与宏展开。对象宏只是 token 替换，因此 #define SQR(x) x*x 遇到 SQR(a+1) 会展开成 a+1*a+1；参数和整个表达式都要加括号，但即便如此 SQR(i++) 仍会求值两次。需要类型检查和单次求值时，static inline 函数通常更安全。","条件编译适合隔离平台能力、配置和调试代码，却容易制造只在某个宏组合下才存在的程序。公共头文件用 include guard 或 #pragma once 防止重复包含，接口宏应控制数量并记录取值来源。调试奇怪声明或宏错误时，可查看预处理输出，确认编译器最终看见了什么，而不是只盯原文件。"]},
   "c-translation-phases":{title:"从 .c 到可执行映像，每一步都在回答不同问题",paras:["预处理把头文件和宏展开成翻译单元；编译进行语法、类型检查并生成汇编或中间代码；汇编把指令变成带符号与重定位信息的目标文件；链接再把多个目标文件和库合并，解析符号引用，按链接脚本放置段并修补最终地址。所谓“编译错误”和“链接错误”因此不是一回事：前者常是单个翻译单元看不懂，后者常是定义缺失或重复。","烧进 MCU 的通常是从 ELF 提取出的 bin/hex，但 ELF 还保留段、符号和调试信息，排查问题更有价值。若声明能通过编译却链接报 undefined reference，要查对应定义是否参与构建、名字与 linkage 是否一致；若 multiple definition，则查头文件是否放了外部定义或同一源文件被重复加入。"]},
   "c-object-link":{title:"一个名字能否跨文件相见，取决于 linkage，不只取决于作用域",paras:["作用域回答源码中哪里能写这个名字，存储期回答对象活多久，linkage 则回答不同声明是否代表同一个实体。文件作用域的非 static 函数和对象通常具有外部链接，可由其他翻译单元通过 extern 声明引用；加 static 后变成内部链接，只在本翻译单元内命名。块作用域局部变量通常没有链接。","头文件应放声明和类型，而不是普通外部对象的定义。典型做法是在一个 .c 中写 int g_count;，在头文件写 extern int g_count;。头文件里写 static 变量不会得到一个共享全局，而会让每个包含它的翻译单元各自拥有副本，既浪费空间又可能让你修改的是不同对象。"]},
-  "c-decl-definition":{title:"声明告诉编译器它是什么，定义还要真正提供实体",paras:["函数原型、extern 对象声明可以重复出现，只要类型兼容；定义则为函数提供函数体，或为对象分配存储。int f(int); 是声明，int f(int x){return x;} 是定义；extern int counter; 通常只是声明，而文件作用域 int counter; 是暂定定义，最终会形成对象定义。","头文件的任务是让每个翻译单元看到一致接口，所以函数声明、类型定义、枚举和宏放在头里；具有外部链接的函数体和对象定义通常放在一个源文件。若接口声明与定义参数类型不一致，现代编译器应报错；最危险的是缺少原型或手写了错误 extern，让调用约定和真实函数不一致。"]},
-  "c-promotions":{title:"表达式运算前，窄整数常常已经不是原来的类型",paras:["char、signed/unsigned char、short 以及某些位域参加大多数算术时先做整数提升：若 int 能表示其全部值就提升为 int，否则提升为 unsigned int。随后二元运算再通过通常算术转换寻找共同类型。于是两个 uint8_t 相加通常在 int 中完成，结果赋回 uint8_t 时才截断；这与“8 位加法天然回绕”不同。","有符号与无符号混合尤其容易反直觉。若无符号类型的等级不低于有符号一侧，负数可能转换成很大的无符号值。比较数组长度时让索引也用 size_t，反向循环则避免写 i>=0 这种永远为真的无符号条件。分析表达式要逐个写出提升后类型、共同类型和最终转换，不能只看变量声明。"]},
-  "c-ub":{title:"未定义行为不是返回随机值，而是程序已离开 C 的合同",paras:["越界访问、解引用失效指针、有符号溢出、除以零和违反别名规则都可能产生未定义行为（UB）。标准不再约束结果，优化器因此可以假设这些情况永远不会发生，并据此删除分支或重排代码。调试版“看起来正常”不能提供保证，换优化级别、编译器或输入就可能完全不同。","还要区分 unspecified 与 implementation-defined：前者允许实现从若干合法结果中选择，通常无需记录；后者要求实现选择并文档化，例如某些整数表示或 char 符号性。工程上打开高等级警告、UBSan/ASan（主机测试可用时），给外部长度和算术做边界检查，并把依赖实现的假设写成 static_assert 或移植层。"]},
-  "c-control-flow":{title:"控制流写得清楚，边界与清理路径才有机会被看见",paras:["if/else 负责互斥条件，switch 适合按离散状态分派，循环则应明确初始化、继续条件和每轮推进。switch 的 case 默认会继续落入下一个分支，除非 break、return 或明确标注有意 fallthrough；把赋值误写进条件、在复杂表达式里混入 ++，都会让执行顺序难以审计。","嵌入式函数常有多个资源获取步骤，失败路径要按相反顺序释放。可以用小函数或单一 cleanup 标签集中清理，而不是在每个 return 前复制一份。无限主循环要包含阻塞、看门狗和错误恢复策略；for(;;) 本身没有问题，问题是循环是否有明确的不变量以及系统如何离开异常状态。"]},
+  "c-decl-definition":{title:"声明告诉编译器它是什么，定义还要真正提供实体",paras:["函数原型、extern 对象声明可以重复出现，只要类型兼容；定义则为函数提供函数体，或为对象分配存储。int f(int); 是声明，int f(int x){return x;} 是定义；extern int counter; 通常只是声明，而文件作用域 int counter; 是暂定定义，最终会形成对象定义。","头文件的任务是让每个翻译单元看到一致接口，所以函数声明、类型定义、枚举和宏放在头里；具有外部链接的函数体和对象定义通常放在一个源文件。若接口声明与定义参数类型不一致，现代编译器应报错；最危险的是缺少原型或手写了错误 extern，让调用约定和真实函数不一致。"]},
   "c-array-decay":{title:"数组只有在多数表达式里变成首元素指针，它本身仍不是指针",paras:["int a[10] 是包含十个 int 的数组对象，sizeof a 得到整个数组字节数，&a 的类型是指向整个数组的指针。只有在大多数表达式中，a 才转换成 &a[0]，类型变为 int*。作为函数形参写 int a[10] 也会被调整为 int*，数字 10 不会随调用传入，所以函数必须另收长度。","字符串字面量用于初始化 char s[]=\"abc\" 时会复制成可修改数组；char *p=\"abc\" 则指向不可修改的字面量内容，写入是 UB。多维数组退化时保留行类型：int a[3][4] 传入函数后相当于指向 int[4]，第二维必须已知，编译器才能跨过一整行。"]},
   "c-pass-by-value":{title:"C 永远按值传参，指针只是被复制的一种值",paras:["调用 f(x) 时，形参得到实参值的副本；函数修改形参本身不会改掉调用者变量。传入指针时被复制的是地址值，两份指针仍指向同一对象，所以通过 *p 可以修改那个对象，但 p=p+1 只改变函数内的指针副本。若要让函数改写调用者持有的指针，就传入指针的地址，也就是 T**。","数组形参看似例外，其实在函数参数列表中会调整为指针，因此仍是复制一个指针值。接口设计要同时写清输入/输出方向、可否为空、指向对象长度和所有权；仅凭 const T* 可以表达不通过此指针修改对象，却不能自动证明其他别名不会修改。"]},
   "c-bitfields":{title:"位域适合描述本地紧凑状态，不适合偷偷充当线协议",paras:["结构体位域允许声明若干以 bit 为宽度的成员，编译器负责在分配单元中取位和改位。它可让寄存器或本地状态访问更可读，但基础类型选择、位的排列方向、跨单元方式和填充都带实现定义成分；对 volatile 位域的访问宽度也受实现和 ABI 影响。","因此网络包、文件格式和跨编译器持久化数据应使用整数加掩码/移位显式编码。对 MMIO 使用位域前要核对编译器 ABI、寄存器访问宽度和读改写副作用，尤其是 W1C 寄存器。零宽位域可强制下一个位域从新分配单元开始，但不能把整份结构布局想当然地当成标准协议。"]},
@@ -9815,13 +9253,7 @@ const lessonEssays={
   "indev":{title:"触摸芯片给的是原始坐标，LVGL 需要的是当前屏幕坐标与稳定事件",paras:["输入回调读取原始 x/y 和触摸状态，再经过轴交换、镜像、旋转、缩放和校准映射到显示坐标。显示旋转后若仍用旧变换，就会出现点击位置镜像或偏移。最直观的验证是屏幕上实时画出 LVGL 收到的点，依次触碰四角和中心，而不是靠按钮是否偶尔能点中判断。","电阻触摸和噪声较大的传感器还需要滤波、去抖与按下/释放阈值，不能每次抖动都创建新手势。编码器输入要提供增量与按键状态，并设置正确 group/focus；键盘输入则映射为 LVGL key。输入回调应快速返回，慢速 I²C 读取可先在驱动层缓存，避免阻塞整个 GUI 处理循环。"]}
 };
 
-const canonicalStudies={
-  "c-signed-unsigned":{kind:"EXPRESSION LAB",title:"把一次 signed / unsigned 比较从源代码算到最终类型",lead:"反直觉结果通常不是 CPU 算错，而是比较发生前，两个操作数已经被转换到了你没注意的共同类型。判断时不要盯着变量声明，要沿整数提升与通常算术转换逐步走。",steps:[
-    ["先写出原始类型","`-1` 通常是 int；`sizeof array` 的结果是 size_t，而 size_t 是某种无符号整数类型。"],
-    ["做整数提升","char、short 和较窄位域先提升为 int 或 unsigned int；这里两侧通常已经无需再提升。"],
-    ["寻找共同类型","若无符号类型的等级不低于有符号类型，负的 int 会转换成 size_t 对应的巨大无符号值。"],
-    ["最后才比较","于是问题不再是 -1 与 4，而是 SIZE_MAX 与 4；比较自然为假。修复方法是统一有意义的域并在转换前检查范围。"]
-  ],example:{code:`int a[4];\nint i = -1;\n\nif (i < sizeof a / sizeof a[0]) {\n    /* 很可能不会进入：i 被转换为 size_t */\n}\n\nif (i >= 0 && (size_t)i < 4u) {\n    /* 先在 signed 域排除负数，再显式转换 */\n}`,title:"为什么加一个 i >= 0 就不只是‘保险’",copy:"`&&` 从左到右短路。只有已经证明 i 非负，右侧转换才表示同一个数学值；这把类型转换建立在显式范围证明上。"},danger:"不要通过把所有长度和下标都改成 unsigned 来‘消灭警告’。倒序循环、差值和错误码往往需要负值语义。",verify:"打开 -Wconversion/-Wsign-conversion，观察诊断；再让编译器生成汇编或在调试器里查看转换后的无符号值。"},
+const canonicalStudies={
   "c-pointer-model":{kind:"OBJECT MODEL",title:"指针不是任意地址计算器：合法性来自对象、元素与生命周期",lead:"机器只看到地址位模式，C 抽象机还追踪它指向哪个对象、是否在对象生命周期内、能否按目标类型访问。很多在汇编层‘能发出 load’的表达式，在 C 层已经没有定义。",steps:[
     ["先确定对象","`int a[4]` 是一个数组对象，内部含 4 个连续 int 元素；`&a[0]` 到 `&a[3]` 指向真实元素。"],
     ["允许 one-past","`a + 4` 可形成并用于比较、循环终止或减法，但它不指向元素，所以不能解引用。"],
@@ -9833,13 +9265,7 @@ const canonicalStudies={
     ["对齐当前偏移","成员偏移 `Oᵢ = align_up(current, Aᵢ)`；`Oᵢ-current` 就是它前面的内部 padding。"],
     ["放入成员并推进","更新 `current = Oᵢ + Sᵢ`。重复到最后一个成员。成员之间可以有洞，但不能重排。"],
     ["补齐整个结构体","结构体对齐通常是成员所需对齐的最大值（再受 ABI/属性约束）；最终 sizeof 为 `align_up(current, alignof(struct))`，尾部 padding 保证数组步长。"]
-  ],example:{code:`struct PacketMeta {\n    uint8_t  tag;      /* offset 0, size 1 */\n    uint32_t count;    /* offset 4, size 4 */\n    uint16_t crc;      /* offset 8, size 2 */\n};\n/* 常见 32-bit ABI：sizeof = 12，而不是 7 */\n\n_Static_assert(offsetof(struct PacketMeta,count)==4,\n               "ABI changed");`,title:"逐字节排布（假设 uint32_t 对齐 4、uint16_t 对齐 2）",copy:"tag 占 [0]；为了 count 跳到 offset 4，插入 3 字节；crc 占 [8..9]；末尾再补 2 字节到 12，使数组第二项仍从 4 的倍数开始。"},danger:"`packed` 只是实现扩展：它可能制造非对齐成员访问，也不等于协议端序正确。线上格式应逐字段序列化。",verify:"用 `sizeof`、`_Alignof/alignof`、`offsetof` 和 `_Static_assert` 固化真正依赖的 ABI；再看目标编译器布局报告与反汇编。"},
-  "c-volatile-atomic":{kind:"CONCURRENCY CONTRACT",title:"volatile、原子、临界区与屏障分别管哪一层",lead:"这四个词经常被混成‘防优化工具’，其实各自回答的问题不同：编译器是否必须发生访问、读改写是否不可分割、谁能在期间插入，以及访问何时对另一执行者可见。",steps:[
-    ["volatile 管可观察访问","适合 MMIO 或实现定义的异步变化对象，约束编译器不能随意省掉/合并这些访问；它不自动提供互斥、跨核同步或复合操作原子性。"],
-    ["原子管不可分割与语言内存序","C 原子对象让并发读写具有定义，并可选择 memory_order；目标平台是否 lock-free 必须查询实现。"],
-    ["临界区管抢占窗口","单核 MCU 上暂时屏蔽相关中断或用 RTOS 临界区，可让一段读改写不被特定执行上下文插入；范围必须短且明确。"],
-    ["屏障管完成与顺序","编译器屏障、DMB/DSB/ISB 和 Cache clean/invalidate不是一回事。发布 DMA 描述符往往同时需要所有权、Cache 与顺序协议。"]
-  ],example:{code:`volatile uint32_t ready;   /* 仍不是线程同步原语 */\nuint8_t payload[64];\n\n/* 错误想象：写 payload 后写 ready=1，\n   DMA/另一执行者就必然按期望看到全部内容。 */\n\n/* 正确方案取决于参与者：\n   C 原子 / 临界区 / Cache clean / DMB / 外设寄存器协议 */`,title:"先问参与者，再选工具",copy:"ISR 与任务、CPU 与 DMA、双核之间的可见性机制不同。必须写清谁写、谁读、是否有 Cache、是否允许抢占和交接事件。"},danger:"`volatile counter++` 仍是读—改—写序列；中断插入后完全可能丢更新。",verify:"查看反汇编只能证明生成了哪些指令；并发正确性还要用压力测试、事件时间线和架构/RTOS 合同论证。"},
+  ],example:{code:`struct PacketMeta {\n    uint8_t  tag;      /* offset 0, size 1 */\n    uint32_t count;    /* offset 4, size 4 */\n    uint16_t crc;      /* offset 8, size 2 */\n};\n/* 常见 32-bit ABI：sizeof = 12，而不是 7 */\n\n_Static_assert(offsetof(struct PacketMeta,count)==4,\n               "ABI changed");`,title:"逐字节排布（假设 uint32_t 对齐 4、uint16_t 对齐 2）",copy:"tag 占 [0]；为了 count 跳到 offset 4，插入 3 字节；crc 占 [8..9]；末尾再补 2 字节到 12，使数组第二项仍从 4 的倍数开始。"},danger:"`packed` 只是实现扩展：它可能制造非对齐成员访问，也不等于协议端序正确。线上格式应逐字段序列化。",verify:"用 `sizeof`、`_Alignof/alignof`、`offsetof` 和 `_Static_assert` 固化真正依赖的 ABI；再看目标编译器布局报告与反汇编。"},
   "aapcs32":{kind:"ABI WALKTHROUGH",title:"一次 C 调用怎样跨过独立编译边界",lead:"AAPCS32 的价值不是背 R0～R3，而是让不同编译器产生的目标文件在参数、返回值、寄存器保存和栈对齐上说同一种机器语言。",steps:[
     ["调用者准备参数","满足规则的标量优先分配到 r0–r3；放不下或规则要求的部分进入栈参数区。复合类型、64 位值和 VFP 变体要按对应 ABI 分类。"],
     ["BL 建立返回线索","BL 把返回信息写入 LR，并跳到被调用函数；若函数还要再调用别人，通常需要先保存自己的 LR。"],
@@ -9968,7 +9394,6 @@ function renderCanonicalStudy(id){
   return `<section class="masterclass" data-kind="${esc(s.kind)}"><div class="masterclass-head"><small>核心推演 · 从条件走到结论</small><h3>${esc(s.title)}</h3><p>${esc(s.lead)}</p></div><div class="mc-walk">${walk}</div>${example}<div class="mc-boundary"><div class="danger"><b>最容易错在哪里</b><p>${esc(s.danger)}</p></div><div class="verify"><b>怎样把结论验证出来</b><p>${esc(s.verify)}</p></div></div></section>`;
 }
 const supplementalDepth={
-  "c-volatile-atomic":[["原子性到底是什么意思","原子操作对它所承诺的观察者表现为不可再分：其他并发执行者只能看到操作之前或之后的状态，看不到中间半成品。这个定义必须带范围——某次对齐 32-bit load/store 可能由硬件一条访存完成，不代表 `counter++` 这种“读、加、写”复合动作原子，更不代表多个字段组成的不变量能一起提交。"],["四个常被混淆的承诺","原子性回答“会不会看见半次操作”；互斥回答“谁能同时进入这段协议”；顺序/可见性回答“一方先写 A 再发布 B，另一方按什么次序观察”；lock-free 只回答实现是否无需锁取得系统级进展。原子不等于有序，不等于事务，更不等于断电后持久。"],["放回单核 MCU 的真实场景","主循环和 ISR 同时修改计数器时，`volatile counter++` 仍可能在读后被中断插入而丢更新。可以使用 C `_Atomic`/`atomic_fetch_add` 建立语言定义的并发操作；也可在单核且参与者明确时，用很短的临界区包住整个读改写。若另一方是 DMA，则还要处理 buffer 所有权、Cache 与屏障，C 原子本身不指挥外设。"]],
   "c-memcpy-memmove":[["先做五项调用前检查","每次 mem* 调用先写清：地址指向仍存活的对象吗；源能读、目标能写吗；n 的单位和乘法是否正确；区域是否重叠；复制后谁拥有其中的资源。只看函数名而不看这五项，最容易得到“测试时正常、优化后偶发”的错误。"],["别把字节工具当类型构造器","mem* 擅长搬运和观察对象表示，不理解成员语义。解析外部数据时可把固定数量字节 memcpy 到对齐的无符号整数，再显式处理端序；但把任意字节塞进指针、浮点、枚举或带约束的结构体后直接使用，仍可能得到陷阱表示、非法值或 ABI 依赖。"]],
   "c-multidim-array":[["形参为什么必须知道后续维度","`int a[R][C]` 在表达式中转换为指向‘含 C 个 int 的数组’的指针，即 `int (*)[C]`。编译器计算 `a[i][j]` 时要先跨过 i 行，每行步长是 `C*sizeof(int)`；因此形参可以省略最外层长度，却不能在普通数组形参中凭空省略列宽。VLA 形参则可把运行时列数作为前置参数。"],["连续二维数组与指针的指针不同","`int **` 指向一枚 int*，它可能再指向各自独立分配的行；`int [R][C]` 是单一连续对象。二者的寻址次数、布局、Cache 局部性和释放方式均不同，不能靠强制转换互换。向函数传矩阵时应把行列、stride 与元素类型写进接口合同。"]],
   "arm-nvic-overview":[["优先级数字先经过实现位宽","NVIC 优先级寄存器可能只实现高若干位，`__NVIC_PRIO_BITS` 描述芯片选择。CMSIS API 接收逻辑优先级值并按实现对齐；直接把未移位常量写寄存器、或混用 HAL 分组编码与原始数值，会造成‘设置了却没变化’。数值越小优先级越高，NMI/HardFault 还有固定异常优先级。"],["Pending、Active 与抢占是三件事","事件可以 pending 但因 PRIMASK/BASEPRI、当前 active 优先级或全局条件而不能立即执行。抢占优先级决定能否打断，子优先级常用于同时 pending 时的服务顺序。清外设源、清 pending 和异常返回分别作用在不同层，调试时应同时读取外设 flag、NVIC pending/active 与屏蔽寄存器。"]],
@@ -10027,8 +9452,95 @@ function renderStructAlignmentTutorial(){
     <section><span class="struct-kicker">最后补充 · 先把主线学会再看</span><h3>pack 能减少空位，但不是免费的压缩按钮</h3><div class="struct-finish"><article class="struct-finish-card"><h4><code>#pragma pack(n)</code> 改变什么</h4><p>它给成员对齐设置一个上限。例如在支持该指令的编译器中，pack(1) 会让成员都最多按 1 对齐，S1 可能从 12 变成 6。但 int 可能落在非自然地址，访问速度、硬件支持和跨模块兼容都要重新确认。使用时最好成对写 push/pop，别让设置意外影响后面的结构体。</p></article><article class="struct-finish-card"><h4>初学时怎样验证</h4><p>先用纸和字节格手算，再用 <code>sizeof(struct S1)</code> 看整个结构体大小。想知道成员离开头多少字节时，可以再认识 <code>offsetof(struct S1, i)</code>：它只是在告诉你“i 的偏移是多少”，不是另一套更复杂的规则。</p></article></div><div class="struct-tool-note"><b>这一页学到哪里就够？</b>会按四条规则手算，会解释内部空位与尾部空位，会算成员换序和嵌套结构体，已经覆盖结构体对齐的核心问题。跨启动程序、共享内存或硬件固定格式时还会增加工程检查，但那不是本页要求背诵的内容。</div></section>
   </div>`;
 }
+function renderControlFlowCourse(){return `<div class="c-foundation-course c-flow-workshop">
+  <section class="c-course-opening"><div class="c-opening-grid"><div><span class="c-course-kicker">控制流不是把代码缩进得很深</span><h3>一个配置包进入函数后，怎样保证失败不会留下半更新状态？</h3><p>好的控制流首先处理明显失败，再把解码结果放进局部临时对象，全部验证通过后一次提交。这样读者可以沿着一条主路理解成功过程，每个失败出口也知道自己有没有取得资源、有没有修改共享状态。</p><p class="c-opening-question">真正的问题不是“用 if 还是 switch”，而是状态如何前进、失败如何收尾。</p></div><div class="c-code-panel"><pre>Status config_apply(const uint8_t *buf, size_t len)\n{\n    if (buf == NULL) return ST_BAD_ARG;\n    if (len &lt; HEADER_SIZE) return ST_TRUNCATED;\n\n    Config next = {0};\n    if (!decode(buf, len, &amp;next)) return ST_FORMAT;\n    if (!config_is_safe(&amp;next)) return ST_RANGE;\n\n    g_config = next;\n    return ST_OK;\n}</pre><span class="result">所有检查完成之前只修改局部 next；最终赋值是唯一提交点。</span></div></div></section>
+  <section><span class="c-course-kicker">卫语句 · 先把不合格输入送出去</span><h3>主流程越平直，边界和提交点越容易看见</h3><div class="c-flow-road"><div class="c-flow-stop" data-step="01"><div><b>指针有效吗？</b><span>无效时尚未取得任何资源，直接返回参数错误。</span></div><em>失败 → BAD_ARG</em></div><div class="c-flow-stop" data-step="02"><div><b>长度足够吗？</b><span>还没读取字段，截断输入在入口被拦住。</span></div><em>失败 → TRUNCATED</em></div><div class="c-flow-stop" data-step="03"><div><b>解码到临时对象</b><span>即使中途失败，也不会污染当前生效配置。</span></div><em>失败 → FORMAT</em></div><div class="c-flow-stop" data-step="04"><div><b>验证跨字段约束</b><span>范围、组合关系和业务状态全部通过。</span></div><em>失败 → RANGE</em></div><div class="c-flow-stop" data-step="05"><div><b>一次提交</b><span>共享状态只在成功路径末尾更新。</span></div><em>成功 → OK</em></div></div></section>
+  <section><span class="c-course-kicker">if、switch、循环各自适合什么</span><h3>根据问题形状选控制结构，不要只凭个人习惯</h3><div class="c-choice-path"><div style="--tone:#4a7bc1"><b>if / else</b><span>适合范围判断、组合条件和前置检查。条件过长时应提取成有名字的判断函数。</span></div><div style="--tone:#41957d"><b>switch</b><span>适合一个离散状态或命令码的分派。每个 case 都要明确 break、return 或有意贯穿。</span></div><div style="--tone:#d18745"><b>for</b><span>适合初始化、继续条件和步进都清楚的计数过程。</span></div><div style="--tone:#9a69ad"><b>while</b><span>适合“条件仍成立就继续”的过程，例如等待、解析和消费队列。</span></div></div><p>控制结构本身没有高低之分。真正重要的是：所有输入状态是否被覆盖、每轮是否前进、循环是否能够终止，以及失败是否会跳过必要清理。</p></section>
+  <section><span class="c-course-kicker">两个最常见的边界坑</span><h3>switch 的贯穿和 size_t 的倒序，都必须显式表达意图</h3><div class="c-overflow-road"><div><b>switch case</b><span>case 不会自动在下一个标签前停止。若没有 break、return 或 goto，执行会继续进入后续 case。有意贯穿应清楚注释；普通分支最好明确结束。</span></div><div class="danger"><b>无符号倒序</b><span><code>for (size_t i=n-1; i&gt;=0; --i)</code> 中，i 永远不小于 0，减到 0 后会回绕成最大值。</span></div></div><div class="c-code-panel"><pre>/* 从 n-1 处理到 0，n==0 时也安全 */\nfor (size_t i = n; i-- &gt; 0; ) {\n    process(items[i]);\n}</pre><span class="result">条件先比较旧值是否大于 0，再递减；进入循环体时 i 已经是要访问的下标。</span></div></section>
+  <section><span class="c-course-kicker">资源已经取得后，出口必须收束</span><h3>入口可以早返回，多资源阶段更适合统一 cleanup</h3><p>尚未取得资源时，卫语句直接返回非常清楚；一旦依次打开文件、申请缓冲区、加锁或启动外设，多个散落 return 很容易漏掉某一步清理。C 中常用一个 cleanup 标签，按取得顺序的反方向释放。</p><div class="c-cleanup-map"><div class="c-cleanup-stack"><span>① lock()</span><span>② buffer = malloc()</span><span>③ device_start()</span></div><i>失败后反向归还 →</i><p>device_stop()<br>free(buffer)<br>unlock()<br><br>每个资源只在“确实取得”后才进入清理集合。</p></div><div class="c-code-panel"><pre>Status run_job(void)\n{\n    Status st = ST_FAIL;\n    uint8_t *buf = NULL;\n    bool locked = false;\n\n    if (!lock()) goto cleanup;\n    locked = true;\n\n    buf = malloc(BUF_SIZE);\n    if (buf == NULL) goto cleanup;\n\n    st = do_work(buf);\n\ncleanup:\n    free(buf);              // free(NULL) 安全\n    if (locked) unlock();\n    return st;\n}</pre><span class="result">goto 在这里不是制造任意跳转，而是让所有失败路径汇入一个清理出口。</span></div></section>
+  <section class="c-course-summary"><span class="c-course-kicker">一页收束</span><h3>好的控制流能同时回答成功、失败和资源三个问题</h3><p><strong>成功路径怎样前进？每个失败条件从哪里离开？离开时拥有哪些资源？</strong>只要这三个答案清楚，if、switch、循环、早返回和 cleanup 都只是表达过程的工具。</p></section>
+</div>`;}
+function renderExpressionCourse(){return `<div class="c-foundation-course c-expression-stage">
+  <section class="c-course-opening"><div class="c-opening-grid"><div><span class="c-course-kicker">一行代码，两个不同问题</span><h3>f(i++, i++)：先算左边还是右边？</h3><p>括号和逗号让我们很容易产生“从左到右”的错觉，但函数实参通常没有固定的左右求值顺序。更严重的是，同一个 i 在同一个完整表达式里被修改多次，程序已经没有一个可以依赖的标准结果。</p><p class="c-opening-question">优先级决定怎样分组；求值顺序才决定谁先执行。</p></div><div class="c-code-panel"><pre>int i = 0;\nf(i++, i++);</pre><span class="result">不要回答“0,1”或“1,0”。正确处理是指出：代码本身不应这样写，应先拆开副作用。</span></div></div></section>
+  <section><span class="c-course-kicker">先把两个概念彻底分开</span><h3>表达式长什么样，不等于它按什么时间顺序运行</h3><div class="c-timeline-choice"><div class="c-timeline"><header><b>优先级 / 结合性</b><span>画语法树</span></header><div class="c-timeline-line"><em>a + b</em><i></i><em>* c 先分组</em></div><p>回答“哪些操作数属于哪个运算符”。主动加括号能让结构更清楚。</p></div><div class="c-timeline bad"><header><b>求值顺序</b><span>画时间线</span></header><div class="c-timeline-line"><em>left?</em><i style="--tone:#c66b49"></i><em>right?</em></div><p>回答“先执行谁、何时产生副作用”。不能从优先级表推出来。</p></div></div><p>例如 <code>a() + b() * c()</code> 中，乘法先与 b、c 分组，但并不因此保证 b() 一定先于 a() 被调用。代码若依赖这种先后关系，就应拆成命名临时变量。</p></section>
+  <section><span class="c-course-kicker">副作用必须拥有清楚的时间线</span><h3>同一变量既被修改又被再次读写时，先停下来拆语句</h3><div class="c-code-panel"><pre>/* 难以说明，不要写 */\n/* data[index] = index++; */\n\n/* 每一步都能画出时间线 */\nsize_t old_index = index;\nindex++;\ndata[old_index] = (int)old_index;</pre><span class="result">拆语句不是“写得啰嗦”，而是把读、写和顺序变成可以调试、审查和证明的过程。</span></div><div class="c-explain-sequence"><div><b>列出每一次读取和修改</b><span>函数调用、++、--、赋值和 volatile 访问都可能产生可观察副作用。</span></div><div><b>检查规则是否给它们排序</b><span>没有明确顺序时，不要根据某次汇编或某个编译器习惯猜测。</span></div><div><b>冲突时拆成完整表达式</b><span>临时变量通常是嵌入式工程中最清楚、最稳定的修复。</span></div></div></section>
+  <section><span class="c-course-kicker">短路求值是一道真正有顺序的安全门</span><h3>&& 和 || 不仅计算真假，还决定右侧会不会执行</h3><div class="c-logic-gates"><div><b>items != NULL</b><span>失败就立即为假</span></div><div><b>index &lt; count</b><span>第一关通过才检查</span></div><div><b>items[index].ready</b><span>前两关通过才访问</span></div><div><b>全部成立</b><span>表达式最终为真</span></div></div><div class="c-code-panel"><pre>bool ready(const Item *items, size_t count, size_t index)\n{\n    return items != NULL &amp;&amp;\n           index &lt; count &amp;&amp;\n           items[index].ready;\n}</pre><span class="result">&amp; 和 | 是位运算，两侧都会求值，不能替代这道安全门。关键业务动作也不要藏在短路表达式右侧，显式 if 往往更清楚。</span></div></section>
+  <section><span class="c-course-kicker">什么叫未定义行为</span><h3>不是“随机返回一个值”，而是语言不再承诺结果</h3><p>越界访问、使用已经失效的指针、有符号溢出、除以零以及冲突的未排序副作用，都可能让程序离开 C 语言保证的范围。调试版恰好正常，只说明这次构建和输入没有立刻暴露问题；优化器仍可以基于“合法程序不会这样”重新组织代码。</p><div class="c-overflow-road"><div class="danger"><b>不要继续猜输出</b><span>题目一旦在某一步已经发生未定义行为，后面的某次打印结果不能升级为语言规则。</span></div><div><b>工程上的修复</b><span>先找出前提被破坏的位置，再用边界检查、拆分副作用、明确生命周期和编译器警告修复。</span></div></div></section>
+  <section class="c-course-summary"><span class="c-course-kicker">一页收束</span><h3>分析表达式时画两张图：一张括号图，一张时间图</h3><p><strong>括号图</strong>回答怎样分组，<strong>时间图</strong>回答先执行谁。短路运算符提供明确顺序；其他没有保证的地方，宁可拆语句，也不要让程序依赖猜测。</p></section>
+</div>`;}
+function renderFloatCourse(){return `<div class="c-foundation-course c-float-lab">
+  <section class="c-course-opening"><div class="c-opening-grid"><div><span class="c-course-kicker">先看一个熟悉的意外</span><h3>0.1 + 0.2 为什么不一定正好等于 0.3？</h3><p>十进制中的 0.1 很简单，但换成二进制小数后会无限重复。浮点变量只有有限位，只能保存离它最近的可表示值。参与运算的是这些近似值，所以最终结果可能与另一个近似的 0.3 留下一点差距。</p><p class="c-opening-question">浮点数不是“算不准”，而是在有限存储中用精度换取巨大范围。</p></div><div class="c-code-panel"><pre>float a = 0.1f;\nfloat b = 0.2f;\nfloat c = 0.3f;\n\nprintf("%.9f\\n", a + b);\nprintf("%.9f\\n", c);</pre><span class="result">常见结果可能非常接近，却不保证二进制位完全相同。</span></div></div></section>
+  <section><span class="c-course-kicker">直觉 · 数轴上只有有限落脚点</span><h3>数值越大，相邻浮点数之间的间隔通常也越大</h3><p>可以把浮点数想成一把会伸缩的刻度尺：靠近零时刻度密，数值变大后刻度逐渐稀疏。一个真实数如果落在两个刻度之间，只能舍入到其中一个。</p><div class="c-float-zoom"><div><b>靠近 0：落脚点密集</b><small>适合表示很小的变化</small><i class="marks" style="--gap:14px"></i></div><div><b>数值变大：间隔扩大</b><small>可表示范围更远</small><i class="marks"></i></div><div><b>更大的量级：细小增量可能消失</b><small>大数 + 小数 ≈ 原大数</small><i class="marks"></i></div></div><p>这也解释了为什么大量小量累计会产生误差，以及为什么把很大的基准值和很小的变化量混在同一个 float 中要格外谨慎。</p></section>
+  <section><span class="c-course-kicker">比较不能只背“禁止 ==”</span><h3>先问这个值是怎样产生的，再决定是否需要容差</h3><div class="c-overflow-road"><div><b>可以直接比较的情况</b><span>状态变量被明确赋为 0.0f，后续只检查这个哨兵；或者算法本身保证产生精确的零。此时 <code>x == 0.0f</code> 可以准确表达意图。</span></div><div><b>需要容差的情况</b><span>值来自传感器、累计、除法、滤波或其他近似运算。此时“足够接近”要由噪声、量程和业务误差决定。</span></div></div><div class="c-compare-formula"><div class="formula">|a - b| ≤ max（绝对容差，<br>相对容差 × max(|a|, |b|)）</div><ul><li>接近零时，绝对容差提供稳定下限。</li><li>数值很大时，相对容差允许误差随量级增长。</li><li>两个容差都应来自实际数据，而不是复制一个万能常量。</li></ul></div></section>
+  <section><span class="c-course-kicker">一个可以直接使用的比较函数</span><h3>把容差放进接口，让调用者说明允许误差</h3><div class="c-code-panel"><pre>#include &lt;math.h&gt;\n#include &lt;stdbool.h&gt;\n\nbool nearly_equal(float a, float b,\n                  float abs_tol, float rel_tol)\n{\n    if (!isfinite(a) || !isfinite(b)) return false;\n\n    float diff  = fabsf(a - b);\n    float scale = fmaxf(fabsf(a), fabsf(b));\n    return diff &lt;= fmaxf(abs_tol, rel_tol * scale);\n}</pre><span class="result">例如温度传感器分辨率为 0.1°C，比较阈值就应围绕测量误差设计，而不是机械使用 1e-6。</span></div></section>
+  <section><span class="c-course-kicker">NaN 与无穷 · 外部计算结果要先验明身份</span><h3>NaN 参与普通比较时，经常让所有条件都变成假</h3><p>NaN 表示“不是一个普通数值”，例如某些无效运算的结果。它与任何数（包括自己）的相等比较通常都为假；正负无穷则表示超出有限范围的特殊值。解析外部浮点数据或使用复杂数学函数时，可以先用 <code>isfinite</code>、<code>isnan</code> 检查，再进入业务范围判断。</p><div class="c-course-note"><b>嵌入式选 float 还是 double？</b>先看精度需求和数值范围，再看目标 FPU 对哪种精度有硬件支持，以及库函数、存储和运行时间能否接受。不要因为 double“更准”就无条件使用，也不要因为 float“更快”就忽略误差预算。</div></section>
+  <section class="c-course-summary"><span class="c-course-kicker">一页收束</span><h3>浮点比较的答案来自数据来源，不来自一句口诀</h3><p><strong>精确路径可以直接比较；近似计算使用有依据的容差；外部结果先排除 NaN 和无穷。</strong>只要先说明值如何产生，比较方式就不会神秘。</p></section>
+</div>`;}
+function renderIntegerOperationsCourse(){return `<div class="c-foundation-course c-integer-case">
+  <section class="c-course-opening"><div class="c-opening-grid"><div><span class="c-course-kicker">反直觉现场</span><h3>-1 明明小于数组长度，为什么条件可能为假？</h3><p>CPU 没有算错。真正发生的事情是：比较之前，<code>-1</code> 可能先被转换成一个很大的无符号数。要看懂整数表达式，不能只盯着变量声明，必须沿着转换过程一步步走。</p><p class="c-opening-question">整数运算的固定路线是：提升 → 找共同类型 → 运算 → 赋值。</p></div><div class="c-code-panel"><pre>int data[4];\nint index = -1;\n\nif (index &lt; sizeof data / sizeof data[0]) {\n    use(data[index]);\n}</pre><span class="result">右侧是 size_t。常见平台上，index 会先转成巨大的无符号值，因此比较为假。</span></div></div></section>
+  <section><span class="c-course-kicker">先掌握一条推演流水线</span><h3>目标变量的类型，不能倒过来保护前面的运算</h3><p>每当表达式混合不同整数类型，都按下面五步走。只要不跳步，大多数题目都会从“玄学”变成机械推导。</p><div class="c-course-scroll"><div class="c-conversion-river"><div><b>① 原始类型</b><span>写出每个操作数当前是什么类型。</span></div><div><b>② 整数提升</b><span>char、short 等小整数通常先变成 int。</span></div><div><b>③ 共同类型</b><span>二元运算两侧转换成一个共同类型。</span></div><div><b>④ 完成运算</b><span>溢出与结果范围由此时的类型决定。</span></div><div><b>⑤ 赋值转换</b><span>最后才转换到左侧目标变量。</span></div></div></div></section>
+  <section><span class="c-course-kicker">把 -1 的变化看清楚</span><h3>有符号数进入无符号域后，数学意义可能完全改变</h3><div class="c-number-flip"><div class="c-number-side"><strong>-1</strong><span>int · 表示错误下标</span></div><i>转换为 size_t →</i><div class="c-number-side"><strong>SIZE_MAX</strong><span>无符号域中的最大值</span></div></div><p>修复方式不是把所有变量都改成 unsigned，而是先在有符号域排除负值，再明确进入容量域：</p><div class="c-code-panel"><pre>if (index &gt;= 0 &amp;&amp; (size_t)index &lt; count) {\n    use(data[index]);\n}</pre><span class="result">短路保证只有 index 已被证明非负时，右侧才执行转换和比较。</span></div></section>
+  <section><span class="c-course-kicker">小整数会先“坐电梯”</span><h3>uint16_t 结果赋给 uint32_t，中间乘法仍可能先在 int 中出错</h3><p>假设常见 32 位环境中 <code>int</code> 能表示 0～65535，那么两个 <code>uint16_t</code> 会先提升为 int。下面乘法的数学结果是 2,500,000,000，超过 32 位有符号 int 的上限；左侧的 uint32_t 要到乘法结束后才参与，已经来不及。</p><div class="c-code-panel"><pre>uint16_t a = 50000u;\nuint16_t b = 50000u;\n\nuint32_t wrong = a * b;              // 乘法可能先在 int 中\nuint32_t right = (uint32_t)a * b;    // 转换放在运算之前</pre><span class="result">关键不是“写了强转就安全”，而是强转改变了乘法发生时的类型。回窄时仍要先做范围检查。</span></div></section>
+  <section><span class="c-course-kicker">两种溢出不要混在一起</span><h3>无符号回绕有规则，不等于业务结果正确</h3><div class="c-overflow-road"><div><b>无符号整数</b><span>超出范围后按 2 的位宽次方取模。例如 uint8_t 的 255 + 1 得到 0。它可以用于经过证明的计数器差值，但也可能让长度检查绕过。</span></div><div class="danger"><b>有符号整数</b><span>不能把超范围结果当作必然补码回绕继续推理。编译器会假设合法程序不发生这种溢出，并据此优化代码。</span></div></div><p>因此“用 unsigned 就不会溢出”是错误说法。正确说法是：无符号溢出的计算结果有定义，而程序是否允许回绕要由业务规则决定。</p></section>
+  <section><span class="c-course-kicker">把转换写在边界上</span><h3>从 size_t 回窄前，先证明目标类型装得下</h3><div class="c-code-panel"><pre>bool to_u16(size_t value, uint16_t *out)\n{\n    if (out == NULL || value &gt; UINT16_MAX) {\n        return false;\n    }\n    *out = (uint16_t)value;\n    return true;\n}</pre><span class="result">先检查范围，再转换；失败时不修改输出。显式强转是最后一步，不是安全证明本身。</span></div></section>
+  <section class="c-course-summary"><span class="c-course-kicker">一页收束</span><h3>遇到整数题，不要猜结果，写出转换路线</h3><p><strong>原类型 → 整数提升 → 共同类型 → 运算范围 → 赋值转换。</strong>这条路线同时解释有符号/无符号比较、小整数乘法、无符号倒序循环和回窄丢失高位。</p></section>
+</div>`;}
+function renderIntegerTypesCourse(){return `<div class="c-foundation-course c-type-guide">
+  <section class="c-course-opening"><div class="c-opening-grid"><div><span class="c-course-kicker">从一个真实选择开始</span><h3>采样值、毫秒计数和数组长度，为什么不应该都写成 int？</h3><p>类型不是给变量贴一个“占几字节”的标签。它同时规定能表示哪些值、运算时怎样转换，以及接口向调用者表达什么含义。选择类型的第一步不是背表，而是先问数据从哪里来、会不会为负、最大可能多大。</p><p class="c-opening-question">我们真正要解决的是：怎样让类型既装得下数据，又把用途说清楚？</p></div><div class="c-code-panel"><pre>uint16_t adc_raw;     // ADC 原始码\nint16_t  temperature; // 可能低于 0\nuint32_t uptime_ms;   // 单调计数\nsize_t   sample_count;// 数组元素数量</pre><span class="result">四个变量看起来都是“整数”，但值域和用途完全不同。</span></div></div></section>
+  <section><span class="c-course-kicker">第一步 · 先看范围，不从名字猜位宽</span><h3>C 只承诺基本类型的相对能力，具体大小由当前目标决定</h3><p><code>char</code>、<code>short</code>、<code>int</code>、<code>long</code> 和 <code>long long</code> 至少按这个顺序拥有不变小的表示能力，但相邻类型完全可以一样大。常见 32 位 MCU 上，char/short/int 往往是 8/16/32 位；这只是常见结果，不是看到名字就能永远成立的规则。</p><div class="c-course-scroll"><div class="c-range-stage"><div class="c-range-row"><b>char</b><div class="c-range-track"><i style="--w:24%;--tone:#5e7fc2"></i></div><small>sizeof = 1</small></div><div class="c-range-row"><b>short</b><div class="c-range-track"><i style="--w:43%;--tone:#4a9a82"></i></div><small>至少 16 bit 范围</small></div><div class="c-range-row"><b>int</b><div class="c-range-track"><i style="--w:63%;--tone:#d28a48"></i></div><small>目标机自然整数</small></div><div class="c-range-row"><b>long</b><div class="c-range-track"><i style="--w:78%;--tone:#9b70b2"></i></div><small>不小于 int</small></div><div class="c-range-row"><b>long long</b><div class="c-range-track"><i style="--w:100%;--tone:#c6604b"></i></div><small>至少 64 bit 范围</small></div></div></div><div class="c-course-note"><b>怎样验证当前工程？</b>用 <code>sizeof</code> 查看占多少个 C 字节，用 <code>&lt;limits.h&gt;</code> 查看基本整数的最小值和最大值。不要拿电脑上的结果替代 MCU 编译目标的结果。</div></section>
+  <section><span class="c-course-kicker">sizeof 到底在数什么</span><h3>sizeof(char) 永远等于 1，但这个“1”指一个 C 字节</h3><p>在绝大多数现代 MCU 中，一个字节就是 8 bit，所以通常可以把 <code>sizeof</code> 结果理解为熟悉的字节数。但语言层面只规定 <code>sizeof(char) == 1</code>，一个 C 字节含多少 bit 由 <code>CHAR_BIT</code> 给出。求职和普通 STM32 开发不必围着罕见平台打转，只要记住：<strong>sizeof 的单位不是 bit，返回值类型是 size_t。</strong></p><div class="c-explain-sequence"><div><b>sizeof(uint32_t) 常见为 4</b><span>表示对象占 4 个字节，而不是值只能等于 4。</span></div><div><b>sizeof(array) 要看此刻是不是数组</b><span>真正的数组对象可以得到整块容量；传进函数后，形参数组通常已经变成指针，这时只会得到指针大小。</span></div><div><b>size_t 专门承接对象大小</b><span>它足以表示当前平台任何对象的大小。与负数混合比较时必须小心，下一页会完整推演。</span></div></div></section>
+  <section><span class="c-course-kicker">工程选型 · 按用途走</span><h3>固定宽度、自然整数和 size_t 各有自己的位置</h3><div class="c-choice-path"><div style="--tone:#557bc0"><b>寄存器 / 线协议</b><span>字段明确为 8、16、32 位时，优先使用 <code>uint8_t</code>、<code>uint16_t</code>、<code>uint32_t</code>。</span></div><div style="--tone:#3f967d"><b>普通计算与状态</b><span>没有固定二进制格式要求、数值范围普通时，<code>int</code> 往往最自然。</span></div><div style="--tone:#cf8847"><b>容量与下标</b><span><code>sizeof</code>、数组容量和内存长度通常使用 <code>size_t</code>，倒序和错误码不要硬塞进无符号域。</span></div><div style="--tone:#9869ae"><b>可能为负的物理量</b><span>温度、误差和差值需要有符号类型，并根据量程选择宽度。</span></div></div><p>固定宽度类型的价值是保证字段宽度，而不是“看起来更专业”。普通循环变量如果不跨协议、不映射寄存器，也没有极端范围要求，使用 <code>int</code> 往往更清楚。</p></section>
+  <section><span class="c-course-kicker">表达意图 · bool 与 enum</span><h3>有些整数不是拿来算的，而是用来说明状态</h3><p><code>bool</code> 适合表达真假；任意非零标量转换为 bool 后都表示真。<code>enum</code> 给一组离散状态命名，特别适合状态机、错误类别和工作模式。它们让代码更可读，但不能自动替你验证外部输入。</p><div class="c-code-panel"><pre>typedef enum {\n    MOTOR_IDLE,\n    MOTOR_STARTING,\n    MOTOR_RUNNING,\n    MOTOR_FAULT\n} MotorState;\n\nbool motor_can_start(MotorState state)\n{\n    return state == MOTOR_IDLE;\n}</pre><span class="result">enum 表达“属于哪一种状态”，bool 表达“条件是否成立”。通信帧中仍应明确字段宽度并在解析后转换。</span></div></section>
+  <section class="c-course-summary"><span class="c-course-kicker">一页收束</span><h3>选择整数类型时，按四个问题依次判断</h3><p><strong>会不会为负？最大值多大？是否跨硬件或协议边界？它表示数值、容量还是状态？</strong>回答完这些问题，类型通常自然出现。最后再用当前工具链验证实际大小，而不是反过来从 sizeof 猜业务含义。</p></section>
+</div>`;}
+const cFoundationIds=new Set(["c-integer-types","c-signed-unsigned","c-float","c-sequencing","c-control-flow"]);
+function renderCFoundationCourse(id){
+  if(id==="c-integer-types")return renderIntegerTypesCourse();
+  if(id==="c-signed-unsigned")return renderIntegerOperationsCourse();
+  if(id==="c-float")return renderFloatCourse();
+  if(id==="c-sequencing")return renderExpressionCourse();
+  if(id==="c-control-flow")return renderControlFlowCourse();
+  return "";
+}
+const cSecondIds=new Set(["c-storage-duration","c-const-pointer","c-volatile","c-isr-sharing"]);
+function renderCSecondCourse(id){
+  if(id==="c-storage-duration")return renderLifetimeCourse();
+  if(id==="c-const-pointer")return renderConstCourse();
+  if(id==="c-volatile")return renderVolatileCourse();
+  if(id==="c-isr-sharing")return renderIsrSharingCourse();
+  return "";
+}
+function renderLifetimeCourse(){return `<div class="c-second-course life-map">
+  <section class="life-opening"><div><span class="c-course-kicker">先把一句“局部变量在栈上”拆开</span><h3>同一个变量，至少要回答三个不同问题</h3><p>看到一个变量时，我们常把“局部、全局、static、栈、可见范围”揉成一团。其实它们分别在回答：源码中哪里能写出这个名字？对象从什么时候存在到什么时候？别的 .c 文件能否通过同名声明找到它？至于最后使用寄存器、栈还是某段 RAM，是编译器和链接器在这些语义约束下做出的实现。</p><p>先把这几层分开，static 为什么只初始化一次、局部变量为什么可以与全局变量同名、返回局部地址为什么危险，就不需要死记。</p></div><div class="life-questions"><div><b>作用域</b><span>这个名字在源码的哪一段可见？</span></div><div><b>存储期</b><span>这个对象何时出生、何时失效？</span></div><div><b>链接</b><span>其他源文件中的声明能否找到同一实体？</span></div><div><b>实际位置</b><span>工具链最终把它放在寄存器、栈还是静态区？</span></div></div></section>
+  <section class="life-timeline"><span class="c-course-kicker">跟着一次函数调用看普通局部对象</span><h3>名字进入作用域时，对象开始一段新的生命</h3><div class="life-line"><div class="life-stop" style="--tone:#4d7fba"><i>1</i><b>调用函数</b><span>进入函数体，参数和局部声明开始可见。</span></div><div class="life-stop" style="--tone:#4b9a7f"><i>2</i><b>创建对象</b><span>每次调用都有一份独立的局部状态，递归时尤其明显。</span></div><div class="life-stop" style="--tone:#d28a49"><i>3</i><b>执行与修改</b><span>对象可能在栈或寄存器，也可能被优化掉；语义不变。</span></div><div class="life-stop" style="--tone:#be5f4a"><i>4</i><b>离开函数</b><span>对象生命周期结束，指向它的旧指针立即悬空。</span></div></div><p>“生命周期结束”不等于那几字节立刻清零。它只表示原对象已经不存在，后续代码没有权利再通过旧指针访问它。同一地址稍后被另一调用复用，也不会让旧对象复活。</p></section>
+  <section class="life-static-sheet"><div><span class="c-course-kicker">函数内部的 static</span><h3>名字仍是局部的，对象却贯穿程序</h3><p>下面的 calls 只有 sample_read 函数能直接写出这个名字，但对象从程序开始一直存在到程序结束。因此第一次调用后的值会被下一次调用继续使用，初始化也只发生一次。</p><pre>uint32_t sample_read(void)\n{\n    static uint32_t calls = 0;\n    ++calls;\n    return calls;\n}</pre><p>它适合保存确实需要跨调用保留的状态；若函数可能被递归、ISR 或多个任务同时调用，这份共享状态也会成为竞争点。</p></div><div><span class="c-course-kicker">文件作用域的 static</span><h3>不是“更长寿”，而是不对其他 .c 暴露名字</h3><p>文件作用域对象本来就具有静态存储期。此处再写 static，最重要的效果是让名称只在当前翻译单元中链接，常用来实现模块私有状态和私有函数。</p><pre>/* sensor.c */\nstatic uint32_t error_count;\nstatic void recover_bus(void) { ... }\n\n/* 其他 .c 不能用 extern 找到它们 */</pre><p>因此“static 的作用”必须带位置回答：函数内主要改变存储期，文件作用域主要限制跨文件链接。</p></div></section>
+  <section class="life-timeline"><span class="c-course-kicker">同名并不一定是同一个对象</span><h3>局部变量可以遮住外层或全局名字，但通常不值得故意这样写</h3><p>块内声明的 count 可以与文件作用域的 count 同名；在该块中，不带限定的名称会优先指向最近一层声明。两个对象各自拥有独立生命周期。语言允许不代表代码清楚：调试时看到两个 count 很容易读错，因此工程代码一般避免有意义的全局状态被局部同名变量遮蔽。</p><div class="c-code-panel"><pre>static unsigned count = 100;   /* 文件内对象 */\n\nvoid run(void)\n{\n    unsigned count = 0;        /* 新的局部对象，遮住外层名字 */\n    ++count;                    /* 修改的是局部 count */\n}</pre><span class="result">作用域决定此处名字绑定到谁；存储期决定两个对象各自活多久。这两个问题不能合并回答。</span></div></section>
+  <section class="life-dangle"><span class="c-course-kicker">最后解决最典型的生命周期错误</span><h3>返回局部变量地址，错误发生在 return 的那一刻</h3><div class="life-dangle-road"><div><b>函数内</b><p>int value 正在存活，&amp;value 此时有效。</p></div><i>→</i><div><b>执行 return</b><p>value 生命周期结束，返回出去的地址立即变成悬空指针。</p></div><i>→</i><div><b>调用者解引用</b><p>即使旧数值还在，也是在访问已经不存在的对象。</p></div></div><div class="c-code-panel"><pre>/* 错误 */\nint *bad_value(void)\n{\n    int value = 42;\n    return &amp;value;\n}\n\n/* 常用修复：返回值，或让调用者提供存储 */\nbool read_value(int *out)\n{\n    if (out == NULL) return false;\n    *out = 42;\n    return true;\n}</pre><span class="result">static 局部地址确实能在函数返回后继续存活，但所有调用会共享同一对象。是否使用它要看重入和并发需求，不能把 static 当作通用补丁。</span></div></section>
+</div>`;}
+function renderConstCourse(){return `<div class="c-second-course const-review">
+  <section class="const-brief"><span class="c-course-kicker">把 const 当作接口承诺，而不是装饰词</span><h3>调用 crc32(buffer, length) 时，怎样一眼确认函数不会改 buffer？</h3><p>最直接的办法是让函数参数写成 <code>const uint8_t *buffer</code>。这告诉编译器、调用者和代码审查者：函数可以读取这些字节，却不能通过这根指针写回。const 的价值首先是表达和检查合同，而不是单纯争取某种优化。</p></section>
+  <section class="const-file"><span class="c-course-kicker">一次接口代码审查</span><h3>输入只读，输出可写，分别写进函数原型</h3><div class="const-code-review"><pre>bool packet_decode(const uint8_t *input,\n                   size_t input_len,\n                   Packet *output);</pre><div class="review-note good"><b>input</b><span>指向 const 数据：函数可以移动 input 指针和读取字节，但不能写 input[i]。</span></div><div class="review-note good"><b>output</b><span>指向可写 Packet：调用者明确授权函数把解析结果写进去。</span></div><div class="review-note"><b>仍需说明</b><span>const 不证明 input 非空、长度足够或生命周期足够长；这些仍属于接口前置条件。</span></div></div><p>当可写指针传给只读参数时，权限只会收紧，通常是安全的；反过来把 const 数据交给可写指针会丢失保护，编译器应当警告。</p></section>
+  <aside class="const-layers"><span class="c-course-kicker">从变量名向外读</span><div class="const-decl" style="--tone:#4a7fbb"><code>const int *p</code><b>目标只读，指针可换</b><span>不能写 *p；可以让 p 指向另一个 int。</span></div><div class="const-decl" style="--tone:#4b9a7c"><code>int * const p = &amp;x</code><b>指针锁定，目标可写</b><span>p 必须初始化且不能改指向；仍可以写 *p。</span></div><div class="const-decl" style="--tone:#b66b49"><code>const int * const p = &amp;x</code><b>两层都只读</b><span>既不能经 p 改目标，也不能让 p 改指向。</span></div><p>诀窍是先找变量名 p，再向外看：右边先遇到 const，通常锁住 p；星号左侧的 const 修饰所指对象。</p></aside>
+  <section class="const-file"><span class="c-course-kicker">普通 const 对象</span><h3>声明后就应初始化，并且不再通过正常表达式修改</h3><div class="c-code-panel"><pre>const uint32_t timeout_ms = 1000u;\nconst uint8_t command[] = {0xA5u, 0x01u, 0x00u};\n\n/* timeout_ms = 2000u;  编译器应诊断 */</pre><span class="result">在常见 MCU 工程中，文件作用域只读对象可能被链接到 Flash；但是否真的位于哪一段由链接脚本和使用方式决定，不是 const 关键字单独保证。</span></div><p>强制转换去掉 const 并不等于获得写权限。若底层对象本来就声明为 const，随后尝试修改可能直接 Fault，也可能产生语言不保证的结果。正确设计是从接口源头决定谁拥有写权限。</p></section>
+  <section class="const-layers"><span class="c-course-kicker">const 与 #define</span><h3>常量对象和文本替换不是同一种工具</h3><div class="const-decl" style="--tone:#4b9078"><code>static const uint32_t limit = 16u;</code><b>有类型、有作用域、可取地址</b><span>适合模块中的只读数据和需要地址的表。</span></div><div class="const-decl" style="--tone:#c27b42"><code>#define LIMIT 16u</code><b>预处理阶段替换 token</b><span>没有对象地址；常用于条件编译、头文件配置和必须在预处理中出现的值。</span></div><p>数组长度、case 标签等需要“编译期整数常量”的位置，在不同 C 标准和场景中不一定能直接使用普通 const 对象；enum 常量或宏往往更合适。宏的完整规则会在预处理章节单独讲。</p></section>
+  <section class="const-compare"><div><b>const 不是“永远不变”</b><span>const int *p 只限制经 p 的写操作；同一非 const 对象仍可能被其他合法可写指针修改。</span></div><div><b>const 不是线程同步</b><span>它没有锁、原子性或发布顺序。数据是否会被 ISR、DMA 或另一任务改变，要用对应并发协议处理。</span></div><div><b>const volatile</b><span>程序只能读，但值可能由硬件自行变化，典型例子是只读状态寄存器。下一页从这个场景进入 volatile。</span></div></section>
+</div>`;}
+function renderVolatileCourse(){return `<div class="c-second-course volatile-scope">
+  <section class="volatile-opening"><div><span class="c-course-kicker">从一个轮询状态位的死循环开始</span><h3>寄存器明明会被硬件改，编译器为什么可能只读一次？</h3><p>对普通变量，编译器依据当前 C 代码判断：循环体里没有语句修改 status，于是后续每轮重复读取可能没有意义，可以把值保存在寄存器里反复判断。但内存映射外设不遵守“只有本程序写了才会变”的假设——硬件会在程序视线之外更新它。</p><p>volatile 就是在告诉编译器：这次访问本身具有意义，每次规定的读取或写入都必须按实现要求真正发生，不能把它当成普通的重复动作省掉。</p></div><div class="volatile-poll"><pre>/* 错误的硬件映射：普通指针 */\nuint32_t *status = (uint32_t *)STATUS_ADDR;\nwhile ((*status &amp; READY) == 0u) { }\n\n/* 正确表达访问性质 */\nvolatile uint32_t *status =\n    (volatile uint32_t *)STATUS_ADDR;\nwhile ((*status &amp; READY) == 0u) { }</pre><div class="volatile-wave"><i></i><b>硬件在此把 READY 拉高</b></div></div></section>
+  <section class="volatile-diff"><div><span class="c-course-kicker">没有 volatile 的可能优化</span><h3>读一次，然后永远判断旧值</h3><code>r = *status;\nloop:\n    if ((r &amp; READY) == 0) goto loop;</code><p>这不是编译器“自作聪明”，而是普通对象模型允许它复用未被程序修改的值。</p></div><div><span class="c-course-kicker">声明为 volatile 后</span><h3>每轮都重新产生一次读取</h3><code>loop:\n    r = *status;\n    if ((r &amp; READY) == 0) goto loop;</code><p>具体汇编取决于工具链，但程序不能再把多次 volatile 读取随意合成一次普通读取。</p></div></section>
+  <section class="volatile-contract"><span class="c-course-kicker">只给它一份工作</span><h3>volatile 保证访问发生，不负责把并发问题全部解决</h3><div class="volatile-grid"><div style="--tone:#4a8f7c"><b>它解决</b><span>MMIO 寄存器、由异步环境改变的简单对象，需要每次源码访问真实发生。</span></div><div style="--tone:#c98145"><b>它不解决</b><span>counter++ 的读—改—写不可分割性，也不阻止 ISR 在中间插入。</span></div><div style="--tone:#a35e72"><b>它也不解决</b><span>多个字段的一致快照、任务互斥、DMA Cache 一致性或两个执行者之间的交接顺序。</span></div></div><p>所以“共享变量全部加 volatile”不是并发设计。它可能让某次读取重新发生，却无法说明事件会不会丢、复合更新会不会互相覆盖，以及消费者是否会看到完整数据。</p></section>
+  <section class="volatile-diff"><div><span class="c-course-kicker">volatile uint32_t *</span><h3>程序可读可写，硬件也可能改变</h3><p>常见于控制/状态混合寄存器。是否允许读改写、某位是否写 1 清零，仍必须查芯片手册；volatile 不会阻止错误访问。</p></div><div><span class="c-course-kicker">const volatile uint32_t *</span><h3>程序只读，硬件仍可能改变</h3><p>常见于只读状态或计数寄存器。const 禁止程序经该指针写，volatile 要求每次读取真实发生，两者职责互不冲突。</p></div></section>
+  <section class="volatile-contract"><span class="c-course-kicker">与 ISR 共享简单标志时</span><h3>volatile 只是起点，下一步要问“允许丢事件吗”</h3><div class="c-code-panel"><pre>static volatile bool rx_ready;\n\nvoid UART_IRQHandler(void)\n{\n    rx_ready = true;\n}\n\nint main(void)\n{\n    for (;;) {\n        if (rx_ready) {\n            rx_ready = false;\n            consume_byte();\n        }\n    }\n}</pre><span class="result">若 ISR 在主循环清零前连续触发两次，bool 仍只有 true，第二次事件不会留下额外信息。访问发生了，协议却仍然可能丢事件。</span></div><p>因此下一页不再继续堆关键词，而是从这个确切故障出发，逐步比较标志、计数器、临界区和环形缓冲。</p></section>
+</div>`;}
+function renderIsrSharingCourse(){return `<div class="c-second-course isr-dispatch">
+  <section class="isr-opening"><div><span class="c-course-kicker">一次 UART 突发到达</span><h3>如果中断来了三次，主循环只看见一个 true，另外两次去了哪里？</h3><p>它们没有“被 volatile 吃掉”，而是数据结构从一开始就没有容量表达三次事件。bool 只有 false 和 true 两种状态，只能表示“至少发生过一次”。要设计 ISR 共享数据，第一步不是选关键字，而是先写清事件是否可合并、是否必须逐个处理、是否还携带数据。</p></div><div class="isr-ledger"><div style="--tone:#4a80b9"><time>10.0 ms</time><span>ISR：rx_ready = true</span><small>第 1 次</small></div><div style="--tone:#4a9a7e"><time>10.1 ms</time><span>ISR：rx_ready = true</span><small>仍然只是 true</small></div><div style="--tone:#d08545"><time>10.2 ms</time><span>ISR：rx_ready = true</span><small>仍然没有计数</small></div><div style="--tone:#b65e49"><time>12.0 ms</time><span>主循环：只处理一次</span><small>丢失 2 次</small></div></div></section>
+  <section class="isr-evolution"><span class="c-course-kicker">根据要保存的信息升级数据结构</span><h3>标志、计数器和队列不是性能高低关系，而是表达能力不同</h3><div class="isr-steps"><div><b>一个 bool 标志</b><span>适合事件可以合并的场景，例如“需要重新刷新一次界面”。无论来几次，处理一次就够。</span></div><div><b>一个事件计数器</b><span>适合只关心发生次数、每次没有独立 payload 的事件。还要处理读清与递增竞争、计数上限。</span></div><div><b>环形缓冲或队列</b><span>每次事件携带字节、时间戳或描述符时，需要为每项保存独立数据，并定义满时策略。</span></div></div><p>“能否丢”必须明确写在设计里。对可合并事件，覆盖不是 bug；对串口字节、采样值或命令，覆盖通常意味着协议数据已经不可恢复。</p></section>
+  <section class="isr-rmw"><div><span class="c-course-kicker">为什么 counter++ 只加 volatile 仍会丢</span><h3>一条 C 语句，实际可能是读、计算、写回三步</h3><p>即使目标 MCU 对一次对齐 32 位读取和写入不会撕成两半，counter++ 仍然是复合动作。主循环刚读出 5，ISR 抢占并写入 6；主循环恢复后仍用旧的 5 计算并写入 6，于是两次递增最终只留下一个。</p><p>修复要保护完整的“读—改—写”窗口：在单核 MCU 上可短暂屏蔽会竞争的中断或使用 RTOS 临界区；也可以使用工具链或语言提供的合适原子操作。选择前先确认参与者是谁，别机械套用。</p></div><div class="isr-interleave"><div><b>主循环</b><span>读取 counter = 5</span></div><div><b>ISR 插入</b><span>读取 5，写回 6</span></div><div><b>主循环</b><span>仍根据旧值写回 6</span></div><div><b>最终结果</b><span>执行两次 ++，只增加 1</span></div></div></section>
+  <section class="isr-evolution"><span class="c-course-kicker">共享一块数据时，发布动作必须放在最后</span><h3>先写 payload，再更新 ready 或 head</h3><div class="c-code-panel"><pre>/* 单生产者 ISR，单消费者主循环的示意 */\nvoid UART_IRQHandler(void)\n{\n    size_t next = next_index(rx_head);\n    if (next == rx_tail) {\n        ++rx_dropped;              /* 满：记录并丢弃，本例策略 */\n        return;\n    }\n\n    rx_buffer[rx_head] = UART_DR;  /* 1. 先写完整数据 */\n    rx_head = next;                /* 2. 最后发布新 head */\n}</pre><span class="result">若先更新 head，消费者可能看到“已有新元素”，随后却读取一个还没写完的槽。head 不只是下标，也是生产者向消费者发布所有权的信号。</span></div><p>这个示例只适用于明确的单生产者、单消费者模型。多个 ISR 同时写、DMA 参与、带 Cache 的系统或 RTOS 任务间共享时，需要使用对应的队列、临界区、Cache 维护和顺序机制，不能照搬两行索引。</p></section>
+  <section class="isr-chooser"><span class="c-course-kicker">最后按需求选择</span><h3>先问信息量和上下文，再选通信方式</h3><div class="isr-choice-row"><b>需求</b><b>合适起点</b><b>必须补充的合同</b></div><div class="isr-choice-row"><span>重复事件可以合并</span><span>volatile/原子标志或任务通知</span><span>谁清零，清零窗口是否会覆盖新事件</span></div><div class="isr-choice-row"><span>只需保存次数</span><span>受保护的计数器</span><span>饱和/回绕、读取并清零是否原子</span></div><div class="isr-choice-row"><span>每次携带小数据</span><span>环形缓冲或 RTOS FromISR 队列</span><span>容量、满时策略、生产与消费所有权</span></div><div class="isr-choice-row"><span>DMA 完成一大块数据</span><span>传递缓冲区索引或描述符</span><span>Cache、一致性、缓冲区何时重新归 DMA</span></div><p>一份可靠共享协议最终要回答：谁写、谁读、一次操作包含几步、事件能否合并、缓冲满怎么办，以及最坏情况下中断允许被延迟多久。</p></section>
+</div>`;}
 function renderLesson(n,id,chapter){
-  if(id==="c-padding-alignment")return "";
+  if(id==="c-padding-alignment"||cFoundationIds.has(id)||cSecondIds.has(id))return "";
   const d=deepLessons[id],useEssay=!!lessonEssays[id];
   const sections=!useEssay&&d?.sections?.length?`<section class="text-card deep-prose"><h3>${varied(id,["再往下一层","把刚才的画面讲严谨","现在补上不能省略的细节"])}</h3>${d.sections.map(s=>`<div class="prose-section"><h4>${esc(s[0])}</h4><p>${esc(s[1])}</p></div>`).join("")}</section>`:"";
   const code=d?.code?`<section class="text-card code-card"><h3>${esc(d.code.title)}</h3><div class="code-meta"><span>${esc(d.code.meta||"示例代码")}</span><span>关注语义，不照抄配置</span></div><pre><code>${esc(d.code.text)}</code></pre></section>`:"";
